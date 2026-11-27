@@ -18,13 +18,19 @@ Bridge: **EBITDA = SDE − owner replacement cost.** The same business can look 
 3. Price each role from at least two current sources (local job postings, a salary survey, a recruiter quote). Record the sources.
 4. Add employer payroll taxes and benefits. Ask a CPA or payroll provider for the burden rate in the user's state rather than guessing.
 5. If the owner holds a license the business needs, price a licensed hire, not a general manager.
-6. If the buyer will run the business: still compute EBITDA with a market salary. The buyer's own pay comes out of it; a deal that only works if the buyer works for free is a job with debt.
+6. If the buyer will run the business: still compute EBITDA with a market salary. The buyer's own pay comes out of it; a deal that only works if the buyer works for free is a job with debt. If the buyer will do some of the owner's jobs but not others (runs the business but won't do the licensed field work, the estimating or the books), use the buyer's own market pay for the jobs they will do as `--replacement-cost`, and enter each job they won't do as a negative `other` row with `by` = `buyer`, priced at the market pay for that role (cite the postings or survey). Those rows lower every buyer case and never touch "as claimed".
 
 ## Status definitions (use exactly these)
 
 - **supported**: a document in the workspace shows the amount, and the reason it won't recur under a new owner is documented. Cite file and page.
 - **assumed**: plausible, not yet documented. Carries a request to get the document.
 - **unsupported**: no document, contradicted by a document, or a real operating cost.
+
+Depreciation, amortization and interest read off a tax return that is in `financials/` count as supported: cite the return's line. Interest is supported only if the seller's debt is paid off at closing (if the buyer takes the debt on, it isn't an add-back). With no return on file, nothing is supported yet: the supported case is not meaningful, and the output says so rather than offering the starting profit as a price basis.
+
+## Who put the row there: seller or buyer
+
+The `by` column keeps two things apart. Seller rows (`by` = `seller`) are the seller's or broker's own add-backs, entered as claimed whatever their status; together with the starting profit they make "as claimed", which should reproduce the seller's stated SDE (check it with `--claimed-sde`). Buyer rows (`by` = `buyer`) are your normalizations: rent brought up to market, a hire for a job you won't do, an add-back the seller missed. They are a separate step and never enter "as claimed" or the seller's discretionary share. Buyer rows that lower earnings count in the supported case even when only assumed (a cost you expect is a cost); buyer rows that raise earnings count there only when supported.
 
 ## Common add-backs: test and evidence
 
@@ -44,6 +50,8 @@ Bridge: **EBITDA = SDE − owner replacement cost.** The same business can look 
 | PPP loan forgiveness, grants, ERC | Remove as income: non-recurring (a deduction, not an add-back) | Left in revenue or other income | Loan forgiveness letter, return's other-income lines |
 
 ## Adjustments that lower earnings (sellers rarely list these)
+
+Enter these as buyer rows (`by` = `buyer`) unless the seller listed them.
 
 - Related-party rent below market (deduct the gap).
 - Owner's salary below market (if the add-back uses the actual low salary, the replacement cost corrects for it; make sure it isn't counted twice).

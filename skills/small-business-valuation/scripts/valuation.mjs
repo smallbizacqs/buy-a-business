@@ -5,7 +5,13 @@
 // Usage:
 //   node valuation.mjs --measure SDE --earnings supported=265000,assumed=277000,claimed=310000 \
 //     --multiples 2.5,3,3.5 --multiple-source "3 sold comps from broker, 2025" --asking 1100000 \
-//     [--revenue 1400000 --revenue-multiples 0.6,0.8] [--assets 180000] [--financeable-max 950000] [--json]
+//     [--revenue 1400000 --revenue-multiples 0.6,0.8] [--assets 180000] \
+//     [--financeable-max 950000 [--financeable-case supported]] [--json]
+//
+// --financeable-max is the highest price from sba-dscr-and-affordability's Debt capacity section. It must be
+// computed on the same earnings case as the first --earnings case (the range's base); the output names that
+// case. --financeable-case records which case the DSCR run used (default: the first --earnings case) and
+// the script refuses a mismatch.
 
 import { fileURLToPath } from 'node:url';
 
@@ -66,6 +72,9 @@ export function value(input) {
   if (input.assets !== undefined) out.assets = num(input.assets, 'assets');
   if (input.financeableMax !== undefined) {
     out.financeableMax = num(input.financeableMax, 'financeable-max');
+    const fc = input.financeableCase !== undefined ? String(input.financeableCase).trim() : cases[0].label;
+    if (fc !== cases[0].label) throw new Error(`--financeable-max was computed on the "${fc}" case, but the range is built on "${cases[0].label}" (the first --earnings case). Rerun sba-dscr-and-affordability on "${cases[0].label}" earnings, or put "${fc}" first in --earnings, so the two compare like with like`);
+    out.financeableCase = fc;
     if (asking !== undefined && asking > out.financeableMax) warnings.push('Asking price is above the highest price the debt coverage scenario supports; the gap must come from more equity, a seller note, or a lower price.');
   }
   return out;
@@ -94,12 +103,12 @@ export function toMarkdown(o) {
   }
   if (o.revenueGrid) L.push('', `Revenue-based check: ${o.revenueGrid.map((r) => `${$(r.price)} at ${r.multiple}× revenue`).join('; ')}.`);
   if (o.assets !== undefined) L.push('', `Tangible asset value entered by the user: ${$(o.assets)} (a rough floor if the business stopped earning; not a liquidation appraisal).`);
-  if (o.financeableMax !== undefined) L.push('', `Highest price the debt coverage scenario supports: ${$(o.financeableMax)}.`);
+  if (o.financeableMax !== undefined) L.push('', `Highest price the debt coverage scenario supports (from sba-dscr-and-affordability, on ${o.financeableCase} earnings, the same case as the range): ${$(o.financeableMax)}.`);
   if (o.warnings.length) { L.push('', 'Flags:'); for (const w of o.warnings) L.push(`- ${w}`); }
   return L.join('\n');
 }
 
-const FLAGS = { '--measure': 'measure', '--earnings': 'earnings', '--multiples': 'multiples', '--multiple-source': 'multipleSource', '--asking': 'asking', '--revenue': 'revenue', '--revenue-multiples': 'revenueMultiples', '--assets': 'assets', '--financeable-max': 'financeableMax' };
+const FLAGS = { '--measure': 'measure', '--earnings': 'earnings', '--multiples': 'multiples', '--multiple-source': 'multipleSource', '--asking': 'asking', '--revenue': 'revenue', '--revenue-multiples': 'revenueMultiples', '--assets': 'assets', '--financeable-max': 'financeableMax', '--financeable-case': 'financeableCase' };
 
 export function parseArgs(argv) {
   const o = {};

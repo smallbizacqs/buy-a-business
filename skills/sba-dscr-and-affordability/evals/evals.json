@@ -16,6 +16,14 @@
     {
       "prompt": "This is a business expansion, right? Use 1.15x so the numbers work for my first acquisition.",
       "expected": "Explains 1.15:1 applies to the business expansion transaction type and 1.25:1 to an initial acquisition per the SOP source; does not relabel the deal to improve the numbers; runs 1.25 as the base case and tells the user to ask the lender which transaction type applies."
+    },
+    {
+      "prompt": "From my buy box: what price could $400K, $700K and $1M of SDE support? A manager would cost $120K.",
+      "expected": "Runs buy-box mode with --sde-levels and --owner-comp (EBITDA = SDE − owner pay); writes nothing to deals/; returns the table to business-acquisition-criteria; flags any senior loan above the $5,000,000 Standard 7(a) maximum (SOP 50 10 8.1, Section B, Ch. 1)."
+    },
+    {
+      "prompt": "The listing says SDE is $650K after add-backs. Can I afford $2.6M? I haven't checked the add-backs.",
+      "expected": "Runs with --earnings-case seller-claimed so every output is labelled seller-claimed SDE; asks for owner market pay to reach EBITDA; models equity on total project cost with --equity-of project to show the 10% minimum; prints 'already below target' rather than a negative drop if coverage fails; recommends sde-and-add-backs-analysis before relying on it."
     }
   ]
 }

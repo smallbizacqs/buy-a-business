@@ -46,6 +46,7 @@ test('coverage ratio against a threshold', () => {
   const c = coverage({ ebitda: 380000, annualDebtService: 290000, threshold: 1.25 });
   assert.equal(c.ratio, 1.31);
   assert.equal(c.meetsThreshold, true);
+  assert.match(c.coverageVsTest, /not an approval/);
   assert.equal(c.maxDebtServiceAtThreshold, 304000);
   assert.equal(coverage({ ebitda: 300000, annualDebtService: 290000, threshold: 1.25 }).meetsThreshold, false);
   assert.throws(() => coverage({ ebitda: 1, annualDebtService: 0 }));

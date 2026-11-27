@@ -12,8 +12,21 @@
 // bases the SOP allows the lender to test on (last fiscal year-end, or the average of the last two).
 // --sde S --owner-comp C can be given instead of --ebitda: EBITDA = SDE - market cost to replace the owner.
 // --valuation V (the lender's business valuation, if known) adds the equity-gap and total-debt checks.
+// --equity-pct is a share of the PRICE by default. --equity-of project applies it to total project cost
+//   (price + costs financed in the loan), the base SOP 50 10 8.1 App. 15 C.2.a measures the equity injection on.
+//   --equity-amount adds a fixed dollar amount on top.
+// --earnings-case names which earnings were used (supported, seller-claimed, cpa-adjusted, qoe...); printed in the output.
+//   seller-claimed labels every output "seller-claimed SDE" (add-backs untested).
+// --period ttm labels a single trailing-twelve-month figure (illustration; the SOP tests fiscal year-ends).
+// Buy-box mode: --ebitda-levels a,b,c (or --sde-levels a,b,c --owner-comp C) gives the max price for 1 to 5
+//   hypothetical earnings levels; no --price, nothing about a specific deal.
 
 import { fileURLToPath } from 'node:url';
+
+// SOP 50 10 8.1, Section B, Ch. 1 (data/sources/sba-sop-50-10-8-1-max-loan.yaml)
+export const MAX_7A_LOAN = 5000000;
+// SOP 50 10 8.1, Appendix 15, Para. C.2.a (data/sources/sba-sop-50-10-8-1-equity-minimum.yaml), initial acquisitions
+export const MIN_EQUITY_INITIAL = 0.10;
 
 export const TARGETS = {
   // SOP 50 10 8.1, Appendix 15, Para. C.2 (data/sources/sba-sop-50-10-8-1-dsc-ratio.yaml)
@@ -61,7 +74,18 @@ function num(v, name, { min = -Infinity } = {}) {
 export function normalize(input) {
   const i = { ...input };
   let ebitdaYears;
-  if (i.ebitda !== undefined) {
+  const list = (v, name) => (Array.isArray(v) ? v : String(v).split(',')).map((x) => num(x, name));
+  const buyBox = i.ebitdaLevels !== undefined || i.sdeLevels !== undefined;
+  if (buyBox) {
+    if (i.price !== undefined) throw new Error('buy-box mode (--ebitda-levels / --sde-levels) takes no --price; it sizes hypothetical earnings levels, not a deal');
+    if (i.ebitdaLevels !== undefined) ebitdaYears = list(i.ebitdaLevels, 'ebitda-levels');
+    else {
+      if (i.ownerComp === undefined) throw new Error('--sde-levels needs --owner-comp (the market cost to replace the owner) to bridge SDE to EBITDA');
+      const comp = num(i.ownerComp, 'owner-comp', { min: 0 });
+      ebitdaYears = list(i.sdeLevels, 'sde-levels').map((x) => x - comp);
+    }
+    if (ebitdaYears.length < 1 || ebitdaYears.length > 5) throw new Error('give 1 to 5 hypothetical earnings levels');
+  } else if (i.ebitda !== undefined) {
     ebitdaYears = (Array.isArray(i.ebitda) ? i.ebitda : String(i.ebitda).split(',')).map((v) => num(v, 'ebitda'));
   } else if (i.sde !== undefined && i.ownerComp !== undefined) {
     const sde = (Array.isArray(i.sde) ? i.sde : String(i.sde).split(',')).map((v) => num(v, 'sde'));
@@ -70,16 +94,27 @@ export function normalize(input) {
   } else {
     throw new Error('need --ebitda, or --sde together with --owner-comp (the market cost to replace the owner)');
   }
-  if (ebitdaYears.length < 1 || ebitdaYears.length > 2) throw new Error('give one or two fiscal years of EBITDA, most recent first');
+  const period = i.period ?? 'fy';
+  if (!['fy', 'ttm'].includes(period)) throw new Error('--period must be fy (fiscal year-ends) or ttm (trailing twelve months)');
+  if (!buyBox && (ebitdaYears.length < 1 || ebitdaYears.length > 2)) throw new Error('give one or two fiscal years of EBITDA, most recent first');
+  if (!buyBox && period === 'ttm' && ebitdaYears.length !== 1) throw new Error('--period ttm takes a single trailing-twelve-month figure');
+  const equityOf = i.equityOf ?? 'price';
+  if (!['price', 'project'].includes(equityOf)) throw new Error('--equity-of must be price or project');
   const type = i.type ?? 'initial-acquisition';
   if (i.target === undefined && !(type in TARGETS)) throw new Error(`unknown --type "${type}"; use one of ${Object.keys(TARGETS).join(', ')} or pass --target`);
   const target = i.target !== undefined ? num(i.target, 'target', { min: 0.01 }) : TARGETS[type];
   if (i.rate === undefined || i.term === undefined) throw new Error('need --rate (senior loan, % per year) and --term (years)');
   const out = {
     ebitdaYears,
+    buyBox,
+    sdeLevels: buyBox && i.sdeLevels !== undefined ? list(i.sdeLevels, 'sde-levels') : undefined,
+    ownerComp: i.ownerComp !== undefined ? num(i.ownerComp, 'owner-comp', { min: 0 }) : undefined,
+    earningsCase: i.earningsCase !== undefined && i.earningsCase !== true ? String(i.earningsCase) : 'not stated',
+    period,
+    equityOf,
     type,
     target,
-    targetSource: i.target !== undefined ? 'user-set' : 'SOP 50 10 8.1 App. 15 C.2',
+    targetSource: i.target !== undefined ? 'user-set' : 'SOP 50 10 8.1, Appendix 15, Para. C.2 (sba-sop-50-10-8-1-dsc-ratio)',
     basis: i.basis ?? 'historical',
     rate: num(i.rate, 'rate', { min: 0 }),
     term: num(i.term, 'term', { min: 0.0833 }),
@@ -102,12 +137,14 @@ export function normalize(input) {
   return out;
 }
 
-/** Split a price into senior loan, seller note and equity. */
+/** Split a price into senior loan, seller note and equity. --equity-pct applies to the price, or with
+ *  equityOf 'project' to total project cost (price + financed costs). */
 export function capitalStack(price, p) {
   const note = p.notePct / 100 * price + p.noteAmount;
-  const equity = p.equityPct / 100 * price + p.equityAmount;
+  const projectCost = price + p.financedCosts;
+  const equity = p.equityPct / 100 * (p.equityOf === 'project' ? projectCost : price) + p.equityAmount;
   const senior = price - note - equity + p.financedCosts;
-  return { price, senior, note, equity, financedCosts: p.financedCosts };
+  return { price, senior, note, equity, financedCosts: p.financedCosts, projectCost, equityShareOfProject: projectCost > 0 ? equity / projectCost : 0, overMaxLoan: senior > MAX_7A_LOAN };
 }
 
 /** Annual debt service and coverage at a given price and EBITDA. */
@@ -128,7 +165,8 @@ export function maxPrice(ebitda, p) {
   // totalDs(price) = fs * (price*(1 - np - ep) - nA - eA + costs) + fn * (np*price + nA) + other  (linear in price)
   const np = p.notePct / 100, ep = p.equityPct / 100;
   const slope = fs * (1 - np - ep) + fn * np;
-  const intercept = fs * (p.financedCosts - p.noteAmount - p.equityAmount) + fn * p.noteAmount + p.otherDebtService;
+  const costsInSenior = p.financedCosts * (p.equityOf === 'project' ? 1 - ep : 1);
+  const intercept = fs * (costsInSenior - p.noteAmount - p.equityAmount) + fn * p.noteAmount + p.otherDebtService;
   const price = (maxDs - intercept) / slope;
   if (!(price > 0)) return { price: 0, maxDs, reason: 'EBITDA does not cover the fixed debt service (other debt, financed costs) at the target coverage' };
   const at = coverageAt(price, ebitda, p);
@@ -150,19 +188,29 @@ export function valuationCheck(stack, p) {
 
 export function run(input) {
   const p = normalize(input);
-  const bases = [{ label: 'Last fiscal year-end', ebitda: p.ebitdaYears[0] }];
-  if (p.ebitdaYears.length === 2) bases.push({ label: 'Average of last two fiscal year-ends', ebitda: (p.ebitdaYears[0] + p.ebitdaYears[1]) / 2 });
+  const claimed = /seller[- ]?claimed/i.test(p.earningsCase);
+  const tag = claimed ? ' (seller-claimed SDE)' : '';
+  let bases;
+  if (p.buyBox) bases = p.ebitdaYears.map((e, k) => ({ label: `Hypothetical level ${k + 1}${p.sdeLevels ? `: SDE ${$(p.sdeLevels[k])} − owner pay ${$(p.ownerComp)}` : ''}${tag}`, ebitda: e }));
+  else if (p.period === 'ttm') bases = [{ label: `Trailing twelve months${tag}`, ebitda: p.ebitdaYears[0] }];
+  else {
+    bases = [{ label: `Last fiscal year-end${tag}`, ebitda: p.ebitdaYears[0] }];
+    if (p.ebitdaYears.length === 2) bases.push({ label: `Average of last two fiscal year-ends${tag}`, ebitda: (p.ebitdaYears[0] + p.ebitdaYears[1]) / 2 });
+  }
   const warnings = [];
-  if (p.basis === 'projected') warnings.push('Projected basis: under SOP 50 10 8.1 App. 15 C.2 the lender may not rely on projections to meet the coverage requirement, except for the acquisition of an owner-occupied special purpose property. Treat these rows as illustration only.');
-  if (p.basis === 'adjusted') warnings.push('Adjusted basis: SOP 50 10 8.1 App. 15 C.2 lets the lender make prudent adjustments for savings the transaction will realize. Which adjustments count is the lender\'s call; list each one and its evidence.');
-  if (p.noteStandby) warnings.push('Seller note payments are excluded because the note is entered as on full standby: under SOP 50 10 8.1 that means no payments of principal or interest for the term of the 7(a) loan (sba-sop-50-10-8-1-seller-debt-equity); interest may accrue and be paid after the 7(a) loan is repaid (sba-sop-50-10-8-1-standby-terms). If the note will pay anything sooner, rerun without --note-standby.');
-  if (p.noteInterestOnly) warnings.push('Interest-only seller note: for coverage the lender must apply an amortization of no more than 10 years (sba-sop-50-10-8-1-interest-only-debt), so the note is tested as amortizing over ' + Math.min(p.noteTerm, 10) + ' years, not at its interest-only payment.');
-  if (p.valuation !== undefined) warnings.push('Business valuation entered: ' + Math.round(p.valuation).toLocaleString('en-US') + '. Total debt, including seller debt not on full standby, is limited to the valuation (sba-sop-50-10-8-1-total-debt-cap), and any price above the valuation must be made up with equity (sba-sop-50-10-8-1-valuation-gap-equity). The SBA valuation is ordered by and prepared for the lender.');
-  warnings.push('The lender also runs a global cash flow analysis, including affiliates, that must meet 1:1 (sba-sop-50-10-8-1-global-cash-flow), and the buyer\'s pay from the business must cover their obligations and living expenses (sba-sop-50-10-8-1-owner-compensation).');
+  if (claimed) warnings.push('Earnings are seller-claimed SDE: the add-backs have not been tested, so every figure here rests on the seller\'s numbers. Re-run on the supported case once sde-and-add-backs-analysis has tested them.');
+  if (p.buyBox) warnings.push('Buy-box mode: hypothetical earnings levels, not a deal. Nothing here is written to deals/.');
+  if (p.period === 'ttm') warnings.push('Trailing-twelve-month basis: SOP 50 10 8.1, Appendix 15, Para. C.2 has the lender test coverage on the last fiscal year-end or the average of the last two (sba-sop-50-10-8-1-dsc-ratio), and also analyze the latest interim statement against the same period a year earlier (Para. C.2.b; sba-sop-50-10-8-1-interim-statements). Treat this row as illustration, and run the fiscal years too.');
+  if (p.basis === 'projected') warnings.push('Projected basis: under SOP 50 10 8.1, Appendix 15, Para. C.2 the lender may not rely on projections to meet the coverage requirement, except for the acquisition of an owner-occupied special purpose property (sba-sop-50-10-8-1-projections). Treat these rows as illustration only.');
+  if (p.basis === 'adjusted') warnings.push('Adjusted basis: SOP 50 10 8.1, Appendix 15, Para. C.2 lets the lender make prudent adjustments for savings the transaction will realize (sba-sop-50-10-8-1-adjustments). Which adjustments count is the lender\'s call; list each one and its evidence.');
+  if (p.noteStandby) warnings.push('Seller note payments are excluded because the note is entered as on full standby: under SOP 50 10 8.1, Appendix 15 that means no payments of principal or interest for the term of the 7(a) loan (sba-sop-50-10-8-1-seller-debt-equity); interest may accrue and be paid after the 7(a) loan is repaid (Para. C.2.a; sba-sop-50-10-8-1-standby-terms). If the note will pay anything sooner, rerun without --note-standby.');
+  if (p.noteInterestOnly) warnings.push('Interest-only seller note: for coverage the lender must apply an amortization of no more than 10 years (SOP 50 10 8.1, Appendix 15, Para. C.2.b; sba-sop-50-10-8-1-interest-only-debt), so the note is tested as amortizing over ' + Math.min(p.noteTerm, 10) + ' years, not at its interest-only payment.');
+  if (p.valuation !== undefined) warnings.push('Business valuation entered: ' + Math.round(p.valuation).toLocaleString('en-US') + '. Under SOP 50 10 8.1, Appendix 15, total debt, including seller debt not on full standby, is limited to the valuation (sba-sop-50-10-8-1-total-debt-cap), and any price above the valuation must be made up with equity (sba-sop-50-10-8-1-valuation-gap-equity). The SBA valuation is ordered by and prepared for the lender.');
+  warnings.push('The lender also runs a global cash flow analysis, including affiliates, that must meet 1:1, and the buyer\'s pay from the business must cover their obligations and living expenses (SOP 50 10 8.1, Appendix 15, Para. C.2.b; sba-sop-50-10-8-1-global-cash-flow, sba-sop-50-10-8-1-owner-compensation).');
   if (p.targetSource === 'user-set') warnings.push(`Target coverage ${p.target} was set by the user, not taken from the SOP table.`);
   warnings.push('Fixed-rate scenario. If the loan rate can float, rerun at higher rates to see the effect.');
   warnings.push('Cash after debt service is before income taxes, capital spending and any draw above the replacement salary already deducted to reach EBITDA.');
-  warnings.push('Not modeled: loan size limits, the lender\'s own credit policy, the global cash flow test itself, guaranty fees unless included in financed costs, and the minimum equity the lender will require.');
+  warnings.push('Not modeled: the lender\'s own credit policy, the global cash flow test itself, guaranty fees unless included in financed costs, and the equity the lender will actually require.');
   const results = bases.map((b) => {
     const r = { ...b, max: maxPrice(b.ebitda, p) };
     if (p.valuation !== undefined) r.max.valuationCheck = valuationCheck(r.max, p);
@@ -174,6 +222,16 @@ export function run(input) {
     }
     return r;
   });
+  const over = [];
+  for (const r of results) {
+    if (r.max.overMaxLoan) over.push(`max price, ${r.label}`);
+    if (r.atPrice?.overMaxLoan) over.push(`at the price, ${r.label}`);
+  }
+  if (over.length) warnings.push(`Senior loan above ${$(MAX_7A_LOAN)} (${over.join('; ')}): the maximum for any one Standard 7(a) loan is $5,000,000 (SOP 50 10 8.1, Section B, Ch. 1; sba-sop-50-10-8-1-max-loan). The rest would need more equity, a larger seller note or other debt; ask the lender.`);
+  if (p.price !== undefined && p.type === 'initial-acquisition') {
+    const share = results[0].atPrice.equityShareOfProject;
+    if (share < MIN_EQUITY_INITIAL) warnings.push(`Equity at the price is ${(share * 100).toFixed(1)}% of project cost (price + financed costs). For an initial acquisition SOP 50 10 8.1, Appendix 15, Para. C.2.a sets a 10% minimum equity injection that cannot be reduced, measured on total project cost (sba-sop-50-10-8-1-equity-minimum, sba-sop-50-10-8-1-equity-project-cost). A seller note on full standby may supply part of it, within the limits the lender applies (sba-sop-50-10-8-1-equity-limited-sources). Rerun with --equity-of project --equity-pct 10 to model the minimum.`);
+  }
   const sensitivity = [];
   if (p.price !== undefined) {
     const e0 = bases[0].ebitda;
@@ -193,18 +251,21 @@ const pct = (x) => (x * 100).toFixed(1) + '%';
 export function toMarkdown(out) {
   const p = out.inputs;
   const L = [];
-  L.push('## Debt capacity (DSCR scenario, not a lender decision)', '');
+  const claimed = /seller[- ]?claimed/i.test(p.earningsCase);
+  L.push(p.buyBox ? `## Buy-box debt capacity (hypothetical earnings levels${claimed ? ', seller-claimed SDE' : ''}; not a lender decision)` : `## Debt capacity (DSCR scenario${claimed ? ' on seller-claimed SDE' : ''}, not a lender decision)`, '');
+  L.push(`Earnings case: ${p.earningsCase}${claimed ? ' (add-backs untested)' : ''}. Period: ${p.buyBox ? 'hypothetical levels' : p.period === 'ttm' ? 'trailing twelve months' : 'fiscal year-ends'}.`);
   L.push(`Coverage basis: ${p.basis}. Target: ${p.target.toFixed(2)}:1 (${p.type}; source: ${p.targetSource}).`);
   L.push(`Senior loan: ${p.rate}% for ${p.term} years, monthly payments. Seller note: ${p.notePct ? p.notePct + '% of price' : ''}${p.noteAmount ? ' + ' + $(p.noteAmount) : ''}${!p.notePct && !p.noteAmount ? 'none' : ''} at ${p.noteRate}% over ${p.noteTerm} years${p.noteInterestOnly ? ' (interest only; tested as amortizing over ' + Math.min(p.noteTerm, 10) + ' years)' : ''}${p.noteStandby ? ' (full standby: payments excluded)' : ''}.`);
-  L.push(`Equity: ${p.equityPct ? p.equityPct + '% of price' : ''}${p.equityAmount ? ' + ' + $(p.equityAmount) : ''}${!p.equityPct && !p.equityAmount ? 'none' : ''}. Costs financed in the senior loan: ${$(p.financedCosts)}. Other debt service after closing: ${$(p.otherDebtService)}/yr.`, '');
+  L.push(`Equity: ${p.equityPct ? p.equityPct + (p.equityOf === 'project' ? '% of project cost (price + financed costs)' : '% of price') : ''}${p.equityAmount ? ' + ' + $(p.equityAmount) : ''}${!p.equityPct && !p.equityAmount ? 'none' : ''}. Costs financed in the senior loan: ${$(p.financedCosts)}. Other debt service after closing: ${$(p.otherDebtService)}/yr.`, '');
   L.push('| Basis | EBITDA | Max total debt service | Max price | Senior loan | Seller note | Equity |', '|---|---|---|---|---|---|---|');
-  for (const r of out.results) L.push(`| ${r.label} | ${$(r.ebitda)} | ${$(r.max.maxDs)} | ${$(r.max.price)} | ${$(r.max.senior)} | ${$(r.max.note)} | ${$(r.max.equity)} |`);
+  for (const r of out.results) L.push(`| ${r.label} | ${$(r.ebitda)} | ${$(r.max.maxDs)} | ${$(r.max.price)} | ${$(r.max.senior)}${r.max.overMaxLoan ? ' (over the 7(a) maximum)' : ''} | ${$(r.max.note)} | ${$(r.max.equity)} |`);
   if (out.results[0].atPrice) {
     L.push('', `At the price of ${$(p.price)}:`, '', '| Basis | Total debt service | DSCR | Cash after debt service | EBITDA drop to reach target | EBITDA drop to reach 1.00x |', '|---|---|---|---|---|---|');
-    for (const r of out.results) L.push(`| ${r.label} | ${$(r.atPrice.totalDs)} | ${x2(r.atPrice.dscr)} | ${$(r.atPrice.cashAfterDebt)} | ${pct(r.declineToTarget)} | ${pct(r.declineTo1x)} |`);
+    for (const r of out.results) L.push(`| ${r.label} | ${$(r.atPrice.totalDs)} | ${x2(r.atPrice.dscr)} | ${$(r.atPrice.cashAfterDebt)} | ${r.declineToTarget < 0 ? 'already below target' : pct(r.declineToTarget)} | ${r.declineTo1x < 0 ? 'already below 1.00x' : pct(r.declineTo1x)} |`);
+    L.push('', `Equity at that price: ${$(out.results[0].atPrice.equity)}, ${(out.results[0].atPrice.equityShareOfProject * 100).toFixed(1)}% of project cost (${$(out.results[0].atPrice.projectCost)}).`);
     L.push('', 'Sensitivity at that price (last fiscal year EBITDA):', '', '| EBITDA change | +0 pts rate | +1 pt rate | +2 pts rate |', '|---|---|---|---|');
     for (const dE of [0, -0.1, -0.2]) {
-      const row = out.sensitivity.filter((s) => s.ebitdaChange === dE).map((s) => x2(s.dscr));
+      const row = out.sensitivity.filter((x) => x.ebitdaChange === dE).map((x) => x2(x.dscr));
       L.push(`| ${dE === 0 ? 'as reported' : pct(dE)} | ${row.join(' | ')} |`);
     }
   }
@@ -227,6 +288,8 @@ const FLAG = {
   '--basis': 'basis', '--note-pct': 'notePct', '--note-amount': 'noteAmount', '--note-rate': 'noteRate', '--note-term': 'noteTerm',
   '--equity-pct': 'equityPct', '--equity-amount': 'equityAmount', '--financed-costs': 'financedCosts',
   '--other-debt-service': 'otherDebtService', '--price': 'price', '--valuation': 'valuation',
+  '--equity-of': 'equityOf', '--earnings-case': 'earningsCase', '--period': 'period',
+  '--ebitda-levels': 'ebitdaLevels', '--sde-levels': 'sdeLevels',
 };
 const BOOL = { '--note-interest-only': 'noteInterestOnly', '--note-standby': 'noteStandby', '--json': 'json' };
 

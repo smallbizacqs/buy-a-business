@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { annualDebtService, noteCoverageFactor, valuationCheck, normalize, coverageAt, maxPrice, breakEvenDecline, run, toMarkdown, parseArgs, TARGETS } from './dscr.mjs';
+import { annualDebtService, noteCoverageFactor, valuationCheck, normalize, coverageAt, maxPrice, breakEvenDecline, run, toMarkdown, parseArgs, TARGETS, capitalStack, MAX_7A_LOAN } from './dscr.mjs';
 
 const close = (a, b, tol = 0.5) => assert.ok(Math.abs(a - b) <= tol, `${a} not within ${tol} of ${b}`);
 
@@ -118,4 +118,73 @@ test('valuation checks: price above valuation is equity; paying debt capped at v
   const md = toMarkdown(run({ ebitda: 400000, rate: 10, term: 10, equityPct: 10, valuation: 1000000, price: 1200000 }));
   assert.match(md, /Against the business valuation/);
   assert.match(md, /total-debt-cap/);
+});
+
+test('--equity-of project applies the equity share to price + financed costs, and max price still hits the target', () => {
+  const p = normalize({ ebitda: 400000, rate: 10, term: 10, equityPct: 10, equityOf: 'project', financedCosts: 100000 });
+  const st = capitalStack(1000000, p);
+  close(st.equity, 110000, 1e-6);
+  close(st.senior, 990000, 1e-6);
+  close(st.equityShareOfProject, 0.1, 1e-12);
+  const m = maxPrice(400000, p);
+  close(m.dscr, 1.25, 1e-9);
+  close(m.equity, 0.1 * (m.price + 100000), 0.01);
+  assert.throws(() => normalize({ ebitda: 1, rate: 10, term: 10, equityOf: 'bogus' }), /equity-of/);
+});
+
+test('equity below 10% of project cost at the price is flagged for an initial acquisition', () => {
+  const out = run({ ebitda: 400000, rate: 10, term: 10, equityPct: 10, financedCosts: 100000, price: 1000000 });
+  assert.ok(out.warnings.some((w) => /9\.1% of project cost/.test(w) && /equity-project-cost/.test(w)));
+  const ok = run({ ebitda: 400000, rate: 10, term: 10, equityPct: 10, equityOf: 'project', financedCosts: 100000, price: 1000000 });
+  assert.ok(!ok.warnings.some((w) => /of project cost \(price/.test(w)));
+});
+
+test('senior loan above the 7(a) maximum is warned', () => {
+  assert.equal(MAX_7A_LOAN, 5000000);
+  const out = run({ ebitda: 2000000, rate: 10, term: 10, equityPct: 10, price: 7000000 });
+  assert.ok(out.results[0].atPrice.overMaxLoan);
+  assert.ok(out.warnings.some((w) => /Standard 7\(a\) loan is \$5,000,000/.test(w) && /max-loan/.test(w)));
+  assert.match(toMarkdown(out), /over the 7\(a\) maximum/);
+  assert.ok(!run({ ebitda: 300000, rate: 10, term: 10, equityPct: 10, price: 1000000 }).warnings.some((w) => /max-loan/.test(w)));
+});
+
+test('coverage already below target prints "already below target", not a negative drop', () => {
+  const md = toMarkdown(run({ ebitda: 200000, rate: 10, term: 10, equityPct: 10, price: 2000000 }));
+  assert.match(md, /already below target/);
+  assert.match(md, /already below 1\.00x/);
+  assert.match(md, /\| already below target \| already below 1\.00x \|/);
+});
+
+test('earnings case is recorded; seller-claimed labels every output', () => {
+  const out = run({ ebitda: 400000, rate: 10, term: 10, equityPct: 10, price: 1000000, earningsCase: 'seller-claimed' });
+  assert.equal(out.inputs.earningsCase, 'seller-claimed');
+  assert.ok(out.results.every((r) => /seller-claimed SDE/.test(r.label)));
+  const md = toMarkdown(out);
+  assert.match(md, /DSCR scenario on seller-claimed SDE/);
+  assert.match(md, /Earnings case: seller-claimed \(add-backs untested\)/);
+  assert.match(toMarkdown(run({ ebitda: 400000, rate: 10, term: 10, earningsCase: 'supported' })), /Earnings case: supported\./);
+  assert.match(toMarkdown(run({ ebitda: 400000, rate: 10, term: 10 })), /Earnings case: not stated/);
+});
+
+test('trailing-twelve-month period labels the row and warns', () => {
+  const out = run({ ebitda: 400000, rate: 10, term: 10, period: 'ttm' });
+  assert.equal(out.results.length, 1);
+  assert.match(out.results[0].label, /Trailing twelve months/);
+  assert.ok(out.warnings.some((w) => /interim-statements/.test(w)));
+  assert.throws(() => normalize({ ebitda: '1,2', rate: 10, term: 10, period: 'ttm' }), /single/);
+  assert.throws(() => normalize({ ebitda: 1, rate: 10, term: 10, period: 'week' }), /--period/);
+});
+
+test('buy-box mode: hypothetical levels, SDE bridged by owner pay, no price allowed', () => {
+  const out = run({ sdeLevels: '400000,700000', ownerComp: 120000, rate: 10, term: 10, equityPct: 10 });
+  assert.deepEqual(out.inputs.ebitdaYears, [280000, 580000]);
+  assert.equal(out.results.length, 2);
+  out.results.forEach((r) => close(r.max.dscr, 1.25, 1e-9));
+  assert.match(toMarkdown(out), /Buy-box debt capacity/);
+  assert.ok(out.warnings.some((w) => /Nothing here is written to deals/.test(w)));
+  assert.equal(run({ ebitdaLevels: '300000,500000,800000', rate: 10, term: 10 }).results.length, 3);
+  assert.throws(() => normalize({ ebitdaLevels: '300000', rate: 10, term: 10, price: 1 }), /no --price/);
+  assert.throws(() => normalize({ sdeLevels: '300000', rate: 10, term: 10 }), /owner-comp/);
+  assert.deepEqual(parseArgs(['--ebitda-levels', '1,2', '--equity-of', 'project', '--earnings-case', 'supported', '--period', 'ttm']),
+    { ebitdaLevels: '1,2', equityOf: 'project', earningsCase: 'supported', period: 'ttm' });
 });

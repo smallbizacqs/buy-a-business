@@ -34,6 +34,14 @@ test('revenue-based check, assets and financeable max', () => {
   assert.deepEqual(o.revenueGrid.map((r) => r.price), [800000, 1000000]);
   assert.equal(o.assets, 150000);
   assert.ok(o.warnings.some((w) => /debt coverage scenario/.test(w)));
+  assert.equal(o.financeableCase, 'supported');
+});
+
+test('financeable max must use the same earnings case as the range, and the output names it', () => {
+  const o = value({ ...base, financeableMax: '1000000', financeableCase: 'supported' });
+  assert.match(toMarkdown(o), /from sba-dscr-and-affordability, on supported earnings, the same case as the range\): \$1,000,000/);
+  assert.throws(() => value({ ...base, financeableMax: '1000000', financeableCase: 'claimed' }), /computed on the "claimed" case, but the range is built on "supported"/);
+  assert.equal(parseArgs(['--financeable-case', 'supported']).financeableCase, 'supported');
 });
 
 test('refuses to run without user-sourced multiples or a measure', () => {

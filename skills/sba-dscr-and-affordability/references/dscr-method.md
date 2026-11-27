@@ -51,7 +51,7 @@ If the buyer will run the business and live off it, their own living costs must 
 3. What's left covers the senior loan and the seller note. Each dollar of principal costs a fixed amount per year at a given rate and term (the "service factor"; for example, about $0.159 a year per dollar at 10% over 10 years with monthly payments).
 4. Price × (share financed by the senior loan × its factor + share financed by the note × its factor) = what's left. Solve for price.
 
-The script does this exactly, including fixed-dollar equity and notes and costs added to the loan.
+The script does this exactly, including fixed-dollar equity and notes and costs added to the loan. `--equity-pct` is a share of the price unless `--equity-of project` is given, which applies it to price + financed costs (total project cost, the base for the SOP's equity minimum).
 
 ### Worked example (illustration, all inputs are assumptions)
 

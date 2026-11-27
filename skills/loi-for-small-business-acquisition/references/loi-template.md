@@ -1,6 +1,6 @@
 # loi-draft.md template
 
-Copy into `deals/<slug>/loi-draft.md` and fill. Brackets mark anything still open. This is a business-terms draft in plain language for the parties and their lawyers; it is not legal drafting. A lawyer should review before signature.
+Copy into `deals/<slug>/loi-draft.md` and fill. Brackets mark anything still open. In an SBA 7(a) initial acquisition, use the consultant wording in the Transition paragraph: the seller may not stay as an officer, director, owner or employee, but the business may hire the seller as a consultant for up to 24 months in total (source `sba-sop-50-10-8-1-seller-consultant`; check its `review_by` date and confirm with the lender). This is a business-terms draft in plain language for the parties and their lawyers; it is not legal drafting. A lawyer should review before signature.
 
 ```markdown
 # LOI: <business name>
@@ -29,7 +29,7 @@ This letter sets out the main terms on which [Buyer name] or an entity Buyer for
 4. **Cash-free, debt-free.** Seller keeps cash and pays off all debt, liens and debt-like obligations at closing. *(Non-binding)*
 5. **Working capital.** The Business will be delivered with a normal level of net working capital, set as [the trailing twelve-month average of month-end net working capital], with the definition and peg to be agreed in diligence and an adjustment at closing. [Inventory included in the price / added at the lower of cost or value based on a physical count within [N] days of closing, excluding obsolete or damaged stock, not to exceed $[cap].] *(Non-binding)*
 6. **Real estate.** [Buyer will lease the premises from [landlord / Seller] on terms acceptable to Buyer, for an initial term of [N] years with [N] renewals / Buyer will purchase the real estate for $[X] / Seller will assign the existing lease with landlord consent]. *(Non-binding)*
-7. **Transition.** Seller will work in the Business full-time for [N] weeks and part-time for [N] months after closing, [included in the price / at $[X] per [period] under a consulting agreement]. *(Non-binding)*
+7. **Transition.** Seller will work in the Business full-time for [N] weeks and part-time for [N] months after closing, [included in the price / at $[X] per [period] under a consulting agreement]. [If SBA 7(a)-financed: as a consultant to the Business under a written consulting agreement, not as an officer, director, owner or employee, for no more than 24 months in total.] *(Non-binding)*
 8. **Non-compete and non-solicit.** Seller will not compete with the Business or solicit its customers or employees within [area] for [N] years. *(Non-binding)*
 9. **Employees.** Buyer intends to offer employment to [all / named] employees. Seller will pay all wages, bonuses and other amounts owed to employees through closing. *(Non-binding)*
 10. **Conditions.** Closing depends on: Buyer's satisfaction with due diligence in its sole judgment; financing on terms acceptable to Buyer; a purchase agreement acceptable to both parties; [landlord consent or new lease]; [consents for named contracts, licenses and permits]; no material adverse change. *(Non-binding)*

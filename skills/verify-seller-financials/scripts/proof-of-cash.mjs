@@ -5,7 +5,10 @@
 //
 // Usage:
 //   node proof-of-cash.mjs --bank bank.csv --books books.csv [--tax tax.csv]
-//     [--threshold 5] [--annual-threshold 2] [--fy-end-month 12] [--json]
+//     [--threshold 5] [--annual-threshold 2] [--fy-end-month 12] [--period-start YYYY-MM --period-end YYYY-MM] [--json]
+//   --period-start/--period-end: the period asked for; months in it with no data at all become one gap.
+//   The trailing-twelve-month check sums the monthly differences of the last 12 months with both bank and
+//   books data and flags the total against --annual-threshold, even when no single month passed --threshold.
 //
 // bank.csv, either format (header required):
 //   summary:      month,account,total_deposits[,transfers_in][,loan_proceeds][,owner_contributions][,refunds][,other_nonrevenue]
@@ -146,7 +149,7 @@ export function readTax(text) {
   return { years, errors };
 }
 
-export function proofOfCash({ bank, books, tax }, { threshold = 5, annualThreshold = 2, fyEndMonth = 12 } = {}) {
+export function proofOfCash({ bank, books, tax }, { threshold = 5, annualThreshold = 2, fyEndMonth = 12, periodStart = null, periodEnd = null } = {}) {
   const errors = [...bank.errors, ...books.errors, ...(tax?.errors ?? [])];
   if (errors.length) { const e = new Error(errors.join('\n')); e.details = errors; throw e; }
   if (!(fyEndMonth >= 1 && fyEndMonth <= 12)) throw new Error('fy-end-month must be 1-12');
@@ -154,6 +157,12 @@ export function proofOfCash({ bank, books, tax }, { threshold = 5, annualThresho
   const all = [...new Set([...bank.months.keys(), ...books.months.keys()])].sort();
   if (!all.length) throw new Error('no months found in the bank or books files');
   const span = monthRange(all[0], all[all.length - 1]);
+  if ((periodStart && !MONTH.test(periodStart)) || (periodEnd && !MONTH.test(periodEnd))) throw new Error('period-start and period-end must be YYYY-MM');
+  if (periodStart || periodEnd) {
+    const want = monthRange(periodStart ?? all[0], periodEnd ?? all[all.length - 1]);
+    const missing = want.filter((m) => m < span[0] || m > span[span.length - 1]);
+    if (missing.length) gaps.push({ kind: 'period-not-provided', months: missing, text: `No bank data or books for ${missing.length} month(s) of the requested period (${missing[0]} to ${missing[missing.length - 1]}); the checks ran on ${span[0]} to ${span[span.length - 1]} only. Ask for the missing months.` });
+  }
 
   const monthly = span.map((m) => {
     const b = bank.months.get(m), k = books.months.get(m);
@@ -171,6 +180,18 @@ export function proofOfCash({ bank, books, tax }, { threshold = 5, annualThresho
     if (row.unknown > 0) gaps.push({ kind: 'unknown-deposits', month: m, amount: row.unknown, text: `${m}: ${fmt$(row.unknown)} of deposits not yet classified (counted as revenue until explained)` });
     return row;
   });
+
+  // Trailing twelve months: small same-direction differences can add up even when no month passes the trigger.
+  const matched = monthly.filter((r) => r.diff !== undefined).slice(-12);
+  if (matched.length >= 2) {
+    const sumDiff = matched.reduce((a, r) => a + r.diff, 0), sumExp = matched.reduce((a, r) => a + r.expected, 0);
+    const short = matched.filter((r) => r.diff < 0).length, over = matched.filter((r) => r.diff > 0).length;
+    const label = matched.length === 12 ? 'Trailing twelve months' : `Last ${matched.length} months with both bank and books data`;
+    if (sumExp !== 0 && Math.abs(sumDiff / sumExp) * 100 > annualThreshold) {
+      const flagged = matched.filter((r) => r.flag).length;
+      gaps.push({ kind: 'ttm-drift', amount: sumDiff, text: `${label} (${matched[0].month} to ${matched[matched.length - 1].month}): revenue deposits ${sumDiff < 0 ? 'fall short of' : 'exceed'} expected receipts by ${fmt$(Math.abs(sumDiff))} in total (${((sumDiff / sumExp) * 100).toFixed(1)}%, above the ${annualThreshold}% trigger); ${sumDiff < 0 ? short : over} of ${matched.length} months run the same way${flagged ? '' : ', though no single month passed the monthly trigger'}` });
+    }
+  }
 
   for (const [acct, set] of bank.accountMonths) {
     const ms = [...set].sort();
@@ -194,8 +215,10 @@ export function proofOfCash({ bank, books, tax }, { threshold = 5, annualThresho
     const t = tax?.years.get(a.year);
     const out = { ...a, complete: a.bankMonths === 12 && a.bookMonths === 12, taxReceipts: t ? t.grossReceipts : null, taxSource: t?.source ?? '' };
     if (t) {
-      out.booksVsTax = a.booked - t.grossReceipts;
-      out.depositsVsTax = a.revenueDeposits - t.grossReceipts;
+      if (out.complete) {
+        out.booksVsTax = a.booked - t.grossReceipts;
+        out.depositsVsTax = a.revenueDeposits - t.grossReceipts;
+      }
       if (!out.complete) gaps.push({ kind: 'partial-year', year: a.year, text: `FY${a.year}: only ${a.bankMonths} months of bank data and ${a.bookMonths} of books; annual comparison to the return is partial` });
       else {
         if (t.grossReceipts !== 0 && Math.abs(out.booksVsTax / t.grossReceipts) * 100 > annualThreshold) gaps.push({ kind: 'books-vs-tax', year: a.year, amount: out.booksVsTax, text: `FY${a.year}: booked revenue differs from return gross receipts by ${fmt$(out.booksVsTax)} (${((out.booksVsTax / t.grossReceipts) * 100).toFixed(1)}%)` });
@@ -204,7 +227,10 @@ export function proofOfCash({ bank, books, tax }, { threshold = 5, annualThresho
     } else if (tax && out.complete) gaps.push({ kind: 'missing-return', year: a.year, text: `FY${a.year}: a full year of data but no tax return gross receipts entered` });
     return out;
   });
-  return { settings: { threshold, annualThreshold, fyEndMonth, bankFormat: bank.format }, monthly, annual, gaps };
+  for (const [year, t] of tax?.years ?? []) {
+    if (!fy.has(year)) gaps.push({ kind: 'return-no-data', year, text: `FY${year}: a tax return is entered (gross receipts ${fmt$(t.grossReceipts)}) but there is no monthly bank or books data for that year, so it can't be compared. Ask for that year's statements and monthly P&Ls, or leave the year out.` });
+  }
+  return { settings: { threshold, annualThreshold, fyEndMonth, bankFormat: bank.format, periodStart, periodEnd }, monthly, annual, gaps };
 }
 
 function fmt$(x) { return Number.isFinite(x) ? (x < 0 ? '-$' : '$') + Math.abs(Math.round(x)).toLocaleString('en-US') : 'n/a'; }
@@ -217,7 +243,8 @@ export function toMarkdown(out) {
   L.push('### By month', '', '| Month | Total deposits | Non-revenue | Revenue deposits | Booked revenue | Expected receipts | Difference | % | Flag |', '|---|---|---|---|---|---|---|---|---|');
   for (const r of out.monthly) L.push(`| ${r.month} | ${cell(r.deposits)} | ${cell(r.nonrev)} | ${cell(r.revenueDeposits)} | ${cell(r.booked)} | ${cell(r.expected)} | ${r.diff === undefined ? '—' : fmt$(r.diff)} | ${r.pct === undefined ? '—' : Number.isFinite(r.pct) ? (r.pct * 100).toFixed(1) + '%' : 'n/a'} | ${r.flag ? 'CHECK' : ''} |`);
   L.push('', '### By fiscal year', '', '| FY | Months (bank/books) | Revenue deposits | Booked revenue | Return gross receipts | Books − return | Deposits − return |', '|---|---|---|---|---|---|---|');
-  for (const a of out.annual) L.push(`| ${a.year} | ${a.bankMonths}/${a.bookMonths}${a.complete ? '' : ' (partial)'} | ${fmt$(a.revenueDeposits)} | ${fmt$(a.booked)} | ${cell(a.taxReceipts)} | ${a.booksVsTax === undefined ? '—' : fmt$(a.booksVsTax)} | ${a.depositsVsTax === undefined ? '—' : fmt$(a.depositsVsTax)} |`);
+  for (const a of out.annual) L.push(`| ${a.year} | ${a.bankMonths}/${a.bookMonths}${a.complete ? '' : ' (partial)'} | ${fmt$(a.revenueDeposits)} | ${fmt$(a.booked)} | ${cell(a.taxReceipts)} | ${!a.complete || a.booksVsTax === undefined ? '—' : fmt$(a.booksVsTax)} | ${!a.complete || a.depositsVsTax === undefined ? '—' : fmt$(a.depositsVsTax)} |`);
+  if (out.annual.some((a) => !a.complete && a.taxReceipts !== null)) L.push('', '— in a partial year: the comparison with the return needs all 12 months of bank data and books.');
   L.push('', '### Gaps to explain', '');
   if (!out.gaps.length) L.push('None above the review triggers. That is not proof the figures are genuine.');
   out.gaps.forEach((g, i) => L.push(`${i + 1}. ${g.text}`));
@@ -230,7 +257,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   for (let k = 0; k < argv.length; k++) {
     const a = argv[k];
     if (a === '--json') o.json = true;
-    else if (['--bank', '--books', '--tax', '--threshold', '--annual-threshold', '--fy-end-month'].includes(a) && argv[k + 1] !== undefined) o[a.slice(2)] = argv[++k];
+    else if (['--bank', '--books', '--tax', '--threshold', '--annual-threshold', '--fy-end-month', '--period-start', '--period-end'].includes(a) && argv[k + 1] !== undefined) o[a.slice(2)] = argv[++k];
     else { console.error(`error: unknown or incomplete argument ${a}`); process.exit(1); }
   }
   try {
@@ -239,7 +266,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       bank: readBank(readFileSync(o.bank, 'utf8')),
       books: readBooks(readFileSync(o.books, 'utf8')),
       tax: o.tax ? readTax(readFileSync(o.tax, 'utf8')) : undefined,
-    }, { threshold: Number(o.threshold ?? 5), annualThreshold: Number(o['annual-threshold'] ?? 2), fyEndMonth: Number(o['fy-end-month'] ?? 12) });
+    }, { threshold: Number(o.threshold ?? 5), annualThreshold: Number(o['annual-threshold'] ?? 2), fyEndMonth: Number(o['fy-end-month'] ?? 12), periodStart: o['period-start'] ?? null, periodEnd: o['period-end'] ?? null });
     console.log(o.json ? JSON.stringify(out, null, 2) : toMarkdown(out));
   } catch (e) {
     console.error(`error: ${e.message}`);

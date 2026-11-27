@@ -60,6 +60,7 @@ export function coverage({ ebitda, annualDebtService, threshold }) {
   if (threshold) {
     out.threshold = threshold;
     out.meetsThreshold = ratio >= threshold;
+    out.coverageVsTest = `coverage ${ratio >= threshold ? 'at or above' : 'below'} the ${threshold}x test on these inputs (not an approval)`;
     out.maxDebtServiceAtThreshold = round(ebitda / threshold);
   }
   return out;

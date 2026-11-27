@@ -100,3 +100,43 @@ test('markdown states it is not a QoE and lists gaps', () => {
   assert.match(md, /does not authenticate/);
   assert.match(md, /### Gaps to explain/);
 });
+
+test('partial year prints — for books and deposits minus return', () => {
+  const bank = bankSummary.split('\n').filter((l) => !l.startsWith('2025-12')).join('\n');
+  const books = booksCsv.split('\n').filter((l) => !l.startsWith('2025-12')).join('\n');
+  const out = proofOfCash({ bank: readBank(bank), books: readBooks(books), tax: readTax(taxCsv) });
+  assert.equal(out.annual[0].complete, false);
+  assert.equal(out.annual[0].booksVsTax, undefined);
+  const md = toMarkdown(out);
+  assert.match(md, /\| 2025 \| 11\/11 \(partial\) \| \$1,100,000 \| \$1,100,000 \| \$1,200,000 \| — \| — \|/);
+  assert.match(md, /needs all 12 months/);
+});
+
+test('a return with no monthly data for its year is flagged', () => {
+  const out = proofOfCash({ bank: readBank(bankSummary), books: readBooks(booksCsv), tax: readTax(taxCsv + '\n2023,1000000,2023 return') });
+  const g = out.gaps.find((x) => x.kind === 'return-no-data');
+  assert.equal(g.year, 2023);
+  assert.match(g.text, /no monthly bank or books data/);
+});
+
+test('trailing-twelve-month drift is flagged even when every month is under the monthly trigger', () => {
+  // deposits 4% short every month: no month passes 5%, but the year is 4% short (> 2%)
+  const bank = 'month,account,total_deposits\n' + months.map((m) => `${m},Operating,96000`).join('\n');
+  const out = proofOfCash({ bank: readBank(bank), books: readBooks(booksCsv), tax: readTax(taxCsv) }, { threshold: 5, annualThreshold: 2 });
+  assert.ok(out.monthly.every((r) => !r.flag));
+  const g = out.gaps.find((x) => x.kind === 'ttm-drift');
+  assert.equal(g.amount, -48000);
+  assert.match(g.text, /Trailing twelve months \(2025-01 to 2025-12\)/);
+  assert.match(g.text, /12 of 12 months run the same way, though no single month passed/);
+  // a clean year has no drift gap
+  assert.ok(!proofOfCash({ bank: readBank(bankSummary), books: readBooks(booksCsv) }).gaps.some((x) => x.kind === 'ttm-drift'));
+});
+
+test('months of the requested period with no data become one gap', () => {
+  const out = proofOfCash({ bank: readBank(bankSummary), books: readBooks(booksCsv) }, { periodStart: '2024-01', periodEnd: '2025-12' });
+  const g = out.gaps.filter((x) => x.kind === 'period-not-provided');
+  assert.equal(g.length, 1);
+  assert.equal(g[0].months.length, 12);
+  assert.match(g[0].text, /2024-01 to 2024-12/);
+  assert.throws(() => proofOfCash({ bank: readBank(bankSummary), books: readBooks(booksCsv) }, { periodStart: '2024' }), /YYYY-MM/);
+});

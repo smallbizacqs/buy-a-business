@@ -86,7 +86,31 @@ Record each fact with its source: `CIM p. 12`, `2025 P&L`, `owner, call 2026-11-
 
 **Worse if:** only the departing owner qualifies and the user can't qualify; transfer requires a new application with a long wait. **Better if:** several staff hold the license; company-level permits that transfer with a stock sale.
 
-## 6. Labor availability
+## 6. Premises and lease
+
+**The risk.** The business runs from space it doesn't own, and the lease undermines the deal: the landlord is the seller or someone related to them, so the rent in the P&L may not be market rent and the seller keeps leverage after closing; the lease ends before the loan is paid off; or the landlord's consent is needed to assign the lease and comes with a rent increase or a personal guarantee.
+
+**Extract.** Landlord's name and any relationship to the seller; rent now and at each step; lease start, end and renewal options (and who can exercise them); any assignment or change-of-control clause; security deposit and guarantees; who owns the improvements and fixed equipment.
+
+**Request.**
+- The lease and every amendment, extension and side letter.
+- For a related-party landlord: who owns the property, and a market rent check (broker opinion or comparable listings, labeled as the user's research).
+- Any landlord notices of default, and rent payment history.
+
+**Ask the owner.**
+- Do you, a relative or a company you own hold the building?
+- Will the landlord assign the lease or sign a new one, for how long, and on what rent?
+- Has the landlord been told about the sale? Any disputes, defaults or planned redevelopment?
+
+**Ask a lawyer.** What the assignment clause requires, whether a sale of the company (not only of its assets) triggers it, and what the landlord's consent should and shouldn't add.
+
+**SBA note.** SOP 50 10 8.1 says that for 7(a) loans the lease term, including renewal options only the borrower can exercise, should equal or exceed the loan term (`sba-sop-50-10-8-1-lease-term`). That paragraph sits under the lender's duties when the borrower leases space and has conditions, so ask the lender whether and how it applies to this deal; don't state it as a requirement for every loan. The application file includes a copy of the lease where there is one (`sba-sop-50-10-8-1-application-lease-copy`). Check both sources' `review_by` dates in `references/sources.md`.
+
+**Earnings link.** Related-party rent below market overstates earnings: enter the gap as a buyer adjustment in `sde-and-add-backs-analysis`.
+
+**Worse if:** related-party landlord with no written lease or a below-market rent; the remaining term plus renewals is shorter than the loan; consent to assign at the landlord's sole discretion; a location the customers depend on (retail, a licensed facility). **Better if:** an arm's-length lease at market rent with buyer-held renewals covering the loan; the landlord has agreed in writing to assign or re-lease; the business could move without losing customers or licenses.
+
+## 7. Labor availability
 
 **The risk.** The business needs skilled workers (technicians, nurses, drivers, licensed trades) that are hard to hire locally, which caps growth and pushes wages up.
 
@@ -100,7 +124,7 @@ Record each fact with its source: `CIM p. 12`, `2025 P&L`, `owner, call 2026-11-
 
 **Worse if:** work turned away; wages rising faster than prices; heavy overtime. **Better if:** an apprenticeship pipeline; low turnover; pricing power to pass wages through.
 
-## 7. Private equity consolidation (roll-ups)
+## 8. Private equity consolidation (roll-ups)
 
 **The risk and the chance.** Investors buying up businesses in the industry can raise prices you pay for add-ons, compete for staff and customers with bigger budgets, or squeeze suppliers. They can also be a buyer when you sell later.
 
@@ -112,7 +136,7 @@ Record each fact with its source: `CIM p. 12`, `2025 P&L`, `owner, call 2026-11-
 
 **Score both ways.** Write down the downside (competition for labor, pricing pressure) and the upside (exit buyers), with evidence for each. Don't call it good or bad in general.
 
-## 8. Macro exposure: rates, tariffs, the economy
+## 9. Macro exposure: rates, tariffs, the economy
 
 **The risk.** Revenue or margins swing with interest rates (customers who finance purchases, new construction, real estate), with tariffs or import costs (imported parts or goods), or with recessions (discretionary spending). The buyer's own loan cost moves with rates too if the loan is variable.
 
@@ -126,9 +150,9 @@ Record each fact with its source: `CIM p. 12`, `2025 P&L`, `owner, call 2026-11-
 
 **Worse if:** discretionary, big-ticket, financed purchases; imported inputs with thin margins. **Better if:** required or recurring services (repairs, compliance, maintenance contracts).
 
-## 9. Distressed or turnaround situation
+## 10. Distressed or turnaround situation
 
-**The risk.** Revenue or earnings are falling, and the price assumes a recovery the buyer has to deliver. Lenders test coverage on historical results, so a declining business may not support the debt (see `references/sources.md`: in a 7(a) change of ownership the lender may not rely on projections to meet coverage, except for an owner-occupied special purpose property).
+**The risk.** Revenue or earnings are falling, and the price assumes a recovery the buyer has to deliver. Lenders test coverage on historical results, so a declining business may not support the debt (in a 7(a) change of ownership the lender may not rely on projections to meet coverage, except for an owner-occupied special purpose property: `sba-sop-50-10-8-1-projections` in `references/sources.md`).
 
 **Extract.** Three-year trend of revenue, gross margin and earnings; TTM against the last full year; reason the owner gives for the decline.
 
@@ -138,7 +162,7 @@ Record each fact with its source: `CIM p. 12`, `2025 P&L`, `owner, call 2026-11-
 
 **Worse if:** the decline cause is outside anyone's control (a lost contract, a market shift); the buyer has no direct experience fixing this. **Better if:** a clear, fixable cause (owner illness, under-marketing) with evidence; price reflects current earnings, not past ones.
 
-## 10. Hidden upside
+## 11. Hidden upside
 
 **Not a risk, but scored the same way** so it isn't overstated. Upside the owner hasn't captured: prices not raised in years, no recurring maintenance plans, no online presence, unused capacity, manual processes, an adjacent service customers already ask for.
 

@@ -57,7 +57,7 @@ catalog_order: 10
 - No sales pitch, no named firms, no affiliate links, nothing about who maintains the repo.
 - No network calls and no package installs. A script ships in the folder, is plain Node with no dependencies, and has a test in `scripts/*.test.mjs` runnable with `node --test`.
 - A script shared by several skills is copied into each folder (so each installs alone) and every copy must be identical; `npm test` checks this.
-- SBA and other rules: state the source and its effective date, and tell the agent to check `data/sources/` dates and say when a rule may have changed. Use the SOP 50 10 8.1 facts in `data/sources/` rather than memory.
+- SBA and other rules: in anything the user reads, cite the rule in prose ("SOP 50 10 8.1, Appendix 15, Para. C.2") with the source id after it, not the id alone. State the source and its effective date, and tell the agent to check `data/sources/` dates and say when a rule may have changed. Use the SOP 50 10 8.1 facts in `data/sources/` rather than memory.
 - Counsel: the category sentence in `docs/AUTHORING.md`, nothing else.
 - Write to the workspace, not to chat only, so the next skill can pick it up.
 

@@ -20,12 +20,12 @@ acquisition/
   deals/
     <deal-slug>/
       listing.md        the listing, teaser or CIM summary, with the source
-      evaluation.md     earnings, add-backs, valuation, DSCR scenario, risks, questions
+      evaluation.md     earnings, add-backs, valuation, DSCR scenario, risks, questions, diligence calendar dates
       addbacks.csv      each add-back with evidence and supported / assumed / unsupported
       financials/       the user's copies of P&Ls, tax returns, bank statements (never uploaded by a skill)
         proof-of-cash/  the CSVs the proof-of-cash script reads
       verification.md   proof-of-cash tie-out and gaps
-      loi-draft.md      offer terms and the LOI draft
+      loi-draft.md      offer terms and the LOI draft (mid-deal: the signed LOI's terms as the user stated them, labelled user-stated)
       diligence-tracker.csv   request list with owner, due date, status, notes
       lender.md         lender, term sheet, package checklist
       deal-model.md     capital stack, debt service and coverage by scenario (+ deal-model.json)
@@ -53,8 +53,11 @@ updated: 2026-11-26
 stage: decide            # current stage id (see data/taxonomy.yaml)
 liquid_funds: 300000
 max_equity_in_deal: 150000
-months_of_living_costs: 18
+monthly_household_spend: 9000   # what the household spends a month, from the user
+months_of_living_costs: 6       # cash reserve kept outside the deal after closing, in months of household spend (a planning choice)
+search_runway_months: 12        # months the user can search without a salary
 timeline: "Close within 12 to 18 months"
+operating_experience: "Managed a team of 8; owned a $2M budget; no direct selling"  # the user's words; null if not asked
 operate_or_hire: operate # operate | hire | undecided
 path: undecided          # sba-solo | self-funded-search | search-fund | independent-sponsor | holdco | undecided
 risk_notes: "Spouse agrees to a personal guarantee but not a lien on the house."
@@ -74,11 +77,12 @@ advisors: {lawyer: null, cpa: null, lender: null, qoe: null, insurance: null}
 
 - `area`: `financial`, `legal`, `operational`, `lender`, `insurance`, `other`.
 - `status`: `open`, `requested`, `received`, `reviewed`, `issue`, `closed`.
-- `id` prefixes, so skills never collide: `P` pre-offer requests (`screen-business-cim`), `F` financial, `L` legal, `O` operational, `B` lender, `I` insurance, `X` other; then a two-digit number (`F07`).
+- `id` prefixes, so skills never collide: `P` pre-offer requests (`screen-business-cim`), `F` financial, `V` proof-of-cash gaps (`verify-seller-financials`, area `financial`), `L` legal, `O` operational, `B` lender, `I` insurance, `X` other; then a two-digit number (`F07`). Each request appears once: if another list already has the same document (for example the lender's `B` row for the seller's tax returns), don't add a second row.
 
 ## Rules for skills
 
 - Read `profile.yaml` and the deal folder before asking the user anything; ask only for what's missing.
 - Append to `decisions.md` when the user decides something; never rewrite history.
+- When a skill writes its main output, it sets `updated` in `profile.yaml` to today and moves `stage` to that skill's stage if the profile shows an earlier one (never backwards).
 - Keep the user's documents where they put them; never upload, email or share them.
 - Write dates as YYYY-MM-DD.

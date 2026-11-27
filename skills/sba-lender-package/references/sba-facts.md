@@ -11,8 +11,8 @@ Every line below comes from a file in `references/sources.md`. SOP 50 10 8.1 app
 | The lender compares the latest interim statement with the same period a year earlier. | `sba-sop-50-10-8-1-interim-statements` |
 | In a change of ownership the lender must verify the seller's financial data against IRS records. | `sba-sop-50-10-8-1-seller-tax-verification` |
 | Lenders request tax transcripts with IRS Form 4506-C or 8821 and must follow up if the IRS hasn't responded within 10 business days. | `sba-sop-50-10-8-1-transcript-follow-up` |
-| Owners of 20% or more and proposed guarantors give a personal financial statement (SBA Form 413 or equivalent) dated within 90 days; business financial statements must be within 120 days. | `sba-sop-50-10-8-1-owner-financial-statement` |
-| Each co-borrower on a 7(a) loan completes and signs its own SBA Form 1919. | `sba-sop-50-10-8-1-form-1919` |
+| Owners of 20% or more and proposed guarantors give a personal financial statement (SBA Form 413 or equivalent) dated within 90 days of submission to SBA; business financial statements must be dated within 120 days of submission to SBA (SOP 50 10 8.1, Appendix 20). | `sba-sop-50-10-8-1-owner-financial-statement` |
+| A separate SBA Form 1919 is completed for each co-borrower and signed by the applicant's authorized representative, then submitted to the lender (SOP 50 10 8.1, Appendix 20). | `sba-sop-50-10-8-1-form-1919` |
 | The lender's credit memo describes the buyer's industry experience and who will run day-to-day operations. | `sba-sop-50-10-8-1-management-experience` |
 | The lender must make and document a site visit to the business being acquired. | `sba-sop-50-10-8-1-site-visit` |
 | Some types of business are ineligible for SBA loans, and the lender must check. | `sba-sop-50-10-8-1-ineligible-businesses` |

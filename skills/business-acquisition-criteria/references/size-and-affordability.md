@@ -10,7 +10,7 @@ From `profile.yaml`: `max_equity_in_deal`. Subtract what the user wants held bac
 
 Ask which applies:
 
-- **Bank or SBA 7(a) loan plus equity, maybe a seller note.** Hand off to `sba-dscr-and-affordability`. It estimates the largest price a given EBITDA supports at the coverage ratio the lender tests, from the user's own rate, term, seller note and equity inputs, and cites the SBA rule and its effective date. Run it for two or three earnings levels to see the band.
+- **Bank or SBA 7(a) loan plus equity, maybe a seller note.** Hand off to `sba-dscr-and-affordability`. It estimates the largest price a given EBITDA supports at the coverage ratio the lender tests, from the user's own rate, term, seller note and equity inputs, and cites the SBA rule and its effective date. Run it in buy-box mode for two or three earnings levels to see the band: `--sde-levels a,b,c --owner-comp <owner_market_pay>` (it writes nothing to `deals/`). Coverage is tested on EBITDA, and the buy box is usually in SDE; `owner_market_pay` is the bridge (EBITDA = SDE − owner_market_pay).
 - **All cash or investor equity.** Price ceiling is the equity available plus anything investors commit.
 - **Seller financing heavy.** Treat as a scenario; most sellers won't carry most of the price. See `seller-note-structuring`.
 
@@ -35,7 +35,8 @@ The lender's coverage ratio is not the same as the user's comfort. A deal can pa
 ```yaml
 size:
   measure: sde
-  earnings_min: <floor from step 3>
+  earnings_min: <floor from step 3, in SDE>
+  owner_market_pay: <market cost to replace the owner; EBITDA = SDE − this>
   earnings_max: <the earnings level whose supported price equals the price ceiling>
   price_min: <optional; below this, often the owner's job>
   price_max: <ceiling from step 2>

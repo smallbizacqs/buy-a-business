@@ -18,7 +18,8 @@ Write to `deals/<slug>/grill.md`. A later run adds a new dated section at the to
 Status is one of: Fact (third-party record or signed document), User decision, Assumption (seller or broker says), Agent analysis.
 
 ### Decisions taken
-- <decision>. Why: <reason>. Logged in decisions.md on 2026-11-26.
+- <decision>. Why: <reason>.
+(All of this session's decisions are summarized in one decisions.md entry dated 2026-11-26.)
 
 ### Risks accepted
 - <risk>. Accepted because <reason>. Would change my mind: <trigger>.
@@ -33,7 +34,7 @@ Status is one of: Fact (third-party record or signed document), User decision, A
 | 1 | Do deposits tie to reported revenue for 24 months? | the user, from bank statements | `verify-seller-financials` | before QoE |
 
 ### Analysis (agent)
-Coverage and downside, only from recorded numbers, with the inputs shown. Labelled as analysis, not a lender's conclusion.
+Coverage and downside, only from recorded numbers, with the inputs shown. Labelled as analysis, not a lender's conclusion. If an owner replacement cost had to be assumed, write "ASSUMPTION: owner replacement cost $…, not sourced" beside every figure that uses it and show coverage at $25,000 above and below it.
 
 ### What would have to be true
 Three to seven lines: the conditions under which this deal works. No "buy" or "don't buy".

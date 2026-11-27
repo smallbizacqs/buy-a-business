@@ -30,6 +30,8 @@ Note on SBA loans: SBA rules limit how seller notes, earnouts and seller roles a
 
 **Licenses held by one person.** Confirm the transfer route with a lawyer and the licensing board before signing the LOI if possible; the user or a staying employee qualifies before closing; the owner stays as qualifier for a defined period under a written agreement; a closing condition that licenses are in place.
 
+**Premises and lease.** Landlord consent to assignment, or a new lease, as a closing condition (`loi-for-small-business-acquisition`); a lease term with buyer-held renewals that covers the loan (ask the lender what it needs); market rent priced into earnings (`sde-and-add-backs-analysis`); with a seller-landlord, a new market-rent lease signed at closing and, if wanted, an option or first right to buy; counsel reviews the assignment and guarantee terms (`small-business-legal-due-diligence`).
+
 **Labor availability.** Budget wage increases in the model; check pricing power; a retention plan; look at apprenticeship or training partnerships after closing.
 
 **PE consolidation.** Factor competitor wage pressure into the labor budget; protect key staff; note the exit upside without paying for it.

@@ -1,10 +1,11 @@
-year,item,category,amount,status,evidence
-2025,Net income per federal return,net_income,0,,2025 return page 1 (form and line)
-2025,Owner salary and payroll taxes,owner_comp,0,assumed,
-2025,Owner health insurance,owner_comp,0,assumed,
-2025,Depreciation,depreciation,0,supported,2025 return depreciation schedule
-2025,Amortization,amortization,0,assumed,
-2025,Interest on debt not assumed by buyer,interest,0,assumed,
-2025,Personal vehicle (not used in operations),discretionary,0,assumed,
-2025,One-time legal settlement,one_time,0,assumed,
-2025,Related-party rent below market (deduct gap),other,0,assumed,
+year,item,category,amount,status,evidence,by
+2025,Net income per federal return,net_income,0,,2025 return page 1 (form and line),
+2025,Owner salary and payroll taxes,owner_comp,0,assumed,,seller
+2025,Owner health insurance,owner_comp,0,assumed,,seller
+2025,Depreciation,depreciation,0,supported,2025 return depreciation schedule,seller
+2025,Amortization,amortization,0,supported,2025 return (form and line),seller
+2025,Interest on debt paid off at closing,interest,0,supported,2025 return (form and line),seller
+2025,Personal vehicle (not used in operations),discretionary,0,assumed,,seller
+2025,One-time legal settlement,one_time,0,assumed,,seller
+2025,Related-party rent below market (deduct gap),other,0,assumed,,buyer
+2025,Job the buyer won't do (market pay for that role),other,0,assumed,,buyer

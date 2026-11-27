@@ -27,7 +27,7 @@ The rule of thumb: **settle in the LOI anything that moves money or could kill t
 |---|---|---|
 | Asset or stock purchase | Asset purchase unless a reason (licenses, contracts, permits that can't transfer) points to stock | Ask the CPA and lawyer; `small-business-deal-structure` lists the trade-offs. |
 | Buyer entity | "Buyer or an entity Buyer forms" | Signing personally when an entity is intended. |
-| Real estate | Lease from the seller at market rent, with a term and renewals that cover the loan, and an option or first right to buy | Rent set below market in the P&L (owner-landlord). For 7(a) loans the lease term including renewal options should equal or exceed the loan term (source `sba-sop-50-10-8-1-lease-term`). |
+| Real estate | Lease from the seller at market rent, with a term and renewals that cover the loan, and an option or first right to buy | Rent set below market in the P&L (owner-landlord). SOP 50 10 8.1 says that for 7(a) loans the lease term, including renewal options only the borrower can exercise, should equal or exceed the loan term; that paragraph covers lenders' duties when the borrower leases space and has its own conditions, so ask the lender whether it applies (source `sba-sop-50-10-8-1-lease-term`). |
 
 ## People and transition
 

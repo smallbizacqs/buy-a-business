@@ -36,10 +36,17 @@ export function daysBetween(a, b) {
   return Math.round((parseDate(b) - parseDate(a)) / 86400000);
 }
 
+// A due date on a Saturday or Sunday moves back to the Friday before it.
+export function previousBusinessDay(s) {
+  const dow = parseDate(s).getUTCDay();
+  return dow === 6 ? addDays(s, -1) : dow === 0 ? addDays(s, -2) : s;
+}
+
 // Counts back from the exclusivity end:
 //   decision  = exclusivity end - decisionBufferDays (time to raise a reprice or ask for an extension)
 //   findings  = decision - findingsBufferDays (all paid work reported; phase 2 ends)
 //   phase 1   = start + phase1Share of the working days (cheap checks done; decide whether to spend on phase 2)
+// Due dates that land on a weekend move to the previous business day (never to or before the start).
 export function buildCalendar({ start, exclusivityEnd, closingTarget = null, decisionBufferDays = 7, findingsBufferDays = 3, phase1Share = 0.35 }) {
   const windowDays = daysBetween(start, exclusivityEnd);
   if (windowDays <= 0) throw new Error('exclusivity end must be after the start date');
@@ -47,24 +54,32 @@ export function buildCalendar({ start, exclusivityEnd, closingTarget = null, dec
   const findings = addDays(decision, -findingsBufferDays);
   const workDays = daysBetween(start, findings);
   if (workDays < 2) throw new Error(`the window is too short: findings would be due ${findings}, at or before the start ${start}`);
-  const phase1 = addDays(start, Math.min(workDays - 1, Math.max(1, Math.round(workDays * phase1Share))));
+  const raw = { phase1: addDays(start, Math.min(workDays - 1, Math.max(1, Math.round(workDays * phase1Share)))), findings, decision };
+  const due = {};
+  const movedForWeekend = [];
+  for (const [k, d] of Object.entries(raw)) {
+    const b = previousBusinessDay(d);
+    due[k] = b > start ? b : d;
+    if (due[k] !== d) movedForWeekend.push({ key: k, from: d, to: due[k] });
+  }
   const warnings = [];
   if (windowDays < 30) warnings.push(`Only ${windowDays} days of exclusivity. Ask for an extension now, in writing, rather than at the end.`);
   if (workDays < 14) warnings.push(`Only ${workDays} days between the start and findings due (${findings}). Paid work (QoE, legal review) may not fit.`);
   if (closingTarget) {
     parseDate(closingTarget);
-    if (closingTarget > exclusivityEnd) warnings.push(`Target closing ${closingTarget} is after exclusivity ends ${exclusivityEnd}. Plan to ask for an extension before ${decision}.`);
+    if (closingTarget > exclusivityEnd) warnings.push(`Target closing ${closingTarget} is after exclusivity ends ${exclusivityEnd}. Plan to ask for an extension before ${due.decision}.`);
+    else if (closingTarget >= addDays(exclusivityEnd, -7)) warnings.push(`Target closing ${closingTarget} is within 7 days of exclusivity ending ${exclusivityEnd}: any slip in the loan or the documents runs past exclusivity. Consider asking for an extension before ${due.decision}.`);
   }
   const milestones = [
     { key: 'start', date: start, label: 'Diligence starts' },
-    { key: 'phase1', date: phase1, label: 'Phase 1 done: request lists out, core documents in, low-cost checks done. Decide whether to spend on phase 2.' },
-    { key: 'phase2', date: findings, label: 'Phase 2 done: paid work (QoE, legal review, customer calls) reported. Findings due.' },
-    { key: 'decision', date: decision, label: 'Go / reprice / walk decision. Raise any reprice with the seller now.' },
+    { key: 'phase1', date: due.phase1, label: 'Phase 1 done: request lists out, core documents in, low-cost checks done. Decide whether to spend on phase 2.' },
+    { key: 'phase2', date: due.findings, label: 'Phase 2 done: paid work (QoE, legal review, customer calls) reported. Findings due.' },
+    { key: 'decision', date: due.decision, label: 'Go / reprice / walk decision. Raise any reprice with the seller now.' },
     { key: 'exclusivity', date: exclusivityEnd, label: 'Exclusivity ends' },
   ];
   if (closingTarget) milestones.push({ key: 'closing', date: closingTarget, label: 'Target closing' });
   milestones.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
-  return { start, exclusivityEnd, closingTarget, windowDays, due: { phase1, phase2: findings, findings, decision }, milestones, warnings };
+  return { start, exclusivityEnd, closingTarget, windowDays, due: { phase1: due.phase1, phase2: due.findings, findings: due.findings, decision: due.decision }, movedForWeekend, milestones, warnings };
 }
 
 // ---- CSV

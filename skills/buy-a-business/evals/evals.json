@@ -16,6 +16,14 @@
     {
       "prompt": "Set up my workspace. I already have an acquisition folder from last month.",
       "expected": "Reads the existing profile.yaml, decisions.md, pipeline.csv and deals/ first; does not overwrite any file; asks only for missing or stale fields; appends a dated entry to decisions.md rather than rewriting history; names the current stage and next skills from the profile's stage."
+    },
+    {
+      "prompt": "I sold my startup stake and have $3M liquid. I've never managed anyone or run a P&L, but I want an SBA deal. Where do I start?",
+      "expected": "Asks the start interview including operating experience; records monthly_household_spend, months_of_living_costs (reserve after closing) and search_runway_months as separate fields; routes to stage 1 decide and am-i-ready-to-buy-a-business despite clear money and path; mentions the SBA credit-elsewhere certification (SOP 50 10 8.1, Section A, Ch. 1, Para. H) as a question for the lender; makes no claim that SBA is the most common path."
+    },
+    {
+      "prompt": "We signed the LOI on 2026-11-20: $2.4M, asset purchase, 10% seller note, exclusivity ends 2027-01-19, target closing 2027-01-15.",
+      "expected": "Creates deals/<slug>/notes.md and deals/<slug>/loi-draft.md with price, structure, signature date, exclusivity end and target closing labelled user-stated; adds a pipeline row with stage loi-signed; states the days left until exclusivity ends and that the target closing is only four days before it; routes to stage 7."
     }
   ]
 }

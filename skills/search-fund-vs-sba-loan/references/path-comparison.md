@@ -4,7 +4,7 @@ General patterns, to be overwritten by the user's facts and any terms they've be
 
 ## The four paths in one line each
 
-- **Self-funded search with an SBA 7(a) loan** (`sba-solo` or `self-funded-search`): the buyer pays for the search, buys with their own equity plus a bank loan (often with a seller note), owns most or all of the business, and personally guarantees the loan.
+- **Self-funded search with an SBA 7(a) loan** (`sba-solo` or `self-funded-search`): the buyer pays for the search, buys with their own equity plus a bank loan (often with a seller note), owns most or all of the business, and personally guarantees the loan. The two ids differ in how the deal is found: `sba-solo` is buying a listed deal without a formal search (often while keeping a job); `self-funded-search` is a dedicated search period, full or part time, on the buyer's own money.
 - **Traditional search fund** (`search-fund`): investors pay the searcher's salary and search costs up front in exchange for the right to invest in the deal; the searcher earns a share of the equity over time and doesn't usually put in much of their own money.
 - **Independent sponsor** (`independent-sponsor`): the buyer finds a deal first, then raises equity for that one deal from investors, earning fees and a share of the profits (often called carry or promote) on terms negotiated per deal.
 - **Holding company** (`holdco`): an entity built to buy and keep several businesses over time, funded by the founder, investors with long horizons (permanent capital), or both.
@@ -17,7 +17,7 @@ General patterns, to be overwritten by the user's facts and any terms they've be
 | Your income while searching | None unless you keep a job | A salary from search capital | None unless you keep a job | Depends on how it's funded |
 | Your cash in the deal | The equity injection and costs; see `sba-7a-acquisition-loan` | Usually little | Often some, to show commitment; investors may ask | Founder capital plus investors |
 | What you own after closing | Most or all | A share earned over time; terms set by investors | A share via carry and any co-investment; terms per deal | Depends on founder vs investor capital |
-| Personal guarantee | Yes, on an SBA loan (20%+ owners give an unlimited guaranty under SOP 50 10 8.1) | Usually avoided where the deal uses non-SBA debt; check each deal | Depends on the debt chosen | Depends on the debt chosen |
+| Personal guarantee | Yes, on an SBA loan (20%+ owners give an unlimited guaranty under SOP 50 10 8.1) | Depends on the debt chosen and who owns 20% or more; check each deal | Depends on the debt chosen | Depends on the debt chosen |
 | Control | Full | Shared with an investor board | Shared with deal investors | Founder-led, with investor rights |
 | Deal size it suits | Limited by your equity, coverage and the 7(a) loan cap | Larger deals, investor equity plus debt | Whatever investors back | Starts with one, adds more |
 | Speed to start | Fast: no fundraise | Slower: raise search capital first | Fast to search; raise when you have a deal | Depends |
@@ -31,6 +31,7 @@ Sourced SBA rules referenced above (SOP 50 10 8.1, effective for loans numbered 
 - `sba-sop-50-10-8-1-personal-guaranty`: "Any individual who has direct and/or indirect ownership of 20% or more of an Applicant must provide an unlimited full guaranty."
 - `sba-sop-50-10-8-1-equity-limited-sources`: limited sources (standby debt, standby seller debt, minority equity investments) "may provide no more than half of the required Equity Injection."
 - `sba-sop-50-10-8-1-max-loan`: "The maximum loan amount for any one Standard 7(a) loan is $5,000,000."
+- `sba-sop-50-10-8-1-credit-elsewhere`: the lender "must certify and indicate that the Applicant does not have the ability to obtain some or all of the requested loan funds on reasonable terms" without SBA assistance (Section A, Ch. 1, Para. H); a buyer with large liquid funds asks the lender how it applies.
 - `sba-sop-50-10-8-1-pari-passu`: a non-SBA loan sharing the lien equally with the 7(a) loan isn't treated as a piggyback structure when its maturity isn't shorter than the 7(a) loan's; relevant to larger deals.
 
 ## Ownership math template
@@ -39,7 +40,7 @@ Use the same labeled business value (V) and debt (D) for every column. Equity va
 
 | | Self-funded + SBA | Search fund | Independent sponsor | Holdco |
 |---|---|---|---|---|
-| Your ownership % (from the user or offered terms) | | | | |
+| Your ownership % (offered terms, or a hypothetical share the user names, labelled "hypothetical") | | | | |
 | Your share of E | | | | |
 | Your cash invested | | | | |
 | Your share ÷ your cash (if cash > 0) | | | | |

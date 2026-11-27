@@ -9,7 +9,7 @@ Write each item into the tracker as area `lender`, id `B01`…, with owner and a
 | Item | Owner | Notes |
 |---|---|---|
 | Personal financial statement on the lender's form, dated within 90 days, for each 20%+ owner and guarantor | buyer | Source `sba-sop-50-10-8-1-owner-financial-statement` |
-| SBA Form 1919 for each co-borrower, on the lender's copy | buyer | Source `sba-sop-50-10-8-1-form-1919` |
+| SBA Form 1919: a separate one for each co-borrower, completed and signed by the applicant's authorized representative, on the lender's copy (only if there are co-borrowers) | buyer | Source `sba-sop-50-10-8-1-form-1919` |
 | Personal federal tax returns, last 3 years (lender will say how many) | buyer | |
 | Resume focused on management and industry experience, and who will run day-to-day operations | buyer | The credit memo describes this (source `sba-sop-50-10-8-1-management-experience`) |
 | Source of equity: bank and brokerage statements showing the funds and how long they've been there; gift letters; retirement-plan documents if used | buyer | Equity rules: sources `sba-sop-50-10-8-1-equity-minimum`, `-equity-unlimited-sources`, `-equity-limited-sources` |
@@ -25,7 +25,7 @@ Write each item into the tracker as area `lender`, id `B01`…, with owner and a
 |---|---|---|
 | Business tax returns, last 3 years | seller | Three most recent year-ends (source `sba-sop-50-10-8-1-three-years`) |
 | Year-end financial statements, last 3 years | seller | Source `sba-sop-50-10-8-1-application-business-purchase` |
-| Interim P&L and balance sheet, within 120 days, with the same period prior year | seller | Sources `sba-sop-50-10-8-1-interim-statements`, `-owner-financial-statement` |
+| Interim P&L and balance sheet, dated within 120 days of submission to SBA, with the same period prior year | seller | Sources `sba-sop-50-10-8-1-interim-statements`, `-owner-financial-statement` |
 | Signed IRS transcript authorization (Form 4506-C or 8821, on the lender's copy) | seller | Sources `sba-sop-50-10-8-1-seller-tax-verification`, `-transcript-follow-up` |
 | AR and AP agings; debt schedule | seller | |
 | Add-back schedule with support | seller / buyer | |

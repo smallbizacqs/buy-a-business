@@ -20,6 +20,26 @@ test('late steps and closing after exclusivity warn', () => {
   assert.match(t.warnings[1], /extension/);
 });
 
+test('steps marked done are not late', () => {
+  const t = timeline({ closing: '2027-01-15', today: '2026-12-01', done: ['shortlist', 'package', 'term-sheet'] });
+  assert.deepEqual(t.rows.filter((r) => r.status === 'done').map((r) => r.key), ['shortlist', 'package', 'term-sheet']);
+  assert.ok(t.rows.find((r) => r.key === 'third-party').status === 'late');
+  assert.doesNotMatch(t.warnings[0], /shortlist|term-sheet/);
+  const custom = timeline({ closing: '2027-01-15', today: '2026-12-01', steps: [{ key: 'term-sheet', daysBefore: 65, label: 'x', done: true }, { key: 'closing', daysBefore: 0, label: 'y' }] });
+  assert.deepEqual(custom.warnings, []);
+  assert.throws(() => timeline({ closing: '2027-01-15', done: ['nope'] }), /unknown step/);
+});
+
+test('conflicts with the diligence calendar are flagged', () => {
+  const cal = { exclusivityEnd: '2027-01-30', closingTarget: '2027-02-12', due: { decision: '2027-01-22' } };
+  const t = timeline({ closing: '2027-03-15', diligenceCalendar: cal });
+  assert.ok(t.warnings.some((w) => /after exclusivity ends 2027-01-30/.test(w)));
+  assert.ok(t.warnings.some((w) => /commitment letter .* comes after the go \/ reprice \/ walk decision \(2027-01-22\)/.test(w)));
+  assert.ok(t.warnings.some((w) => /target closing 2027-02-12/.test(w)));
+  const ok = timeline({ closing: '2027-01-29', diligenceCalendar: { exclusivityEnd: '2027-01-30', closingTarget: '2027-01-29', due: { decision: '2027-01-22' } } });
+  assert.deepEqual(ok.warnings, []);
+});
+
 test('custom steps replace the placeholders', () => {
   const t = timeline({ closing: '2027-03-15', steps: [{ key: 'approval', daysBefore: 20, label: 'x' }, { key: 'closing', daysBefore: 0, label: 'y' }] });
   assert.deepEqual(t.rows.map((r) => r.date), ['2027-02-23', '2027-03-15']);
@@ -41,7 +61,10 @@ test('term sheets compared with combined coverage', () => {
   assert.equal(r[0].annualDebtService, 158580.88);
   assert.equal(r[0].combinedAnnualDebtService, 182580.88);
   assert.equal(r[0].coverage, 1.64);
-  assert.equal(r[0].meetsThreshold, true);
+  assert.equal(r[0].coverageVsTest, 'coverage at or above the 1.25x test on these inputs (not an approval)');
+  assert.equal(r[0].meetsThreshold, undefined);
+  const low = compareSheets({ ebitda: 150000, threshold: 1.25, sheets: [{ lender: 'C', principal: 1000000, annualRate: 0.1, years: 10 }] });
+  assert.equal(low[0].coverageVsTest, 'coverage below the 1.25x test on these inputs');
   assert.ok(r[1].annualDebtService < r[0].annualDebtService);
   assert.equal(r[1].fees, 0);
 });

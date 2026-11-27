@@ -6,7 +6,10 @@
 //
 // Usage:
 //   node lender-math.mjs timeline --closing 2027-03-15 [--today 2026-12-01] [--exclusivity-end 2027-02-28] [--steps steps.json]
-//     steps.json: [ { "key": "approval", "daysBefore": 30, "label": "..." }, ... ] replaces DEFAULT_STEPS
+//       [--done shortlist,term-sheet] [--diligence-calendar calendar.json]
+//     steps.json: [ { "key": "approval", "daysBefore": 30, "label": "...", "done": true }, ... ] replaces DEFAULT_STEPS
+//     --done marks steps already done (a term sheet in hand), so they don't show as late
+//     --diligence-calendar reads the JSON printed by diligence-calendar.mjs and flags conflicts with its dates
 //   node lender-math.mjs steps   prints DEFAULT_STEPS as JSON, to copy and edit with each lender's quoted turnaround
 //   node lender-math.mjs compare term-sheets.json
 //     { "ebitda": 420000, "otherAnnualDebtService": 24000, "threshold": 1.25,
@@ -35,15 +38,29 @@ export const DEFAULT_STEPS = [
   { key: 'closing', daysBefore: 0, label: 'Closing and funding' },
 ];
 
-export function timeline({ closing, today = null, exclusivityEnd = null, steps = DEFAULT_STEPS }) {
+export function timeline({ closing, today = null, exclusivityEnd = null, steps = DEFAULT_STEPS, done = [], diligenceCalendar = null }) {
   addDays(closing, 0);
-  const rows = [...steps].sort((a, b) => b.daysBefore - a.daysBefore).map((s) => ({ ...s, date: addDays(closing, -s.daysBefore) }));
+  const doneSet = new Set(done);
+  const rows = [...steps].sort((a, b) => b.daysBefore - a.daysBefore).map((s) => {
+    const r = { ...s, date: addDays(closing, -s.daysBefore) };
+    r.status = s.done || doneSet.has(s.key) ? 'done' : today && r.date < today ? 'late' : 'to do';
+    return r;
+  });
+  const unknown = [...doneSet].filter((k) => !rows.some((r) => r.key === k));
+  if (unknown.length) throw new Error(`--done names unknown step(s): ${unknown.join(', ')}; use keys from the steps list`);
   const warnings = [];
   if (today) {
-    const late = rows.filter((r) => r.date < today);
-    if (late.length) warnings.push(`${late.length} step(s) were due before ${today}: ${late.map((r) => r.key).join(', ')}. Ask the lender whether ${closing} is still realistic.`);
+    const late = rows.filter((r) => r.status === 'late');
+    if (late.length) warnings.push(`${late.length} step(s) not marked done were due before ${today}: ${late.map((r) => r.key).join(', ')}. Mark any already done with --done; for the rest, ask the lender whether ${closing} is still realistic.`);
   }
-  if (exclusivityEnd && closing > exclusivityEnd) warnings.push(`Closing ${closing} is after exclusivity ends ${exclusivityEnd}; ask the seller for an extension in writing.`);
+  const excl = exclusivityEnd ?? diligenceCalendar?.exclusivityEnd ?? null;
+  if (excl && closing > excl) warnings.push(`Closing ${closing} is after exclusivity ends ${excl}; ask the seller for an extension in writing.`);
+  if (diligenceCalendar) {
+    const decision = diligenceCalendar.due?.decision;
+    const approval = rows.find((r) => r.key === 'approval');
+    if (decision && approval && approval.status !== 'done' && approval.date > decision) warnings.push(`Conflict with the diligence calendar: the commitment letter (step "approval", ${approval.date}) comes after the go / reprice / walk decision (${decision}), so the decision would be made without the lender's conditions. Ask the lender for an earlier commitment, or the seller for more time.`);
+    if (diligenceCalendar.closingTarget && diligenceCalendar.closingTarget !== closing) warnings.push(`Conflict with the diligence calendar: it uses target closing ${diligenceCalendar.closingTarget}, this timeline uses ${closing}. Agree one date and rerun both.`);
+  }
   return { closing, rows, warnings, note: 'Lead times are planning placeholders; replace them with each lender\'s quoted turnaround.' };
 }
 
@@ -63,7 +80,9 @@ export function compareSheets({ sheets, ebitda = null, otherAnnualDebtService = 
       const combined = annual + otherAnnualDebtService;
       out.combinedAnnualDebtService = round(combined);
       out.coverage = round(ebitda / combined);
-      if (threshold) out.meetsThreshold = ebitda / combined >= threshold;
+      if (threshold) out.coverageVsTest = ebitda / combined >= threshold
+        ? `coverage at or above the ${threshold}x test on these inputs (not an approval)`
+        : `coverage below the ${threshold}x test on these inputs`;
     }
     return out;
   });
@@ -82,7 +101,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   try {
     const o = opts(process.argv.slice(2));
     let out;
-    if (o._[0] === 'timeline') out = timeline({ closing: o.closing, today: o.today ?? null, exclusivityEnd: o['exclusivity-end'] ?? null, steps: o.steps ? JSON.parse(readFileSync(o.steps, 'utf8')) : DEFAULT_STEPS });
+    if (o._[0] === 'timeline') out = timeline({ closing: o.closing, today: o.today ?? null, exclusivityEnd: o['exclusivity-end'] ?? null, steps: o.steps ? JSON.parse(readFileSync(o.steps, 'utf8')) : DEFAULT_STEPS,
+      done: o.done ? o.done.split(',').map((x) => x.trim()) : [], diligenceCalendar: o['diligence-calendar'] ? JSON.parse(readFileSync(o['diligence-calendar'], 'utf8')) : null });
     else if (o._[0] === 'steps') out = DEFAULT_STEPS;
     else if (o._[0] === 'compare') out = compareSheets(JSON.parse(readFileSync(o._[1], 'utf8')));
     else throw new Error('usage: node lender-math.mjs timeline --closing YYYY-MM-DD [--steps steps.json] | steps | compare term-sheets.json');

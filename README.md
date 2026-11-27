@@ -49,7 +49,7 @@ Two entry points you call by name, and one specialist skill per topic that your 
 | Skill | What it does |
 |---|---|
 | [`buy-a-business`](skills/buy-a-business/SKILL.md) | Start here to buy a small business: sets up a workspace that carries over between sessions, finds out where the buyer is (just curious, searching, or mid-deal), asks one round of questions with a suggested answer for each, then names the stage, the guide page and the next one to three skills. |
-| [`grill-my-deal`](skills/grill-my-deal/SKILL.md) | Stress-test a small-business acquisition before you offer, sign or close: reads everything in the workspace, then asks every open question at once (price and earnings, financing and coverage, customers, owner dependence, employees, lease, licenses, working capital, your own capacity and downside), each with a recommended answer, and writes a record of decisions, accepted risks, deal-killers and open questions. |
+| [`grill-my-deal`](skills/grill-my-deal/SKILL.md) | Stress-test a small-business acquisition before you offer, sign or close: reads everything in the workspace, then asks every open question in one message, or two rounds when the list is long (price and earnings, financing and coverage, customers, owner dependence, employees, lease, licenses, working capital, your own capacity and downside), each with a recommended answer, and writes a record of decisions, accepted risks, deal-killers and open questions. |
 
 ### 1. Should you buy a business?
 
