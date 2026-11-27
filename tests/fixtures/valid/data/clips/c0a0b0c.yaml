@@ -4,6 +4,7 @@ facets:
   speaker_role: lender
   sells_services: "unknown"
   format: story
+title: "Demo title"
 view: "A lender explains the first thing."
 creator:
   name: "Demo Creator"

@@ -6,42 +6,52 @@ version: 1
 stages:
   - id: decide
     order: 1
+    short: "Should you buy?"
     title: Should you buy a business?
     summary: What buying a small business involves, what it costs you in time, money and risk, and whether you'd run it yourself.
   - id: fund
     order: 2
+    short: "Path and money"
     title: Choose your path and line up the money
     summary: Self-funded with an SBA loan, a search fund, a holding company or deal-by-deal investors, and how each is financed.
   - id: find
     order: 3
+    short: "Find deals"
     title: Decide what to buy and find deals
     summary: Your criteria (the "buy box"), brokers and marketplaces, reaching owners directly, and how long a search takes.
   - id: approach
     order: 4
+    short: "Owners and brokers"
     title: Talk to owners and brokers
     summary: First calls and meetings, earning an owner's trust, working with brokers, and the early screen before an offer.
   - id: evaluate
     order: 5
+    short: "Size it up"
     title: "Size it up: real earnings, fair price, what you can borrow"
     summary: Seller's discretionary earnings and add-backs, valuation multiples, debt coverage, and the risks that change the price.
   - id: offer
     order: 6
+    short: "Make the offer"
     title: Make the offer (the LOI)
     summary: The letter of intent, deal structure, working capital, negotiation, and the advisors you'll need.
   - id: confirm
     order: 7
+    short: "Diligence and the loan"
     title: Check everything and finalize the loan
     summary: Financial, legal and operational due diligence, when to walk away, and the lender's approval process.
   - id: close
     order: 8
+    short: "Sign and close"
     title: Sign and close
     summary: The purchase agreement and closing day. In small deals, signing and closing usually happen on the same day.
   - id: own
     order: 9
+    short: "First 100 days"
     title: Your first 100 days as owner
     summary: The seller's transition, keeping employees and customers, and what to change (and not change) first.
   - id: later
     order: 10
+    short: "Grow, buy more, or sell"
     title: "Later: grow, buy more, or sell"
     summary: Growing value, add-on acquisitions and holding companies, and exit options.
 

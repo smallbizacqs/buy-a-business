@@ -25,11 +25,11 @@ function loadPrivateTerms(root) {
 }
 
 const FIELDS = {
-  stage: ['id', 'order', 'title', 'summary'],
+  stage: ['id', 'order', 'short', 'title', 'summary'],
   topic: ['id', 'stage', 'title', 'skill', 'exempt'],
   leaf: ['id', 'topic', 'question', 'scope', 'not', 'aliases', 'volatile', 'replaced_by'],
-  clip: ['id', 'leaves', 'facets', 'view', 'creator', 'source', 'posts', 'school', 'removed', 'added'],
-  clipRequired: ['id', 'leaves', 'facets', 'view', 'creator', 'source', 'posts', 'added'],
+  clip: ['id', 'leaves', 'facets', 'title', 'view', 'creator', 'source', 'posts', 'school', 'removed', 'added'],
+  clipRequired: ['id', 'leaves', 'facets', 'title', 'view', 'creator', 'source', 'posts', 'added'],
   source: ['id', 'tier', 'title', 'publisher', 'url', 'quote', 'proposition', 'accessed', 'review_by', 'notes'],
   sourceRequired: ['id', 'tier', 'title', 'url', 'quote', 'proposition', 'accessed', 'review_by'],
   answer: ['leaf', 'status', 'last_checked', 'sources'],
