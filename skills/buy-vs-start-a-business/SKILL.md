@@ -24,7 +24,7 @@ The user gets a written comparison of four routes into owning a business (buy an
 
 ## Inputs
 
-Read first, in the workspace (`acquisition/` by default; see `workspace/SPEC.md`):
+Read first, in the workspace (`acquisition/` by default; see `references/workspace.md`):
 
 - `acquisition/profile.yaml`: liquid funds, maximum equity, months of living costs, operate or hire, risk notes.
 - `acquisition/decisions.md`: anything already decided.
@@ -44,7 +44,7 @@ If there is no workspace, offer to create it with `buy-a-business`, or work in c
 1. Restate the user's situation in four lines (money, need for income, risk, temperament) so they can correct it.
 2. Open `references/route-comparison.md` and fill the route table for this user: for each route, score the eight factors (time to owner pay, cash needed, how it can be financed, main risk, what you inherit, skills it rewards, control, exit) as fits / mixed / poor, with one line of reason tied to the user's answers.
 3. Apply the decisive questions in `references/route-comparison.md` ("Which route fits whom"). Name the route that fits best and the runner-up. If two routes tie, say so and name the single fact that would break the tie.
-4. Show rough money math, in round numbers, using the user's inputs only. For buying with an SBA 7(a) loan: SOP 50 10 8.1 requires at least 10% equity on total project cost for an initial acquisition (`sba-sop-50-10-8-1-equity-minimum`, `sba-sop-50-10-8-1-equity-project-cost`; effective for loans numbered on or after 2026-10-01; check the `review_by` dates in `data/sources/`). So the equity they could put in ÷ 0.10 is a ceiling on total project cost, not a target; cash flow coverage usually binds first (send them to `acquisition-deal-model`). For starting: the months of runway their savings buy with no salary. Never invent market figures.
+4. Show rough money math, in round numbers, using the user's inputs only. For buying with an SBA 7(a) loan: SOP 50 10 8.1 requires at least 10% equity on total project cost for an initial acquisition (`sba-sop-50-10-8-1-equity-minimum`, `sba-sop-50-10-8-1-equity-project-cost`; effective for loans numbered on or after 2026-10-01; check the `review_by` dates in `references/sources.md`). So the equity they could put in ÷ 0.10 is a ceiling on total project cost, not a target; cash flow coverage usually binds first (send them to `acquisition-deal-model`). For starting: the months of runway their savings buy with no salary. Never invent market figures.
 5. For franchises, list the documents and questions in the franchise section of the reference (disclosure document, franchise agreement, transfer terms for a resale, territory, fees). A lawyer reads the agreement.
 6. List what would change the recommendation (for example: "a spouse who won't sign a guarantee pushes you away from a loan-financed purchase").
 7. If the user decides, append a dated entry to `acquisition/decisions.md` and set `stage` in `profile.yaml` only if the user agrees.

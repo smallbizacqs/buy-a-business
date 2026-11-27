@@ -1,6 +1,6 @@
 # Rule pinpoints and input fields
 
-Every rule here is quoted in a `data/sources/<id>.yaml` file from SOP 50 10 8.1 (effective for loans given an SBA loan number on or after 2026-10-01). Open the file before relying on it: check `review_by`, and use the file's quote, not this summary, when the wording matters. If a source file has been removed or its quote differs, trust the file and flag the difference.
+Every rule here is quoted in a `references/sources.md<id>.yaml` file from SOP 50 10 8.1 (effective for loans given an SBA loan number on or after 2026-10-01). Open the file before relying on it: check `review_by`, and use the file's quote, not this summary, when the wording matters. If a source file has been removed or its quote differs, trust the file and flag the difference.
 
 ## Checks the script runs
 
@@ -45,7 +45,7 @@ Every rule here is quoted in a `data/sources/<id>.yaml` file from SOP 50 10 8.1 
 
 ## Not covered by our sources
 
-Say so and make each a lender question: citizenship and residency, rates and spreads, guaranty fees, prepayment, credit score expectations, industry-specific rules (online, software, franchise), 504 details, and any rule for which no `data/sources` file exists.
+Say so and make each a lender question: citizenship and residency, rates and spreads, guaranty fees, prepayment, credit score expectations, industry-specific rules (online, software, franchise), 504 details, and any rule for which no `references/sources.md` file exists.
 
 ## Earnout alternatives (for the lender and a lawyer to weigh)
 

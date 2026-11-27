@@ -1,6 +1,6 @@
 # SBA facts used in the lender process (SOP 50 10 8.1)
 
-Every line below comes from a file in `data/sources/`. SOP 50 10 8.1 applies to loans given an SBA loan number on or after 2026-10-01 (source `sba-information-notice-5000-880695`). Before quoting a line, open its source file and check `review_by`; if the date has passed, say the rule may have changed and point to the current SOP and `sba-sop-rule-check`. Quote the proposition; don't restate it more broadly. These are rules lenders apply; none of them means a particular deal qualifies.
+Every line below comes from a file in `references/sources.md`. SOP 50 10 8.1 applies to loans given an SBA loan number on or after 2026-10-01 (source `sba-information-notice-5000-880695`). Before quoting a line, open its source file and check `review_by`; if the date has passed, say the rule may have changed and point to the current SOP and `sba-sop-rule-check`. Quote the proposition; don't restate it more broadly. These are rules lenders apply; none of them means a particular deal qualifies.
 
 ## What the lender looks at
 
@@ -69,4 +69,4 @@ Every line below comes from a file in `data/sources/`. SOP 50 10 8.1 applies to 
 | A 7(a) lender may hold loan funds in escrow for no more than 5 business days to facilitate closing. | `sba-sop-50-10-8-1-closing-escrow` |
 | For non-delegated applications sent to SBA's processing center, SBA itself decides eligibility and creditworthiness. | `sba-sop-50-10-8-1-lgpc-decision` |
 
-Anything not in this table: look in `data/sources/` for a matching file; if none, don't state it, and ask the lender or use `sba-sop-rule-check`.
+Anything not in this table: look in `references/sources.md` for a matching file; if none, don't state it, and ask the lender or use `sba-sop-rule-check`.

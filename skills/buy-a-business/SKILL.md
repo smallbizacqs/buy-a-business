@@ -7,7 +7,7 @@ description: >-
   one to three skills. Use when the user says "buy a business", "where do I start", "how do I
   buy a small business", "entrepreneurship through acquisition", "ETA", "search fund", "I want
   to acquire a company", or "I signed an LOI, now what". Hands off to grill-my-deal and to the
-  topic skills listed in data/taxonomy.yaml.
+  topic skills listed in references/stage-map.md.
 license: CC-BY-4.0
 metadata:
   version: "0.1.0"
@@ -26,12 +26,12 @@ The user gets a workspace folder that every other skill reads and writes, a shor
 1. Look for an existing workspace first: `./acquisition/profile.yaml`, or any folder the user names. If one exists, read `profile.yaml`, `decisions.md`, `pipeline.csv` and the `deals/` folders, and ask only for what's missing.
 2. If there is no workspace, ask where to create it (suggest `./acquisition/` in the current folder).
 3. Read what the user has already said. Signals that they're mid-deal: "signed an LOI", "in diligence", "the lender issued a term sheet", "closing next month", "I just bought". Signals they're at the start: "thinking about", "where do I start", "is ETA for me".
-4. The stage map in `references/stage-map.md` (from `data/taxonomy.yaml`) gives every stage, guide file, topic and skill name. If the taxonomy changed after the map was made, trust the taxonomy.
+4. The stage map in `references/stage-map.md` gives every stage, guide file, topic and skill name. If the taxonomy changed after the map was made, trust the taxonomy.
 
 ## Workflow
 
 1. **Say once, plainly:** this is a guide and a set of tools, not legal, tax or financial advice; a lawyer, a CPA and the lender make the calls in their areas. Don't repeat it in every message.
-2. **Create the workspace** per `workspace/SPEC.md`, using the templates in `references/workspace-templates.md`: `profile.yaml`, `decisions.md`, `pipeline.csv` (header row only), and empty `deals/` and `owner/` folders. Don't create `buy-box.yaml`; `business-acquisition-criteria` writes it. Never overwrite an existing file; add to it.
+2. **Create the workspace** per `references/workspace.md`, using the templates in `references/workspace-templates.md`: `profile.yaml`, `decisions.md`, `pipeline.csv` (header row only), and empty `deals/` and `owner/` folders. Don't create `buy-box.yaml`; `business-acquisition-criteria` writes it. Never overwrite an existing file; add to it.
 3. **Place the user** with one of the two interviews in `references/intake-questions.md`. Ask every question in a single message, numbered, each with a suggested answer and a one-line reason, worded so "yes" accepts it. The user can answer "yes to all except 3".
    - **At the start** (stages 1 to 3): budget and liquid funds, risk tolerance including a personal guarantee, operate or hire a manager, timeline, financing path.
    - **Mid-deal** (signed or near-signed LOI): LOI terms, lender and term sheet status, exclusivity end date, advisors hired, documents in hand. Then route to stage 7 (`confirm`), or stage 8 if a closing date is set and diligence is done.
@@ -47,9 +47,9 @@ The user gets a workspace folder that every other skill reads and writes, a shor
 
 ## Output
 
-- `acquisition/profile.yaml`: the fields in `workspace/SPEC.md`, plus `timeline` (free text) if given. `stage` is a stage id from `data/taxonomy.yaml`.
+- `acquisition/profile.yaml`: the fields in `references/workspace.md`, plus `timeline` (free text) if given. `stage` is a stage id from `references/stage-map.md`.
 - `acquisition/decisions.md`: dated entries, newest last: what was decided, why, what would change it.
-- `acquisition/pipeline.csv`: header row from `workspace/SPEC.md`; one row per deal when mid-deal.
+- `acquisition/pipeline.csv`: header row from `references/workspace.md`; one row per deal when mid-deal.
 - `acquisition/deals/<slug>/notes.md` (mid-deal only): intake answers, dated.
 - In chat: the stage, the guide file, the next skills, and any urgent flags.
 

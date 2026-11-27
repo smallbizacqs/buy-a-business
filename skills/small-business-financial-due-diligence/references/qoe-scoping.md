@@ -18,7 +18,7 @@ Factors that point toward a lighter scope: clean accrual books reviewed by an ou
 
 ## What SOP 50 10 8.1 says about QoE (SBA 7(a) loans)
 
-These facts come from `data/sources/` and apply to loans given an SBA loan number on or after 2026-10-01 (source `sba-information-notice-5000-880695`). Check each source's `review_by` date; SBA rules change, so say the rule may have changed and point to the current SOP (or `sba-sop-rule-check`) if a date has passed.
+These facts come from `references/sources.md` and apply to loans given an SBA loan number on or after 2026-10-01 (source `sba-information-notice-5000-880695`). Check each source's `review_by` date; SBA rules change, so say the rule may have changed and point to the current SOP (or `sba-sop-rule-check`) if a date has passed.
 
 | Rule | Source id |
 |---|---|

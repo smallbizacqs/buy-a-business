@@ -1,6 +1,6 @@
 # Equity source matrix
 
-SBA treatment below is from SOP 50 10 8.1 (effective for loans numbered on or after 2026-10-01). Check `review_by` in each `data/sources/` file; confirm the current SOP and the lender's reading. "Lender's call" means no source settles it.
+SBA treatment below is from SOP 50 10 8.1 (effective for loans numbered on or after 2026-10-01). Check `review_by` in each `references/sources.md` file; confirm the current SOP and the lender's reading. "Lender's call" means no source settles it.
 
 ## Source by source
 

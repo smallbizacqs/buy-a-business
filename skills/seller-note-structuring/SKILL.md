@@ -39,7 +39,7 @@ Ask for what's missing, together, with recommended answers:
 
 ## Workflow
 
-1. **SBA rules first if an SBA loan is involved** (SOP 50 10 8.1, effective for loans numbered on or after 2026-10-01; check each source's `review_by` date in `data/sources/` and say a rule may have changed if passed; always add "confirm the current SOP and your lender's reading"):
+1. **SBA rules first if an SBA loan is involved** (SOP 50 10 8.1, effective for loans numbered on or after 2026-10-01; check each source's `review_by` date in `references/sources.md` and say a rule may have changed if passed; always add "confirm the current SOP and your lender's reading"):
    - Counts as equity only if "subordinated to the Lender and on full standby (no payments of principal or interest for the term of the 7(a) loan)" (`sba-sop-50-10-8-1-seller-debt-equity`).
    - Standby debt "may accrue interest" and be paid after the 7(a) loan is repaid; the seller subordinates liens and takes no action without the lender's consent (`sba-sop-50-10-8-1-standby-terms`).
    - Standby seller debt is a limited equity source: with other limited sources, no more than half of the required equity (`sba-sop-50-10-8-1-equity-limited-sources`).

@@ -1,6 +1,6 @@
 # SBA 7(a) acquisition rules, equity worksheet, checklist and lender questions
 
-All rules below are from SOP 50 10 8.1, which applies to loans given an SBA loan number on or after 2026-10-01 (`sba-information-notice-5000-880695`). Quote them with the source id. Before using one, open `data/sources/<id>.yaml` and check `review_by`; if it has passed, say the rule may have changed. Always tell the user to confirm the current SOP and the lender's reading. Anything not in this table is not sourced here: make it a lender question.
+All rules below are from SOP 50 10 8.1, which applies to loans given an SBA loan number on or after 2026-10-01 (`sba-information-notice-5000-880695`). Quote them with the source id. Before using one, open `references/sources.md<id>.yaml` and check `review_by`; if it has passed, say the rule may have changed. Always tell the user to confirm the current SOP and the lender's reading. Anything not in this table is not sourced here: make it a lender question.
 
 ## Rules table
 

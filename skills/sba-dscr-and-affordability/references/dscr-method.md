@@ -4,7 +4,7 @@ Debt service coverage ratio (DSCR) = cash flow available to pay debt ÷ the debt
 
 ## The rule (SBA 7(a) changes of ownership, SOP 50 10 8.1)
 
-SOP 50 10 8.1 applies to applications given an SBA loan number on or after 2026-10-01 (`data/sources/sba-information-notice-5000-880695.yaml`). All of the following come from Appendix 15, Para. C.2. Check each source file's `review_by` date before relying on it; SBA rules change often.
+SOP 50 10 8.1 applies to applications given an SBA loan number on or after 2026-10-01 (`references/sources.md`). All of the following come from Appendix 15, Para. C.2. Check each source file's `review_by` date before relying on it; SBA rules change often.
 
 | Point | What the SOP says | Source id |
 |---|---|---|

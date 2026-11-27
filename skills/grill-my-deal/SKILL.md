@@ -53,7 +53,7 @@ Ruthless about evidence, fair about the deal. Separate fact from assumption in e
 
 - `deals/<slug>/grill.md` (or `grill-search-plan.md` at the workspace root): date, deal step, fact sheet with sources, decisions taken, risks accepted, deal-killers found, open questions, next skills. A second run adds a new dated section at the top and marks what changed; it never deletes the earlier one.
 - `decisions.md`: one dated entry per decision taken.
-- `deals/<slug>/diligence-tracker.csv`: if it exists and the user agrees, add open questions as rows with status `open` (same columns as `workspace/SPEC.md`).
+- `deals/<slug>/diligence-tracker.csv`: if it exists and the user agrees, add open questions as rows with status `open` (same columns as `references/workspace.md`).
 
 ## Safety and authority
 

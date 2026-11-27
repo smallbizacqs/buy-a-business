@@ -41,7 +41,7 @@ Ask for what's missing, together, with recommended answers:
 
 ## Workflow
 
-1. **Check the sources first.** Open each `data/sources/` file cited in `references/rule-pinpoints.md`. Note today's date against every `review_by`; if any has passed, say at the top of the output that the rule may have changed and must be checked against the current SOP before relying on it.
+1. **Check the sources first.** Open each `references/sources.md` file cited in `references/rule-pinpoints.md`. Note today's date against every `review_by`; if any has passed, say at the top of the output that the rule may have changed and must be checked against the current SOP before relying on it.
 2. **Which SOP.** SOP 50 10 8.1 applies to loans given an SBA loan number on or after 2026-10-01 (`sba-information-notice-5000-880695`). If the loan was numbered earlier, say an earlier SOP may govern and these checks may not apply.
 3. **Run the script.** Write the deal facts to `acquisition/deals/<slug>/sop-check-input.json` using the fields in the reference and run `node scripts/sop-check.mjs <input.json>` from this skill's folder. Unknowns stay unknown; never fill a fact to make a check pass.
 4. **Read the results out.** For each conflict, say what would have to change and the trade-off (for example: "the seller note is counted as equity but has payments in year 3; either put it on full standby for the loan term, or count it as debt and add $X of cash"). For each missing fact, say who has it (seller, lender, valuation firm). For each lender's call, write the question.
@@ -55,7 +55,7 @@ Ask for what's missing, together, with recommended answers:
 
 ```markdown
 # SBA rule check: <deal>, <date>
-> Checked against SOP 50 10 8.1 facts quoted in data/sources (effective for loans numbered on or after 2026-10-01). Sources' review_by dates: <ok | passed on …>. Confirm the current SOP and your lender's reading. This is not an eligibility decision.
+> Checked against SOP 50 10 8.1 facts quoted in references/sources.md (effective for loans numbered on or after 2026-10-01). Sources' review_by dates: <ok | passed on …>. Confirm the current SOP and your lender's reading. This is not an eligibility decision.
 ## Results
 | # | Check | Deal fact | Rule | Source (pinpoint) | Result | Note |
 ## Conflicts and what would change them

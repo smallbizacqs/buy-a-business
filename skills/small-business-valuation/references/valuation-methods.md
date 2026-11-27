@@ -18,7 +18,7 @@ Rules that keep the math honest:
 
 ## The lender's valuation in an SBA 7(a) deal (SOP 50 10 8.1)
 
-Check each source's `review_by` date in `data/sources/`; SBA rules change.
+Check each source's `review_by` date in `references/sources.md`; SBA rules change.
 
 - The business valuation must be requested by and prepared for the lender; the lender can't use one prepared for the buyer or the seller (`sba-sop-50-10-8-1-valuation-for-lender`). A buyer's own range (this skill) is for the buyer's decisions only.
 - If the business purchase price is $350,000 or less, the lender may do its own valuation, unless buyer and seller are closely related (`sba-sop-50-10-8-1-valuation-350k`).

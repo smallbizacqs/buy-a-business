@@ -26,7 +26,7 @@ General patterns, to be overwritten by the user's facts and any terms they've be
 | Main skill beyond operating | Handling a lender and a seller | Managing an investor board | Raising money deal by deal | Raising long-term capital and capital allocation |
 | Securities law | Usually none (your own money) | Yes: raising from investors | Yes | Yes if outside investors |
 
-Sourced SBA rules referenced above (SOP 50 10 8.1, effective for loans numbered on or after 2026-10-01; check `review_by` in `data/sources/`):
+Sourced SBA rules referenced above (SOP 50 10 8.1, effective for loans numbered on or after 2026-10-01; check `review_by` in `references/sources.md`):
 
 - `sba-sop-50-10-8-1-personal-guaranty`: "Any individual who has direct and/or indirect ownership of 20% or more of an Applicant must provide an unlimited full guaranty."
 - `sba-sop-50-10-8-1-equity-limited-sources`: limited sources (standby debt, standby seller debt, minority equity investments) "may provide no more than half of the required Equity Injection."

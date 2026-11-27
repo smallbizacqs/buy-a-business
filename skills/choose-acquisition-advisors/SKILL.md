@@ -45,7 +45,7 @@ If no deal is active yet, plan the team for the buyer's buy box and suggest whic
 
 ## Output
 
-- `profile.yaml`: the `advisors: {lawyer, cpa, lender, qoe}` map from `workspace/SPEC.md`, filled with what the user chose (the insurance broker and specialists go in the notes entry).
+- `profile.yaml`: the `advisors: {lawyer, cpa, lender, qoe}` map from `references/workspace.md`, filled with what the user chose (the insurance broker and specialists go in the notes entry).
 - `deals/<slug>/notes.md` (or `notes.md` at the workspace root if no deal yet): dated `## Advisor team` entry with roles needed, timing, interview notes, quote comparison table and the budget script output.
 - `decisions.md`: dated entry for each hire.
 

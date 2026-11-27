@@ -47,7 +47,7 @@ The script prints a markdown table; `--json` returns each year's figures, includ
 
 - **First year at target:** the year take-home first reaches the user's target. If it never does within five years, say so plainly and show what would have to change (lower price, longer loan term, more equity, less seller note in the early years, higher SDE that's real).
 - **Below household minimum:** count those years and the cumulative shortfall; compare with the post-closing cash reserve in `profile.yaml`.
-- **Coverage column:** cash before debt ÷ debt service. Under about 1.5, a modest bad year leaves little for the owner (a personal-cushion rule of thumb, not a lending rule). The lender's test is separate: EBITDA ÷ combined post-transaction debt service, 1.25:1 for an initial acquisition under SOP 50 10 8.1 (effective 2026-10-01; `data/sources/sba-sop-50-10-8-1-dsc-ratio.yaml` and `sba-sop-50-10-8-1-dsc-definition.yaml`).
+- **Coverage column:** cash before debt ÷ debt service. Under about 1.5, a modest bad year leaves little for the owner (a personal-cushion rule of thumb, not a lending rule). The lender's test is separate: EBITDA ÷ combined post-transaction debt service, 1.25:1 for an initial acquisition under SOP 50 10 8.1 (effective 2026-10-01; `references/sources.md` and `sba-sop-50-10-8-1-dsc-definition.yaml`).
 
 ## Wealth building, honestly
 

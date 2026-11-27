@@ -47,7 +47,7 @@ What the owner says about AI in the business (have they adopted any, lost any wo
 
 ## 6. General commentary (weakest)
 
-Articles, forecasts and opinions about AI and industries. Use only to generate questions to check, never as the basis of a rating. Don't quote statistics unless they have a source in `data/sources/`.
+Articles, forecasts and opinions about AI and industries. Use only to generate questions to check, never as the basis of a rating. Don't quote statistics unless they have a source in `references/sources.md`.
 
 ## Questions to draft for the owner
 

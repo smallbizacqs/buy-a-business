@@ -74,7 +74,7 @@ If a seller says the business makes more than the returns show because of unrepo
 
 ## What an SBA lender's process looks at (SOP 50 10 8.1)
 
-If the deal will use a 7(a) loan, the schedule should anticipate these. Check each source's `review_by` date in `data/sources/`; SBA rules change.
+If the deal will use a 7(a) loan, the schedule should anticipate these. Check each source's `review_by` date in `references/sources.md`; SBA rules change.
 
 - The lender's analysis uses the three most recent year-ends of the acquired business (`sba-sop-50-10-8-1-three-years`) and compares the latest interim statement with the same period a year earlier (`sba-sop-50-10-8-1-interim-statements`).
 - Adjustments the lender may justify include unfunded capital expenditures, non-recurring income, distributions, S-corp tax distributions, seller discretionary expenses and owner compensation (`sba-sop-50-10-8-1-adjustment-items`); each must be prudent, necessary and supported by ongoing operations (`sba-sop-50-10-8-1-adjustment-justification`).

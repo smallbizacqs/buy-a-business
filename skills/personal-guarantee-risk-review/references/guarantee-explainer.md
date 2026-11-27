@@ -18,7 +18,7 @@
 
 ## SBA rules (SOP 50 10 8.1, effective for loans numbered on or after 2026-10-01)
 
-Quote these with the source id. Check each file's `review_by` date in `data/sources/`; if it has passed, say the rule may have changed. The lender's reading of the current SOP governs.
+Quote these with the source id. Check each file's `review_by` date in `references/sources.md`; if it has passed, say the rule may have changed. The lender's reading of the current SOP governs.
 
 | Rule | What the SOP says | Source |
 |---|---|---|

@@ -34,7 +34,7 @@ Read first, ask only for what's missing:
 
 Ask together, each with a suggested answer:
 
-1. Which years? Suggest the last three fiscal years, the trailing twelve months (TTM), and this year-to-date beside the same months last year. In an SBA deal that matches what the lender analyzes (`data/sources/sba-sop-50-10-8-1-three-years.yaml`, `-interim-statements.yaml`; check `review_by`).
+1. Which years? Suggest the last three fiscal years, the trailing twelve months (TTM), and this year-to-date beside the same months last year. In an SBA deal that matches what the lender analyzes (`references/sources.md`, `-interim-statements.yaml`; check `review_by`).
 2. Which document is the starting profit? Suggest the tax return (it's filed under penalty and lenders commonly start there), with the P&L reconciled to it.
 3. Owner replacement cost: what would it cost to hire someone to do every job the owner does (salary, payroll taxes, benefits)? Suggest the user price the role from local job postings or a salary survey and record the source. Never invent a salary.
 4. Maintenance capital spending a year (vehicles, equipment that must be replaced). Suggest the average of the last three years' fixed-asset purchases from the returns' depreciation schedules.

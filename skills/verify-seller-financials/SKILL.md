@@ -29,7 +29,7 @@ Read first, ask only for what's missing:
 - `acquisition/deals/<slug>/financials/`: bank statements for every business account, monthly P&Ls, tax returns, merchant processor statements if the business takes cards.
 - `acquisition/deals/<slug>/evaluation.md`: the earnings section, if `sde-and-add-backs-analysis` has run.
 - From the user, together, each with a suggested answer:
-  1. Period: suggest the trailing twelve months plus the last two fiscal years. That mirrors the cash proof an SBA-required QoE must include (`data/sources/sba-sop-50-10-8-1-qoe-cash-proof.yaml`), so gaps surface before the QoE does.
+  1. Period: suggest the trailing twelve months plus the last two fiscal years. That mirrors the cash proof an SBA-required QoE must include (`references/sources.md`), so gaps surface before the QoE does.
   2. Fiscal year-end month: suggest the month shown on the return.
   3. Review triggers for flagging differences: suggest 5% a month and 2% a year. Say these are the user's own thresholds for follow-up, not a standard.
   4. Does the business collect sales tax, take cards (fees netted before deposit), or bill on account (receivables)? Suggest checking the P&L and balance sheet.

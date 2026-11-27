@@ -22,7 +22,7 @@ catalog_order: 20
 
 # SBA 7(a) acquisition loans
 
-The user gets a loan plan: the 7(a) rules that shape their deal, quoted from `data/sources/` with the SOP version and effective date; their equity injection worked out on total project cost, including how much a seller note on full standby can supply; a checklist of what they'll be asked for; and a lender comparison sheet with the questions to ask each one. It prepares the user to talk to lenders; it doesn't decide anything a lender decides.
+The user gets a loan plan: the 7(a) rules that shape their deal, quoted from `references/sources.md` with the SOP version and effective date; their equity injection worked out on total project cost, including how much a seller note on full standby can supply; a checklist of what they'll be asked for; and a lender comparison sheet with the questions to ask each one. It prepares the user to talk to lenders; it doesn't decide anything a lender decides.
 
 ## Inputs
 
@@ -39,7 +39,7 @@ Ask for what's missing, together, with recommended answers:
 
 ## Workflow
 
-1. **Basics, sourced.** From `references/sba-7a-rules.md`, give the user the rules that apply to their deal, each with its source id. Check every cited source's `review_by` date in `data/sources/`; if passed, say the rule may have changed. Always add: "confirm against the current SOP and your lender's reading". Where the user asks about something the sources don't cover (rates, fees, prepayment, citizenship, 504 details), say so and turn it into a lender question.
+1. **Basics, sourced.** From `references/sba-7a-rules.md`, give the user the rules that apply to their deal, each with its source id. Check every cited source's `review_by` date in `references/sources.md`; if passed, say the rule may have changed. Always add: "confirm against the current SOP and your lender's reading". Where the user asks about something the sources don't cover (rates, fees, prepayment, citizenship, 504 details), say so and turn it into a lender question.
 2. **Equity math.** On the user's numbers, fill the equity worksheet in the reference: total project cost → 10% minimum (initial acquisition) → the most that limited sources (standby debt, standby seller debt, minority equity) can supply (half of the required equity) → the unborrowed cash or qualifying personal loan the buyer must bring. Show every line. Note that the lender may require more than the minimum and that a price above the lender's valuation must be covered by more equity.
 3. **Coverage preview.** If earnings are known, run `acquisition-deal-model` (or show the math by hand): EBITDA ÷ combined post-transaction debt service against 1.25:1, on the last fiscal year-end or the average of the last two. Label it a preview; the lender underwrites.
 4. **Triggers.** Note which apply: valuation by a qualified source ordered by the lender (the lender may value deals of $350,000 or less itself), a quality of earnings report at a business purchase price of $3 million or more, real estate amortization, lease term versus loan term, working-assets line of credit.

@@ -38,7 +38,7 @@ Where you can, tie impact to numbers: recompute earnings and the debt service co
 1. Every score has one line of evidence with its source. "Top customer 34% of 2025 revenue (CIM p. 12, unverified)".
 2. No evidence, no number. Write "no evidence yet" in the score column and the document request that would settle it. Don't average it in, don't guess.
 3. Seller claims count as weak evidence: score them, but mark "unverified". When a document confirms or contradicts the claim, update the score and the date.
-4. Your own benchmarks (what's common in the industry) go in a separate "benchmark" line and need a source in `data/sources/`. Without one, leave them out.
+4. Your own benchmarks (what's common in the industry) go in a separate "benchmark" line and need a source in `references/sources.md`. Without one, leave them out.
 5. Rescore when new documents arrive. Keep the old row in a dated note if the score moved by 5 or more, so the user can see what changed.
 
 ## Ranking and summary

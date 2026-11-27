@@ -1,12 +1,12 @@
 # Workspace templates
 
-Create these in the folder the user chose (default `./acquisition/`). Never overwrite a file that exists; add to it. Dates are YYYY-MM-DD. The full specification is `workspace/SPEC.md`.
+Create these in the folder the user chose (default `./acquisition/`). Never overwrite a file that exists; add to it. Dates are YYYY-MM-DD. The full specification is `references/workspace.md`.
 
 ## profile.yaml
 
 ```yaml
 updated: 2026-11-26
-stage: decide            # a stage id from data/taxonomy.yaml: decide | fund | find | approach | evaluate | offer | confirm | close | own | later
+stage: decide            # a stage id from references/stage-map.md: decide | fund | find | approach | evaluate | offer | confirm | close | own | later
 liquid_funds: null       # what the user said, in dollars
 max_equity_in_deal: null
 months_of_living_costs: null

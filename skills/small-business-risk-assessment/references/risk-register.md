@@ -128,7 +128,7 @@ Record each fact with its source: `CIM p. 12`, `2025 P&L`, `owner, call 2026-11-
 
 ## 9. Distressed or turnaround situation
 
-**The risk.** Revenue or earnings are falling, and the price assumes a recovery the buyer has to deliver. Lenders test coverage on historical results, so a declining business may not support the debt (see `data/sources/sba-sop-50-10-8-1-projections.yaml`: in a 7(a) change of ownership the lender may not rely on projections to meet coverage, except for an owner-occupied special purpose property).
+**The risk.** Revenue or earnings are falling, and the price assumes a recovery the buyer has to deliver. Lenders test coverage on historical results, so a declining business may not support the debt (see `references/sources.md`: in a 7(a) change of ownership the lender may not rely on projections to meet coverage, except for an owner-occupied special purpose property).
 
 **Extract.** Three-year trend of revenue, gross margin and earnings; TTM against the last full year; reason the owner gives for the decline.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Checks a deal's numbers against the SOP 50 10 8.1 facts quoted in data/sources/.
+// Checks a deal's numbers against the SOP 50 10 8.1 facts quoted in references/sources.md.
 // Plain Node, no dependencies, no network. Usage:
 //   node sop-check.mjs deal.json          prints a markdown table
 //   node sop-check.mjs deal.json --json   prints JSON
@@ -117,7 +117,7 @@ function usd(n) { return n == null ? 'n/a' : (n < 0 ? '-$' : '$') + Math.round(M
 function fx(n) { return n == null ? 'n/a' : n.toFixed(2) + 'x'; }
 
 export function toMarkdown(res) {
-  const L = [`Checked against ${res.sop.name} facts in data/sources (effective for loans numbered on or after ${res.sop.effective}). Confirm the current SOP and your lender's reading; this is not an eligibility decision.`, '', '| # | Check | Deal fact | Rule (quoted or summarized) | Source | Result | Note |', '|---|---|---|---|---|---|---|'];
+  const L = [`Checked against ${res.sop.name} facts in references/sources.md (effective for loans numbered on or after ${res.sop.effective}). Confirm the current SOP and your lender's reading; this is not an eligibility decision.`, '', '| # | Check | Deal fact | Rule (quoted or summarized) | Source | Result | Note |', '|---|---|---|---|---|---|---|'];
   for (const c of res.checks) L.push(`| ${c.id} | ${c.check} | ${c.dealFact} | ${c.rule} | ${c.source} | ${c.result} | ${c.note} |`);
   return L.join('\n');
 }

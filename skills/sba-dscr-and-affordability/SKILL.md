@@ -4,7 +4,7 @@ description: >-
   Work out what a buyer can pay for a small business given the loan payments: debt service
   coverage (DSCR) at a target ratio, the highest price and senior loan the earnings support, and
   how the answer moves with the rate, the seller note, equity and a drop in earnings. Uses the
-  SOP 50 10 8.1 coverage facts in data/sources and a tested script. Use when the user asks "how much
+  SOP 50 10 8.1 coverage facts in references/sources.md and a tested script. Use when the user asks "how much
   can I afford", "what DSCR does the SBA want", "does this deal cash flow", "1.25x coverage",
   "how big a loan can this support", or wants to stress-test a price before an LOI. Hands off to
   sde-and-add-backs-analysis, small-business-valuation, seller-note-structuring and sba-7a-acquisition-loan.
@@ -41,7 +41,7 @@ If earnings are missing entirely, stop and hand off to `sde-and-add-backs-analys
 
 ## Workflow
 
-1. Check the sources. Open the SOP 50 10 8.1 files in `data/sources/` named in [references/dscr-method.md](references/dscr-method.md) (coverage ratio and definition, adjustments, projections, interest-only debt, standby, total debt cap, valuation gap, global cash flow, QoE) and `sba-information-notice-5000-880695.yaml`. Note each `review_by` date. If any date has passed, say the rule may have changed and point the user to the current SBA SOP 50 10 and `sba-sop-rule-check`. SOP 50 10 8.1 applies to loans given an SBA loan number on or after 2026-10-01.
+1. Check the sources. Open the SOP 50 10 8.1 files in `references/sources.md` named in [references/dscr-method.md](references/dscr-method.md) (coverage ratio and definition, adjustments, projections, interest-only debt, standby, total debt cap, valuation gap, global cash flow, QoE) and `sba-information-notice-5000-880695.yaml`. Note each `review_by` date. If any date has passed, say the rule may have changed and point the user to the current SBA SOP 50 10 and `sba-sop-rule-check`. SOP 50 10 8.1 applies to loans given an SBA loan number on or after 2026-10-01.
 2. State the rules in plain words, each with its source id, before the numbers (table in [references/dscr-method.md](references/dscr-method.md)):
    - Coverage is EBITDA ÷ combined debt service after the deal (every payment, not only the SBA loan), on the last fiscal year-end or the average of the last two, historical or adjusted: 1.25:1 for an initial acquisition, owner buyout, ESOP or cooperative; 1.15:1 for a business expansion.
    - Adjustments must be prudent and justified; projections can't be relied on to meet coverage, except for an owner-occupied special purpose property.

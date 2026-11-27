@@ -25,7 +25,7 @@ The user gets an honest readiness scorecard across six areas, each rated **ready
 
 ## Inputs
 
-Read first: `acquisition/profile.yaml` and `acquisition/decisions.md` (workspace defaults to `acquisition/`; see `workspace/SPEC.md`). If there is no workspace, offer to create it with `buy-a-business`.
+Read first: `acquisition/profile.yaml` and `acquisition/decisions.md` (workspace defaults to `acquisition/`; see `references/workspace.md`). If there is no workspace, offer to create it with `buy-a-business`.
 
 Then ask everything missing in one message, using the interview in `references/readiness-interview.md`. Each question carries a recommended answer so the user can reply "yes to all" and correct only what's wrong. The core set:
 

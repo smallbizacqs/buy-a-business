@@ -84,7 +84,7 @@ open_questions:
   - "Confirm lender's view of buyer's industry experience"
 ```
 
-Industry names use the `industry` facet values in `data/taxonomy.yaml` where one fits, else free text. A dated line in `acquisition/decisions.md` records each version.
+Industry names use common industry names where one fits, else free text. A dated line in `acquisition/decisions.md` records each version.
 
 ## Safety and authority
 

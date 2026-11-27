@@ -15,7 +15,7 @@ Show every line with the user's numbers. Label anything the user didn't give as 
 - **E negative:** not ready on money for that deal size. Options: a smaller deal, keep the job longer, a partner, a seller note, or investors (see `search-fund-vs-sba-loan`).
 - **E positive but under 3 months of spending:** close; any surprise in diligence breaks the plan.
 - Also note what counts. Under SOP 50 10 8.1, unborrowed cash (including a gift) can supply all of the required equity, and so can a personal loan to a guarantor repaid from a source other than the business's cash flow (`sba-sop-50-10-8-1-equity-unlimited-sources`); standby debt, standby seller debt and minority equity investments together can supply no more than half (`sba-sop-50-10-8-1-equity-limited-sources`). Education, advisory and agent fees don't count (`sba-sop-50-10-8-1-prepaid-not-equity`). A home equity line or 401(k) plan raises its own questions; see `acquisition-equity-sources` and ask the lender.
-- These are SOP 50 10 8.1 rules for loans numbered on or after 2026-10-01. Check each source's `review_by` date in `data/sources/`; if it has passed, say the rule may have changed and point to the current SOP.
+- These are SOP 50 10 8.1 rules for loans numbered on or after 2026-10-01. Check each source's `review_by` date in `references/sources.md`; if it has passed, say the rule may have changed and point to the current SOP.
 
 ## Rubric
 
