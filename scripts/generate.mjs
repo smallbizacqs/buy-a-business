@@ -10,7 +10,7 @@ import { parseFrontmatter } from './validate.mjs';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const RAW = 'https://raw.githubusercontent.com/smallbizacqs/buy-a-business/main';
 const REPO = 'https://github.com/smallbizacqs/buy-a-business';
-const AUTHOR = { name: 'Small Biz Acquisitions', email: 'smallbizacquisitions@outlook.com', url: 'https://smallbizacqs.com' };
+const AUTHOR = { name: 'Small Biz Acquisitions', email: 'support@smallbizacqs.com', url: 'https://smallbizacqs.com' };
 const version = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')).version;
 
 const tax = YAML.parse(readFileSync(join(ROOT, 'data/taxonomy.yaml'), 'utf8'));
