@@ -1,0 +1,9 @@
+id: google-gmail-sender-authentication
+tier: official-doc
+title: "Email sender guidelines"
+publisher: "Google (Gmail Help)"
+url: https://support.google.com/mail/answer/81126?hl=en
+quote: "Set up SPF or DKIM email authentication for your sending domains."
+proposition: "Gmail requires every sender to set up SPF or DKIM email authentication for its sending domains."
+accessed: 2026-11-26
+review_by: 2027-11-26

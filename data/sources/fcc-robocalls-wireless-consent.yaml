@@ -1,0 +1,10 @@
+id: fcc-robocalls-wireless-consent
+tier: official-doc
+title: "Stop Unwanted Robocalls and Texts"
+publisher: "Federal Communications Commission"
+url: https://www.fcc.gov/consumers/guides/stop-unwanted-robocalls-and-texts
+quote: "FCC rules also require a caller to obtain your oral or written consent before making an autodialed or prerecorded call or text to your wireless number."
+proposition: "FCC rules require consent before an autodialed or prerecorded call or text to a wireless number."
+accessed: 2026-11-26
+review_by: 2027-02-26
+notes: "fcc.gov blocks scripted fetches; quote verified in a browser on 2026-11-26 (see data/verification.yaml)."

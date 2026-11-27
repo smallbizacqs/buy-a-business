@@ -1,0 +1,10 @@
+id: fcc-state-dnc-lists
+tier: official-doc
+title: "Stop Unwanted Robocalls and Texts"
+publisher: "Federal Communications Commission"
+url: https://www.fcc.gov/consumers/guides/stop-unwanted-robocalls-and-texts
+quote: "Many states now have statewide do-not-call lists for residents."
+proposition: "Many states keep their own do-not-call lists in addition to the national registry."
+accessed: 2026-11-26
+review_by: 2027-02-26
+notes: "fcc.gov blocks scripted fetches; quote verified in a browser on 2026-11-26 (see data/verification.yaml)."

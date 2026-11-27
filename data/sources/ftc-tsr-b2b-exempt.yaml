@@ -1,0 +1,10 @@
+id: ftc-tsr-b2b-exempt
+tier: official-doc
+title: "Complying with the Telemarketing Sales Rule"
+publisher: "Federal Trade Commission"
+url: https://www.ftc.gov/business-guidance/resources/complying-telemarketing-sales-rule
+quote: "Most phone calls between a telemarketer and a business are exempt from the TSR."
+proposition: "Most business-to-business calls are exempt from the FTC's Telemarketing Sales Rule."
+accessed: 2026-11-26
+review_by: 2027-02-26
+notes: "ftc.gov blocks scripted fetches; quote verified in a browser on 2026-11-26 (see data/verification.yaml)."

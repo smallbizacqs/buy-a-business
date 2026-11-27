@@ -1,0 +1,10 @@
+id: fcc-robotexts-commercial-consent
+tier: official-doc
+title: "Stop Unwanted Robocalls and Texts"
+publisher: "Federal Communications Commission"
+url: https://www.fcc.gov/consumers/guides/stop-unwanted-robocalls-and-texts
+quote: "Commercial texts require written consent; for informational texts, your consent may be oral."
+proposition: "Under the FCC's robotext rules, commercial texts need written consent; informational texts may rest on oral consent."
+accessed: 2026-11-26
+review_by: 2027-02-26
+notes: "fcc.gov blocks scripted fetches; quote verified in a browser on 2026-11-26 (see data/verification.yaml)."

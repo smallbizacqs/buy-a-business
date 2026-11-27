@@ -161,6 +161,14 @@ export function validate(root, { today = new Date().toISOString().slice(0, 10) }
     sources.set(basename(f, '.yaml'), s);
   }
 
+  // Two source files with the same URL and the same quote are one source; keep one id.
+  const seenQuote = new Map();
+  for (const [id, s] of sources) {
+    const k = `${s.url}|${String(s.quote ?? '').replace(/[\u201C\u201D]/g, '"').replace(/\s+/g, ' ').trim().toLowerCase()}`;
+    if (seenQuote.has(k)) err('SRC-DUP', join(root, 'data/sources', `${id}.yaml`), `same URL and quote as "${seenQuote.get(k)}"; cite that one`);
+    else seenQuote.set(k, id);
+  }
+
   // ---- leaf answers
   for (const f of listFiles(join(root, 'data/leaves'), '.md')) {
     examined++;

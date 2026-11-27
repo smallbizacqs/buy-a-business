@@ -234,7 +234,7 @@ leaves:
   - id: failure-stories
     topic: decide/risk
     question: "What happens when an acquisition fails, and why do they fail?"
-    scope: "What happens to the buyer when an acquired business fails (default, guarantee calls, workouts), how often it happens and the broad reasons; operating causes after closing belong to post-close-failure."
+    scope: "What happens to the buyer when an acquired business fails (default, guarantee calls, workouts) and the broad reasons; operating causes after closing belong to post-close-failure."
     not: [post-close-failure, personal-guarantee]
     aliases: ["what happens if my business fails with an SBA loan", "SBA loan default", "failed acquisition story"]
   - id: asset-protection
@@ -389,6 +389,13 @@ leaves:
     scope: "Financing only: whether working-capital money or a revolving credit line can be borrowed with the acquisition loan; the working capital delivered in the deal is what-is-nwc and peg."
     not: [what-is-nwc, peg]
     aliases: ["working capital line of credit SBA", "SBA revolver", "working capital loan with acquisition"]
+    volatile: true
+  - id: sba-small-loans
+    topic: fund/sba-loan
+    question: "How do smaller SBA loans (7(a) Small and Express) work for a small acquisition?"
+    scope: "The smaller 7(a) loan tiers and how their collateral, process and limits differ for small purchases."
+    not: [sba-7a-basics, loan-limits-pari-passu]
+    aliases: ["SBA express loan acquisition", "7(a) small loan", "small SBA loan to buy a business"]
     volatile: true
   - id: online-saas-eligibility
     topic: fund/sba-loan
@@ -609,7 +616,7 @@ leaves:
     aliases: ["websites to buy a business", "businesses for sale listings", "online business marketplaces"]
   - id: why-listings-dont-sell
     topic: find/brokers
-    question: "Why do most listed businesses never sell, and what does that tell a buyer?"
+    question: "Why do many listed businesses never sell, and what does that tell a buyer?"
     scope: "Why most listed businesses never sell, and what that tells a buyer about price and leverage."
     not: [asking-price-gap]
     aliases: ["why businesses don't sell", "listed business sale rate", "stale listings"]
@@ -1484,12 +1491,32 @@ leaves:
     scope: "Reporting, financial controls and key numbers after closing."
     not: [systems-data, operating-system-eos]
     aliases: ["KPIs small business", "financial controls", "monthly close"]
+  - id: lender-after-closing
+    topic: own/first-100-days
+    question: "What does the lender expect after closing: reporting, covenants and what happens if I miss one?"
+    scope: "Ongoing obligations to the lender after funding: financial reporting, covenant tests, insurance, and handling a missed covenant."
+    not: [lender-package, financial-controls-kpis]
+    aliases: ["loan covenants after closing", "SBA lender reporting requirements", "covenant breach small business loan"]
+    volatile: true
   - id: post-closing-true-up
     topic: own/first-100-days
     question: "How do I track the working-capital true-up and escrow release after closing?"
     scope: "Post-closing adjustments and deadlines: working-capital true-up, escrow or holdback release, and claims."
     not: [peg, escrow-holdback]
     aliases: ["working capital true-up after closing", "escrow release", "post-closing adjustment"]
+  - id: seller-payments-after-closing
+    topic: own/first-100-days
+    question: "How do I manage seller-note payments, earnouts and other money owed to the seller after closing?"
+    scope: "Running the payments owed to the seller after closing: seller note schedules, standby periods, earnout calculations and disputes."
+    not: [post-closing-true-up, seller-note-terms, earnout-disputes]
+    aliases: ["seller note payments after closing", "paying an earnout", "seller note standby period ends"]
+    volatile: true
+  - id: post-closing-insurance
+    topic: own/first-100-days
+    question: "What insurance should the business carry after closing?"
+    scope: "Insurance coverage to put in place or review after closing, including what the lender requires."
+    not: [insurance-review, pg-insurance]
+    aliases: ["business insurance after acquisition", "insurance after buying a business", "lender required insurance"]
   - id: operating-system-eos
     topic: own/operate
     question: "Should I adopt EOS or another management system?"

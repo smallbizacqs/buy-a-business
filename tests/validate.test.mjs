@@ -57,6 +57,7 @@ const cases = {
   'SRC-FIELD': (d) => edit(d, SRC, (s) => s.replace('quote: "The rule says this."\n', '')),
   'SRC-ID': (d) => edit(d, SRC, (s) => s.replace('id: demo-rule', 'id: other-rule')),
   'SRC-TIER': (d) => edit(d, SRC, (s) => s.replace('tier: primary-rule', 'tier: gossip')),
+  'SRC-DUP': (d) => writeFileSync(join(d, 'data/sources/demo-rule-copy.yaml'), readFileSync(join(d, SRC), 'utf8').replace('id: demo-rule', 'id: demo-rule-copy')),
   'SRC-URL': (d) => edit(d, SRC, (s) => s.replace('https://example.gov/rule', 'http://example.gov/rule')),
   'ANS-FIELD': (d) => edit(d, ANS, (s) => s.replace('status: draft', 'status: final')),
   'ANS-LEAF': (d) => { renameSync(join(d, ANS), join(d, 'data/leaves/ghost-leaf.md')); edit(d, 'data/leaves/ghost-leaf.md', (s) => s.replace('leaf: first-leaf', 'leaf: ghost-leaf')); },

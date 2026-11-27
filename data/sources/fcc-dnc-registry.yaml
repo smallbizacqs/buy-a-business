@@ -1,0 +1,10 @@
+id: fcc-dnc-registry
+tier: official-doc
+title: "Stop Unwanted Robocalls and Texts"
+publisher: "Federal Communications Commission"
+url: https://www.fcc.gov/consumers/guides/stop-unwanted-robocalls-and-texts
+quote: "The National Do Not Call Registry is a list of landline and wireless phone numbers that legitimate telemarketers agree not to call."
+proposition: "The National Do Not Call Registry lists landline and wireless numbers that telemarketers must not call."
+accessed: 2026-11-26
+review_by: 2027-02-26
+notes: "fcc.gov blocks scripted fetches; quote verified in a browser on 2026-11-26 (see data/verification.yaml)."

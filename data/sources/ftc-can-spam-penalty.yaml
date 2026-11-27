@@ -1,0 +1,10 @@
+id: ftc-can-spam-penalty
+tier: official-doc
+title: "CAN-SPAM Act: A Compliance Guide for Business"
+publisher: "Federal Trade Commission"
+url: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
+quote: "Each separate email in violation of the CAN-SPAM Act is subject to penalties of up to $53,088, so non-compliance can be costly."
+proposition: "Each email that violates CAN-SPAM can carry a penalty of up to $53,088 (the FTC's figure as of its January 2024 edit)."
+accessed: 2026-11-26
+review_by: 2027-02-26
+notes: "ftc.gov blocks scripted fetches; quote verified in a browser on 2026-11-26 (see data/verification.yaml)."

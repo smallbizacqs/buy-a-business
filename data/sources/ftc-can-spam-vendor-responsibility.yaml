@@ -1,0 +1,10 @@
+id: ftc-can-spam-vendor-responsibility
+tier: official-doc
+title: "CAN-SPAM Act: A Compliance Guide for Business"
+publisher: "Federal Trade Commission"
+url: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
+quote: "The law makes clear that even if you hire another company to handle your email marketing, you can’t contract away your legal responsibility to comply with the law."
+proposition: "A business that hires someone else to send its email remains responsible for CAN-SPAM compliance."
+accessed: 2026-11-26
+review_by: 2027-02-26
+notes: "ftc.gov blocks scripted fetches; quote verified in a browser on 2026-11-26 (see data/verification.yaml)."

@@ -1,0 +1,10 @@
+id: ftc-can-spam-opt-out
+tier: official-doc
+title: "CAN-SPAM Act: A Compliance Guide for Business"
+publisher: "Federal Trade Commission"
+url: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
+quote: "You must honor a recipient’s opt-out request within 10 business days."
+proposition: "CAN-SPAM requires a sender to honor an opt-out request within 10 business days."
+accessed: 2026-11-26
+review_by: 2027-02-26
+notes: "ftc.gov blocks scripted fetches; quote verified in a browser on 2026-11-26 (see data/verification.yaml)."

@@ -16,3 +16,71 @@
   status: verified-in-browser
   reason: "flippa.com returns 403 to scripts; quote found verbatim in the rendered Terms of Service page in a browser."
   checked_on: 2026-11-26
+- id: ftc-can-spam-b2b
+  status: verified-in-browser
+  reason: "ftc.gov returns an error page (HTTP 404) to scripts; quote found verbatim in the rendered FTC business guidance page in a browser."
+  checked_on: 2026-11-26
+- id: ftc-can-spam-commercial-message
+  status: verified-in-browser
+  reason: "ftc.gov returns an error page (HTTP 404) to scripts; quote found verbatim in the rendered FTC business guidance page in a browser."
+  checked_on: 2026-11-26
+- id: ftc-can-spam-subject-line
+  status: verified-in-browser
+  reason: "ftc.gov returns an error page (HTTP 404) to scripts; quote found verbatim in the rendered FTC business guidance page in a browser."
+  checked_on: 2026-11-26
+- id: ftc-can-spam-postal-address
+  status: verified-in-browser
+  reason: "ftc.gov returns an error page (HTTP 404) to scripts; quote found verbatim in the rendered FTC business guidance page in a browser."
+  checked_on: 2026-11-26
+- id: ftc-can-spam-opt-out
+  status: verified-in-browser
+  reason: "ftc.gov returns an error page (HTTP 404) to scripts; quote found verbatim in the rendered FTC business guidance page in a browser."
+  checked_on: 2026-11-26
+- id: ftc-can-spam-penalty
+  status: verified-in-browser
+  reason: "ftc.gov returns an error page (HTTP 404) to scripts; quote found verbatim in the rendered FTC business guidance page in a browser."
+  checked_on: 2026-11-26
+- id: ftc-can-spam-vendor-responsibility
+  status: verified-in-browser
+  reason: "ftc.gov returns an error page (HTTP 404) to scripts; quote found verbatim in the rendered FTC business guidance page in a browser."
+  checked_on: 2026-11-26
+- id: ftc-tsr-b2b-exempt
+  status: verified-in-browser
+  reason: "ftc.gov returns an error page (HTTP 404) to scripts; quote found verbatim in the rendered FTC business guidance page in a browser."
+  checked_on: 2026-11-26
+- id: ftc-tsr-state-laws
+  status: verified-in-browser
+  reason: "ftc.gov returns an error page (HTTP 404) to scripts; quote found verbatim in the rendered FTC business guidance page in a browser."
+  checked_on: 2026-11-26
+- id: fcc-robocalls-wireless-consent
+  status: verified-in-browser
+  reason: "fcc.gov returns 403 to scripts; quote found verbatim in the rendered FCC consumer guide in a browser."
+  checked_on: 2026-11-26
+- id: fcc-robotexts-commercial-consent
+  status: verified-in-browser
+  reason: "fcc.gov returns 403 to scripts; quote found verbatim in the rendered FCC consumer guide in a browser."
+  checked_on: 2026-11-26
+- id: fcc-ai-voice-calls
+  status: verified-in-browser
+  reason: "fcc.gov returns 403 to scripts; quote found verbatim in the rendered FCC consumer guide in a browser."
+  checked_on: 2026-11-26
+- id: fcc-dnc-registry
+  status: verified-in-browser
+  reason: "fcc.gov returns 403 to scripts; quote found verbatim in the rendered FCC consumer guide in a browser."
+  checked_on: 2026-11-26
+- id: fcc-state-dnc-lists
+  status: verified-in-browser
+  reason: "fcc.gov returns 403 to scripts; quote found verbatim in the rendered FCC consumer guide in a browser."
+  checked_on: 2026-11-26
+- id: dol-fact-sheet-71-for-profit-pay
+  status: verified-in-browser
+  reason: "dol.gov returns 403 to scripts; quote found verbatim in the rendered DOL Wage and Hour fact sheet in a browser."
+  checked_on: 2026-11-26
+- id: dol-fact-sheet-71-primary-beneficiary
+  status: verified-in-browser
+  reason: "dol.gov returns 403 to scripts; quote found verbatim in the rendered DOL Wage and Hour fact sheet in a browser."
+  checked_on: 2026-11-26
+- id: ftc-noncompete-rule-not-in-effect
+  status: verified-in-browser
+  reason: "ftc.gov returns 404 to scripts; quote found verbatim on the rendered Noncompete Rule page in a browser."
+  checked_on: 2026-11-27

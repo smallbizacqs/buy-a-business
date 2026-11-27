@@ -1,0 +1,9 @@
+id: google-gmail-sender-spam-rate
+tier: official-doc
+title: "Email sender guidelines"
+publisher: "Google (Gmail Help)"
+url: https://support.google.com/mail/answer/81126?hl=en
+quote: "Keep spam rates reported in Postmaster Tools below 0.3%."
+proposition: "Gmail tells senders to keep the spam-complaint rate it reports below 0.3%."
+accessed: 2026-11-26
+review_by: 2027-11-26

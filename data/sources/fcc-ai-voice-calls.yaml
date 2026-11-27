@@ -1,0 +1,10 @@
+id: fcc-ai-voice-calls
+tier: official-doc
+title: "Stop Unwanted Robocalls and Texts"
+publisher: "Federal Communications Commission"
+url: https://www.fcc.gov/consumers/guides/stop-unwanted-robocalls-and-texts
+quote: "AI-generated voice calls are illegal unless the consumer has agreed to receive them or the caller is exempt."
+proposition: "AI-generated voice calls are illegal without the recipient's agreement unless the caller is exempt."
+accessed: 2026-11-26
+review_by: 2027-02-26
+notes: "fcc.gov blocks scripted fetches; quote verified in a browser on 2026-11-26 (see data/verification.yaml)."
