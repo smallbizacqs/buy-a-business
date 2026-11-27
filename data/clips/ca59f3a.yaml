@@ -1,0 +1,21 @@
+id: ca59f3a
+leaves: [when-owner-not-ready, earn-trust]
+facets:
+  speaker_role: coach-course
+  sells_services: "yes"
+  format: opinion
+  audience: buyer
+  geography: us
+view: "The Acquisitions Academy Podcast describes staying in touch with owners who aren't ready to sell yet, treating sourcing as many long conversations."
+creator:
+  name: "Acquisitions Academy Podcast"
+  channel: https://www.youtube.com/@AcquisitionAcademyPodcast
+source:
+  url: https://www.youtube.com/watch?v=pyv-mz5u_XM
+  start: 1473
+  end: 1490
+  published: 2026-10-29
+posts:
+  youtube: null
+  tiktok: null
+added: 2026-11-26

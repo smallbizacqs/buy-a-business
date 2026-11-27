@@ -1,0 +1,22 @@
+id: c237676
+leaves: [dscr, underwriting]
+facets:
+  speaker_role: searcher-operator
+  sells_services: "unknown"
+  format: worked-numbers
+  audience: buyer
+  rules_regime: sba-sop-50-10-8-1
+  geography: us
+view: "Helen Guo works an SBA 7(a) example: $100K a year in loan payments needs $125K of cash flow at 1.25x coverage, measured on historical results, not a forecast."
+creator:
+  name: "SMB Deal Hunter (Helen Guo)"
+  channel: https://www.youtube.com/@smbdealhunter
+source:
+  url: https://www.youtube.com/watch?v=CCH4H5b4IiE
+  start: 390
+  end: 409
+  published: 2026-10-16
+posts:
+  youtube: null
+  tiktok: null
+added: 2026-11-26

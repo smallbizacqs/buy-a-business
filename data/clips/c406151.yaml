@@ -1,0 +1,21 @@
+id: c406151
+leaves: [broker-credibility]
+facets:
+  speaker_role: searcher-operator
+  sells_services: "unknown"
+  format: how-to
+  audience: buyer
+  geography: us
+view: "SMBash suggests that a searcher's note to a broker should explain the buyer's connection to the business."
+creator:
+  name: "SMBash"
+  channel: https://www.youtube.com/@SMB_ash
+source:
+  url: https://www.youtube.com/watch?v=JoCR_Ztc-Ow
+  start: 660
+  end: 672
+  published: 2026-06-23
+posts:
+  youtube: null
+  tiktok: null
+added: 2026-11-26

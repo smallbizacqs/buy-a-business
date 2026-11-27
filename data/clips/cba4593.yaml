@@ -1,0 +1,21 @@
+id: cba4593
+leaves: [cash-free-debt-free, ar-ap-inventory]
+facets:
+  speaker_role: cpa-qoe
+  sells_services: "yes"
+  format: how-to
+  audience: buyer
+  geography: us
+view: "Darin Pierson, a CPA, says customer prepayments (deferred revenue) are a debt the buyer inherits in a cash-free, debt-free deal, so they belong in the working-capital adjustment."
+creator:
+  name: "Darin Pierson, CPA"
+  channel: https://www.youtube.com/@ashfordsky
+source:
+  url: https://www.youtube.com/watch?v=_Hb2co17Feo
+  start: 1248
+  end: 1268
+  published: 2026-07-24
+posts:
+  youtube: null
+  tiktok: null
+added: 2026-11-26

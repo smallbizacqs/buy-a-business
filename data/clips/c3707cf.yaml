@@ -1,0 +1,21 @@
+id: c3707cf
+leaves: [first-meeting, pre-loi-diligence]
+facets:
+  speaker_role: searcher-operator
+  sells_services: "unknown"
+  format: story
+  audience: buyer
+  geography: us
+view: "A buyer on The Operating System Show runs a three-hour first meeting with the owner covering the business's past, present and future, before any LOI."
+creator:
+  name: "The Operating System Show"
+  channel: https://www.youtube.com/@TheOperatingSystemShow
+source:
+  url: https://www.youtube.com/watch?v=kc5t7Qsp6oE
+  start: 955
+  end: 971
+  published: 2026-10-13
+posts:
+  youtube: null
+  tiktok: null
+added: 2026-11-26

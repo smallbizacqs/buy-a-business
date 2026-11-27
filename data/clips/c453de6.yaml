@@ -1,0 +1,21 @@
+id: c453de6
+leaves: [seller-consulting-agreement, getting-seller-to-carry]
+facets:
+  speaker_role: consultant
+  sells_services: "unknown"
+  format: story
+  audience: buyer
+  geography: us
+view: "Barlow & Williams describe a deal where the seller refused a seller note and the buyer proposed a three-year consulting agreement instead."
+creator:
+  name: "Barlow & Williams"
+  channel: https://www.youtube.com/@BarlowAndWilliams
+source:
+  url: https://www.youtube.com/watch?v=JG9q8P81TgQ
+  start: 2618
+  end: 2644
+  published: 2026-05-28
+posts:
+  youtube: null
+  tiktok: null
+added: 2026-11-26

@@ -1,0 +1,21 @@
+id: ca97f03
+leaves: [capital-stack, seller-financing-basics, dscr]
+facets:
+  speaker_role: lender
+  sells_services: "yes"
+  format: worked-numbers
+  audience: buyer
+  geography: us
+view: "Pioneer Capital Advisory compares two deals at the same price with a different split between bank debt and seller financing."
+creator:
+  name: "Pioneer Capital Advisory"
+  channel: https://www.youtube.com/@PioneerCapitalAdvisoryLLC
+source:
+  url: https://www.youtube.com/watch?v=vP3A7JyKHt8
+  start: 464
+  end: 494
+  published: 2026-06-28
+posts:
+  youtube: null
+  tiktok: null
+added: 2026-11-26

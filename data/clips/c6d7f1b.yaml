@@ -1,0 +1,21 @@
+id: c6d7f1b
+leaves: [first-conversation, cold-calling]
+facets:
+  speaker_role: coach-course
+  sells_services: "unknown"
+  format: how-to
+  audience: buyer
+  geography: us
+view: "Wolf of Main Street opens a cold call to an owner by asking for permission first (\"Do you have a minute?\") before any pitch."
+creator:
+  name: "Wolf of Main Street"
+  channel: https://www.youtube.com/@wolf-of-main-st
+source:
+  url: https://www.youtube.com/watch?v=FZ98S2zrji0
+  start: 573
+  end: 592
+  published: 2026-10-14
+posts:
+  youtube: null
+  tiktok: null
+added: 2026-11-26

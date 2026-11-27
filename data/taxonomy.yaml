@@ -1,0 +1,353 @@
+# The structure of the guide: stage → topic → leaf question, plus facets.
+# Leaf ids are permanent: never rename or reuse one. Merge with `replaced_by`.
+# A clip or answer always points at a leaf; its stage comes from the leaf's topic.
+version: 1
+
+stages:
+  - id: decide
+    order: 1
+    title: Should you buy a business?
+    summary: What buying a small business involves, what it costs you in time, money and risk, and whether you'd run it yourself.
+  - id: fund
+    order: 2
+    title: Choose your path and line up the money
+    summary: Self-funded with an SBA loan, a search fund, a holding company or deal-by-deal investors, and how each is financed.
+  - id: find
+    order: 3
+    title: Decide what to buy and find deals
+    summary: Your criteria (the "buy box"), brokers and marketplaces, reaching owners directly, and how long a search takes.
+  - id: approach
+    order: 4
+    title: Talk to owners and brokers
+    summary: First calls and meetings, earning an owner's trust, working with brokers, and the early screen before an offer.
+  - id: evaluate
+    order: 5
+    title: "Size it up: real earnings, fair price, what you can borrow"
+    summary: Seller's discretionary earnings and add-backs, valuation multiples, debt coverage, and the risks that change the price.
+  - id: offer
+    order: 6
+    title: Make the offer (the LOI)
+    summary: The letter of intent, deal structure, working capital, negotiation, and the advisors you'll need.
+  - id: confirm
+    order: 7
+    title: Check everything and finalize the loan
+    summary: Financial, legal and operational due diligence, when to walk away, and the lender's approval process.
+  - id: close
+    order: 8
+    title: Sign and close
+    summary: The purchase agreement and closing day. In small deals, signing and closing usually happen on the same day.
+  - id: own
+    order: 9
+    title: Your first 100 days as owner
+    summary: The seller's transition, keeping employees and customers, and what to change (and not change) first.
+  - id: later
+    order: 10
+    title: "Later: grow, buy more, or sell"
+    summary: Growing value, add-on acquisitions and holding companies, and exit options.
+
+# skill: the topic's skill name; status published|coming. exempt: a reason instead of a skill.
+topics:
+  - {id: decide/buy-vs-build, stage: decide, title: "Buy, start or franchise", skill: buy-vs-start-a-business}
+  - {id: decide/fit, stage: decide, title: Is it a fit for you, skill: am-i-ready-to-buy-a-business}
+  - {id: decide/operator-model, stage: decide, title: Run it yourself or hire a manager, skill: owner-operator-vs-absentee-owner}
+  - {id: decide/economics, stage: decide, title: What you'll earn, skill: business-owner-take-home-pay}
+  - {id: decide/risk, stage: decide, title: What you're putting at risk, skill: personal-guarantee-risk-review}
+  - {id: decide/what-to-buy, stage: decide, title: What kind of business, skill: what-small-business-to-buy}
+  - {id: decide/learn, stage: decide, title: Where to learn more, exempt: "A list of programs and communities, not a job a skill does."}
+  - {id: fund/buyer-path, stage: fund, title: Choose your path, skill: search-fund-vs-sba-loan}
+  - {id: fund/sba-loan, stage: fund, title: SBA 7(a) loans, skill: sba-7a-acquisition-loan}
+  - {id: fund/sba-rules, stage: fund, title: Current SBA rules, skill: sba-sop-rule-check}
+  - {id: fund/seller-financing, stage: fund, title: Seller financing, skill: seller-note-structuring}
+  - {id: fund/creative, stage: fund, title: Other ways to fund the equity, skill: acquisition-equity-sources}
+  - {id: fund/raising-equity, stage: fund, title: Raising money from investors, skill: search-fund-investor-raise}
+  - {id: fund/modeling, stage: fund, title: Modeling the deal, skill: acquisition-deal-model}
+  - {id: find/buy-box, stage: find, title: Your buy box, skill: business-acquisition-criteria}
+  - {id: find/brokers, stage: find, title: Brokers and marketplaces, skill: find-businesses-for-sale}
+  - {id: find/off-market, stage: find, title: Finding owners who aren't listed, skill: off-market-deal-sourcing}
+  - {id: find/search-process, stage: find, title: Running the search, skill: acquisition-search-plan}
+  - {id: approach/owner-outreach, stage: approach, title: Talking to owners, skill: business-owner-outreach}
+  - {id: approach/broker-relations, stage: approach, title: Working with brokers, skill: business-broker-relations}
+  - {id: approach/screening, stage: approach, title: The early screen, skill: screen-business-cim}
+  - {id: evaluate/earnings, stage: evaluate, title: Real earnings, skill: sde-and-add-backs-analysis}
+  - {id: evaluate/valuation, stage: evaluate, title: What it's worth, skill: small-business-valuation}
+  - {id: evaluate/debt-capacity, stage: evaluate, title: What you can borrow, skill: sba-dscr-and-affordability}
+  - {id: evaluate/risk-factors, stage: evaluate, title: Risks that change the price, skill: small-business-risk-assessment}
+  - {id: offer/loi, stage: offer, title: The letter of intent, skill: loi-for-small-business-acquisition}
+  - {id: offer/structure, stage: offer, title: Deal structure, skill: small-business-deal-structure}
+  - {id: offer/working-capital, stage: offer, title: Working capital, skill: working-capital-peg-for-small-business}
+  - {id: offer/negotiation, stage: offer, title: Negotiation, skill: small-business-acquisition-negotiation}
+  - {id: offer/team, stage: offer, title: Your advisors, skill: choose-acquisition-advisors}
+  - {id: confirm/financial-dd, stage: confirm, title: Financial due diligence, skill: small-business-financial-due-diligence}
+  - {id: confirm/legal-dd, stage: confirm, title: Legal due diligence, skill: small-business-legal-due-diligence}
+  - {id: confirm/ops-dd, stage: confirm, title: Operational due diligence, skill: small-business-operational-due-diligence}
+  - {id: confirm/go-no-go, stage: confirm, title: Go or walk away, skill: acquisition-go-no-go-review}
+  - {id: confirm/lender-process, stage: confirm, title: The lender's process, skill: sba-lender-package}
+  - {id: close/purchase-agreement, stage: close, title: The purchase agreement, skill: small-business-purchase-agreement}
+  - {id: close/mechanics, stage: close, title: Closing day, skill: small-business-closing-checklist}
+  - {id: own/transition, stage: own, title: The handover, skill: seller-transition-plan}
+  - {id: own/first-100-days, stage: own, title: The first 100 days, skill: first-100-days-after-acquisition}
+  - {id: own/operate, stage: own, title: Running it, skill: acquired-business-operating-system}
+  - {id: later/growth, stage: later, title: Growing value, skill: professionalize-small-business}
+  - {id: later/add-ons, stage: later, title: Buying more, skill: add-on-acquisition-plan}
+  - {id: later/exit, stage: later, title: Selling, skill: small-business-exit-options}
+
+# Skills that sit on a single leaf (a distinct job) or across stages.
+extra_skills:
+  - {skill: buy-a-business, kind: entry, covers: router}
+  - {skill: grill-my-deal, kind: entry, covers: router}
+  - {skill: verify-seller-financials, kind: specialist, covers: proof-of-cash}
+  - {skill: ai-disruption-risk-check, kind: specialist, covers: ai-disruption}
+
+leaves:
+  # decide
+  - {id: buy-vs-start, topic: decide/buy-vs-build, question: "Should I buy an existing business or start one?"}
+  - {id: buy-vs-franchise, topic: decide/buy-vs-build, question: "Should I buy an independent business, a franchise resale or a new franchise?"}
+  - {id: what-is-eta, topic: decide/buy-vs-build, question: "What is entrepreneurship through acquisition, and how does the path work?"}
+  - {id: readiness, topic: decide/fit, question: "Am I ready to buy a business: finances, temperament and timing?"}
+  - {id: no-industry-experience, topic: decide/fit, question: "Can I buy a business in an industry I've never worked in?"}
+  - {id: operator-skills, topic: decide/fit, question: "What skills does an owner-operator actually need?"}
+  - {id: career-switch, topic: decide/fit, question: "How do people move from banking, tech, consulting or the military into owning a business?"}
+  - {id: mba-path, topic: decide/fit, question: "Is buying a business a good path after an MBA, and does the MBA help?"}
+  - {id: keep-day-job, topic: decide/fit, question: "Can I search for or buy a business while keeping my job?"}
+  - {id: partner-or-solo, topic: decide/fit, question: "Should I search and buy with a partner or alone?"}
+  - {id: spouse-family, topic: decide/fit, question: "How do I talk through the risk with my spouse and family?"}
+  - {id: operator-vs-absentee, topic: decide/operator-model, question: "Should I run the business myself or put in a manager?"}
+  - {id: hours-lifestyle, topic: decide/operator-model, question: "What are the hours and lifestyle like in the first year?"}
+  - {id: owner-take-home, topic: decide/economics, question: "How much will I actually take home after the loan payments?"}
+  - {id: j-curve, topic: decide/economics, question: "How long until the business pays me a normal salary?"}
+  - {id: wealth-building, topic: decide/economics, question: "How does owning a small business build long-term wealth?"}
+  - {id: silver-tsunami, topic: decide/economics, question: "Is the wave of retiring owners a real buying opportunity?"}
+  - {id: personal-guarantee, topic: decide/risk, question: "What does a personal guarantee put at risk, and can I limit it?"}
+  - {id: pg-insurance, topic: decide/risk, question: "Can I insure my SBA personal guarantee?"}
+  - {id: collateral-home, topic: decide/risk, question: "Will the lender take my house or other assets as collateral?"}
+  - {id: failure-stories, topic: decide/risk, question: "What happens when an acquisition fails, and why do they fail?"}
+  - {id: asset-protection, topic: decide/risk, question: "How do I protect personal assets when I buy a business?"}
+  - {id: boring-business-thesis, topic: decide/what-to-buy, question: "Why buy a 'boring' business, and which ones?"}
+  - {id: resilient-businesses, topic: decide/what-to-buy, question: "Which small businesses hold up through recessions and AI?"}
+  - {id: businesses-to-avoid, topic: decide/what-to-buy, question: "Which businesses should a first-time buyer avoid?"}
+  - {id: eta-programs-communities, topic: decide/learn, question: "Which programs, conferences and communities about buying a business are worth it?"}
+  # fund
+  - {id: self-funded-search, topic: fund/buyer-path, question: "How does a self-funded search work?"}
+  - {id: traditional-search-fund, topic: fund/buyer-path, question: "How does an investor-backed search fund work?"}
+  - {id: searcher-economics, topic: fund/buyer-path, question: "How does a searcher earn equity in a search fund?"}
+  - {id: holdco, topic: fund/buyer-path, question: "Should I build a holding company instead of doing one deal?"}
+  - {id: permanent-capital, topic: fund/buyer-path, question: "What is permanent capital, and how is buy-and-hold different?"}
+  - {id: independent-sponsor, topic: fund/buyer-path, question: "How does the independent-sponsor (deal-by-deal) model work?"}
+  - {id: choose-path, topic: fund/buyer-path, question: "Self-funded, search fund, independent sponsor or holdco: which fits me?"}
+  - {id: micro-pe-lmm, topic: fund/buyer-path, question: "How do micro private equity and lower-middle-market funds differ from buying one business?"}
+  - {id: family-office-capital, topic: fund/buyer-path, question: "How do family offices back buyers and direct deals?"}
+  - {id: sba-7a-basics, topic: fund/sba-loan, question: "How does an SBA 7(a) loan to buy a business work?"}
+  - {id: eligibility-credit, topic: fund/sba-loan, question: "Do I qualify for an SBA acquisition loan: credit, experience, liquidity?"}
+  - {id: equity-injection, topic: fund/sba-loan, question: "How much of my own money does an SBA loan require, and what counts toward it?"}
+  - {id: underwriting, topic: fund/sba-loan, question: "How do SBA lenders underwrite an acquisition?"}
+  - {id: rates-fees-terms, topic: fund/sba-loan, question: "What are SBA 7(a) rates, guaranty fees and terms?"}
+  - {id: lender-selection, topic: fund/sba-loan, question: "How do I choose an SBA lender?"}
+  - {id: 7a-vs-504, topic: fund/sba-loan, question: "SBA 7(a) or 504: which applies when real estate is part of the deal?"}
+  - {id: real-estate-in-deal, topic: fund/sba-loan, question: "Can I finance the building together with the business?"}
+  - {id: loan-limits-pari-passu, topic: fund/sba-loan, question: "What is the largest SBA loan, and how are bigger deals financed?"}
+  - {id: wc-credit-line, topic: fund/sba-loan, question: "Can the loan include a working-capital credit line?"}
+  - {id: online-saas-eligibility, topic: fund/sba-loan, question: "Can an SBA loan fund an online, SaaS or e-commerce business?"}
+  - {id: sop-rule-changes, topic: fund/sba-rules, question: "What changed in the SBA's lending rules (SOP 50 10), and when?"}
+  - {id: citizenship-rule, topic: fund/sba-rules, question: "Must every owner be a US citizen to get an SBA loan?"}
+  - {id: investor-equity-rules, topic: fund/sba-rules, question: "What are the SBA rules for outside investors and guarantors?"}
+  - {id: partial-change-of-ownership, topic: fund/sba-rules, question: "Can I buy part of a business with an SBA loan, and must the seller keep guaranteeing?"}
+  - {id: earnout-ban-forgivable-note, topic: fund/sba-rules, question: "The SBA doesn't allow earnouts. What can a deal use instead?"}
+  - {id: seller-financing-basics, topic: fund/seller-financing, question: "Why and how much will a seller finance?"}
+  - {id: seller-note-standby, topic: fund/seller-financing, question: "Does the SBA require the seller note to be on full standby, and for how long?"}
+  - {id: seller-note-terms, topic: fund/seller-financing, question: "What rate, term and amortization should a seller note have?"}
+  - {id: seller-note-as-equity, topic: fund/seller-financing, question: "Can the seller note count toward my equity injection?"}
+  - {id: seller-note-refinance-timing, topic: fund/seller-financing, question: "When can I refinance or pay off the seller note?"}
+  - {id: getting-seller-to-carry, topic: fund/seller-financing, question: "How do I get a reluctant seller to carry a note?"}
+  - {id: set-off-default, topic: fund/seller-financing, question: "What happens if I can't pay the seller note, and can I offset claims against it?"}
+  - {id: little-money-down, topic: fund/creative, question: "Can I really buy a business with little or no money down?"}
+  - {id: equity-sources-robs-heloc, topic: fund/creative, question: "Can I fund my down payment from a 401(k) (ROBS), a home equity line or savings?"}
+  - {id: conventional-vs-sba, topic: fund/creative, question: "When is a conventional or cash-flow loan better than an SBA loan?"}
+  - {id: mezz-private-credit, topic: fund/creative, question: "When do mezzanine debt or private credit make sense?"}
+  - {id: raise-from-investors, topic: fund/raising-equity, question: "How do I raise equity from investors for a single deal?"}
+  - {id: investor-terms, topic: fund/raising-equity, question: "What terms do investors expect: preferred return, carry, ownership?"}
+  - {id: what-investors-want, topic: fund/raising-equity, question: "What do investors in small-business buyers look for?"}
+  - {id: search-fund-returns, topic: fund/raising-equity, question: "What returns do search-fund investors expect?"}
+  - {id: 506b-506c-securities, topic: fund/raising-equity, question: "Rule 506(b) or 506(c): can I advertise that I'm raising money?"}
+  - {id: co-gp-jv, topic: fund/raising-equity, question: "Should I bring in a co-sponsor or joint-venture partner?"}
+  - {id: capital-stack, topic: fund/modeling, question: "How do I layer bank debt, a seller note and equity?"}
+  - {id: deal-model, topic: fund/modeling, question: "How do I build an acquisition model that works for the lender, the seller and me?"}
+  # find
+  - {id: define-buy-box, topic: find/buy-box, question: "How do I define my buy box?"}
+  - {id: deal-size, topic: find/buy-box, question: "What size of business should a first-time buyer target?"}
+  - {id: industry-selection, topic: find/buy-box, question: "How do I pick an industry?"}
+  - {id: recurring-revenue, topic: find/buy-box, question: "Why look for recurring revenue, and which businesses have it?"}
+  - {id: what-makes-a-good-target, topic: find/buy-box, question: "What makes a small business worth buying?"}
+  - {id: geography-relocation, topic: find/buy-box, question: "Should I buy locally or move for the right deal?"}
+  - {id: how-brokers-work, topic: find/brokers, question: "How do business brokers work, and whose side are they on?"}
+  - {id: listing-marketplaces, topic: find/brokers, question: "Which marketplaces list businesses for sale?"}
+  - {id: why-listings-dont-sell, topic: find/brokers, question: "Why do most listed businesses never sell, and what does that tell a buyer?"}
+  - {id: buy-side-advisor, topic: find/brokers, question: "Should I hire a buy-side advisor?"}
+  - {id: off-market-sourcing, topic: find/off-market, question: "How do I find owners whose businesses aren't listed?"}
+  - {id: cold-email, topic: find/off-market, question: "How do I email business owners I don't know?"}
+  - {id: cold-calling, topic: find/off-market, question: "Does calling owners directly work, and what do I say?"}
+  - {id: direct-mail, topic: find/off-market, question: "Do letters and direct mail to owners work?"}
+  - {id: data-and-lists, topic: find/off-market, question: "Which data sources and lists help find owners?"}
+  - {id: referral-networks, topic: find/off-market, question: "How do I find deals through accountants, attorneys, bankers and referrals?"}
+  - {id: interns-and-teams, topic: find/off-market, question: "Should I use interns, assistants or a sourcing team?"}
+  - {id: ai-sourcing, topic: find/off-market, question: "Can AI find and screen deals for me?"}
+  - {id: search-timeline, topic: find/search-process, question: "How long does a search take?"}
+  - {id: deal-funnel-math, topic: find/search-process, question: "How many deals and offers does it take to close one?"}
+  - {id: search-ran-out, topic: find/search-process, question: "What happens when a search runs out of time or money?"}
+  - {id: competition-crowded, topic: find/search-process, question: "Is buying small businesses getting crowded, and how do I stand out?"}
+  - {id: search-budget, topic: find/search-process, question: "How do I pay my living costs during the search?"}
+  # approach
+  - {id: first-conversation, topic: approach/owner-outreach, question: "What do I say on the first call with an owner?"}
+  - {id: first-meeting, topic: approach/owner-outreach, question: "How should I run the first meeting with an owner?"}
+  - {id: when-owner-not-ready, topic: approach/owner-outreach, question: "What do I do when an owner isn't ready to sell yet?"}
+  - {id: earn-trust, topic: approach/owner-outreach, question: "How do I earn a retiring owner's trust?"}
+  - {id: seller-psychology, topic: approach/owner-outreach, question: "What do sellers care about besides price?"}
+  - {id: why-owner-selling, topic: approach/owner-outreach, question: "How do I find out why the owner is really selling?"}
+  - {id: buyer-of-choice, topic: approach/owner-outreach, question: "How do I win a deal without the highest offer?"}
+  - {id: broker-credibility, topic: approach/broker-relations, question: "How do I look credible to brokers?"}
+  - {id: bad-brokers, topic: approach/broker-relations, question: "How do I get a deal done with an unresponsive or difficult broker?"}
+  - {id: nda, topic: approach/screening, question: "What should I know before signing an NDA with a seller?"}
+  - {id: cim-teaser, topic: approach/screening, question: "How do I read a teaser or CIM, and what's missing from it?"}
+  - {id: early-red-flags, topic: approach/screening, question: "Which early red flags should make me pass before an offer?"}
+  - {id: pre-loi-diligence, topic: approach/screening, question: "How much checking should I do before making an offer?"}
+  - {id: early-docs-request, topic: approach/screening, question: "Which documents should I get before making an offer?"}
+  # evaluate
+  - {id: sde-vs-ebitda, topic: evaluate/earnings, question: "SDE or EBITDA: which measure applies, and why?"}
+  - {id: add-backs, topic: evaluate/earnings, question: "Which add-backs are legitimate and which are inflated?"}
+  - {id: owner-replacement-cost, topic: evaluate/earnings, question: "How do I account for the cost of replacing the owner's work?"}
+  - {id: tax-returns-vs-books, topic: evaluate/earnings, question: "Why don't the tax returns match the P&L, and which one counts?"}
+  - {id: cash-business, topic: evaluate/earnings, question: "How should a buyer treat claimed cash income that isn't reported?"}
+  - {id: proof-of-cash, topic: evaluate/earnings, question: "How do I tie reported revenue to the bank statements?"}
+  - {id: trends-ttm, topic: evaluate/earnings, question: "How do I weigh the last 12 months against prior years and declining trends?"}
+  - {id: covid-ppp-normalization, topic: evaluate/earnings, question: "How do I adjust for unusual years such as COVID and PPP loans?"}
+  - {id: capex-equipment, topic: evaluate/earnings, question: "How do I account for equipment, vehicles and future capital spending?"}
+  - {id: what-multiple, topic: evaluate/valuation, question: "What multiple should I pay for a small business?"}
+  - {id: value-drivers, topic: evaluate/valuation, question: "What earns a business a higher or lower multiple?"}
+  - {id: valuation-methods, topic: evaluate/valuation, question: "How is a small business valued: multiples, cash flow or assets?"}
+  - {id: asking-price-gap, topic: evaluate/valuation, question: "How do I handle an unrealistic asking price?"}
+  - {id: revenue-based-valuation, topic: evaluate/valuation, question: "How are practices and agencies valued as a percentage of revenue?"}
+  - {id: dscr, topic: evaluate/debt-capacity, question: "What debt service coverage do lenders require, and how is it calculated?"}
+  - {id: affordability, topic: evaluate/debt-capacity, question: "How much can I pay for a business given the loan payments?"}
+  - {id: stress-test, topic: evaluate/debt-capacity, question: "How do I stress-test a deal for a downturn?"}
+  - {id: customer-concentration, topic: evaluate/risk-factors, question: "How much customer concentration is too much?"}
+  - {id: owner-dependence, topic: evaluate/risk-factors, question: "Does the business depend too much on the owner?"}
+  - {id: key-employee-risk, topic: evaluate/risk-factors, question: "What if key employees leave after the sale?"}
+  - {id: supplier-concentration, topic: evaluate/risk-factors, question: "What if a key supplier relationship breaks?"}
+  - {id: license-dependence, topic: evaluate/risk-factors, question: "Does the business need a license I don't hold?"}
+  - {id: ai-disruption, topic: evaluate/risk-factors, question: "Will AI disrupt this particular business?"}
+  - {id: labor-availability, topic: evaluate/risk-factors, question: "Can I hire enough technicians or skilled workers?"}
+  - {id: pe-consolidation, topic: evaluate/risk-factors, question: "Is private equity rolling up this industry, and is that good or bad for me?"}
+  - {id: macro-exposure, topic: evaluate/risk-factors, question: "How exposed is the business to interest rates, tariffs and the economy?"}
+  - {id: hidden-upside, topic: evaluate/risk-factors, question: "How do I spot upside the owner hasn't captured?"}
+  - {id: distressed-turnaround, topic: evaluate/risk-factors, question: "Should I buy a struggling business to turn it around?"}
+  # offer
+  - {id: loi-contents, topic: offer/loi, question: "What goes in a letter of intent, and what part of it is binding?"}
+  - {id: settle-before-diligence, topic: offer/loi, question: "Which terms should be settled in the LOI rather than later?"}
+  - {id: exclusivity, topic: offer/loi, question: "How long should exclusivity (no-shop) last?"}
+  - {id: loi-mistakes, topic: offer/loi, question: "Which LOI mistakes cost buyers later?"}
+  - {id: retrade, topic: offer/loi, question: "When is it fair to change the price after the LOI?"}
+  - {id: asset-vs-stock, topic: offer/structure, question: "Asset purchase or stock purchase?"}
+  - {id: earnouts, topic: offer/structure, question: "When and how should a deal use an earnout?"}
+  - {id: earnout-disputes, topic: offer/structure, question: "How do earnouts go wrong, and how are disputes prevented?"}
+  - {id: rollover-equity, topic: offer/structure, question: "Should the seller keep a stake (rollover equity)?"}
+  - {id: cash-at-close, topic: offer/structure, question: "How much should be paid at closing versus later?"}
+  - {id: partial-buy-recap, topic: offer/structure, question: "Can I buy a majority now and the rest later?"}
+  - {id: seller-consulting-agreement, topic: offer/structure, question: "How should a seller's consulting or transition agreement be structured?"}
+  - {id: non-compete, topic: offer/structure, question: "What non-compete and non-solicit should the seller sign?"}
+  - {id: real-estate-lease-or-buy, topic: offer/structure, question: "Should I buy the seller's real estate or lease it?"}
+  - {id: tax-structuring, topic: offer/structure, question: "How do taxes shape the deal structure and price allocation?"}
+  - {id: what-is-nwc, topic: offer/working-capital, question: "What is net working capital in a deal, and why does it matter?"}
+  - {id: peg, topic: offer/working-capital, question: "How is the working-capital target (peg) set and trued up?"}
+  - {id: cash-free-debt-free, topic: offer/working-capital, question: "What does 'cash-free, debt-free' mean for the buyer?"}
+  - {id: ar-ap-inventory, topic: offer/working-capital, question: "How are receivables, payables, inventory and customer deposits handled?"}
+  - {id: wip-backlog, topic: offer/working-capital, question: "How are work in progress and backlog handled for contractors?"}
+  - {id: price-vs-terms, topic: offer/negotiation, question: "How do I trade price against terms?"}
+  - {id: tactics, topic: offer/negotiation, question: "Which negotiation approaches work with owner-sellers?"}
+  - {id: deal-momentum, topic: offer/negotiation, question: "How do I keep a deal from stalling?"}
+  - {id: choosing-counsel, topic: offer/team, question: "Do I need a lawyer to buy a business, and how do I choose one?"}
+  - {id: advisor-costs, topic: offer/team, question: "What do lawyers, accountants and diligence providers cost?"}
+  - {id: deal-team, topic: offer/team, question: "Who should be on my acquisition team?"}
+  - {id: cpa-role, topic: offer/team, question: "What role should my accountant play?"}
+  # confirm
+  - {id: qoe-need, topic: confirm/financial-dd, question: "Do I need a quality of earnings report?"}
+  - {id: qoe-cost-scope, topic: confirm/financial-dd, question: "What does a quality of earnings report cost, and is a lighter one enough?"}
+  - {id: sba-qoe-3m-rule, topic: confirm/financial-dd, question: "When does the SBA require a quality of earnings report?"}
+  - {id: fraud-misstatement, topic: confirm/financial-dd, question: "What fraud and misstatements does diligence uncover?"}
+  - {id: phased-diligence, topic: confirm/financial-dd, question: "How do I stage diligence spending in case the deal dies?"}
+  - {id: revenue-quality-churn, topic: confirm/financial-dd, question: "How do I check customer churn, retention and revenue quality?"}
+  - {id: financial-dd-checklist, topic: confirm/financial-dd, question: "What belongs on a financial diligence checklist?"}
+  - {id: legal-dd-scope, topic: confirm/legal-dd, question: "What does legal diligence cover in a small deal?"}
+  - {id: contract-assignment, topic: confirm/legal-dd, question: "Will key contracts transfer to me?"}
+  - {id: lease-assignment, topic: confirm/legal-dd, question: "How do I handle the landlord and the lease?"}
+  - {id: licenses-permits-transfer, topic: confirm/legal-dd, question: "Do licenses and permits transfer to a buyer?"}
+  - {id: litigation-liabilities, topic: confirm/legal-dd, question: "How do I find hidden liabilities and lawsuits?"}
+  - {id: ip-tech, topic: confirm/legal-dd, question: "How do I check intellectual property, code and domains?"}
+  - {id: environmental, topic: confirm/legal-dd, question: "When do I need an environmental (Phase I) report?"}
+  - {id: regulatory-compliance, topic: confirm/legal-dd, question: "Which regulatory and licensing-board issues should I check?"}
+  - {id: employee-dd, topic: confirm/ops-dd, question: "How do I check employees, payroll and worker classification?"}
+  - {id: customer-dd-calls, topic: confirm/ops-dd, question: "Should I talk to customers before closing, and how?"}
+  - {id: marketing-dd, topic: confirm/ops-dd, question: "What should I ask about marketing and where new customers come from?"}
+  - {id: systems-data, topic: confirm/ops-dd, question: "How do I assess the software, records and data quality?"}
+  - {id: work-in-business-first, topic: confirm/ops-dd, question: "Should I spend time working in the business before closing?"}
+  - {id: insurance-review, topic: confirm/ops-dd, question: "What insurance should I review or buy?"}
+  - {id: ai-assisted-diligence, topic: confirm/ops-dd, question: "Can AI tools speed up diligence?"}
+  - {id: deal-killers, topic: confirm/go-no-go, question: "Which diligence findings should kill or reprice a deal?"}
+  - {id: walk-away, topic: confirm/go-no-go, question: "How do I know when to walk away?"}
+  - {id: seller-surprises, topic: confirm/go-no-go, question: "Which seller problems usually surface in diligence?"}
+  - {id: lender-package, topic: confirm/lender-process, question: "What does the lender need from me?"}
+  - {id: approval-timeline, topic: confirm/lender-process, question: "How long do SBA approval and closing take?"}
+  - {id: business-appraisal, topic: confirm/lender-process, question: "Does the lender require an independent business valuation?"}
+  - {id: lender-declines, topic: confirm/lender-process, question: "Why do lenders decline acquisition loans?"}
+  # close
+  - {id: apa-key-terms, topic: close/purchase-agreement, question: "What are the key terms of a purchase agreement for a small business?"}
+  - {id: reps-warranties, topic: close/purchase-agreement, question: "What representations and warranties should the buyer get?"}
+  - {id: indemnification, topic: close/purchase-agreement, question: "How does indemnification protect the buyer?"}
+  - {id: escrow-holdback, topic: close/purchase-agreement, question: "Should part of the price sit in escrow or a holdback?"}
+  - {id: closing-conditions, topic: close/purchase-agreement, question: "Which closing conditions protect the buyer?"}
+  - {id: rw-insurance, topic: close/purchase-agreement, question: "Is representations and warranties insurance available or worth it for small deals?"}
+  - {id: closing-day, topic: close/mechanics, question: "What happens on closing day?"}
+  - {id: closing-costs, topic: close/mechanics, question: "What are the total closing costs?"}
+  - {id: entity-setup, topic: close/mechanics, question: "What kind of company should I buy through?"}
+  - {id: day-one-readiness, topic: close/mechanics, question: "What must be ready on day one: bank, payroll, insurance?"}
+  # own
+  - {id: seller-transition-period, topic: own/transition, question: "How long should the seller stay, and what should they do?"}
+  - {id: announce-to-employees, topic: own/transition, question: "How and when do I tell the employees?"}
+  - {id: customer-retention, topic: own/transition, question: "How do I keep customers through the change of owner?"}
+  - {id: seller-wont-let-go, topic: own/transition, question: "What if the seller interferes or won't let go?"}
+  - {id: employee-retention, topic: own/transition, question: "How do I keep employees after the purchase?"}
+  - {id: first-100-days-plan, topic: own/first-100-days, question: "What should I do, and not do, in the first 100 days?"}
+  - {id: dont-change-too-fast, topic: own/first-100-days, question: "What shouldn't I change right away?"}
+  - {id: culture, topic: own/first-100-days, question: "How do I lead the team as the new owner?"}
+  - {id: raise-prices, topic: own/first-100-days, question: "When and how should I raise prices?"}
+  - {id: financial-controls-kpis, topic: own/first-100-days, question: "How do I set up reporting, financial controls and key numbers?"}
+  - {id: operating-system-eos, topic: own/operate, question: "Should I adopt EOS or another management system?"}
+  - {id: hiring-team, topic: own/operate, question: "How do I hire and strengthen the team?"}
+  - {id: sales-marketing-growth, topic: own/operate, question: "How do I grow sales in a business I bought?"}
+  - {id: ai-in-operations, topic: own/operate, question: "How can I use AI to improve the business I bought?"}
+  - {id: peer-groups-board, topic: own/operate, question: "Should I set up a board or join a peer group?"}
+  - {id: owner-wellbeing, topic: own/operate, question: "How do owners handle isolation and burnout?"}
+  - {id: post-close-failure, topic: own/operate, question: "Why do acquisitions fail after closing?"}
+  # later
+  - {id: value-creation, topic: later/growth, question: "How do I increase the value of the business after buying it?"}
+  - {id: professionalize-systems, topic: later/growth, question: "How do I make the business run without me?"}
+  - {id: add-on-acquisitions, topic: later/add-ons, question: "When should I make an add-on acquisition or a second deal?"}
+  - {id: rollup-strategy, topic: later/add-ons, question: "How does a roll-up (buy-and-build) create value?"}
+  - {id: multiple-arbitrage, topic: later/add-ons, question: "Is multiple arbitrage real for small roll-ups?"}
+  - {id: integration, topic: later/add-ons, question: "How do I integrate and rebrand businesses I acquire?"}
+  - {id: too-many-too-fast, topic: later/add-ons, question: "What goes wrong when you buy too much too fast?"}
+  - {id: ai-rollups, topic: later/add-ons, question: "What are AI-enabled roll-ups, and do they work?"}
+  - {id: holdco-operations, topic: later/add-ons, question: "How do I run several companies under a holding company?"}
+  - {id: exit-options, topic: later/exit, question: "What are my exit options?"}
+  - {id: sell-to-pe, topic: later/exit, question: "What is selling to private equity or a strategic buyer like?"}
+  - {id: refinance-recap, topic: later/exit, question: "Can I refinance or recapitalize to take money out?"}
+  - {id: cant-exit, topic: later/exit, question: "What if I can't sell the business later?"}
+  - {id: exit-taxes, topic: later/exit, question: "How are the proceeds of selling a business taxed?"}
+
+facets:
+  industry: [hvac, plumbing, electrical, roofing, landscaping, pest-control, pool-service, home-services, cleaning, commercial-services, cpa-accounting, dental, medical, veterinary, home-health, insurance-agency, law-firm, ria-advisory, marketing-agency, property-management, logistics, staffing, manufacturing, distribution, construction, auto-repair, car-wash, laundromat, self-storage, rv-mobile-home-park, vending, restaurant, retail, childcare, education, saas, e-commerce, online-content, franchise-resale, govcon, other]
+  buyer_path: [sba-solo, self-funded-search, search-fund, independent-sponsor, holdco, professional-practice, add-on]
+  deal_size: [under-1m, 1m-5m, 5m-20m, over-20m]
+  speaker_role: [searcher-operator, lender, broker, attorney, cpa-qoe, investor, exited-seller, coach-course, consultant]
+  format: [story, how-to, worked-numbers, rule-change, teardown, panel, opinion]
+  audience: [buyer, seller, investor]
+  rules_regime: [sba-sop-50-10-7-1, sba-sop-50-10-8, sba-sop-50-10-8-1]
+  geography: [us, uk, canada, australia, other]

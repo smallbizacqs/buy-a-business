@@ -1,0 +1,21 @@
+id: c91fd98
+leaves: [customer-concentration, owner-dependence]
+facets:
+  speaker_role: consultant
+  sells_services: "unknown"
+  format: story
+  audience: buyer
+  geography: us
+view: "Profit Logic walks through a business where 70% of revenue came from three customers tied to the previous owner, and how revenue fell after the sale."
+creator:
+  name: "Profit Logic"
+  channel: https://www.youtube.com/@ProfitLogicTV
+source:
+  url: https://www.youtube.com/watch?v=fbl9HkMiseU
+  start: 225
+  end: 261
+  published: 2026-10-06
+posts:
+  youtube: null
+  tiktok: null
+added: 2026-11-26

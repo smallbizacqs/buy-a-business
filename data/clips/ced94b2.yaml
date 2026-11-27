@@ -1,0 +1,21 @@
+id: ced94b2
+leaves: [retrade, earn-trust]
+facets:
+  speaker_role: searcher-operator
+  sells_services: "unknown"
+  format: opinion
+  audience: buyer
+  geography: us
+view: "PMI Acquisitions says a buyer should make one offer and not cut the price later unless something major turns up, because re-pricing costs the seller's trust."
+creator:
+  name: "PMI Acquisitions"
+  channel: https://www.youtube.com/@pmiacquisitions
+source:
+  url: https://www.youtube.com/watch?v=7vFP66rstdw
+  start: 565
+  end: 584
+  published: 2026-07-02
+posts:
+  youtube: null
+  tiktok: null
+added: 2026-11-26

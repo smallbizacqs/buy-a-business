@@ -1,0 +1,22 @@
+id: cc0df6d
+leaves: [customer-dd-calls]
+facets:
+  speaker_role: searcher-operator
+  sells_services: "unknown"
+  format: story
+  industry: other
+  audience: buyer
+  geography: us
+view: "Steven Pivnik describes what he missed in diligence when he bought a gymnastics gym, including talking to customers."
+creator:
+  name: "Steven Pivnik"
+  channel: https://www.youtube.com/@stevenpivnik
+source:
+  url: https://www.youtube.com/watch?v=K8RL91eJ7oI
+  start: 1023
+  end: 1046
+  published: 2026-11-04
+posts:
+  youtube: null
+  tiktok: null
+added: 2026-11-26

@@ -1,0 +1,21 @@
+id: c5a776d
+leaves: [deal-funnel-math]
+facets:
+  speaker_role: searcher-operator
+  sells_services: "unknown"
+  format: opinion
+  audience: buyer
+  geography: us
+view: "Marco Palmero says finding a deal doesn't mean it will close, and buyers shouldn't expect every originated deal to close."
+creator:
+  name: "Marco Palmero"
+  channel: https://www.youtube.com/@mpalmero
+source:
+  url: https://www.youtube.com/watch?v=B3vBeV_QllY
+  start: 101
+  end: 132
+  published: 2026-09-27
+posts:
+  youtube: null
+  tiktok: null
+added: 2026-11-26
