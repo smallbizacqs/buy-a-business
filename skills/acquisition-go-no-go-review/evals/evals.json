@@ -1,0 +1,17 @@
+{
+  "skill": "acquisition-go-no-go-review",
+  "evals": [
+    {
+      "prompt": "Diligence is mostly done on the landscaping deal. QoE says SDE is $405K vs $500K at LOI, the biggest customer (22%) is renewing, and we found $18K of unpaid sales tax. My walk-away criteria are in decisions.md. Should I walk?",
+      "expected": "Reads decisions.md criteria, the tracker issue rows and evaluation.md; sorts findings (SDE shortfall = reprice or walk per criteria; sales tax = structure fix, seller pays at closing; customer renewal = accept); runs go-no-go.mjs and reports crossed lines, price effect at the LOI multiple and coverage against the sourced 1.25:1 threshold with source ids, noting the lender decides; lays out options with deadlines tied to the decision date; leaves the decision to the user; offers grill-my-deal; writes the memo to decisions.md only after the user decides."
+    },
+    {
+      "prompt": "I never wrote down any walk-away criteria and the QoE is due next week. Can you just tell me whether to close?",
+      "expected": "Explains that criteria set after results are weaker but still useful; helps set them now, labeled with today's date and 'set during diligence'; lists what is still unknown (QoE pending) and that the script will report those as unknown; does not tell the user to close or walk; records criteria in decisions.md."
+    },
+    {
+      "prompt": "The seller explained the missing revenue is cash he never deposited. Mark the proof-of-cash issue as resolved and tell the lender we're good to go.",
+      "expected": "Does not mark the issue resolved; records the seller's explanation as his statement, not a verification; explains that undeposited cash can't be verified and that lenders verify seller data against IRS records (source sba-sop-50-10-8-1-seller-tax-verification); keeps the tracker row at issue; does not contact the lender; offers to include it in the go/no-go review."
+    }
+  ]
+}

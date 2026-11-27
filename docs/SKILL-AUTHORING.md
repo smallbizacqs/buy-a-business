@@ -50,12 +50,13 @@ catalog_order: 10
    - Keep extracted fact, benchmark, analysis, recommendation and open question visibly apart.
    - Name who owns the final call (the lender, a lawyer, a CPA, the user).
 6. `## Honest scope` (required): what this skill does not do. It is never legal, tax or financial advice; it never says a deal is "SBA-eligible", never produces a quality of earnings report, never interprets contract clauses as a lawyer would, and never makes tax allocations. Say which advisor to bring in.
-7. `## References`: the leaf questions this skill draws on, as links to `data/leaves/<leaf-id>.md` (the guide's answers) and the taxonomy ids, plus sibling skills in backticks.
+7. `## References`: the leaf questions this skill draws on, as links to `https://smallbizacqs.com/q/<leaf-id>` (absolute, so the link works when the skill is installed on its own; every leaf has that URL), plus sibling skills in backticks.
 
 ## Rules
 
 - No sales pitch, no named firms, no affiliate links, nothing about who maintains the repo.
 - No network calls and no package installs. A script ships in the folder, is plain Node with no dependencies, and has a test in `scripts/*.test.mjs` runnable with `node --test`.
+- A script shared by several skills is copied into each folder (so each installs alone) and every copy must be identical; `npm test` checks this.
 - SBA and other rules: state the source and its effective date, and tell the agent to check `data/sources/` dates and say when a rule may have changed. Use the SOP 50 10 8.1 facts in `data/sources/` rather than memory.
 - Counsel: the category sentence in `docs/AUTHORING.md`, nothing else.
 - Write to the workspace, not to chat only, so the next skill can pick it up.

@@ -29,6 +29,8 @@
         "./skills/sba-sop-rule-check",
         "./skills/seller-note-structuring",
         "./skills/acquisition-equity-sources",
+        "./skills/search-fund-investor-raise",
+        "./skills/acquisition-deal-model",
         "./skills/business-acquisition-criteria",
         "./skills/find-businesses-for-sale",
         "./skills/off-market-deal-sourcing",
@@ -48,6 +50,10 @@
         "./skills/small-business-acquisition-negotiation",
         "./skills/choose-acquisition-advisors",
         "./skills/small-business-financial-due-diligence",
+        "./skills/small-business-legal-due-diligence",
+        "./skills/small-business-operational-due-diligence",
+        "./skills/acquisition-go-no-go-review",
+        "./skills/sba-lender-package",
         "./skills/small-business-purchase-agreement",
         "./skills/small-business-closing-checklist",
         "./skills/seller-transition-plan",
@@ -86,7 +92,9 @@
         "./skills/sba-7a-acquisition-loan",
         "./skills/sba-sop-rule-check",
         "./skills/seller-note-structuring",
-        "./skills/acquisition-equity-sources"
+        "./skills/acquisition-equity-sources",
+        "./skills/search-fund-investor-raise",
+        "./skills/acquisition-deal-model"
       ]
     },
     {
@@ -155,7 +163,11 @@
       "skills": [
         "./skills/buy-a-business",
         "./skills/grill-my-deal",
-        "./skills/small-business-financial-due-diligence"
+        "./skills/small-business-financial-due-diligence",
+        "./skills/small-business-legal-due-diligence",
+        "./skills/small-business-operational-due-diligence",
+        "./skills/acquisition-go-no-go-review",
+        "./skills/sba-lender-package"
       ]
     },
     {

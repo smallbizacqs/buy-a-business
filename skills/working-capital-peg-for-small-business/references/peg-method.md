@@ -49,6 +49,7 @@ The script reports average, median, min, max, range, last-3-month average and wa
 - **Collar.** A band around the peg inside which nothing is paid. A deductible collar pays only the excess beyond the band; a tipping collar pays the whole difference once the band is exceeded. Zero collar is dollar-for-dollar.
 - **Disputes.** Objection window, a meeting, then an independent accountant decides the number only.
 - **Security.** A holdback or escrow, or the right to offset against a seller note (lawyer), covers a shortfall.
+- **SBA 7(a) deals.** Under SBA rules a working-capital true-up in the purchase agreement is not a rebate, and cash paid to the buyer under it can stay in the business (source `sba-sop-50-10-8-1-working-capital-true-up`). Separately, the lender analyzes whether working capital is adequate for at least the next 12 months (source `sba-sop-50-10-8-1-working-capital-adequacy`) and may finance the part of the purchase that relates to working assets such as receivables and inventory on a line of credit (source `sba-sop-50-10-8-1-working-assets-line`). SOP 50 10 8.1; check each source's `review_by` date.
 
 Show the user what each choice does: `--closing 92000 --collar 5000 --collar-type deductible` and again with `tipping`.
 

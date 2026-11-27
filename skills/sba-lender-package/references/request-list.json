@@ -1,0 +1,29 @@
+{
+  "area": "lender",
+  "note": "Lender package rows for diligence-tracker.csv (ids B01...). The lender's own checklist governs; map it onto these rows. phase: phase1 (package to the lender early), phase2 (third-party reports, approval), decision (commitment conditions before the go/no-go date). Tags for --exclude: real-estate, seller-note, qoe, co-borrower. Source ids in why are files in data/sources/.",
+  "requests": [
+    { "request": "Lender's own checklist and forms received", "why": "Their list governs the package", "owner": "lender", "phase": "phase1" },
+    { "request": "Personal financial statement on the lender's form for each 20%+ owner and guarantor, dated within 90 days", "why": "Source sba-sop-50-10-8-1-owner-financial-statement", "owner": "buyer", "phase": "phase1" },
+    { "request": "SBA Form 1919 for each co-borrower, on the lender's copy", "why": "Source sba-sop-50-10-8-1-form-1919", "owner": "buyer", "phase": "phase1" },
+    { "request": "Buyer personal tax returns (years per lender)", "why": "Personal and global cash flow (source sba-sop-50-10-8-1-global-cash-flow)", "owner": "buyer", "phase": "phase1" },
+    { "request": "Buyer resume and management plan: industry experience, who runs day-to-day operations", "why": "Source sba-sop-50-10-8-1-management-experience", "owner": "buyer", "phase": "phase1" },
+    { "request": "Equity source documentation: statements showing funds, gift letters, other sources", "why": "Sources sba-sop-50-10-8-1-equity-minimum, sba-sop-50-10-8-1-equity-unlimited-sources, sba-sop-50-10-8-1-equity-limited-sources", "owner": "buyer", "phase": "phase1" },
+    { "request": "Business plan and projections with assumptions", "why": "Evaluated but not relied on for coverage (source sba-sop-50-10-8-1-projections)", "owner": "buyer", "phase": "phase1" },
+    { "request": "Sources and uses and pro forma balance sheet", "why": "Source sba-sop-50-10-8-1-application-business-purchase", "owner": "buyer", "phase": "phase1" },
+    { "request": "Seller business tax returns and year-end statements, three most recent years", "why": "Sources sba-sop-50-10-8-1-three-years, sba-sop-50-10-8-1-application-business-purchase", "owner": "seller", "phase": "phase1" },
+    { "request": "Seller interim P&L and balance sheet within 120 days, with the same period prior year", "why": "Sources sba-sop-50-10-8-1-interim-statements, sba-sop-50-10-8-1-owner-financial-statement", "owner": "seller", "phase": "phase1" },
+    { "request": "Seller-signed IRS transcript authorization (Form 4506-C or 8821) on the lender's copy", "why": "Sources sba-sop-50-10-8-1-seller-tax-verification, sba-sop-50-10-8-1-transcript-follow-up", "owner": "seller", "phase": "phase1" },
+    { "request": "Copy of the premises lease to the lender", "why": "Sources sba-sop-50-10-8-1-application-lease-copy, sba-sop-50-10-8-1-lease-term", "owner": "buyer", "phase": "phase1" },
+    { "request": "Signed LOI to the lender", "why": "Basis for the term sheet", "owner": "buyer", "phase": "phase1" },
+    { "request": "Term sheets compared in lender.md and one signed", "why": "Choose the lender on the same basis", "owner": "buyer", "phase": "phase1" },
+    { "request": "Business valuation ordered by the lender (track status)", "why": "Source sba-sop-50-10-8-1-valuation-for-lender", "owner": "lender", "phase": "phase2" },
+    { "request": "QoE ordered or buyer-commissioned QoE accepted by the lender (track status)", "why": "Sources sba-sop-50-10-8-1-qoe-threshold, sba-sop-50-10-8-1-qoe-buyer-commissioned", "owner": "lender", "phase": "phase2", "when": ["qoe"] },
+    { "request": "Lender site visit scheduled with the seller's agreement", "why": "Source sba-sop-50-10-8-1-site-visit", "owner": "lender", "phase": "phase2" },
+    { "request": "Real estate appraisal and any environmental report (track status)", "why": "Lender-ordered when real estate is in the deal", "owner": "lender", "phase": "phase2", "when": ["real-estate"] },
+    { "request": "Credit approval and commitment letter received; conditions copied into lender.md", "why": "Conditions drive the closing checklist", "owner": "lender", "phase": "phase2" },
+    { "request": "Seller note standby agreement drafted (if the note counts as equity)", "why": "Sources sba-sop-50-10-8-1-seller-debt-equity, sba-sop-50-10-8-1-standby-terms", "owner": "lawyer", "phase": "decision", "when": ["seller-note"] },
+    { "request": "Purchase agreement draft, then signed copy with all schedules and amendments, to the lender", "why": "Source sba-sop-50-10-8-1-purchase-agreement-in-file", "owner": "lawyer", "phase": "decision" },
+    { "request": "Insurance binders and any life insurance the lender requires", "why": "Source sba-sop-50-10-8-1-insurance-credit-memo", "owner": "insurance broker", "phase": "decision" },
+    { "request": "All commitment conditions cleared before disbursement (equity, standby, appraisals, collateral)", "why": "Source sba-sop-50-10-8-1-conditions-before-disbursement", "owner": "buyer", "phase": "decision" }
+  ]
+}

@@ -69,8 +69,8 @@ Two entry points you call by name, and one specialist skill per topic that your 
 | [`sba-sop-rule-check`](skills/sba-sop-rule-check/SKILL.md) | the user asks "does this deal work under the new SBA rules", "is my seller note OK for SBA", "can I have an earnout with an SBA loan", "what changed in SOP 50 10", or "check my structure before I go to the lender". |
 | [`seller-note-structuring`](skills/seller-note-structuring/SKILL.md) | the user asks "how much will the seller finance", "what rate and term for a seller note", "does the SBA require full standby", "can the seller note count toward my down payment", "the seller won't carry a note", "when can I refinance the seller note", or "what if I can't pay the seller". |
 | [`acquisition-equity-sources`](skills/acquisition-equity-sources/SKILL.md) | the user asks "can I use my 401k to buy a business", "ROBS", "HELOC for a down payment", "can I buy a business with no money down", "can my parents gift the down payment", "conventional loan vs SBA", or "mezzanine debt". |
-| `search-fund-investor-raise` | coming |
-| `acquisition-deal-model` | coming |
+| [`search-fund-investor-raise`](skills/search-fund-investor-raise/SKILL.md) | the user asks "how do I raise money for a search fund", "independent sponsor terms", "what returns do search fund investors expect", "can I post on LinkedIn that I'm raising", "506(b) or 506(c)", "accredited investor", or "should I bring in a co-sponsor". |
+| [`acquisition-deal-model`](skills/acquisition-deal-model/SKILL.md) | the user asks "model this deal", "how do I layer bank debt, a seller note and equity", "what's my DSCR", "how much can I borrow against this", "what price can I afford", or has an LOI to test. |
 
 ### 3. Decide what to buy and find deals
 
@@ -115,10 +115,10 @@ Two entry points you call by name, and one specialist skill per topic that your 
 | Skill | Use it when |
 |---|---|
 | [`small-business-financial-due-diligence`](skills/small-business-financial-due-diligence/SKILL.md) | the buyer says "LOI is signed, what now?", "what should I ask for?", "do I need a QoE?", "what does a QoE cover?", "build my diligence checklist", or "how do I stage diligence spending?". |
-| `small-business-legal-due-diligence` | coming |
-| `small-business-operational-due-diligence` | coming |
-| `acquisition-go-no-go-review` | coming |
-| `sba-lender-package` | coming |
+| [`small-business-legal-due-diligence`](skills/small-business-legal-due-diligence/SKILL.md) | the buyer asks "what legal diligence do I need?", "will the contracts transfer?", "how do I handle the landlord?", "do licenses transfer?", "how do I find lawsuits or liens?", or "do I need a Phase I?". |
+| [`small-business-operational-due-diligence`](skills/small-business-operational-due-diligence/SKILL.md) | the buyer asks "should I talk to customers before closing?", "how do I check employees and payroll?", "are these workers really contractors?", "what insurance do I need?", "how do I check their software and data?", or "should I work in the business first?". |
+| [`acquisition-go-no-go-review`](skills/acquisition-go-no-go-review/SKILL.md) | the buyer asks "should I walk away?", "is this finding a deal-killer?", "is this worth repricing?", "the QoE came back lower, now what?", "what problems usually show up in diligence?", or wants to set walk-away criteria at LOI signing. |
+| [`sba-lender-package`](skills/sba-lender-package/SKILL.md) | the buyer asks "what does the lender need from me?", "how long does SBA approval take?", "how do I compare term sheets?", "does the lender need a business valuation?", "why do lenders decline acquisition loans?", or is preparing an SBA 7(a) package. |
 
 ### 8. Sign and close
 

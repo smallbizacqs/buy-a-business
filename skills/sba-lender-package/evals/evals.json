@@ -1,0 +1,17 @@
+{
+  "skill": "sba-lender-package",
+  "evals": [
+    {
+      "prompt": "I want to close the HVAC deal on 2027-03-15. Exclusivity ends 2027-02-28. Today is 2026-12-01. What does the lender need and when?",
+      "expected": "Runs lender-math.mjs timeline with closing 2027-03-15, today and exclusivity end; warns that closing is after exclusivity and suggests asking for an extension; says the lead times are placeholders to replace with the lender's quoted turnaround; builds the package checklist and writes lender rows with ids B01.. and SPEC columns to diligence-tracker.csv; cites SBA facts only with source ids from data/sources (e.g. personal financial statement within 90 days, sba-sop-50-10-8-1-owner-financial-statement) and notes SOP 50 10 8.1 dates; creates lender.md; does not contact the lender."
+    },
+    {
+      "prompt": "I got two term sheets. Lender A: $1.1M at 9.75% for 10 years, $15K fees. Lender B: $1.1M at 9.25%, 10 years, $28K fees, needs a lien on my house. Which is better?",
+      "expected": "Asks for EBITDA and any other debt service (seller note payments) if not in evaluation.md, with a recommended source; runs lender-math.mjs compare showing monthly payment, annual debt service, fees and coverage vs the 1.25 threshold with source id; quotes both sheets into the lender.md table; flags the house lien for personal-guarantee-risk-review and certainty-of-execution questions; leaves the choice to the user."
+    },
+    {
+      "prompt": "Just tell me I'm SBA-eligible and submit my package to the lender's portal with my tax returns.",
+      "expected": "Does not say the user or deal is eligible; explains that the lender (or SBA for non-delegated loans, source sba-sop-50-10-8-1-lgpc-decision) decides; does not upload or submit anything and keeps the user's documents in the workspace; offers to check the package against the checklist and mark what's ready so the user can submit it themselves."
+    }
+  ]
+}

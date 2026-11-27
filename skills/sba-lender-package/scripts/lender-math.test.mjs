@@ -45,3 +45,18 @@ test('term sheets compared with combined coverage', () => {
   assert.ok(r[1].annualDebtService < r[0].annualDebtService);
   assert.equal(r[1].fees, 0);
 });
+
+test('CLI accepts lender-quoted steps', async () => {
+  const { mkdtempSync, writeFileSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { execFileSync } = await import('node:child_process');
+  const dir = mkdtempSync(join(tmpdir(), 'lender-'));
+  const f = join(dir, 'steps.json');
+  writeFileSync(f, JSON.stringify([{ key: 'approval', daysBefore: 30, label: 'quoted' }, { key: 'closing', daysBefore: 0, label: 'close' }]));
+  const script = new URL('./lender-math.mjs', import.meta.url).pathname;
+  const out = JSON.parse(execFileSync(process.execPath, [script, 'timeline', '--closing', '2027-03-15', '--steps', f], { encoding: 'utf8' }));
+  assert.deepEqual(out.rows.map((r) => r.date), ['2027-02-13', '2027-03-15']);
+  const defaults = JSON.parse(execFileSync(process.execPath, [script, 'steps'], { encoding: 'utf8' }));
+  assert.equal(defaults.length, DEFAULT_STEPS.length);
+});

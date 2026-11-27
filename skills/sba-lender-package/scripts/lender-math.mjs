@@ -5,7 +5,9 @@
 // replace them with the turnaround each lender quotes. Coverage thresholds come from data/sources.
 //
 // Usage:
-//   node lender-math.mjs timeline --closing 2027-03-15 [--today 2026-12-01] [--exclusivity-end 2027-02-28]
+//   node lender-math.mjs timeline --closing 2027-03-15 [--today 2026-12-01] [--exclusivity-end 2027-02-28] [--steps steps.json]
+//     steps.json: [ { "key": "approval", "daysBefore": 30, "label": "..." }, ... ] replaces DEFAULT_STEPS
+//   node lender-math.mjs steps   prints DEFAULT_STEPS as JSON, to copy and edit with each lender's quoted turnaround
 //   node lender-math.mjs compare term-sheets.json
 //     { "ebitda": 420000, "otherAnnualDebtService": 24000, "threshold": 1.25,
 //       "sheets": [ { "lender": "Lender A", "principal": 1100000, "annualRate": 0.0975, "years": 10, "fees": 15000 } ] }
@@ -80,9 +82,10 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   try {
     const o = opts(process.argv.slice(2));
     let out;
-    if (o._[0] === 'timeline') out = timeline({ closing: o.closing, today: o.today ?? null, exclusivityEnd: o['exclusivity-end'] ?? null });
+    if (o._[0] === 'timeline') out = timeline({ closing: o.closing, today: o.today ?? null, exclusivityEnd: o['exclusivity-end'] ?? null, steps: o.steps ? JSON.parse(readFileSync(o.steps, 'utf8')) : DEFAULT_STEPS });
+    else if (o._[0] === 'steps') out = DEFAULT_STEPS;
     else if (o._[0] === 'compare') out = compareSheets(JSON.parse(readFileSync(o._[1], 'utf8')));
-    else throw new Error('usage: node lender-math.mjs timeline --closing YYYY-MM-DD | compare term-sheets.json');
+    else throw new Error('usage: node lender-math.mjs timeline --closing YYYY-MM-DD [--steps steps.json] | steps | compare term-sheets.json');
     process.stdout.write(JSON.stringify(out, null, 2) + '\n');
   } catch (e) { console.error(e.message); process.exit(1); }
 }

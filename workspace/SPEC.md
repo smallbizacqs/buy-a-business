@@ -30,6 +30,7 @@ acquisition/
       deal-model.md     capital stack, debt service and coverage by scenario (+ deal-model.json)
       seller-note.md    seller-note structures compared
       sop-check.md      the deal checked against the current SBA SOP (+ sop-check-input.json)
+      legal-inventory.md   contracts, leases, licenses and permits found in legal diligence
       purchase-agreement-questions.md   questions for counsel on the draft agreement
       closing-checklist.md
       grill.md          the stress test from `grill-my-deal`: decisions, risks accepted, deal-killers, open questions
@@ -56,7 +57,7 @@ timeline: "Close within 12 to 18 months"
 operate_or_hire: operate # operate | hire | undecided
 path: undecided          # sba-solo | self-funded-search | search-fund | independent-sponsor | holdco | undecided
 risk_notes: "Spouse agrees to a personal guarantee but not a lien on the house."
-advisors: {lawyer: null, cpa: null, lender: null, qoe: null}
+advisors: {lawyer: null, cpa: null, lender: null, qoe: null, insurance: null}
 ```
 
 ## pipeline.csv columns
