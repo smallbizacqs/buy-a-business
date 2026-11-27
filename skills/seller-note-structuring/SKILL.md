@@ -89,13 +89,13 @@ This designs and compares payment terms and quotes sourced rules. It is not lega
 
 Leaf questions (taxonomy topic `fund/seller-financing`):
 
-- `seller-financing-basics`: [Why and how much will a seller finance?](../../data/leaves/seller-financing-basics.md)
-- `seller-note-standby`: [Does the SBA require the seller note to be on full standby, and for how long?](../../data/leaves/seller-note-standby.md)
-- `seller-note-terms`: [What rate, term and amortization should a seller note have?](../../data/leaves/seller-note-terms.md)
-- `seller-note-as-equity`: [Can the seller note count toward my equity injection?](../../data/leaves/seller-note-as-equity.md)
-- `seller-note-refinance-timing`: [When can I refinance or pay off the seller note?](../../data/leaves/seller-note-refinance-timing.md)
-- `getting-seller-to-carry`: [How do I get a reluctant seller to carry a note?](../../data/leaves/getting-seller-to-carry.md)
-- `set-off-default`: [What happens if I can't pay the seller note, and can I offset claims against it?](../../data/leaves/set-off-default.md)
+- `seller-financing-basics`: [Why and how much will a seller finance?](https://smallbizacqs.com/q/seller-financing-basics)
+- `seller-note-standby`: [Does the SBA require the seller note to be on full standby, and for how long?](https://smallbizacqs.com/q/seller-note-standby)
+- `seller-note-terms`: [What rate, term and amortization should a seller note have?](https://smallbizacqs.com/q/seller-note-terms)
+- `seller-note-as-equity`: [Can the seller note count toward my equity injection?](https://smallbizacqs.com/q/seller-note-as-equity)
+- `seller-note-refinance-timing`: [When can I refinance or pay off the seller note?](https://smallbizacqs.com/q/seller-note-refinance-timing)
+- `getting-seller-to-carry`: [How do I get a reluctant seller to carry a note?](https://smallbizacqs.com/q/getting-seller-to-carry)
+- `set-off-default`: [What happens if I can't pay the seller note, and can I offset claims against it?](https://smallbizacqs.com/q/set-off-default)
 
 Detail: `references/seller-note-terms.md`. Script: `scripts/seller-note.mjs` (test: `node --test scripts/`).
 

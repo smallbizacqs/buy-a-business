@@ -87,15 +87,15 @@ This compares paths and does simple arithmetic. It is not legal, tax, securities
 
 Leaf questions (taxonomy topic `fund/buyer-path`):
 
-- `self-funded-search`: [How does a self-funded search work?](../../data/leaves/self-funded-search.md)
-- `traditional-search-fund`: [How does an investor-backed search fund work?](../../data/leaves/traditional-search-fund.md)
-- `searcher-economics`: [How does a searcher earn equity in a search fund?](../../data/leaves/searcher-economics.md)
-- `holdco`: [Should I build a holding company instead of doing one deal?](../../data/leaves/holdco.md)
-- `permanent-capital`: [What is permanent capital, and how is buy-and-hold different?](../../data/leaves/permanent-capital.md)
-- `independent-sponsor`: [How does the independent-sponsor (deal-by-deal) model work?](../../data/leaves/independent-sponsor.md)
-- `choose-path`: [Self-funded, search fund, independent sponsor or holdco: which fits me?](../../data/leaves/choose-path.md)
-- `micro-pe-lmm`: [How do micro private equity and lower-middle-market funds differ from buying one business?](../../data/leaves/micro-pe-lmm.md)
-- `family-office-capital`: [How do family offices back buyers and direct deals?](../../data/leaves/family-office-capital.md)
+- `self-funded-search`: [How does a self-funded search work?](https://smallbizacqs.com/q/self-funded-search)
+- `traditional-search-fund`: [How does an investor-backed search fund work?](https://smallbizacqs.com/q/traditional-search-fund)
+- `searcher-economics`: [How does a searcher earn equity in a search fund?](https://smallbizacqs.com/q/searcher-economics)
+- `holdco`: [Should I build a holding company instead of doing one deal?](https://smallbizacqs.com/q/holdco)
+- `permanent-capital`: [What is permanent capital, and how is buy-and-hold different?](https://smallbizacqs.com/q/permanent-capital)
+- `independent-sponsor`: [How does the independent-sponsor (deal-by-deal) model work?](https://smallbizacqs.com/q/independent-sponsor)
+- `choose-path`: [Self-funded, search fund, independent sponsor or holdco: which fits me?](https://smallbizacqs.com/q/choose-path)
+- `micro-pe-lmm`: [How do micro private equity and lower-middle-market funds differ from buying one business?](https://smallbizacqs.com/q/micro-pe-lmm)
+- `family-office-capital`: [How do family offices back buyers and direct deals?](https://smallbizacqs.com/q/family-office-capital)
 
 Detail: `references/path-comparison.md`.
 

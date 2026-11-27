@@ -102,10 +102,10 @@ loan; only a lender decides that (see `sba-7a-acquisition-loan`).
 
 Leaf questions (taxonomy topic `approach/broker-relations`):
 
-- [How do I look credible to brokers?](../../data/leaves/broker-credibility.md) (`broker-credibility`)
-- [How do I get a deal done with an unresponsive or difficult broker?](../../data/leaves/bad-brokers.md) (`bad-brokers`)
+- [How do I look credible to brokers?](https://smallbizacqs.com/q/broker-credibility) (`broker-credibility`)
+- [How do I get a deal done with an unresponsive or difficult broker?](https://smallbizacqs.com/q/bad-brokers) (`bad-brokers`)
 
-Related leaf: [How do business brokers work, and whose side are they on?](../../data/leaves/how-brokers-work.md) (`how-brokers-work`)
+Related leaf: [How do business brokers work, and whose side are they on?](https://smallbizacqs.com/q/how-brokers-work) (`how-brokers-work`)
 
 Reference files:
 

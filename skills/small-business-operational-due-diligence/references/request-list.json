@@ -1,0 +1,32 @@
+{
+  "area": "operational",
+  "note": "Operational and insurance diligence request list. phase: phase1, phase2 (conversations and on-site time happen after the phase-1 gate), decision. Tags for --exclude: employees, field-crews, inventory, vehicles, software, recurring-contracts, online-marketing.",
+  "requests": [
+    { "request": "Organization chart and employee census: role, tenure, full/part-time, pay rate, hours, W-2 or 1099, licenses or certifications, start date (no SSNs or birth dates)", "why": "Who does the work, cost, key people, classification signals", "owner": "seller", "phase": "phase1", "when": ["employees"] },
+    { "request": "List of everyone paid as a contractor (1099) in the last 2 years, what they do, hours, how they're paid and whether they work for others", "why": "Classification facts for counsel and the CPA", "owner": "seller", "phase": "phase1" },
+    { "request": "Benefits summary: health, retirement plan, PTO policy and accrued balances, bonuses and commissions owed", "why": "Costs the buyer takes on; accrued amounts settled at closing", "owner": "seller", "phase": "phase1", "when": ["employees"] },
+    { "request": "Turnover in the last 2 years: who left, role, why", "why": "Retention and culture", "owner": "seller", "phase": "phase2", "when": ["employees"] },
+    { "request": "Owner's weekly schedule and list of tasks only the owner does (estimating, sales, key accounts, licenses, banking)", "why": "Owner dependence; what the buyer or a hire must take over", "owner": "seller", "phase": "phase1" },
+    { "request": "Key employees identified, with seller's view on retention and the timing of telling them", "why": "Key-person risk; retention plan before closing", "owner": "seller", "phase": "phase2", "when": ["employees"] },
+    { "request": "Employee handbook, safety program and training records", "why": "Operating practices and compliance", "owner": "seller", "phase": "phase2", "when": ["employees"] },
+    { "request": "Seller-agreed plan and timing for customer conversations (who, when, how introduced)", "why": "Customer calls need the seller's consent", "owner": "seller", "phase": "phase1" },
+    { "request": "Customer calls completed and notes recorded (top customers by revenue)", "why": "Will customers stay with a new owner?", "owner": "buyer", "phase": "phase2" },
+    { "request": "Recurring contracts or service agreements: count, renewal dates, cancellation history", "why": "Revenue durability", "owner": "seller", "phase": "phase1", "when": ["recurring-contracts"] },
+    { "request": "Pricing sheets, standard quotes and recent price changes", "why": "How the business prices and whether there's room", "owner": "seller", "phase": "phase2" },
+    { "request": "Key suppliers: who, what, terms, alternatives, any personal relationship with the owner", "why": "Supply continuity", "owner": "seller", "phase": "phase2" },
+    { "request": "Systems inventory: every software tool, what it's used for, account holder, monthly cost, data export ability", "why": "What runs the business and what must transfer", "owner": "seller", "phase": "phase1" },
+    { "request": "Read-only look at the job management or CRM system for a sample of 20 records", "why": "Data quality test", "owner": "seller", "phase": "phase2", "when": ["software"] },
+    { "request": "Lead sources for the last 2 years: leads, jobs won and spend by source", "why": "Where customers come from and what each costs", "owner": "seller", "phase": "phase1" },
+    { "request": "Website, online review profiles, ads accounts and social accounts: access to view analytics and reviews", "why": "Marketing health and transferability", "owner": "seller", "phase": "phase2", "when": ["online-marketing"] },
+    { "request": "Referral relationships and how much revenue they bring (and whether they depend on the owner)", "why": "Owner-dependent lead flow", "owner": "seller", "phase": "phase2" },
+    { "request": "Equipment and vehicle list with age, condition and maintenance records", "why": "Capex and reliability", "owner": "seller", "phase": "phase2", "when": ["vehicles"] },
+    { "request": "Inventory management process and last physical count", "why": "Shrink, obsolescence, working capital", "owner": "seller", "phase": "phase2", "when": ["inventory"] },
+    { "request": "Shadowing days scheduled with the seller (office and field)", "why": "See how the business actually runs", "owner": "buyer", "phase": "phase2" },
+    { "request": "Ride-along or site visits with field crews", "why": "Quality of work and crew practices", "owner": "seller", "phase": "phase2", "when": ["field-crews"] },
+    { "request": "Copies of all current insurance policies with declarations pages", "area": "insurance", "why": "What is covered today and gaps", "owner": "seller", "phase": "phase1" },
+    { "request": "Loss runs from each insurer, last 5 years", "area": "insurance", "why": "Claims history drives the buyer's premiums and reveals problems", "owner": "seller", "phase": "phase1" },
+    { "request": "Identify claims-made policies (professional, E&O, cyber, employment practices) and tail coverage needs", "area": "insurance", "why": "Claims for pre-closing acts may be uncovered without tail", "owner": "insurance broker", "phase": "phase2" },
+    { "request": "Workers' comp experience and any open claims", "area": "insurance", "why": "Cost and safety record", "owner": "seller", "phase": "phase2", "when": ["employees"] },
+    { "request": "Buyer's insurance quotes and lender's insurance requirements (property, liability, life, others)", "area": "insurance", "why": "Must be bound by closing; lender sets requirements", "owner": "insurance broker", "phase": "decision" }
+  ]
+}

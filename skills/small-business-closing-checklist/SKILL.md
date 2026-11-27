@@ -82,6 +82,6 @@ This skill organizes closing; it does not run it. It is not legal, tax or financ
 - `references/closing-costs.md`: closing costs by category, with who sets each.
 - `references/entity-and-day-one.md`: entity questions for counsel and the CPA; the day-one readiness list.
 - `scripts/funds-flow.mjs` and `scripts/funds-flow.test.mjs`: sources and uses check (`node --test scripts/`).
-- Leaf questions: `closing-day` ([What happens on closing day?](../../data/leaves/closing-day.md)), `closing-costs` ([What are the total closing costs?](../../data/leaves/closing-costs.md)), `entity-setup` ([What kind of company should I buy through?](../../data/leaves/entity-setup.md)), `day-one-readiness` ([What must be ready on day one?](../../data/leaves/day-one-readiness.md)). Taxonomy topic: `close/mechanics`.
+- Leaf questions: `closing-day` ([What happens on closing day?](https://smallbizacqs.com/q/closing-day)), `closing-costs` ([What are the total closing costs?](https://smallbizacqs.com/q/closing-costs)), `entity-setup` ([What kind of company should I buy through?](https://smallbizacqs.com/q/entity-setup)), `day-one-readiness` ([What must be ready on day one?](https://smallbizacqs.com/q/day-one-readiness)). Taxonomy topic: `close/mechanics`.
 - Related leaves: `approval-timeline`, `insurance-review`, `lease-assignment`.
 - Sibling skills: `small-business-purchase-agreement`, `sba-lender-package`, `working-capital-peg-for-small-business`, `small-business-legal-due-diligence`, `choose-acquisition-advisors`, `seller-transition-plan`, `first-100-days-after-acquisition`.

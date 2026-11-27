@@ -45,7 +45,7 @@ Then ask everything missing in one message, using the interview in `references/r
 3. Rate the six areas with the rubric in the reference. Each rating gets one sentence of reason that quotes the user's own answer.
 4. Name the three gaps that matter most, ranked by how much they would hurt in a deal (money and guarantee gaps first, then skills, then logistics).
 5. Write a 90-day plan: one to three concrete actions per gap (for example, "pull your credit reports and fix the two errors", "have the guarantee conversation with your spouse using `personal-guarantee-risk-review`", "spend two Saturdays shadowing an owner in the trade").
-6. Address the user's specific worry with the matching section of the reference: no industry experience, keeping the day job, partner versus solo, spouse and family, career switch, MBA.
+6. Address the user's specific worry with the matching section of the reference: no industry experience, keeping the day job, partner versus solo, spouse and family, career switch, MBA, not a US citizen.
 7. Update `profile.yaml` (`liquid_funds`, `max_equity_in_deal`, `months_of_living_costs`, `operate_or_hire`, `risk_notes`, `updated`) with the user's OK, and append any decision to `decisions.md`.
 8. Hand off: money tight or pay unclear → `business-owner-take-home-pay`; guarantee or spouse concern → `personal-guarantee-risk-review`; ready on money and wants a path → `search-fund-vs-sba-loan`; ready overall → `what-small-business-to-buy`.
 
@@ -91,14 +91,15 @@ This is a structured self-assessment, not a lending decision or a personality te
 
 Leaf questions (taxonomy topic `decide/fit`):
 
-- `readiness`: [Am I ready to buy a business: finances, temperament and timing?](../../data/leaves/readiness.md)
-- `no-industry-experience`: [Can I buy a business in an industry I've never worked in?](../../data/leaves/no-industry-experience.md)
-- `operator-skills`: [What skills does an owner-operator actually need?](../../data/leaves/operator-skills.md)
-- `career-switch`: [How do people move from banking, tech, consulting or the military into owning a business?](../../data/leaves/career-switch.md)
-- `mba-path`: [Is buying a business a good path after an MBA, and does the MBA help?](../../data/leaves/mba-path.md)
-- `keep-day-job`: [Can I search for or buy a business while keeping my job?](../../data/leaves/keep-day-job.md)
-- `partner-or-solo`: [Should I search and buy with a partner or alone?](../../data/leaves/partner-or-solo.md)
-- `spouse-family`: [How do I talk through the risk with my spouse and family?](../../data/leaves/spouse-family.md)
+- `readiness`: [Am I ready to buy a business: finances, temperament and timing?](https://smallbizacqs.com/q/readiness)
+- `no-industry-experience`: [Can I buy a business in an industry I've never worked in?](https://smallbizacqs.com/q/no-industry-experience)
+- `operator-skills`: [What skills does an owner-operator actually need?](https://smallbizacqs.com/q/operator-skills)
+- `career-switch`: [How do people move from banking, tech, consulting or the military into owning a business?](https://smallbizacqs.com/q/career-switch)
+- `mba-path`: [Is buying a business a good path after an MBA, and does the MBA help?](https://smallbizacqs.com/q/mba-path)
+- `keep-day-job`: [Can I search for or buy a business while keeping my job?](https://smallbizacqs.com/q/keep-day-job)
+- `partner-or-solo`: [Should I search and buy with a partner or alone?](https://smallbizacqs.com/q/partner-or-solo)
+- `spouse-family`: [How do I talk through the risk with my spouse and family?](https://smallbizacqs.com/q/spouse-family)
+- `foreign-buyer-visa`: [Can someone who isn't a US citizen buy a US business, and can it lead to a visa?](https://smallbizacqs.com/q/foreign-buyer-visa)
 
 Detail: `references/readiness-interview.md`.
 

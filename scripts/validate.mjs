@@ -12,6 +12,8 @@ const CLIP_ID = /^c[0-9a-f]{6}$/;
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const TIERS = ['primary-rule', 'official-doc', 'practitioner', 'field-note'];
 const SELLS = ['yes', 'no', 'unknown'];
+// Source-id shapes used in this repo; a token of this shape in a skill must be a real source.
+const SOURCE_REF = /\b((?:sba-sop-50-10-8-1|ecfr|irs|uscis)-[a-z0-9]+(?:-[a-z0-9]+)*|(?:bizbuysell|acquire|flippa|trustmrr)-(?:terms|home)-[a-z0-9-]+)\b/g;
 // The one sentence allowed to contain "run by" (Steven's counsel wording, kept verbatim).
 export const COUNSEL_SENTENCE = 'AI-using law firms with fixed fees that are lean and run by an attorney with big-law experience';
 // Private terms that must never appear in the public repo. The list itself is private: one term per line in
@@ -168,6 +170,7 @@ export function validate(root, { today = new Date().toISOString().slice(0, 10) }
     if (fm.data.leaf !== basename(f, '.md') || !leaves.has(fm.data.leaf)) err('ANS-LEAF', f, `answer must be named for an existing leaf (got "${fm.data.leaf}")`);
     if (!['draft', 'reviewed'].includes(fm.data.status)) err('ANS-FIELD', f, 'status must be draft or reviewed');
     if (!DATE.test(String(fm.data.last_checked ?? ''))) err('ANS-FIELD', f, 'last_checked must be YYYY-MM-DD');
+    for (const id of fm.data.sources ?? []) if (!sources.has(id)) err('ANS-SOURCE', f, `front matter lists unknown source "${id}"`);
     if (!fm.body.trimStart().startsWith('**Short answer.**')) err('ANS-SHORT', f, 'the answer must open with "**Short answer.**"');
     // Citations: [^source-id] or [^c1a2b3c] (a clip). Practitioner material only under "## What practitioners say".
     let section = '';
@@ -213,6 +216,11 @@ export function validate(root, { today = new Date().toISOString().slice(0, 10) }
     else if (planned.get(dir).topic && d.metadata?.topic !== planned.get(dir).topic) err('SKL-TOPIC', sf, `metadata.topic must be "${planned.get(dir).topic}"`);
     for (const sec of ['Safety and authority', 'Honest scope'])
       if (!new RegExp(`^##\\s+${sec}\\s*$`, 'm').test(fm.body)) err('SKL-SECTIONS', sf, `missing "## ${sec}" section`);
+    // Every source id a skill cites (in any .md under its folder) must exist in data/sources/.
+    for (const mf of walk(join(skillsDir, dir)).filter((p) => p.endsWith('.md'))) {
+      const body = readFileSync(mf, 'utf8');
+      for (const [, id] of body.matchAll(SOURCE_REF)) if (!sources.has(id)) err('SKL-SOURCES', mf, `cites source "${id}", which is not in data/sources/`);
+    }
     const ef = join(skillsDir, dir, 'evals', 'evals.json');
     let evals = [];
     try { evals = JSON.parse(readFileSync(ef, 'utf8')).evals ?? []; } catch { /* counted below */ }

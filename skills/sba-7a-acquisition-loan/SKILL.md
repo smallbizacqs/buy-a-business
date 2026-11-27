@@ -82,17 +82,17 @@ This explains sourced 7(a) rules and prepares questions. It is not legal, tax or
 
 Leaf questions (taxonomy topic `fund/sba-loan`):
 
-- `sba-7a-basics`: [How does an SBA 7(a) loan to buy a business work?](../../data/leaves/sba-7a-basics.md)
-- `eligibility-credit`: [Do I qualify for an SBA acquisition loan: credit, experience, liquidity?](../../data/leaves/eligibility-credit.md)
-- `equity-injection`: [How much of my own money does an SBA loan require, and what counts toward it?](../../data/leaves/equity-injection.md)
-- `underwriting`: [How do SBA lenders underwrite an acquisition?](../../data/leaves/underwriting.md)
-- `rates-fees-terms`: [What are SBA 7(a) rates, guaranty fees and terms?](../../data/leaves/rates-fees-terms.md)
-- `lender-selection`: [How do I choose an SBA lender?](../../data/leaves/lender-selection.md)
-- `7a-vs-504`: [SBA 7(a) or 504: which applies when real estate is part of the deal?](../../data/leaves/7a-vs-504.md)
-- `real-estate-in-deal`: [Can I finance the building together with the business?](../../data/leaves/real-estate-in-deal.md)
-- `loan-limits-pari-passu`: [What is the largest SBA loan, and how are bigger deals financed?](../../data/leaves/loan-limits-pari-passu.md)
-- `wc-credit-line`: [Can the loan include a working-capital credit line?](../../data/leaves/wc-credit-line.md)
-- `online-saas-eligibility`: [Can an SBA loan fund an online, SaaS or e-commerce business?](../../data/leaves/online-saas-eligibility.md)
+- `sba-7a-basics`: [How does an SBA 7(a) loan to buy a business work?](https://smallbizacqs.com/q/sba-7a-basics)
+- `eligibility-credit`: [Do I qualify for an SBA acquisition loan: credit, experience, liquidity?](https://smallbizacqs.com/q/eligibility-credit)
+- `equity-injection`: [How much of my own money does an SBA loan require, and what counts toward it?](https://smallbizacqs.com/q/equity-injection)
+- `underwriting`: [How do SBA lenders underwrite an acquisition?](https://smallbizacqs.com/q/underwriting)
+- `rates-fees-terms`: [What are SBA 7(a) rates, guaranty fees and terms?](https://smallbizacqs.com/q/rates-fees-terms)
+- `lender-selection`: [How do I choose an SBA lender?](https://smallbizacqs.com/q/lender-selection)
+- `7a-vs-504`: [SBA 7(a) or 504: which applies when real estate is part of the deal?](https://smallbizacqs.com/q/7a-vs-504)
+- `real-estate-in-deal`: [Can I finance the building together with the business?](https://smallbizacqs.com/q/real-estate-in-deal)
+- `loan-limits-pari-passu`: [What is the largest SBA loan, and how are bigger deals financed?](https://smallbizacqs.com/q/loan-limits-pari-passu)
+- `wc-credit-line`: [Can the loan include a working-capital credit line?](https://smallbizacqs.com/q/wc-credit-line)
+- `online-saas-eligibility`: [Can an SBA loan fund an online, SaaS or e-commerce business?](https://smallbizacqs.com/q/online-saas-eligibility)
 
 Detail: `references/sba-7a-rules.md`.
 

@@ -80,11 +80,11 @@ This review explains common terms and runs arithmetic on the user's estimates. I
 
 Leaf questions (taxonomy topic `decide/risk`):
 
-- `personal-guarantee`: [What does a personal guarantee put at risk, and can I limit it?](../../data/leaves/personal-guarantee.md)
-- `pg-insurance`: [Can I insure my SBA personal guarantee?](../../data/leaves/pg-insurance.md)
-- `collateral-home`: [Will the lender take my house or other assets as collateral?](../../data/leaves/collateral-home.md)
-- `failure-stories`: [What happens when an acquisition fails, and why do they fail?](../../data/leaves/failure-stories.md)
-- `asset-protection`: [How do I protect personal assets when I buy a business?](../../data/leaves/asset-protection.md)
+- `personal-guarantee`: [What does a personal guarantee put at risk, and can I limit it?](https://smallbizacqs.com/q/personal-guarantee)
+- `pg-insurance`: [Can I insure my SBA personal guarantee?](https://smallbizacqs.com/q/pg-insurance)
+- `collateral-home`: [Will the lender take my house or other assets as collateral?](https://smallbizacqs.com/q/collateral-home)
+- `failure-stories`: [What happens when an acquisition fails, and why do they fail?](https://smallbizacqs.com/q/failure-stories)
+- `asset-protection`: [How do I protect personal assets when I buy a business?](https://smallbizacqs.com/q/asset-protection)
 
 Detail: `references/guarantee-explainer.md`. Script: `scripts/pg-exposure.mjs` (test: `node --test scripts/`).
 

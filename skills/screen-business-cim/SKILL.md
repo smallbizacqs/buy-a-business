@@ -109,11 +109,11 @@ signed, a CPA for the financials, and the lender for financing questions.
 
 Leaf questions (taxonomy topic `approach/screening`):
 
-- [What should I know before signing an NDA with a seller?](../../data/leaves/nda.md) (`nda`)
-- [How do I read a teaser or CIM, and what's missing from it?](../../data/leaves/cim-teaser.md) (`cim-teaser`)
-- [Which early red flags should make me pass before an offer?](../../data/leaves/early-red-flags.md) (`early-red-flags`)
-- [How much checking should I do before making an offer?](../../data/leaves/pre-loi-diligence.md) (`pre-loi-diligence`)
-- [Which documents should I get before making an offer?](../../data/leaves/early-docs-request.md) (`early-docs-request`)
+- [What should I know before signing an NDA with a seller?](https://smallbizacqs.com/q/nda) (`nda`)
+- [How do I read a teaser or CIM, and what's missing from it?](https://smallbizacqs.com/q/cim-teaser) (`cim-teaser`)
+- [Which early red flags should make me pass before an offer?](https://smallbizacqs.com/q/early-red-flags) (`early-red-flags`)
+- [How much checking should I do before making an offer?](https://smallbizacqs.com/q/pre-loi-diligence) (`pre-loi-diligence`)
+- [Which documents should I get before making an offer?](https://smallbizacqs.com/q/early-docs-request) (`early-docs-request`)
 
 Reference files:
 

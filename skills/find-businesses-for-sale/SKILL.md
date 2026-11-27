@@ -90,10 +90,10 @@ This skill finds and records listed deals. It does not rank marketplaces, broker
 
 Taxonomy topic: `find/brokers`.
 
-- [How do business brokers work, and whose side are they on?](../../data/leaves/how-brokers-work.md) (`how-brokers-work`)
-- [Which marketplaces list businesses for sale?](../../data/leaves/listing-marketplaces.md) (`listing-marketplaces`)
-- [Why do most listed businesses never sell, and what does that tell a buyer?](../../data/leaves/why-listings-dont-sell.md) (`why-listings-dont-sell`)
-- [Should I hire a buy-side advisor?](../../data/leaves/buy-side-advisor.md) (`buy-side-advisor`)
+- [How do business brokers work, and whose side are they on?](https://smallbizacqs.com/q/how-brokers-work) (`how-brokers-work`)
+- [Which marketplaces list businesses for sale?](https://smallbizacqs.com/q/listing-marketplaces) (`listing-marketplaces`)
+- [Why do most listed businesses never sell, and what does that tell a buyer?](https://smallbizacqs.com/q/why-listings-dont-sell) (`why-listings-dont-sell`)
+- [Should I hire a buy-side advisor?](https://smallbizacqs.com/q/buy-side-advisor) (`buy-side-advisor`)
 
 Method files: [marketplaces and what they show](references/marketplaces.md), [searching with an agent](references/agent-search.md), [reading a listing](references/reading-a-listing.md), [how brokers work](references/how-brokers-work.md).
 

@@ -119,13 +119,13 @@ the user's CPA and lawyer.
 
 Leaf questions (taxonomy topic `approach/owner-outreach`):
 
-- [What do I say on the first call with an owner?](../../data/leaves/first-conversation.md) (`first-conversation`)
-- [How should I run the first meeting with an owner?](../../data/leaves/first-meeting.md) (`first-meeting`)
-- [What do I do when an owner isn't ready to sell yet?](../../data/leaves/when-owner-not-ready.md) (`when-owner-not-ready`)
-- [How do I earn a retiring owner's trust?](../../data/leaves/earn-trust.md) (`earn-trust`)
-- [What do sellers care about besides price?](../../data/leaves/seller-psychology.md) (`seller-psychology`)
-- [How do I find out why the owner is really selling?](../../data/leaves/why-owner-selling.md) (`why-owner-selling`)
-- [How do I win a deal without the highest offer?](../../data/leaves/buyer-of-choice.md) (`buyer-of-choice`)
+- [What do I say on the first call with an owner?](https://smallbizacqs.com/q/first-conversation) (`first-conversation`)
+- [How should I run the first meeting with an owner?](https://smallbizacqs.com/q/first-meeting) (`first-meeting`)
+- [What do I do when an owner isn't ready to sell yet?](https://smallbizacqs.com/q/when-owner-not-ready) (`when-owner-not-ready`)
+- [How do I earn a retiring owner's trust?](https://smallbizacqs.com/q/earn-trust) (`earn-trust`)
+- [What do sellers care about besides price?](https://smallbizacqs.com/q/seller-psychology) (`seller-psychology`)
+- [How do I find out why the owner is really selling?](https://smallbizacqs.com/q/why-owner-selling) (`why-owner-selling`)
+- [How do I win a deal without the highest offer?](https://smallbizacqs.com/q/buyer-of-choice) (`buyer-of-choice`)
 
 Reference files:
 

@@ -67,9 +67,9 @@ This is not legal, tax or financial advice. It drafts business terms in plain la
 
 - Know-how: `references/loi-term-checklist.md`, `references/loi-template.md`, `references/loi-review-checklist.md`, `references/binding-vs-nonbinding.md`. Arithmetic: `scripts/loi-math.mjs`.
 - Taxonomy topic offer/loi. Leaf questions:
-  - [`loi-contents`](../../data/leaves/loi-contents.md): What goes in a letter of intent, and what part of it is binding?
-  - [`settle-before-diligence`](../../data/leaves/settle-before-diligence.md): Which terms should be settled in the LOI rather than later?
-  - [`exclusivity`](../../data/leaves/exclusivity.md): How long should exclusivity (no-shop) last?
-  - [`loi-mistakes`](../../data/leaves/loi-mistakes.md): Which LOI mistakes cost buyers later?
-  - [`retrade`](../../data/leaves/retrade.md): When is it fair to change the price after the LOI?
+  - [`loi-contents`](https://smallbizacqs.com/q/loi-contents): What goes in a letter of intent, and what part of it is binding?
+  - [`settle-before-diligence`](https://smallbizacqs.com/q/settle-before-diligence): Which terms should be settled in the LOI rather than later?
+  - [`exclusivity`](https://smallbizacqs.com/q/exclusivity): How long should exclusivity (no-shop) last?
+  - [`loi-mistakes`](https://smallbizacqs.com/q/loi-mistakes): Which LOI mistakes cost buyers later?
+  - [`retrade`](https://smallbizacqs.com/q/retrade): When is it fair to change the price after the LOI?
 - Sibling skills: `small-business-deal-structure`, `working-capital-peg-for-small-business`, `seller-note-structuring`, `small-business-acquisition-negotiation`, `choose-acquisition-advisors`, `sde-and-add-backs-analysis`, `sba-dscr-and-affordability`, `small-business-financial-due-diligence`. Router: `buy-a-business`. Stress test before sending: `grill-my-deal`.

@@ -82,13 +82,13 @@ This is not financial advice, an appraisal or a fairness opinion. It cannot supp
 
 Topic `evaluate/valuation`:
 
-- [What multiple should I pay for a small business?](../../data/leaves/what-multiple.md) (`what-multiple`)
-- [What earns a business a higher or lower multiple?](../../data/leaves/value-drivers.md) (`value-drivers`)
-- [How is a small business valued: multiples, cash flow or assets?](../../data/leaves/valuation-methods.md) (`valuation-methods`)
-- [How do I handle an unrealistic asking price?](../../data/leaves/asking-price-gap.md) (`asking-price-gap`)
-- [How are practices and agencies valued as a percentage of revenue?](../../data/leaves/revenue-based-valuation.md) (`revenue-based-valuation`)
+- [What multiple should I pay for a small business?](https://smallbizacqs.com/q/what-multiple) (`what-multiple`)
+- [What earns a business a higher or lower multiple?](https://smallbizacqs.com/q/value-drivers) (`value-drivers`)
+- [How is a small business valued: multiples, cash flow or assets?](https://smallbizacqs.com/q/valuation-methods) (`valuation-methods`)
+- [How do I handle an unrealistic asking price?](https://smallbizacqs.com/q/asking-price-gap) (`asking-price-gap`)
+- [How are practices and agencies valued as a percentage of revenue?](https://smallbizacqs.com/q/revenue-based-valuation) (`revenue-based-valuation`)
 
-Related: [does the lender require an independent valuation?](../../data/leaves/business-appraisal.md) (`business-appraisal`).
+Related: [does the lender require an independent valuation?](https://smallbizacqs.com/q/business-appraisal) (`business-appraisal`).
 
 Know-how: [references/valuation-methods.md](references/valuation-methods.md), [references/value-drivers.md](references/value-drivers.md), [references/asking-price-gap.md](references/asking-price-gap.md). Script: `scripts/valuation.mjs` (tests: `node --test scripts/`).
 

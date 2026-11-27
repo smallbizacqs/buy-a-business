@@ -13,6 +13,9 @@ acquisition/
   buyer-profile.md      one-page buyer profile for brokers and owners
   search-plan.md        search plan; inputs in search-plan-inputs.json
   outreach/             off-market targets.csv, referral-sources.csv, drafts (marked "DRAFT: not sent")
+  decide/               stage 1 work: buy-vs-start.md, readiness.md, operator-model.md, take-home.md (+ take-home-input.json),
+                        guarantee-risk.md, what-to-buy.md
+  fund/                 stage 2 work: path.md, sba-loan-plan.md, equity-plan.md, investor-raise.md
   deals/
     <deal-slug>/
       listing.md        the listing, teaser or CIM summary, with the source
@@ -24,6 +27,9 @@ acquisition/
       loi-draft.md      offer terms and the LOI draft
       diligence-tracker.csv   request list with owner, due date, status, notes
       lender.md         lender, term sheet, package checklist
+      deal-model.md     capital stack, debt service and coverage by scenario (+ deal-model.json)
+      seller-note.md    seller-note structures compared
+      sop-check.md      the deal checked against the current SBA SOP (+ sop-check-input.json)
       purchase-agreement-questions.md   questions for counsel on the draft agreement
       closing-checklist.md
       grill.md          the stress test from `grill-my-deal`: decisions, risks accepted, deal-killers, open questions

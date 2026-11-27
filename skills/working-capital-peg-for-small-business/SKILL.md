@@ -73,9 +73,9 @@ This is not legal, tax or financial advice. The script does arithmetic on balanc
 
 - Know-how: `references/nwc-definitions.md`, `references/peg-method.md`, `references/wip-and-contractors.md`, `references/monthly-balances-template.csv`. Arithmetic: `scripts/nwc-peg.mjs` (tests in `scripts/nwc-peg.test.mjs`).
 - Taxonomy topic offer/working-capital. Leaf questions:
-  - [`what-is-nwc`](../../data/leaves/what-is-nwc.md): What is net working capital in a deal, and why does it matter?
-  - [`peg`](../../data/leaves/peg.md): How is the working-capital target (peg) set and trued up?
-  - [`cash-free-debt-free`](../../data/leaves/cash-free-debt-free.md): What does "cash-free, debt-free" mean for the buyer?
-  - [`ar-ap-inventory`](../../data/leaves/ar-ap-inventory.md): How are receivables, payables, inventory and customer deposits handled?
-  - [`wip-backlog`](../../data/leaves/wip-backlog.md): How are work in progress and backlog handled for contractors?
+  - [`what-is-nwc`](https://smallbizacqs.com/q/what-is-nwc): What is net working capital in a deal, and why does it matter?
+  - [`peg`](https://smallbizacqs.com/q/peg): How is the working-capital target (peg) set and trued up?
+  - [`cash-free-debt-free`](https://smallbizacqs.com/q/cash-free-debt-free): What does "cash-free, debt-free" mean for the buyer?
+  - [`ar-ap-inventory`](https://smallbizacqs.com/q/ar-ap-inventory): How are receivables, payables, inventory and customer deposits handled?
+  - [`wip-backlog`](https://smallbizacqs.com/q/wip-backlog): How are work in progress and backlog handled for contractors?
 - Sibling skills: `loi-for-small-business-acquisition`, `small-business-financial-due-diligence`, `verify-seller-financials`, `small-business-deal-structure`, `small-business-purchase-agreement`, `small-business-closing-checklist`. Router: `buy-a-business`. Stress test: `grill-my-deal`.

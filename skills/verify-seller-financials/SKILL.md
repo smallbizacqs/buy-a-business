@@ -84,7 +84,7 @@ This is not a quality of earnings report, an audit or accounting advice. It comp
 
 ## References
 
-Leaf: [How do I tie reported revenue to the bank statements?](../../data/leaves/proof-of-cash.md) (`proof-of-cash`), in topic `evaluate/earnings`. Related: [tax returns vs books](../../data/leaves/tax-returns-vs-books.md) (`tax-returns-vs-books`), [cash business](../../data/leaves/cash-business.md) (`cash-business`), [fraud and misstatements](../../data/leaves/fraud-misstatement.md) (`fraud-misstatement`), [do I need a QoE](../../data/leaves/qoe-need.md) (`qoe-need`).
+Leaf: [How do I tie reported revenue to the bank statements?](https://smallbizacqs.com/q/proof-of-cash) (`proof-of-cash`), in topic `evaluate/earnings`. Related: [tax returns vs books](https://smallbizacqs.com/q/tax-returns-vs-books) (`tax-returns-vs-books`), [cash business](https://smallbizacqs.com/q/cash-business) (`cash-business`), [fraud and misstatements](https://smallbizacqs.com/q/fraud-misstatement) (`fraud-misstatement`), [do I need a QoE](https://smallbizacqs.com/q/qoe-need) (`qoe-need`).
 
 Method: [references/proof-of-cash-method.md](references/proof-of-cash-method.md). Templates: [references/templates/](references/templates/). Script: `scripts/proof-of-cash.mjs` (tests: `node --test scripts/`).
 

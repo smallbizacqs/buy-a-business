@@ -86,11 +86,11 @@ This skill plans the search; it does not predict that the user will find or clos
 
 Taxonomy topic: `find/search-process`.
 
-- [How long does a search take?](../../data/leaves/search-timeline.md) (`search-timeline`)
-- [How many deals and offers does it take to close one?](../../data/leaves/deal-funnel-math.md) (`deal-funnel-math`)
-- [What happens when a search runs out of time or money?](../../data/leaves/search-ran-out.md) (`search-ran-out`)
-- [Is buying small businesses getting crowded, and how do I stand out?](../../data/leaves/competition-crowded.md) (`competition-crowded`)
-- [How do I pay my living costs during the search?](../../data/leaves/search-budget.md) (`search-budget`)
+- [How long does a search take?](https://smallbizacqs.com/q/search-timeline) (`search-timeline`)
+- [How many deals and offers does it take to close one?](https://smallbizacqs.com/q/deal-funnel-math) (`deal-funnel-math`)
+- [What happens when a search runs out of time or money?](https://smallbizacqs.com/q/search-ran-out) (`search-ran-out`)
+- [Is buying small businesses getting crowded, and how do I stand out?](https://smallbizacqs.com/q/competition-crowded) (`competition-crowded`)
+- [How do I pay my living costs during the search?](https://smallbizacqs.com/q/search-budget) (`search-budget`)
 
 Method files: [funnel and timeline](references/funnel-and-timeline.md), [search budget](references/search-budget.md), [weekly cadence](references/weekly-cadence.md), [standing out](references/standing-out.md). Script: [scripts/search-math.mjs](scripts/search-math.mjs) with tests in `scripts/search-math.test.mjs`.
 

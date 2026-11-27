@@ -81,10 +81,10 @@ This maps funding sources and quotes sourced SBA rules. It is not legal, tax, in
 
 Leaf questions (taxonomy topic `fund/creative`):
 
-- `little-money-down`: [Can I really buy a business with little or no money down?](../../data/leaves/little-money-down.md)
-- `equity-sources-robs-heloc`: [Can I fund my down payment from a 401(k) (ROBS), a home equity line or savings?](../../data/leaves/equity-sources-robs-heloc.md)
-- `conventional-vs-sba`: [When is a conventional or cash-flow loan better than an SBA loan?](../../data/leaves/conventional-vs-sba.md)
-- `mezz-private-credit`: [When do mezzanine debt or private credit make sense?](../../data/leaves/mezz-private-credit.md)
+- `little-money-down`: [Can I really buy a business with little or no money down?](https://smallbizacqs.com/q/little-money-down)
+- `equity-sources-robs-heloc`: [Can I fund my down payment from a 401(k) (ROBS), a home equity line or savings?](https://smallbizacqs.com/q/equity-sources-robs-heloc)
+- `conventional-vs-sba`: [When is a conventional or cash-flow loan better than an SBA loan?](https://smallbizacqs.com/q/conventional-vs-sba)
+- `mezz-private-credit`: [When do mezzanine debt or private credit make sense?](https://smallbizacqs.com/q/mezz-private-credit)
 
 Detail: `references/equity-source-matrix.md`.
 

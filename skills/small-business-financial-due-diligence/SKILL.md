@@ -69,11 +69,11 @@ This is not legal, tax or financial advice. It organizes and reviews; it is not 
 
 - Know-how: `references/request-list.json`, `references/review-guide.md`, `references/phased-spending.md`, `references/qoe-scoping.md`, `references/red-flags.md`. Arithmetic: `scripts/diligence-calendar.mjs`.
 - Taxonomy topic confirm/financial-dd. Leaf questions:
-  - [`qoe-need`](../../data/leaves/qoe-need.md): Do I need a quality of earnings report?
-  - [`qoe-cost-scope`](../../data/leaves/qoe-cost-scope.md): What does a quality of earnings report cost, and is a lighter one enough?
-  - [`sba-qoe-3m-rule`](../../data/leaves/sba-qoe-3m-rule.md): When does the SBA require a quality of earnings report?
-  - [`fraud-misstatement`](../../data/leaves/fraud-misstatement.md): What fraud and misstatements does diligence uncover?
-  - [`phased-diligence`](../../data/leaves/phased-diligence.md): How do I stage diligence spending in case the deal dies?
-  - [`revenue-quality-churn`](../../data/leaves/revenue-quality-churn.md): How do I check customer churn, retention and revenue quality?
-  - [`financial-dd-checklist`](../../data/leaves/financial-dd-checklist.md): What belongs on a financial diligence checklist?
+  - [`qoe-need`](https://smallbizacqs.com/q/qoe-need): Do I need a quality of earnings report?
+  - [`qoe-cost-scope`](https://smallbizacqs.com/q/qoe-cost-scope): What does a quality of earnings report cost, and is a lighter one enough?
+  - [`sba-qoe-3m-rule`](https://smallbizacqs.com/q/sba-qoe-3m-rule): When does the SBA require a quality of earnings report?
+  - [`fraud-misstatement`](https://smallbizacqs.com/q/fraud-misstatement): What fraud and misstatements does diligence uncover?
+  - [`phased-diligence`](https://smallbizacqs.com/q/phased-diligence): How do I stage diligence spending in case the deal dies?
+  - [`revenue-quality-churn`](https://smallbizacqs.com/q/revenue-quality-churn): How do I check customer churn, retention and revenue quality?
+  - [`financial-dd-checklist`](https://smallbizacqs.com/q/financial-dd-checklist): What belongs on a financial diligence checklist?
 - Sibling skills: `verify-seller-financials`, `sde-and-add-backs-analysis`, `working-capital-peg-for-small-business`, `small-business-legal-due-diligence`, `small-business-operational-due-diligence`, `acquisition-go-no-go-review`, `sba-lender-package`, `sba-sop-rule-check`, `choose-acquisition-advisors`. Router: `buy-a-business`. Stress test: `grill-my-deal`.

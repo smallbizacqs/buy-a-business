@@ -78,15 +78,15 @@ This skill organizes evidence and judgment; it does not predict outcomes and it 
 
 - Method: [references/risk-register.md](references/risk-register.md) (factors, evidence, questions), [references/scoring.md](references/scoring.md), [references/mitigations.md](references/mitigations.md).
 - Taxonomy topic: `evaluate/risk-factors`. Leaf questions:
-  - [How much customer concentration is too much?](../../data/leaves/customer-concentration.md) (`customer-concentration`)
-  - [Does the business depend too much on the owner?](../../data/leaves/owner-dependence.md) (`owner-dependence`)
-  - [What if key employees leave after the sale?](../../data/leaves/key-employee-risk.md) (`key-employee-risk`)
-  - [What if a key supplier relationship breaks?](../../data/leaves/supplier-concentration.md) (`supplier-concentration`)
-  - [Does the business need a license I don't hold?](../../data/leaves/license-dependence.md) (`license-dependence`)
-  - [Will AI disrupt this particular business?](../../data/leaves/ai-disruption.md) (`ai-disruption`)
-  - [Can I hire enough technicians or skilled workers?](../../data/leaves/labor-availability.md) (`labor-availability`)
-  - [Is private equity rolling up this industry, and is that good or bad for me?](../../data/leaves/pe-consolidation.md) (`pe-consolidation`)
-  - [How exposed is the business to interest rates, tariffs and the economy?](../../data/leaves/macro-exposure.md) (`macro-exposure`)
-  - [How do I spot upside the owner hasn't captured?](../../data/leaves/hidden-upside.md) (`hidden-upside`)
-  - [Should I buy a struggling business to turn it around?](../../data/leaves/distressed-turnaround.md) (`distressed-turnaround`)
+  - [How much customer concentration is too much?](https://smallbizacqs.com/q/customer-concentration) (`customer-concentration`)
+  - [Does the business depend too much on the owner?](https://smallbizacqs.com/q/owner-dependence) (`owner-dependence`)
+  - [What if key employees leave after the sale?](https://smallbizacqs.com/q/key-employee-risk) (`key-employee-risk`)
+  - [What if a key supplier relationship breaks?](https://smallbizacqs.com/q/supplier-concentration) (`supplier-concentration`)
+  - [Does the business need a license I don't hold?](https://smallbizacqs.com/q/license-dependence) (`license-dependence`)
+  - [Will AI disrupt this particular business?](https://smallbizacqs.com/q/ai-disruption) (`ai-disruption`)
+  - [Can I hire enough technicians or skilled workers?](https://smallbizacqs.com/q/labor-availability) (`labor-availability`)
+  - [Is private equity rolling up this industry, and is that good or bad for me?](https://smallbizacqs.com/q/pe-consolidation) (`pe-consolidation`)
+  - [How exposed is the business to interest rates, tariffs and the economy?](https://smallbizacqs.com/q/macro-exposure) (`macro-exposure`)
+  - [How do I spot upside the owner hasn't captured?](https://smallbizacqs.com/q/hidden-upside) (`hidden-upside`)
+  - [Should I buy a struggling business to turn it around?](https://smallbizacqs.com/q/distressed-turnaround) (`distressed-turnaround`)
 - Sibling skills: `ai-disruption-risk-check`, `sde-and-add-backs-analysis`, `small-business-valuation`, `sba-dscr-and-affordability`, `loi-for-small-business-acquisition`, `small-business-operational-due-diligence`, `small-business-legal-due-diligence`, `grill-my-deal`, `buy-a-business`.

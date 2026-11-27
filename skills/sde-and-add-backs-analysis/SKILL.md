@@ -77,15 +77,15 @@ This is not accounting, tax or financial advice, and it is not a quality of earn
 
 Topic `evaluate/earnings`:
 
-- [SDE or EBITDA: which measure applies, and why?](../../data/leaves/sde-vs-ebitda.md) (`sde-vs-ebitda`)
-- [Which add-backs are legitimate and which are inflated?](../../data/leaves/add-backs.md) (`add-backs`)
-- [How do I account for the cost of replacing the owner's work?](../../data/leaves/owner-replacement-cost.md) (`owner-replacement-cost`)
-- [Why don't the tax returns match the P&L, and which one counts?](../../data/leaves/tax-returns-vs-books.md) (`tax-returns-vs-books`)
-- [How should a buyer treat claimed cash income that isn't reported?](../../data/leaves/cash-business.md) (`cash-business`)
-- [How do I tie reported revenue to the bank statements?](../../data/leaves/proof-of-cash.md) (`proof-of-cash`), handled by `verify-seller-financials`
-- [How do I weigh the last 12 months against prior years and declining trends?](../../data/leaves/trends-ttm.md) (`trends-ttm`)
-- [How do I adjust for unusual years such as COVID and PPP loans?](../../data/leaves/covid-ppp-normalization.md) (`covid-ppp-normalization`)
-- [How do I account for equipment, vehicles and future capital spending?](../../data/leaves/capex-equipment.md) (`capex-equipment`)
+- [SDE or EBITDA: which measure applies, and why?](https://smallbizacqs.com/q/sde-vs-ebitda) (`sde-vs-ebitda`)
+- [Which add-backs are legitimate and which are inflated?](https://smallbizacqs.com/q/add-backs) (`add-backs`)
+- [How do I account for the cost of replacing the owner's work?](https://smallbizacqs.com/q/owner-replacement-cost) (`owner-replacement-cost`)
+- [Why don't the tax returns match the P&L, and which one counts?](https://smallbizacqs.com/q/tax-returns-vs-books) (`tax-returns-vs-books`)
+- [How should a buyer treat claimed cash income that isn't reported?](https://smallbizacqs.com/q/cash-business) (`cash-business`)
+- [How do I tie reported revenue to the bank statements?](https://smallbizacqs.com/q/proof-of-cash) (`proof-of-cash`), handled by `verify-seller-financials`
+- [How do I weigh the last 12 months against prior years and declining trends?](https://smallbizacqs.com/q/trends-ttm) (`trends-ttm`)
+- [How do I adjust for unusual years such as COVID and PPP loans?](https://smallbizacqs.com/q/covid-ppp-normalization) (`covid-ppp-normalization`)
+- [How do I account for equipment, vehicles and future capital spending?](https://smallbizacqs.com/q/capex-equipment) (`capex-equipment`)
 
 Know-how: [references/add-back-rules.md](references/add-back-rules.md), [references/tax-returns-vs-books.md](references/tax-returns-vs-books.md), [references/addback-schedule-template.csv](references/addback-schedule-template.csv). Script: `scripts/addbacks.mjs` (tests: `node --test scripts/`).
 

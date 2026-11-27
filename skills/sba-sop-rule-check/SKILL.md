@@ -80,11 +80,11 @@ This compares a deal's facts with quoted rules. It is not legal, tax or financia
 
 Leaf questions (taxonomy topic `fund/sba-rules`):
 
-- `sop-rule-changes`: [What changed in the SBA's lending rules (SOP 50 10), and when?](../../data/leaves/sop-rule-changes.md)
-- `citizenship-rule`: [Must every owner be a US citizen to get an SBA loan?](../../data/leaves/citizenship-rule.md)
-- `investor-equity-rules`: [What are the SBA rules for outside investors and guarantors?](../../data/leaves/investor-equity-rules.md)
-- `partial-change-of-ownership`: [Can I buy part of a business with an SBA loan, and must the seller keep guaranteeing?](../../data/leaves/partial-change-of-ownership.md)
-- `earnout-ban-forgivable-note`: [The SBA doesn't allow earnouts. What can a deal use instead?](../../data/leaves/earnout-ban-forgivable-note.md)
+- `sop-rule-changes`: [What changed in the SBA's lending rules (SOP 50 10), and when?](https://smallbizacqs.com/q/sop-rule-changes)
+- `citizenship-rule`: [Must every owner be a US citizen to get an SBA loan?](https://smallbizacqs.com/q/citizenship-rule)
+- `investor-equity-rules`: [What are the SBA rules for outside investors and guarantors?](https://smallbizacqs.com/q/investor-equity-rules)
+- `partial-change-of-ownership`: [Can I buy part of a business with an SBA loan, and must the seller keep guaranteeing?](https://smallbizacqs.com/q/partial-change-of-ownership)
+- `earnout-ban-forgivable-note`: [The SBA doesn't allow earnouts. What can a deal use instead?](https://smallbizacqs.com/q/earnout-ban-forgivable-note)
 
 Detail: `references/rule-pinpoints.md`. Script: `scripts/sop-check.mjs` (test: `node --test scripts/`).
 

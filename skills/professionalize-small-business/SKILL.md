@@ -74,6 +74,6 @@ This skill helps plan improvements; it does not value the business or promise a 
 ## References
 
 - `references/professionalize-toolkit.md`: owner-dependence checklist, process list and SOP template, delegation ladder, systems checklist, value levers.
-- Leaf questions: `value-creation` ([How do I increase the value of the business?](../../data/leaves/value-creation.md)), `professionalize-systems` ([How do I make the business run without me?](../../data/leaves/professionalize-systems.md)). Taxonomy topic: `later/growth`.
+- Leaf questions: `value-creation` ([How do I increase the value of the business?](https://smallbizacqs.com/q/value-creation)), `professionalize-systems` ([How do I make the business run without me?](https://smallbizacqs.com/q/professionalize-systems)). Taxonomy topic: `later/growth`.
 - Related leaves: `owner-dependence`, `value-drivers`, `recurring-revenue`, `customer-concentration`, `hidden-upside`.
 - Sibling skills: `acquired-business-operating-system`, `small-business-valuation`, `add-on-acquisition-plan`, `small-business-exit-options`.

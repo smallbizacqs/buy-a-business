@@ -75,14 +75,14 @@ This skill plans and drafts outreach. It does not send anything, buy lists for t
 
 Taxonomy topic: `find/off-market`.
 
-- [How do I find owners whose businesses aren't listed?](../../data/leaves/off-market-sourcing.md) (`off-market-sourcing`)
-- [How do I email business owners I don't know?](../../data/leaves/cold-email.md) (`cold-email`)
-- [Does calling owners directly work, and what do I say?](../../data/leaves/cold-calling.md) (`cold-calling`)
-- [Do letters and direct mail to owners work?](../../data/leaves/direct-mail.md) (`direct-mail`)
-- [Which data sources and lists help find owners?](../../data/leaves/data-and-lists.md) (`data-and-lists`)
-- [How do I find deals through accountants, attorneys, bankers and referrals?](../../data/leaves/referral-networks.md) (`referral-networks`)
-- [Should I use interns, assistants or a sourcing team?](../../data/leaves/interns-and-teams.md) (`interns-and-teams`)
-- [Can AI find and screen deals for me?](../../data/leaves/ai-sourcing.md) (`ai-sourcing`)
+- [How do I find owners whose businesses aren't listed?](https://smallbizacqs.com/q/off-market-sourcing) (`off-market-sourcing`)
+- [How do I email business owners I don't know?](https://smallbizacqs.com/q/cold-email) (`cold-email`)
+- [Does calling owners directly work, and what do I say?](https://smallbizacqs.com/q/cold-calling) (`cold-calling`)
+- [Do letters and direct mail to owners work?](https://smallbizacqs.com/q/direct-mail) (`direct-mail`)
+- [Which data sources and lists help find owners?](https://smallbizacqs.com/q/data-and-lists) (`data-and-lists`)
+- [How do I find deals through accountants, attorneys, bankers and referrals?](https://smallbizacqs.com/q/referral-networks) (`referral-networks`)
+- [Should I use interns, assistants or a sourcing team?](https://smallbizacqs.com/q/interns-and-teams) (`interns-and-teams`)
+- [Can AI find and screen deals for me?](https://smallbizacqs.com/q/ai-sourcing) (`ai-sourcing`)
 
 Method files: [lists and data](references/lists-and-data.md), [outreach templates](references/outreach-templates.md), [referral networks](references/referral-networks.md), [consent and anti-spam checklist](references/consent-and-anti-spam.md), [teams and AI](references/teams-and-ai.md).
 

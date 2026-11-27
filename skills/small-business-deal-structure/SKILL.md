@@ -66,14 +66,14 @@ This is not legal, tax or financial advice. It describes options and their trade
 
 - Know-how: `references/asset-vs-stock.md`, `references/consideration-components.md`, `references/earnout-design.md`, `references/real-estate-lease-or-buy.md`. Arithmetic: `scripts/earnout.mjs`.
 - Taxonomy topic offer/structure. Leaf questions:
-  - [`asset-vs-stock`](../../data/leaves/asset-vs-stock.md): Asset purchase or stock purchase?
-  - [`earnouts`](../../data/leaves/earnouts.md): When and how should a deal use an earnout?
-  - [`earnout-disputes`](../../data/leaves/earnout-disputes.md): How do earnouts go wrong, and how are disputes prevented?
-  - [`rollover-equity`](../../data/leaves/rollover-equity.md): Should the seller keep a stake (rollover equity)?
-  - [`cash-at-close`](../../data/leaves/cash-at-close.md): How much should be paid at closing versus later?
-  - [`partial-buy-recap`](../../data/leaves/partial-buy-recap.md): Can I buy a majority now and the rest later?
-  - [`seller-consulting-agreement`](../../data/leaves/seller-consulting-agreement.md): How should a seller's consulting or transition agreement be structured?
-  - [`non-compete`](../../data/leaves/non-compete.md): What non-compete and non-solicit should the seller sign?
-  - [`real-estate-lease-or-buy`](../../data/leaves/real-estate-lease-or-buy.md): Should I buy the seller's real estate or lease it?
-  - [`tax-structuring`](../../data/leaves/tax-structuring.md): How do taxes shape the deal structure and price allocation?
+  - [`asset-vs-stock`](https://smallbizacqs.com/q/asset-vs-stock): Asset purchase or stock purchase?
+  - [`earnouts`](https://smallbizacqs.com/q/earnouts): When and how should a deal use an earnout?
+  - [`earnout-disputes`](https://smallbizacqs.com/q/earnout-disputes): How do earnouts go wrong, and how are disputes prevented?
+  - [`rollover-equity`](https://smallbizacqs.com/q/rollover-equity): Should the seller keep a stake (rollover equity)?
+  - [`cash-at-close`](https://smallbizacqs.com/q/cash-at-close): How much should be paid at closing versus later?
+  - [`partial-buy-recap`](https://smallbizacqs.com/q/partial-buy-recap): Can I buy a majority now and the rest later?
+  - [`seller-consulting-agreement`](https://smallbizacqs.com/q/seller-consulting-agreement): How should a seller's consulting or transition agreement be structured?
+  - [`non-compete`](https://smallbizacqs.com/q/non-compete): What non-compete and non-solicit should the seller sign?
+  - [`real-estate-lease-or-buy`](https://smallbizacqs.com/q/real-estate-lease-or-buy): Should I buy the seller's real estate or lease it?
+  - [`tax-structuring`](https://smallbizacqs.com/q/tax-structuring): How do taxes shape the deal structure and price allocation?
 - Sibling skills: `loi-for-small-business-acquisition`, `seller-note-structuring`, `working-capital-peg-for-small-business`, `small-business-acquisition-negotiation`, `sba-sop-rule-check`, `small-business-risk-assessment`, `small-business-purchase-agreement`. Router: `buy-a-business`. Stress test: `grill-my-deal`.

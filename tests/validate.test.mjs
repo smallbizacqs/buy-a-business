@@ -69,6 +69,7 @@ const cases = {
   'SKL-SECTIONS': (d) => edit(d, SKILL, (s) => s.replace('## Honest scope', '## Scope')),
   'SKL-EVALS': (d) => writeFileSync(join(d, 'skills/demo-skill/evals/evals.json'), '{"evals": [{"prompt": "a", "expected": "b"}]}'),
   'SKL-REFS': (d) => edit(d, SKILL, (s) => s + '\nHand off to `demo-skil1`.\n'),
+  'SKL-SOURCES': (d) => edit(d, SKILL, (s) => s + '\nSee irs-made-up-source.\n'),
   'GEN-FORBIDDEN': (d) => edit(d, ANS, (s) => s + '\nThis mentions SecretTerm.\n'),
   'GEN-RUN-BY': (d) => edit(d, ANS, (s) => s + '\nA shop run by volunteers.\n'),
 };

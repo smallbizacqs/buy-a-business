@@ -102,12 +102,12 @@ This skill helps the user write down and test their criteria. It does not say wh
 
 Taxonomy topic: `find/buy-box`.
 
-- [How do I define my buy box?](../../data/leaves/define-buy-box.md) (`define-buy-box`)
-- [What size of business should a first-time buyer target?](../../data/leaves/deal-size.md) (`deal-size`)
-- [How do I pick an industry?](../../data/leaves/industry-selection.md) (`industry-selection`)
-- [Why look for recurring revenue, and which businesses have it?](../../data/leaves/recurring-revenue.md) (`recurring-revenue`)
-- [What makes a small business worth buying?](../../data/leaves/what-makes-a-good-target.md) (`what-makes-a-good-target`)
-- [Should I buy locally or move for the right deal?](../../data/leaves/geography-relocation.md) (`geography-relocation`)
+- [How do I define my buy box?](https://smallbizacqs.com/q/define-buy-box) (`define-buy-box`)
+- [What size of business should a first-time buyer target?](https://smallbizacqs.com/q/deal-size) (`deal-size`)
+- [How do I pick an industry?](https://smallbizacqs.com/q/industry-selection) (`industry-selection`)
+- [Why look for recurring revenue, and which businesses have it?](https://smallbizacqs.com/q/recurring-revenue) (`recurring-revenue`)
+- [What makes a small business worth buying?](https://smallbizacqs.com/q/what-makes-a-good-target) (`what-makes-a-good-target`)
+- [Should I buy locally or move for the right deal?](https://smallbizacqs.com/q/geography-relocation) (`geography-relocation`)
 
 Method files: [criteria checklist](references/criteria-checklist.md), [size and affordability](references/size-and-affordability.md), [industry selection worksheet](references/industry-selection.md).
 

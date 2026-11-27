@@ -82,9 +82,9 @@ This is a structured way to narrow a search, not a market study or a forecast. I
 
 Leaf questions (taxonomy topic `decide/what-to-buy`):
 
-- `boring-business-thesis`: [Why buy a 'boring' business, and which ones?](../../data/leaves/boring-business-thesis.md)
-- `resilient-businesses`: [Which small businesses hold up through recessions and AI?](../../data/leaves/resilient-businesses.md)
-- `businesses-to-avoid`: [Which businesses should a first-time buyer avoid?](../../data/leaves/businesses-to-avoid.md)
+- `boring-business-thesis`: [Why buy a 'boring' business, and which ones?](https://smallbizacqs.com/q/boring-business-thesis)
+- `resilient-businesses`: [Which small businesses hold up through recessions and AI?](https://smallbizacqs.com/q/resilient-businesses)
+- `businesses-to-avoid`: [Which businesses should a first-time buyer avoid?](https://smallbizacqs.com/q/businesses-to-avoid)
 
 Detail: `references/industry-scoring.md`.
 

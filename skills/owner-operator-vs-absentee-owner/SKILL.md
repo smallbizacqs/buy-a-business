@@ -86,8 +86,8 @@ This skill compares operating models and does arithmetic on the user's inputs. I
 
 Leaf questions (taxonomy topic `decide/operator-model`):
 
-- `operator-vs-absentee`: [Should I run the business myself or put in a manager?](../../data/leaves/operator-vs-absentee.md)
-- `hours-lifestyle`: [What are the hours and lifestyle like in the first year?](../../data/leaves/hours-lifestyle.md)
+- `operator-vs-absentee`: [Should I run the business myself or put in a manager?](https://smallbizacqs.com/q/operator-vs-absentee)
+- `hours-lifestyle`: [What are the hours and lifestyle like in the first year?](https://smallbizacqs.com/q/hours-lifestyle)
 
 Detail: `references/operator-model-worksheets.md`.
 

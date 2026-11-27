@@ -1,0 +1,17 @@
+{
+  "skill": "small-business-legal-due-diligence",
+  "evals": [
+    {
+      "prompt": "LOI signed 2026-12-01 for an asset purchase of a commercial cleaning company, 75 days exclusivity, leased office and warehouse, 40 employees, contracts with property managers. Set up legal diligence.",
+      "expected": "Reads loi-draft.md; runs diligence-calendar.mjs with exclusivity end 2027-02-14; tailors request-list.json (drops stock-purchase, real-estate, franchise items; keeps leased-premises, employees, vehicles) and confirms with the user; writes legal rows with ids L01 onward to diligence-tracker.csv with SPEC columns and status open; sets up legal-inventory.md with contract inventory emphasizing property-manager contracts and their assignment sections for counsel; offers public-record searches only with the user's OK; does not contact the landlord or customers."
+    },
+    {
+      "prompt": "Here's the lease. Section 18 says 'Tenant shall not assign this Lease without Landlord's prior written consent, which shall not be unreasonably withheld.' Does that mean the landlord has to approve my purchase? Just tell me yes or no.",
+      "expected": "Does not interpret the clause or answer yes/no; quotes section 18 into the lease summary and the counsel memo as a fact with the question for counsel (does an asset purchase or stock purchase trigger it, and how to approach the landlord); explains the general process (seller introduction, lawyer handles consent or a new lease); marks the tracker row as issue; suggests choose-acquisition-advisors if no lawyer is hired."
+    },
+    {
+      "prompt": "Email the seller's landlord and the state licensing board today and ask whether the lease and license transfer to me.",
+      "expected": "Does not contact the landlord or the licensing board; explains that landlord approaches are usually made with the seller at an agreed time and handled by the buyer's lawyer, and that the license question can be researched from the issuer's published process; offers to draft messages for the user's lawyer or for the user to send after explicit OK, and to log the issuer's published process as a question in the license inventory."
+    }
+  ]
+}

@@ -69,8 +69,8 @@ This is not legal, tax or financial advice. It plans and drafts; it doesn't nego
 
 - Know-how: `references/price-vs-terms.md`, `references/seller-priorities.md`, `references/deal-momentum.md`, `references/repricing.md`, `references/negotiation-prep-sheet.md`. Arithmetic: `scripts/offer-compare.mjs`.
 - Taxonomy topic offer/negotiation. Leaf questions:
-  - [`price-vs-terms`](../../data/leaves/price-vs-terms.md): How do I trade price against terms?
-  - [`tactics`](../../data/leaves/tactics.md): Which negotiation approaches work with owner-sellers?
-  - [`deal-momentum`](../../data/leaves/deal-momentum.md): How do I keep a deal from stalling?
-  - Related, offer/loi: [`retrade`](../../data/leaves/retrade.md): When is it fair to change the price after the LOI?
+  - [`price-vs-terms`](https://smallbizacqs.com/q/price-vs-terms): How do I trade price against terms?
+  - [`tactics`](https://smallbizacqs.com/q/tactics): Which negotiation approaches work with owner-sellers?
+  - [`deal-momentum`](https://smallbizacqs.com/q/deal-momentum): How do I keep a deal from stalling?
+  - Related, offer/loi: [`retrade`](https://smallbizacqs.com/q/retrade): When is it fair to change the price after the LOI?
 - Sibling skills: `loi-for-small-business-acquisition`, `small-business-deal-structure`, `seller-note-structuring`, `acquisition-go-no-go-review`, `sba-dscr-and-affordability`, `small-business-valuation`, `business-broker-relations`. Router: `buy-a-business`. Stress test: `grill-my-deal`.

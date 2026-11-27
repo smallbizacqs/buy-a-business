@@ -55,3 +55,11 @@ test('markdown compares several structures', () => {
 test('principal is required', () => {
   assert.throws(() => analyzeNote({ ratePct: 6 }), /principal/);
 });
+
+test('a balloon before amortization starts shows no amortizing payment', () => {
+  const n = analyzeNote({ principal: 300_000, ratePct: 6, years: 10, interestOnlyMonths: 36, balloonMonth: 36 });
+  assert.equal(n.levelMonthlyPayment, null);
+  near(n.balloon, 300_000);
+  near(n.totalInterest, 54_000);
+  assert.match(toMarkdown([n]), /none \(balloon first\)/);
+});

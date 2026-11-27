@@ -85,9 +85,9 @@ This skill compares routes in general terms. It is not legal, tax or financial a
 
 Leaf questions (taxonomy topic `decide/buy-vs-build`):
 
-- `buy-vs-start`: [Should I buy an existing business or start one?](../../data/leaves/buy-vs-start.md)
-- `buy-vs-franchise`: [Should I buy an independent business, a franchise resale or a new franchise?](../../data/leaves/buy-vs-franchise.md)
-- `what-is-eta`: [What is entrepreneurship through acquisition, and how does the path work?](../../data/leaves/what-is-eta.md)
+- `buy-vs-start`: [Should I buy an existing business or start one?](https://smallbizacqs.com/q/buy-vs-start)
+- `buy-vs-franchise`: [Should I buy an independent business, a franchise resale or a new franchise?](https://smallbizacqs.com/q/buy-vs-franchise)
+- `what-is-eta`: [What is entrepreneurship through acquisition, and how does the path work?](https://smallbizacqs.com/q/what-is-eta)
 
 Detail: `references/route-comparison.md`.
 

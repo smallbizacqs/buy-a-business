@@ -84,11 +84,11 @@ This is not financial, legal or tax advice. It never says a deal or a buyer is "
 
 Topic `evaluate/debt-capacity`:
 
-- [What debt service coverage do lenders require, and how is it calculated?](../../data/leaves/dscr.md) (`dscr`)
-- [How much can I pay for a business given the loan payments?](../../data/leaves/affordability.md) (`affordability`)
-- [How do I stress-test a deal for a downturn?](../../data/leaves/stress-test.md) (`stress-test`)
+- [What debt service coverage do lenders require, and how is it calculated?](https://smallbizacqs.com/q/dscr) (`dscr`)
+- [How much can I pay for a business given the loan payments?](https://smallbizacqs.com/q/affordability) (`affordability`)
+- [How do I stress-test a deal for a downturn?](https://smallbizacqs.com/q/stress-test) (`stress-test`)
 
-Related leaves: [underwriting](../../data/leaves/underwriting.md) (`underwriting`), [seller note standby](../../data/leaves/seller-note-standby.md) (`seller-note-standby`), [capital stack](../../data/leaves/capital-stack.md) (`capital-stack`).
+Related leaves: [underwriting](https://smallbizacqs.com/q/underwriting) (`underwriting`), [seller note standby](https://smallbizacqs.com/q/seller-note-standby) (`seller-note-standby`), [capital stack](https://smallbizacqs.com/q/capital-stack) (`capital-stack`).
 
 Method and stress tests: [references/dscr-method.md](references/dscr-method.md), [references/stress-tests.md](references/stress-tests.md). Script: `scripts/dscr.mjs` (tests: `node --test scripts/`).
 

@@ -43,7 +43,7 @@ export function analyzeNote(note) {
   const totalPaid = rows.reduce((a, r) => a + r.payment, 0);
   const firstPaymentMonth = rows.find((r) => r.payment > 0)?.month ?? null;
   const amortStart = rows[standbyMonths + interestOnlyMonths];
-  const level = amortStart ? amortStart.payment - amortStart.balloon : 0;
+  const level = amortStart ? amortStart.payment - amortStart.balloon : null;
   const yearsN = Math.ceil(horizon / 12);
   const annual = Array.from({ length: yearsN }, (_, i) => {
     const s = rows.slice(i * 12, (i + 1) * 12);
@@ -66,7 +66,7 @@ const usd = (n) => (n == null ? 'n/a' : (n < 0 ? '-$' : '$') + Math.round(Math.a
 
 export function toMarkdown(list) {
   const L = ['| Structure | Principal | First payment (month) | Balance after standby | Monthly payment when amortizing | Balloon | Total paid | Total interest | Value to seller today |', '|---|---|---|---|---|---|---|---|---|'];
-  for (const n of list) L.push(`| ${n.label} | ${usd(n.principal)} | ${n.firstPaymentMonth ?? 'none'} | ${usd(n.balanceAfterStandby)} | ${usd(n.levelMonthlyPayment)} | ${n.balloon ? usd(n.balloon) : 'none'} | ${usd(n.totalPaid)} | ${usd(n.totalInterest)} | ${n.presentValue == null ? 'n/a' : `${usd(n.presentValue)} at ${n.discountPct}%`} |`);
+  for (const n of list) L.push(`| ${n.label} | ${usd(n.principal)} | ${n.firstPaymentMonth ?? 'none'} | ${usd(n.balanceAfterStandby)} | ${n.levelMonthlyPayment == null ? 'none (balloon first)' : usd(n.levelMonthlyPayment)} | ${n.balloon ? usd(n.balloon) : 'none'} | ${usd(n.totalPaid)} | ${usd(n.totalInterest)} | ${n.presentValue == null ? 'n/a' : `${usd(n.presentValue)} at ${n.discountPct}%`} |`);
   const maxYears = Math.max(...list.map((n) => n.annual.length));
   L.push('', `| Year | ${list.map((n) => n.label).join(' | ')} |`, `|---|${list.map(() => '---|').join('')}`);
   for (let y = 0; y < maxYears; y++) L.push(`| ${y + 1} | ${list.map((n) => { const a = n.annual[y]; return a ? usd(a.payments) + (a.balloon ? ` + balloon ${usd(a.balloon)}` : '') : '$0'; }).join(' | ')} |`);

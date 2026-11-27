@@ -77,6 +77,6 @@ This skill compares routes and plans preparation; it does not value the business
 ## References
 
 - `references/exit-playbook.md`: exit routes compared, readiness checklist, recap and refinance, what if no one buys, questions for the CPA and advisors.
-- Leaf questions: `exit-options` ([What are my exit options?](../../data/leaves/exit-options.md)), `sell-to-pe` ([What is selling to PE or a strategic like?](../../data/leaves/sell-to-pe.md)), `refinance-recap` ([Can I refinance or recapitalize?](../../data/leaves/refinance-recap.md)), `cant-exit` ([What if I can't sell?](../../data/leaves/cant-exit.md)), `exit-taxes` ([How are sale proceeds taxed?](../../data/leaves/exit-taxes.md)). Taxonomy topic: `later/exit`.
+- Leaf questions: `exit-options` ([What are my exit options?](https://smallbizacqs.com/q/exit-options)), `sell-to-pe` ([What is selling to PE or a strategic like?](https://smallbizacqs.com/q/sell-to-pe)), `refinance-recap` ([Can I refinance or recapitalize?](https://smallbizacqs.com/q/refinance-recap)), `cant-exit` ([What if I can't sell?](https://smallbizacqs.com/q/cant-exit)), `exit-taxes` ([How are sale proceeds taxed?](https://smallbizacqs.com/q/exit-taxes)). Taxonomy topic: `later/exit`.
 - Related leaves: `value-drivers`, `owner-dependence`, `seller-note-refinance-timing`, `rollover-equity`, `earnouts`.
 - Sibling skills: `professionalize-small-business`, `small-business-valuation`, `working-capital-peg-for-small-business`, `add-on-acquisition-plan`, `choose-acquisition-advisors`.

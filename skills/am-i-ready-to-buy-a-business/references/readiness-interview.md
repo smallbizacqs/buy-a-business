@@ -68,4 +68,6 @@ People
 
 **Career switch (tech, banking, consulting, military).** Name the transferable skills (analysis, leading teams, process, selling) and the gap most switchers have: day-to-day supervision of hourly staff and front-line selling. Close the gap before buying, through shadowing an owner, part-time work in the trade, or choosing a business with an operations manager who stays.
 
+**Not a US citizen.** Two separate questions, neither covered by our sources: whether ownership or a purchase can support a visa (an immigration lawyer answers) and what SBA citizenship and residency rules apply to the loan (confirm the current SOP with the lender). Record both as open questions; don't answer from memory. Paths without SBA debt (see `search-fund-vs-sba-loan`) may matter more for this buyer.
+
 **After an MBA.** The MBA helps with analysis, financing conversations and investor credibility; it doesn't replace operating experience. Investor-backed search funds often recruit from MBA programs; see `search-fund-vs-sba-loan`.

@@ -80,6 +80,6 @@ This is a structured judgment about one business, not a prediction, and not lega
 
 - Method: [references/task-inventory.md](references/task-inventory.md), [references/evidence.md](references/evidence.md), [references/scoring.md](references/scoring.md).
 - Taxonomy: leaf `ai-disruption` (topic `evaluate/risk-factors`); related leaf `resilient-businesses` (topic `decide/what-to-buy`).
-  - [Will AI disrupt this particular business?](../../data/leaves/ai-disruption.md) (`ai-disruption`)
-  - [Which small businesses hold up through recessions and AI?](../../data/leaves/resilient-businesses.md) (`resilient-businesses`)
+  - [Will AI disrupt this particular business?](https://smallbizacqs.com/q/ai-disruption) (`ai-disruption`)
+  - [Which small businesses hold up through recessions and AI?](https://smallbizacqs.com/q/resilient-businesses) (`resilient-businesses`)
 - Sibling skills: `small-business-risk-assessment`, `small-business-valuation`, `sde-and-add-backs-analysis`, `what-small-business-to-buy`, `grill-my-deal`, `buy-a-business`.

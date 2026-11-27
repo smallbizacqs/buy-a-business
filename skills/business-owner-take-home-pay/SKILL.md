@@ -84,10 +84,10 @@ This is arithmetic on the user's inputs, not a forecast. It is not legal, tax or
 
 Leaf questions (taxonomy topic `decide/economics`):
 
-- `owner-take-home`: [How much will I actually take home after the loan payments?](../../data/leaves/owner-take-home.md)
-- `j-curve`: [How long until the business pays me a normal salary?](../../data/leaves/j-curve.md)
-- `wealth-building`: [How does owning a small business build long-term wealth?](../../data/leaves/wealth-building.md)
-- `silver-tsunami`: [Is the wave of retiring owners a real buying opportunity?](../../data/leaves/silver-tsunami.md)
+- `owner-take-home`: [How much will I actually take home after the loan payments?](https://smallbizacqs.com/q/owner-take-home)
+- `j-curve`: [How long until the business pays me a normal salary?](https://smallbizacqs.com/q/j-curve)
+- `wealth-building`: [How does owning a small business build long-term wealth?](https://smallbizacqs.com/q/wealth-building)
+- `silver-tsunami`: [Is the wave of retiring owners a real buying opportunity?](https://smallbizacqs.com/q/silver-tsunami)
 
 Detail: `references/j-curve-method.md`. Script: `scripts/take-home.mjs` (test: `node --test scripts/`).
 

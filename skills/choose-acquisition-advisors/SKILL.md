@@ -65,8 +65,8 @@ This is not legal, tax or financial advice, and not a referral service: no named
 
 - Know-how: `references/advisor-roles.md`, `references/interview-questions.md`, `references/fee-structures.md`. Arithmetic: `scripts/advisor-budget.mjs`.
 - Taxonomy topic offer/team. Leaf questions:
-  - [`choosing-counsel`](../../data/leaves/choosing-counsel.md): Do I need a lawyer to buy a business, and how do I choose one?
-  - [`advisor-costs`](../../data/leaves/advisor-costs.md): What do lawyers, accountants and diligence providers cost?
-  - [`deal-team`](../../data/leaves/deal-team.md): Who should be on my acquisition team?
-  - [`cpa-role`](../../data/leaves/cpa-role.md): What role should my accountant play?
+  - [`choosing-counsel`](https://smallbizacqs.com/q/choosing-counsel): Do I need a lawyer to buy a business, and how do I choose one?
+  - [`advisor-costs`](https://smallbizacqs.com/q/advisor-costs): What do lawyers, accountants and diligence providers cost?
+  - [`deal-team`](https://smallbizacqs.com/q/deal-team): Who should be on my acquisition team?
+  - [`cpa-role`](https://smallbizacqs.com/q/cpa-role): What role should my accountant play?
 - Sibling skills: `small-business-financial-due-diligence`, `small-business-legal-due-diligence`, `small-business-operational-due-diligence`, `sba-lender-package`, `sba-7a-acquisition-loan`, `loi-for-small-business-acquisition`, `small-business-purchase-agreement`. Router: `buy-a-business`. Stress test: `grill-my-deal`.
