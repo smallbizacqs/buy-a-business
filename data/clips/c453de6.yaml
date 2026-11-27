@@ -1,8 +1,8 @@
 id: c453de6
 leaves: [seller-consulting-agreement, getting-seller-to-carry]
 facets:
-  speaker_role: consultant
-  sells_services: "unknown"
+  speaker_role: attorney
+  sells_services: "yes"
   format: story
   audience: buyer
   geography: us
