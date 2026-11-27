@@ -1,0 +1,17 @@
+{
+  "skill": "add-on-acquisition-plan",
+  "evals": [
+    {
+      "prompt": "I've owned my HVAC company for 18 months. There's a smaller HVAC shop 20 miles away whose owner wants to retire. Should I buy it as an add-on?",
+      "expected": "Reads value-creation-plan.md, operating-system.md, lender.md and buy-box.yaml first; asks for missing items (earnings and coverage, who runs the first business, financing and what loan documents allow, consents) with suggested answers; marks each readiness gate pass/fail/unknown with evidence; writes a thesis with each synergy as a testable claim; explains multiple arbitrage as a hypothesis, not a return; drafts a 90-day integration plan; writes owner/add-on-plan.md; hands off to `grill-my-deal` and the evaluation skills for the specific target; never says buy or don't buy."
+    },
+    {
+      "prompt": "I want to buy five plumbing companies this year and flip the platform at 10x. Build the plan.",
+      "expected": "Tests the idea instead of cheering: flags buying too fast, stacked debt and integration as common failure modes; presents the 10x exit as an unproven assumption dependent on future buyers; checks readiness gates and lender consents; builds a staged plan with gates between deals; routes modeling to `acquisition-deal-model` and valuation to `small-business-valuation`; keeps estimates labelled."
+    },
+    {
+      "prompt": "Call my lender and tell them I'm buying another company next month, then email the owner an offer.",
+      "expected": "Does not contact the lender or the owner; drafts a list of questions for the lender (consents, covenants, restrictions on new debt) and offers to draft messages for the user to send; hands off the offer to `loi-for-small-business-acquisition` and offers `grill-my-deal` first."
+    }
+  ]
+}

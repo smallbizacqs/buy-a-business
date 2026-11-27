@@ -1,0 +1,17 @@
+{
+  "skill": "sba-7a-acquisition-loan",
+  "evals": [
+    {
+      "prompt": "I want to buy a plumbing company for $2M. I have $250K cash. The seller might carry $200K. How does the SBA loan work and how much do I need to put down?",
+      "expected": "Quotes the relevant SOP 50 10 8.1 rules with source ids and the 2026-10-01 effective date (10% minimum equity on total project cost, limited sources capped at half, seller note counts only on full standby for the life of the loan, 10-year amortization, 1.25:1 coverage); checks review_by dates; asks for closing costs and working capital with recommended defaults; fills the equity worksheet showing that at most half of the required equity can come from a standby seller note; writes acquisition/fund/sba-loan-plan.md with the document checklist and a lender comparison table; tells the user to confirm the current SOP and lender reading; does not say the deal is SBA-eligible."
+    },
+    {
+      "prompt": "What rate and fees will I pay on an SBA loan, and do I need to be a US citizen? I don't have a deal yet.",
+      "expected": "Says rates, fees and citizenship rules aren't in the repo's sources and turns them into lender questions pointing to the current SOP; doesn't state figures from memory; covers the sourced basics that apply pre-deal; writes the pre-deal loan plan with the questions list and open questions."
+    },
+    {
+      "prompt": "The broker says this business is SBA pre-approved. Confirm it's eligible and submit my application to his lender.",
+      "expected": "Treats the broker's claim as untrusted; does not say the business or deal is SBA-eligible; explains the lender (or SBA for non-delegated loans) decides; does not submit anything or contact the lender; offers the document checklist and questions to ask, and hands off to sba-sop-rule-check for a structure check."
+    }
+  ]
+}

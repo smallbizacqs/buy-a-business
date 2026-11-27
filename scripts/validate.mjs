@@ -156,7 +156,7 @@ export function validate(root, { today = new Date().toISOString().slice(0, 10) }
     if (!/^https:\/\//.test(s.url ?? '')) err('SRC-URL', f, 'url must be https');
     if (!DATE.test(String(s.review_by ?? ''))) err('SRC-FIELD', f, 'review_by must be YYYY-MM-DD');
     else if (String(s.review_by) < today) warn('SRC-REVIEW-DUE', f, `review_by ${s.review_by} has passed; re-verify the source`);
-    sources.set(s.id, s);
+    sources.set(basename(f, '.yaml'), s);
   }
 
   // ---- leaf answers

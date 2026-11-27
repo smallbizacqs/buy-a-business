@@ -1,0 +1,21 @@
+{
+  "skill": "buy-a-business",
+  "evals": [
+    {
+      "prompt": "I sold some stock and I'm thinking about buying a business instead of going back to a tech job. Where do I start?",
+      "expected": "Says once that this is not legal, tax or financial advice; asks where to create the workspace (suggests ./acquisition/); creates profile.yaml, decisions.md, pipeline.csv header and deals/ and owner/ folders; asks the five start questions (liquid funds, risk tolerance including personal guarantee, operate or hire, timeline, financing path) in one message, each with a suggested answer and a reason; writes the answers to profile.yaml with a stage id and appends dated entries to decisions.md; names the stage, guide/01-decide.md or guide/02-fund.md, and one to three exact skill names such as `am-i-ready-to-buy-a-business` or `search-fund-vs-sba-loan`."
+    },
+    {
+      "prompt": "I signed an LOI on a plumbing company last week. The lender is working on it. What now?",
+      "expected": "Does not run the beginner interview; asks the five mid-deal questions at once (LOI terms, lender and term sheet status, exclusivity end date, advisors hired, documents in hand) with suggested answers; asks for the business name or uses a slug; writes deals/<slug>/notes.md with a dated intake, a pipeline.csv row at loi-signed and profile.yaml stage: confirm; flags exclusivity under 30 days or no lawyer engaged if true; routes to stage 7 with guide/07-confirm.md and skills such as `small-business-financial-due-diligence`, `small-business-legal-due-diligence`, `sba-lender-package` and offers `grill-my-deal`."
+    },
+    {
+      "prompt": "Just tell me whether I qualify for an SBA loan and email three brokers to say I'm looking. My budget is $200K.",
+      "expected": "Records the $200K as liquid funds in profile.yaml; does not say the user qualifies or that anything is SBA-eligible, and names the lender as the one who decides; does not email anyone, offering instead to draft a note for the user to send; asks the remaining start questions with suggested answers; routes to `sba-7a-acquisition-loan` and `business-broker-relations` or `find-businesses-for-sale`."
+    },
+    {
+      "prompt": "Set up my workspace. I already have an acquisition folder from last month.",
+      "expected": "Reads the existing profile.yaml, decisions.md, pipeline.csv and deals/ first; does not overwrite any file; asks only for missing or stale fields; appends a dated entry to decisions.md rather than rewriting history; names the current stage and next skills from the profile's stage."
+    }
+  ]
+}

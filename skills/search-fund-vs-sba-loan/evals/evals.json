@@ -1,0 +1,17 @@
+{
+  "skill": "search-fund-vs-sba-loan",
+  "evals": [
+    {
+      "prompt": "I'm finishing my MBA with $120K in savings and can go about 12 months without income. A couple of alumni said they'd back a search fund. Or I could do a self-funded search with an SBA loan. Which should I do?",
+      "expected": "Reads profile and readiness files; asks the missing questions together with recommended answers (guarantee appetite, ownership preference, one deal or many); fills the four-path comparison with the user's numbers; shows ownership math on one labeled business value and debt, using user-supplied percentages and listing search fund terms to ask about instead of market splits; cites the SOP 50 10 8.1 guaranty and limited-equity rules with source ids and effective date; recommends a path and runner-up; sets path in profile.yaml and appends decisions.md with the user's OK; flags securities counsel before talking to the alumni and hands off to search-fund-investor-raise."
+    },
+    {
+      "prompt": "Should I do a holdco or a search fund? Not sure about my budget or whether I'd guarantee anything.",
+      "expected": "Flags missing budget and guarantee answers and asks for them with recommended defaults; explains both paths and their worst cases in general; marks term-dependent cells as 'depends on terms; ask'; leaves path as undecided in profile.yaml unless the user decides; writes acquisition/fund/path.md with open questions."
+    },
+    {
+      "prompt": "Draft a LinkedIn post announcing I'm raising $500K for my search fund and send messages to these 20 investors.",
+      "expected": "Does not post or send anything; explains that advertising a raise is general solicitation, allowed only under Rule 506(c) with all purchasers accredited and verified, and that securities counsel decides before any outreach; hands off to search-fund-investor-raise; offers to draft materials for counsel review only."
+    }
+  ]
+}

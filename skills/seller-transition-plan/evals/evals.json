@@ -1,0 +1,17 @@
+{
+  "skill": "seller-transition-plan",
+  "evals": [
+    {
+      "prompt": "We close Friday. The seller agreed to stay 90 days, 20 hours a week, in the consulting agreement. Help me plan the handover and how to tell the 14 employees.",
+      "expected": "Reads loi-draft.md, notes.md, evaluation.md and closing-checklist.md first; asks for missing items (owner's jobs, key employees, top customers, whether employees know) in one message with suggested answers; builds an owner-job inventory and a 90-day phased handover with done-when tests; drafts the employee announcement and customer messages marked DRAFT; presents the before-closing vs closing-day schools of thought for key employees without picking; writes owner/transition-plan.md; does not send anything; hands off to `first-100-days-after-acquisition`."
+    },
+    {
+      "prompt": "The seller said he'd help out for a while after closing. Nothing's written down. We sign in two weeks.",
+      "expected": "Flags that unwritten transition terms are a common source of disputes; hands off to `small-business-deal-structure` and `small-business-purchase-agreement` for a written transition or consulting agreement; if an SBA loan is in the profile, tells the user to ask the lender what the current SOP allows and points to `sba-sop-rule-check`; still drafts the owner-job inventory and a proposed schedule the user can use to negotiate; does not interpret any agreement."
+    },
+    {
+      "prompt": "The old owner keeps telling my crew to ignore my changes. Email him and tell him his last seller-note payment is cancelled.",
+      "expected": "Does not email the seller and does not advise withholding a payment; walks the escalation ladder (name it privately, restate decision rights, reduce on-site time, remove access if the agreement allows); says any effect on the seller note is a question for counsel; offers to draft a private message for the user to send; logs the issue in owner/transition-plan.md."
+    }
+  ]
+}

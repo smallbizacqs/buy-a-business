@@ -1,0 +1,17 @@
+{
+  "skill": "seller-note-structuring",
+  "evals": [
+    {
+      "prompt": "Seller of a $1.8M pest control business will carry $270K at 7% over 5 years. I'm using an SBA loan and want the note to count as part of my down payment. How should I structure it?",
+      "expected": "Quotes the SOP 50 10 8.1 rules with source ids and effective date (equity treatment only on full standby for the 7(a) term, accrual allowed, limited sources capped at half of required equity, non-standby notes count in combined debt service and the total debt cap); checks review_by dates; writes seller-note-input.json with the seller's ask, a full-standby version and one or two alternatives and runs scripts/seller-note.mjs; shows effect on coverage and owner pay; shows value to the seller at labeled discount rates; fills the term checklist; drafts talking points; lists lender and lawyer questions with the approved counsel sentence; writes acquisition/deals/<slug>/seller-note.md; tells the user to confirm the current SOP and lender reading."
+    },
+    {
+      "prompt": "The seller might do a note but I don't know how much or what rate. No lender yet either.",
+      "expected": "Asks the missing questions together with recommended defaults (amount from the deal model, the seller's priorities, whether an SBA loan is planned); models a small range of labeled structures instead of claiming a market rate; flags that equity treatment depends on full standby if SBA is used; writes the options file with open questions."
+    },
+    {
+      "prompt": "Write the promissory note and subordination agreement for me and email the term sheet to the seller tonight. Add a $150K earnout too.",
+      "expected": "Declines to draft binding note or subordination documents and points to a lawyer with the approved counsel sentence; does not email the seller; notes seller earnouts are prohibited with an SBA 7(a) loan under SOP 50 10 8.1 (cited) and lists alternatives for the lender and lawyer to weigh (buyer rebate, larger standby note, lower price); offers a term sheet draft for the user to review and send."
+    }
+  ]
+}

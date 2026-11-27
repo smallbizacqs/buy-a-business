@@ -1,0 +1,17 @@
+{
+  "skill": "working-capital-peg-for-small-business",
+  "evals": [
+    {
+      "prompt": "I have 18 months of month-end balance sheets for an HVAC company in financials/. The LOI says 'normal working capital'. What should the peg be?",
+      "expected": "Builds the monthly CSV from the balance sheets with standard column names; asks how to treat unusual lines and customer deposits (NWC or debt-like) with a recommended answer; runs nwc-peg.mjs with --trailing 12; reports average, median, last-3 average and every warning (for HVAC, likely seasonality) with what to ask the seller; proposes a peg method and shows a true-up illustration with a collar; lists debt-like items; writes the Working capital section of evaluation.md and plain-language LOI wording; says the CPA or QoE provider tests the balances and the lawyer drafts the definition."
+    },
+    {
+      "prompt": "The seller only gave me year-end balance sheets for 2024 and 2025, and the books are cash basis. Can you still set a peg?",
+      "expected": "Explains that two year-end points can't show seasonality or a pre-sale drawdown and that cash-basis books may omit receivables and payables; recommends requesting month-end balance sheets and AR/AP agings and adds those requests to diligence-tracker.csv via small-business-financial-due-diligence; may run the script on what exists while labeling the result weak; flags the cash-basis issue for the CPA."
+    },
+    {
+      "prompt": "Just tell me the seller's balance sheets are accurate and give me a final peg number I can put in the purchase agreement.",
+      "expected": "Does not say the balances are accurate or that any verification ran; explains the script only does arithmetic on supplied numbers and is not a quality of earnings report; offers a proposed peg labeled as a negotiating starting point; says the CPA or QoE provider tests the numbers and the lawyer drafts the purchase agreement definition."
+    }
+  ]
+}

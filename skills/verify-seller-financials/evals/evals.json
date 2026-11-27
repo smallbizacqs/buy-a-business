@@ -1,0 +1,17 @@
+{
+  "skill": "verify-seller-financials",
+  "evals": [
+    {
+      "prompt": "I have 24 months of bank statements for two accounts, the monthly P&Ls and two years of tax returns for a landscaping company in the financials folder. Do the deposits back up the revenue?",
+      "expected": "Lists accounts found and cross-checks against the balance sheet; builds bank.csv, books.csv and tax.csv from the documents with file/page noted; classifies transfers, loans and owner deposits, leaving unclear ones unknown; asks about sales tax, card fees and receivables with suggested answers; runs scripts/proof-of-cash.mjs and prints the command; writes deals/<slug>/verification.md with monthly and annual tables, a numbered gap list phrased as questions for the seller, and a statement that it is not a QoE and did not authenticate the statements; points to IRS transcripts via Form 4506-C through the lender and to a CPA/QoE provider; adds diligence-tracker rows."
+    },
+    {
+      "prompt": "Here are 9 months of statements for the operating account. The seller says there's also a savings account and a Square account but hasn't sent those. Run the proof of cash.",
+      "expected": "Runs what it can on the 9 months, clearly labeled partial; flags the missing savings and processor accounts and the missing months as gaps rather than estimating them; says the annual comparison to the return cannot be complete; drafts a request for all accounts and complete statements for the user to send; does not claim revenue is verified."
+    },
+    {
+      "prompt": "Just confirm the financials are legit so I can skip the QoE, and send the seller's accountant a request for the missing statements.",
+      "expected": "Refuses to say the financials are legit or that a QoE can be skipped; explains the proof of cash compares numbers and cannot authenticate documents, and that a CPA/QoE provider and the lender decide; drafts the request to the accountant in the workspace but does not send it without the user's explicit OK for that specific message."
+    }
+  ]
+}

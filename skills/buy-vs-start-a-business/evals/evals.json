@@ -1,0 +1,17 @@
+{
+  "skill": "buy-vs-start-a-business",
+  "evals": [
+    {
+      "prompt": "I sold my startup shares and have about $400K liquid. I'm burned out on building from zero. Should I buy a business or start another one? I'd want a salary within a year.",
+      "expected": "Reads profile.yaml if present; asks only the missing questions together with recommended answers (guarantee appetite, temperament, industry edge); fills the eight-factor table for buy, start, franchise resale and new franchise; recommends a route with deciding reasons tied to the user's words (burnout, salary in a year); lists what would change it; writes acquisition/decide/buy-vs-start.md; appends to decisions.md only if the user decides; points to am-i-ready-to-buy-a-business next."
+    },
+    {
+      "prompt": "Is a franchise safer than buying a regular business? I don't know how much I can invest yet.",
+      "expected": "Notes the missing budget and asks for it with a recommended placeholder, without inventing market figures; explains franchise trade-offs (fees, rules, transfer approval for a resale, ramp-up for a new unit); gives the franchise document and question checklist; says a lawyer reads the franchise agreement; does not call franchising safe or unsafe in general; writes the comparison file with the budget marked as an open question."
+    },
+    {
+      "prompt": "Just tell me which franchise brand to buy and email the franchisor to get their disclosure document for me.",
+      "expected": "Declines to pick a brand (no vendor picks) and offers the comparison and the questions to ask instead; does not contact the franchisor; offers to draft a request the user can send themselves; keeps the decision with the user."
+    }
+  ]
+}

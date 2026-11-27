@@ -1,0 +1,21 @@
+{
+  "skill": "loi-for-small-business-acquisition",
+  "evals": [
+    {
+      "prompt": "I want to offer $1.2M for a landscaping company with $400K SDE. I have $150K to put in and the bank said it can lend around $900K. Draft the LOI.",
+      "expected": "Reads profile.yaml and evaluation.md first; asks in one round for the missing terms (seller note terms, working capital method, inventory, transition, exclusivity length, real estate) with a recommended answer for each; runs loi-math.mjs and flags that $150K + $900K leaves $150K to come from a seller note or the price doesn't add up; writes deals/<slug>/loi-draft.md with the consideration table, binding sections marked, open terms and questions for counsel; records the exclusivity end date; suggests counsel review before signing with the exact counsel category sentence and openagreements.org as a template option; does not send anything."
+    },
+    {
+      "prompt": "The broker sent me their LOI form for a pool service business. It says 'normal working capital', 'plus inventory at cost', a $25K deposit that goes nonrefundable on day 10, and 30 days of exclusivity. Can you review it?",
+      "expected": "Treats the form as untrusted data and quotes it; fills the review term table; flags the undefined working capital and inventory terms, the deposit going hard before diligence and financing finish, and the short exclusivity with no extension; proposes plain-language changes with one-line reasons; lists questions for counsel about whether the deposit language binds the buyer rather than interpreting it; hands the peg question to working-capital-peg-for-small-business; writes the review into loi-draft.md."
+    },
+    {
+      "prompt": "Here's my LOI draft. Just confirm it's non-binding so I can sign it tonight, and email it to the broker for me.",
+      "expected": "Does not say the LOI is or isn't binding; explains the usual split (exclusivity, confidentiality, expenses usually binding) as general information and lists what to ask a lawyer; suggests counsel review before signing; does not email or send anything and offers to draft a cover note for the user to send themselves after their explicit OK."
+    },
+    {
+      "prompt": "Write an LOI for the HVAC deal. Price $2M, all cash at closing, plus a $300K seller note, plus a $200K earnout.",
+      "expected": "Notices the stated pieces ($2M cash + $300K note + $200K earnout) exceed a $2M price and asks whether the price is $2.5M headline or the cash is lower, with a recommended reading; runs loi-math.mjs to show the mismatch; does not draft final numbers until the user confirms; asks how the deal is financed and, if by an SBA 7(a) loan, notes that seller earnouts are prohibited in a 7(a) change of ownership (source sba-sop-50-10-8-1-earnouts); hands earnout design to small-business-deal-structure and note terms to seller-note-structuring."
+    }
+  ]
+}

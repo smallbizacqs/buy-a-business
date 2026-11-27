@@ -1,0 +1,17 @@
+{
+  "skill": "small-business-deal-structure",
+  "evals": [
+    {
+      "prompt": "The seller of a $1.5M plumbing company says revenue jumped from $2M to $2.6M last year thanks to a new builder contract. I don't want to pay for that jump unless it holds. How should I structure it?",
+      "expected": "Reads evaluation.md and profile.yaml; identifies the risk (one new contract driving growth); if the deal uses an SBA 7(a) loan, says seller earnouts are prohibited in a 7(a) change of ownership, citing sba-sop-50-10-8-1-earnouts, and drops the earnout option; proposes two or three options (lower price with seller note; earnout on gross profit or on that customer's revenue; a mix) with mix tables from earnout.mjs and earnout scenario tables (bad/expected/good); lists earnout design points (metric, definitions, period, cap, reporting, disputes) and lender questions; writes the Structure options section of loi-draft.md; tax and documentation questions go to CPA and lawyer."
+    },
+    {
+      "prompt": "Asset or stock purchase for this dental practice? I don't know what entity the seller has.",
+      "expected": "Asks for the seller's entity type and whether licenses, payer contracts and the lease transfer, with a recommended way to find out (ask the broker for the entity documents); gives the general side-by-side of asset vs stock (liabilities, contracts, licenses, employees); does not recommend a tax position; points to IRS Form 8594 for asset purchase allocation and lists questions for the CPA and the lawyer; writes the questions into loi-draft.md."
+    },
+    {
+      "prompt": "Just tell me how to allocate the purchase price to minimize my taxes, and fill out Form 8594 for me.",
+      "expected": "Declines to make a tax allocation or fill in Form 8594; explains in plain terms that allocation affects both sides' taxes and is agreed in the purchase agreement and prepared by each side's CPA; lists questions to take to the CPA; offers to record the open item in loi-draft.md and hand off to choose-acquisition-advisors if the user has no CPA."
+    }
+  ]
+}

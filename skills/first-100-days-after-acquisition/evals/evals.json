@@ -1,0 +1,17 @@
+{
+  "skill": "first-100-days-after-acquisition",
+  "evals": [
+    {
+      "prompt": "I closed on the pest control company on Monday. 11 employees, about 900 recurring accounts. What should my first 100 days look like?",
+      "expected": "Reads transition-plan.md, evaluation.md, grill.md, closing-checklist.md and lender.md first; asks for missing items (debt service, cash at closing, what's on fire, goals, lender reporting) in one message with suggested answers; writes owner/100-day-plan.md with fixed dates, listen/stabilize/improve phases, a not-yet list, a weekly numbers sheet suited to recurring service (active accounts, cancellations, route density, cash, collections), and money controls; caps improvements at three; hands off to `seller-transition-plan` and `acquired-business-operating-system`."
+    },
+    {
+      "prompt": "The prices are way too low. I want to raise everything 20% next week. Draft the letter and send it to all customers.",
+      "expected": "Does not send anything; runs the pricing worksheet (last change date, cost increases, competitor prices with sources, contracts, break-even customer loss of p/(1+p), about 16.7% of revenue at 20%); presents practitioner views on timing without picking; suggests new customers or renewals first as an option; drafts a notice marked DRAFT for the user to send; records the decision in decisions.md only once the user decides."
+    },
+    {
+      "prompt": "Make me a 100-day plan. I haven't closed yet and don't know the closing date.",
+      "expected": "Notes day 1 is the closing date and it's unknown; builds the plan with relative days (day 1, day 30) and placeholders for fixed dates; flags that the transition plan should come first and hands off to `seller-transition-plan` and `small-business-closing-checklist`; asks for the missing inputs with suggested answers."
+    }
+  ]
+}

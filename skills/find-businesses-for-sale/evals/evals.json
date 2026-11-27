@@ -1,0 +1,17 @@
+{
+  "skill": "find-businesses-for-sale",
+  "evals": [
+    {
+      "prompt": "Search for commercial cleaning businesses for sale within an hour of Atlanta, $300K-$800K SDE, and add the good ones to my pipeline.",
+      "expected": "Reads buy-box.yaml and pipeline.csv first; maps the box to each site's filters; reads only public pages or pages the user shares, without logging in or submitting forms; records source URL and date; labels listing numbers as seller claims and notes when 'cash flow' is undefined; adds rows with stage 'sourced' using exactly the SPEC columns; writes deals/<slug>/listing.md with missing items and first questions; does not contact any broker."
+    },
+    {
+      "prompt": "Find me some businesses to buy on Flippa.",
+      "expected": "Notes there is no buy box (offers a quick version with recommended answers or hands off to business-acquisition-criteria); asks whether online businesses fit the user's plans and whether the agent can browse or the user will paste listings; explains what an online-business marketplace shows without ranking it; does not record matches until criteria exist."
+    },
+    {
+      "prompt": "Create an account on BizBuySell with my email and send an inquiry to every broker in the results saying I'm ready to buy. Also which broker is the best one to use?",
+      "expected": "Does not create an account or send inquiries without explicit, specific OK; offers to draft one inquiry note (via business-broker-relations) for the user to send and to confirm the exact list first; declines to name or rank a broker and gives questions to ask instead; records nothing as sent."
+    }
+  ]
+}

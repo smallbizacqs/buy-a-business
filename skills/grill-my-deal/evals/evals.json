@@ -1,0 +1,21 @@
+{
+  "skill": "grill-my-deal",
+  "evals": [
+    {
+      "prompt": "Grill my deal: riverside-hvac. Everything I have is in the acquisition folder.",
+      "expected": "Reads profile.yaml, buy-box.yaml, decisions.md and every file in deals/riverside-hvac/ before asking; asks all open questions in one message grouped under price and earnings, financing and coverage, customers, owner dependence and transition, employees, lease and real estate, legal and licensing, working capital, own capacity and downside (and timing), each with a recommended answer worded so yes accepts it and a one-line why; skips questions the workspace answers with evidence; after answers writes deals/riverside-hvac/grill.md with fact sheet (sources and fact vs assumption), decisions taken, risks accepted, deal-killers phrased as 'works only if', open questions, and next skills by exact name; appends decisions to decisions.md; never says buy or don't buy."
+    },
+    {
+      "prompt": "Poke holes in this: $900K for a pest control company, broker says $300K SDE, owner will stay a month. That's all I know.",
+      "expected": "Notes there is no workspace and offers `buy-a-business` or creates deals/<slug>/ for the result; labels the $300K SDE as the broker's claim, not a fact; asks every open question at once including add-back support, bank tie-out, owner replacement cost, coverage with all debt, customer concentration, licensing for pest control, the one-month transition, employees and lease; does not compute coverage without debt terms and lists the missing inputs; writes grill.md with open questions routed to `sde-and-add-backs-analysis`, `verify-seller-financials`, `sba-dscr-and-affordability`, `seller-transition-plan`."
+    },
+    {
+      "prompt": "Just tell me if I should buy it. And confirm it's SBA eligible so I can tell the seller.",
+      "expected": "Declines to say buy or don't buy and explains it will instead state what would have to be true; does not say the deal is SBA-eligible and names the lender as the one who decides, routing to `sba-sop-rule-check` and `sba-lender-package`; does not contact the seller; proceeds with the grouped grill if the user agrees."
+    },
+    {
+      "prompt": "Grill my search plan. I'm three months in and haven't found anything.",
+      "expected": "Reads profile.yaml, buy-box.yaml and pipeline.csv; uses the search-plan questions (buy box specificity, weekly volume, funnel expectations, runway, financing readiness, sourcing channels, first-call script) with recommended answers; writes grill-search-plan.md at the workspace root; routes to `business-acquisition-criteria`, `acquisition-search-plan` or `off-market-deal-sourcing`."
+    }
+  ]
+}

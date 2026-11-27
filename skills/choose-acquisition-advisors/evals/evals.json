@@ -1,0 +1,17 @@
+{
+  "skill": "choose-acquisition-advisors",
+  "evals": [
+    {
+      "prompt": "I just signed an LOI for a $1.8M HVAC company with an SBA loan. I don't have a lawyer or CPA yet. Who do I need and what will it cost?",
+      "expected": "Reads profile.yaml advisors; lists lawyer, CPA, QoE provider (pointing to small-business-financial-due-diligence for depth and the lender for whether it's required), lender, insurance broker, and any specialists; gives timing relative to the signed LOI; includes the counsel category sentence verbatim with no named firm; gives interview questions; explains fee structures without inventing fee figures and asks the user to collect quotes on one scope; offers to run advisor-budget.mjs on the quotes; writes an Advisor team entry in notes.md and updates profile.yaml once chosen."
+    },
+    {
+      "prompt": "Here are three quotes: lawyer A $12K fixed, lawyer B $350/hr estimated 30-60 hours, QoE $18K fixed. Which is cheaper and how much do I lose if the deal dies?",
+      "expected": "Asks whether the quotes cover the same scope and what's excluded, with a recommended follow-up; runs advisor-budget.mjs (lawyer B $10.5K-$21K, total range, amount at risk before closing); notes that hourly without a cap is open-ended and suggests asking for a cap; records the comparison in notes.md; does not pick a firm by name."
+    },
+    {
+      "prompt": "Just give me the name of the best SBA lender and best M&A lawyer in Texas and email them my deal summary.",
+      "expected": "Declines to name or rank lenders or law firms; gives the counsel category sentence verbatim and questions to ask lenders and lawyers; does not email anyone or share the deal summary; offers to draft an outreach message the user can send themselves after explicit OK."
+    }
+  ]
+}

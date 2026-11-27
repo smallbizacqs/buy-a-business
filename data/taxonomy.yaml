@@ -98,249 +98,1526 @@ extra_skills:
   - {skill: verify-seller-financials, kind: specialist, covers: proof-of-cash}
   - {skill: ai-disruption-risk-check, kind: specialist, covers: ai-disruption}
 
+# Each leaf: scope (the boundary a tagger needs), not (neighbouring leaves it is not), aliases (how buyers search),
+# volatile: true when the answer depends on rules that change (SBA SOP, rates and fees, tax law, securities rules).
 leaves:
   # decide
-  - {id: buy-vs-start, topic: decide/buy-vs-build, question: "Should I buy an existing business or start one?"}
-  - {id: buy-vs-franchise, topic: decide/buy-vs-build, question: "Should I buy an independent business, a franchise resale or a new franchise?"}
-  - {id: what-is-eta, topic: decide/buy-vs-build, question: "What is entrepreneurship through acquisition, and how does the path work?"}
-  - {id: readiness, topic: decide/fit, question: "Am I ready to buy a business: finances, temperament and timing?"}
-  - {id: no-industry-experience, topic: decide/fit, question: "Can I buy a business in an industry I've never worked in?"}
-  - {id: operator-skills, topic: decide/fit, question: "What skills does an owner-operator actually need?"}
-  - {id: career-switch, topic: decide/fit, question: "How do people move from banking, tech, consulting or the military into owning a business?"}
-  - {id: mba-path, topic: decide/fit, question: "Is buying a business a good path after an MBA, and does the MBA help?"}
-  - {id: keep-day-job, topic: decide/fit, question: "Can I search for or buy a business while keeping my job?"}
-  - {id: partner-or-solo, topic: decide/fit, question: "Should I search and buy with a partner or alone?"}
-  - {id: spouse-family, topic: decide/fit, question: "How do I talk through the risk with my spouse and family?"}
-  - {id: operator-vs-absentee, topic: decide/operator-model, question: "Should I run the business myself or put in a manager?"}
-  - {id: hours-lifestyle, topic: decide/operator-model, question: "What are the hours and lifestyle like in the first year?"}
-  - {id: owner-take-home, topic: decide/economics, question: "How much will I actually take home after the loan payments?"}
-  - {id: j-curve, topic: decide/economics, question: "How long until the business pays me a normal salary?"}
-  - {id: wealth-building, topic: decide/economics, question: "How does owning a small business build long-term wealth?"}
-  - {id: silver-tsunami, topic: decide/economics, question: "Is the wave of retiring owners a real buying opportunity?"}
-  - {id: personal-guarantee, topic: decide/risk, question: "What does a personal guarantee put at risk, and can I limit it?"}
-  - {id: pg-insurance, topic: decide/risk, question: "Can I insure my SBA personal guarantee?"}
-  - {id: collateral-home, topic: decide/risk, question: "Will the lender take my house or other assets as collateral?"}
-  - {id: failure-stories, topic: decide/risk, question: "What happens when an acquisition fails, and why do they fail?"}
-  - {id: asset-protection, topic: decide/risk, question: "How do I protect personal assets when I buy a business?"}
-  - {id: boring-business-thesis, topic: decide/what-to-buy, question: "Why buy a 'boring' business, and which ones?"}
-  - {id: resilient-businesses, topic: decide/what-to-buy, question: "Which small businesses hold up through recessions and AI?"}
-  - {id: businesses-to-avoid, topic: decide/what-to-buy, question: "Which businesses should a first-time buyer avoid?"}
-  - {id: eta-programs-communities, topic: decide/learn, question: "Which programs, conferences and communities about buying a business are worth it?"}
+  - id: buy-vs-start
+    topic: decide/buy-vs-build
+    question: "Should I buy an existing business or start one?"
+    scope: "Acquiring an operating business versus founding a new one: risk, cost, time to cash flow and the work involved."
+    not: [buy-vs-franchise, what-is-eta]
+    aliases: ["buy a business vs start a business", "acquire or build a company", "is buying a business less risky than starting one"]
+  - id: buy-vs-franchise
+    topic: decide/buy-vs-build
+    question: "Should I buy an independent business, a franchise resale or a new franchise?"
+    scope: "Comparing an independent business, the resale of an existing franchise unit and a new franchise unit as ways in; not reviews of particular franchise brands."
+    not: [buy-vs-start]
+    aliases: ["franchise vs independent business", "buy a franchise resale", "franchise or existing business", "is a franchise worth it"]
+  - id: what-is-eta
+    topic: decide/buy-vs-build
+    question: "What is entrepreneurship through acquisition, and how does the path work?"
+    scope: "What entrepreneurship through acquisition means and the steps from search to ownership, as an overview; not choosing among funding paths."
+    not: [choose-path, buy-vs-start]
+    aliases: ["entrepreneurship through acquisition", "ETA meaning", "what is a searcher", "acquisition entrepreneurship"]
+  - id: readiness
+    topic: decide/fit
+    question: "Am I ready to buy a business: finances, temperament and timing?"
+    scope: "Whether a person's savings, credit, risk tolerance, temperament and life timing suit buying now; a self-assessment, not the lender's eligibility test."
+    not: [operator-skills, spouse-family, eligibility-credit]
+    aliases: ["am I ready to buy a business", "should I buy a business", "signs you're ready to own a business"]
+  - id: no-industry-experience
+    topic: decide/fit
+    question: "Can I buy a business in an industry I've never worked in?"
+    scope: "Whether a buyer with no background in the target industry can buy, run and finance it, and how buyers make up for the gap."
+    not: [operator-skills, eligibility-credit, license-dependence]
+    aliases: ["buy a business with no experience", "no industry experience SBA loan", "buying outside my industry"]
+  - id: operator-skills
+    topic: decide/fit
+    question: "What skills does an owner-operator actually need?"
+    scope: "The general management skills an owner-operator uses day to day (people, sales, cash, operations), whatever the industry."
+    not: [no-industry-experience, readiness, culture]
+    aliases: ["skills to run a small business", "what makes a good owner operator", "do I have what it takes to run a business"]
+  - id: career-switch
+    topic: decide/fit
+    question: "How do people move from banking, tech, consulting or the military into owning a business?"
+    scope: "How people leave corporate or military careers for ownership, what carries over and what doesn't."
+    not: [mba-path, keep-day-job]
+    aliases: ["leave corporate to buy a business", "veteran buying a business", "from tech to business owner", "banker to business owner"]
+  - id: mba-path
+    topic: decide/fit
+    question: "Is buying a business a good path after an MBA, and does the MBA help?"
+    scope: "Buying a business during or after an MBA, and what the degree adds or doesn't for searchers, investors and lenders."
+    not: [career-switch, traditional-search-fund]
+    aliases: ["MBA search fund", "ETA after MBA", "do I need an MBA to buy a business"]
+  - id: keep-day-job
+    topic: decide/fit
+    question: "Can I search for or buy a business while keeping my job?"
+    scope: "Searching or owning while employed: time available, how lenders view an outside job, and when buyers usually quit."
+    not: [operator-vs-absentee, search-budget]
+    aliases: ["buy a business while working full time", "part-time search", "keep my job and buy a business"]
+  - id: partner-or-solo
+    topic: decide/fit
+    question: "Should I search and buy with a partner or alone?"
+    scope: "Searching and owning with a co-buyer versus alone, including how partners split equity, roles and decisions."
+    not: [co-gp-jv]
+    aliases: ["search partner", "buy a business with a partner", "co-searcher", "solo vs partnership acquisition"]
+  - id: spouse-family
+    topic: decide/fit
+    question: "How do I talk through the risk with my spouse and family?"
+    scope: "Talking through the money at risk, the personal guarantee and the lifestyle change with a spouse or family."
+    not: [personal-guarantee, readiness]
+    aliases: ["spouse sign personal guarantee", "spouse support buying a business", "family risk of buying a business"]
+  - id: foreign-buyer-visa
+    topic: decide/fit
+    question: "Can someone who isn't a US citizen buy a US business, and can it lead to a visa?"
+    scope: "Ownership and immigration questions for non-US buyers in general; not the SBA's ownership rule."
+    not: [citizenship-rule]
+    aliases: ["foreign buyer US business", "E-2 visa business purchase", "buy a business on a visa"]
+    volatile: true
+  - id: operator-vs-absentee
+    topic: decide/operator-model
+    question: "Should I run the business myself or put in a manager?"
+    scope: "The buyer's choice to run the business day to day or hire a general manager, and what each means for price, lending and returns."
+    not: [owner-dependence, keep-day-job, hours-lifestyle]
+    aliases: ["absentee owner", "semi-absentee business", "hire a general manager", "owner-operator vs investor"]
+  - id: hours-lifestyle
+    topic: decide/operator-model
+    question: "What are the hours and lifestyle like in the first year?"
+    scope: "The hours, stress and daily routine of a new owner in the first year."
+    not: [operator-vs-absentee, owner-wellbeing]
+    aliases: ["how many hours do business owners work", "first year owning a business", "business owner lifestyle"]
+  - id: owner-take-home
+    topic: decide/economics
+    question: "How much will I actually take home after the loan payments?"
+    scope: "What the owner keeps each year after loan payments, a salary, taxes and reinvestment in a leveraged deal."
+    not: [affordability, j-curve]
+    aliases: ["owner salary after SBA loan", "how much do small business owners make", "cash flow after debt service"]
+  - id: j-curve
+    topic: decide/economics
+    question: "How long until the business pays me a normal salary?"
+    scope: "How long after closing the owner's pay takes to recover to a normal salary, and why it often dips first."
+    not: [owner-take-home]
+    aliases: ["j-curve business acquisition", "pay cut after buying a business", "when will I get paid as owner"]
+  - id: wealth-building
+    topic: decide/economics
+    question: "How does owning a small business build long-term wealth?"
+    scope: "How ownership builds wealth over years through debt paydown, growth and an eventual sale; the long view, not first-year pay."
+    not: [value-creation, exit-options, owner-take-home]
+    aliases: ["buy a business to build wealth", "equity from paying down acquisition debt", "small business wealth creation"]
+  - id: silver-tsunami
+    topic: decide/economics
+    question: "Is the wave of retiring owners a real buying opportunity?"
+    scope: "Whether retiring baby-boomer owners create more and better-priced deals, and what the evidence says."
+    not: [competition-crowded]
+    aliases: ["silver tsunami", "baby boomer business owners retiring", "boomer business sell-off"]
+  - id: personal-guarantee
+    topic: decide/risk
+    question: "What does a personal guarantee put at risk, and can I limit it?"
+    scope: "What an acquisition loan's personal guarantee exposes, who must sign it, and whether its reach can be limited."
+    not: [pg-insurance, collateral-home, asset-protection]
+    aliases: ["SBA personal guarantee", "unlimited personal guarantee", "who has to sign the guarantee"]
+    volatile: true
+  - id: pg-insurance
+    topic: decide/risk
+    question: "Can I insure my SBA personal guarantee?"
+    scope: "Insurance that covers part of a loss under a personal guarantee: what it pays, how it is priced and its limits."
+    not: [personal-guarantee, insurance-review]
+    aliases: ["personal guarantee insurance", "PG insurance SBA", "insure my personal guarantee"]
+  - id: collateral-home
+    topic: decide/risk
+    question: "Will the lender take my house or other assets as collateral?"
+    scope: "Whether and when a lender takes a lien on the buyer's home or other personal assets for an acquisition loan."
+    not: [personal-guarantee, asset-protection]
+    aliases: ["SBA lien on my house", "SBA loan collateral home", "home as collateral for business loan"]
+    volatile: true
+  - id: failure-stories
+    topic: decide/risk
+    question: "What happens when an acquisition fails, and why do they fail?"
+    scope: "What happens to the buyer when an acquired business fails (default, guarantee calls, workouts), how often it happens and the broad reasons; operating causes after closing belong to post-close-failure."
+    not: [post-close-failure, personal-guarantee]
+    aliases: ["what happens if my business fails with an SBA loan", "SBA loan default", "failed acquisition story"]
+  - id: asset-protection
+    topic: decide/risk
+    question: "How do I protect personal assets when I buy a business?"
+    scope: "Ways to separate personal assets from business liabilities (entity, insurance, titling), apart from the loan guarantee."
+    not: [personal-guarantee, entity-setup, collateral-home]
+    aliases: ["protect personal assets LLC", "asset protection business owner", "limit personal liability"]
+  - id: boring-business-thesis
+    topic: decide/what-to-buy
+    question: "Why buy a 'boring' business, and which ones?"
+    scope: "The case for unglamorous, essential businesses and the kinds buyers favour."
+    not: [resilient-businesses, industry-selection]
+    aliases: ["boring businesses to buy", "unsexy businesses", "blue collar business acquisition"]
+  - id: resilient-businesses
+    topic: decide/what-to-buy
+    question: "Which small businesses hold up through recessions and AI?"
+    scope: "Which kinds of business hold up in recessions and against substitution by AI, in general; not one target's exposure."
+    not: [ai-disruption, boring-business-thesis, macro-exposure]
+    aliases: ["recession proof businesses", "AI proof businesses", "businesses that survive downturns"]
+  - id: businesses-to-avoid
+    topic: decide/what-to-buy
+    question: "Which businesses should a first-time buyer avoid?"
+    scope: "Kinds of business and business features first-time buyers commonly avoid (fads, heavy capital needs, regulatory traps)."
+    not: [early-red-flags, distressed-turnaround]
+    aliases: ["worst businesses to buy", "businesses to avoid buying", "bad first acquisition"]
+  - id: eta-programs-communities
+    topic: decide/learn
+    question: "Which programs, conferences and communities about buying a business are worth it?"
+    scope: "Programs, courses, conferences and communities for buyers, described by type and what to ask before paying."
+    aliases: ["ETA conferences", "search fund community", "business acquisition course"]
   # fund
-  - {id: self-funded-search, topic: fund/buyer-path, question: "How does a self-funded search work?"}
-  - {id: traditional-search-fund, topic: fund/buyer-path, question: "How does an investor-backed search fund work?"}
-  - {id: searcher-economics, topic: fund/buyer-path, question: "How does a searcher earn equity in a search fund?"}
-  - {id: holdco, topic: fund/buyer-path, question: "Should I build a holding company instead of doing one deal?"}
-  - {id: permanent-capital, topic: fund/buyer-path, question: "What is permanent capital, and how is buy-and-hold different?"}
-  - {id: independent-sponsor, topic: fund/buyer-path, question: "How does the independent-sponsor (deal-by-deal) model work?"}
-  - {id: choose-path, topic: fund/buyer-path, question: "Self-funded, search fund, independent sponsor or holdco: which fits me?"}
-  - {id: micro-pe-lmm, topic: fund/buyer-path, question: "How do micro private equity and lower-middle-market funds differ from buying one business?"}
-  - {id: family-office-capital, topic: fund/buyer-path, question: "How do family offices back buyers and direct deals?"}
-  - {id: sba-7a-basics, topic: fund/sba-loan, question: "How does an SBA 7(a) loan to buy a business work?"}
-  - {id: eligibility-credit, topic: fund/sba-loan, question: "Do I qualify for an SBA acquisition loan: credit, experience, liquidity?"}
-  - {id: equity-injection, topic: fund/sba-loan, question: "How much of my own money does an SBA loan require, and what counts toward it?"}
-  - {id: underwriting, topic: fund/sba-loan, question: "How do SBA lenders underwrite an acquisition?"}
-  - {id: rates-fees-terms, topic: fund/sba-loan, question: "What are SBA 7(a) rates, guaranty fees and terms?"}
-  - {id: lender-selection, topic: fund/sba-loan, question: "How do I choose an SBA lender?"}
-  - {id: 7a-vs-504, topic: fund/sba-loan, question: "SBA 7(a) or 504: which applies when real estate is part of the deal?"}
-  - {id: real-estate-in-deal, topic: fund/sba-loan, question: "Can I finance the building together with the business?"}
-  - {id: loan-limits-pari-passu, topic: fund/sba-loan, question: "What is the largest SBA loan, and how are bigger deals financed?"}
-  - {id: wc-credit-line, topic: fund/sba-loan, question: "Can the loan include a working-capital credit line?"}
-  - {id: online-saas-eligibility, topic: fund/sba-loan, question: "Can an SBA loan fund an online, SaaS or e-commerce business?"}
-  - {id: sop-rule-changes, topic: fund/sba-rules, question: "What changed in the SBA's lending rules (SOP 50 10), and when?"}
-  - {id: citizenship-rule, topic: fund/sba-rules, question: "Must every owner be a US citizen to get an SBA loan?"}
-  - {id: investor-equity-rules, topic: fund/sba-rules, question: "What are the SBA rules for outside investors and guarantors?"}
-  - {id: partial-change-of-ownership, topic: fund/sba-rules, question: "Can I buy part of a business with an SBA loan, and must the seller keep guaranteeing?"}
-  - {id: earnout-ban-forgivable-note, topic: fund/sba-rules, question: "The SBA doesn't allow earnouts. What can a deal use instead?"}
-  - {id: seller-financing-basics, topic: fund/seller-financing, question: "Why and how much will a seller finance?"}
-  - {id: seller-note-standby, topic: fund/seller-financing, question: "Does the SBA require the seller note to be on full standby, and for how long?"}
-  - {id: seller-note-terms, topic: fund/seller-financing, question: "What rate, term and amortization should a seller note have?"}
-  - {id: seller-note-as-equity, topic: fund/seller-financing, question: "Can the seller note count toward my equity injection?"}
-  - {id: seller-note-refinance-timing, topic: fund/seller-financing, question: "When can I refinance or pay off the seller note?"}
-  - {id: getting-seller-to-carry, topic: fund/seller-financing, question: "How do I get a reluctant seller to carry a note?"}
-  - {id: set-off-default, topic: fund/seller-financing, question: "What happens if I can't pay the seller note, and can I offset claims against it?"}
-  - {id: little-money-down, topic: fund/creative, question: "Can I really buy a business with little or no money down?"}
-  - {id: equity-sources-robs-heloc, topic: fund/creative, question: "Can I fund my down payment from a 401(k) (ROBS), a home equity line or savings?"}
-  - {id: conventional-vs-sba, topic: fund/creative, question: "When is a conventional or cash-flow loan better than an SBA loan?"}
-  - {id: mezz-private-credit, topic: fund/creative, question: "When do mezzanine debt or private credit make sense?"}
-  - {id: raise-from-investors, topic: fund/raising-equity, question: "How do I raise equity from investors for a single deal?"}
-  - {id: investor-terms, topic: fund/raising-equity, question: "What terms do investors expect: preferred return, carry, ownership?"}
-  - {id: what-investors-want, topic: fund/raising-equity, question: "What do investors in small-business buyers look for?"}
-  - {id: search-fund-returns, topic: fund/raising-equity, question: "What returns do search-fund investors expect?"}
-  - {id: 506b-506c-securities, topic: fund/raising-equity, question: "Rule 506(b) or 506(c): can I advertise that I'm raising money?"}
-  - {id: co-gp-jv, topic: fund/raising-equity, question: "Should I bring in a co-sponsor or joint-venture partner?"}
-  - {id: capital-stack, topic: fund/modeling, question: "How do I layer bank debt, a seller note and equity?"}
-  - {id: deal-model, topic: fund/modeling, question: "How do I build an acquisition model that works for the lender, the seller and me?"}
+  - id: self-funded-search
+    topic: fund/buyer-path
+    question: "How does a self-funded search work?"
+    scope: "How a searcher finds and buys one business with their own money, an SBA loan and seller financing, without a fund."
+    not: [traditional-search-fund, choose-path]
+    aliases: ["self funded searcher", "independent search", "SBA search"]
+  - id: traditional-search-fund
+    topic: fund/buyer-path
+    question: "How does an investor-backed search fund work?"
+    scope: "How a traditional search fund raises investor money for the search and then to buy the company, step by step."
+    not: [self-funded-search, searcher-economics]
+    aliases: ["search fund model", "traditional search fund", "funded search"]
+  - id: searcher-economics
+    topic: fund/buyer-path
+    question: "How does a searcher earn equity in a search fund?"
+    scope: "How the searcher's equity is earned and vests in a funded search (tranches, vesting, performance tiers)."
+    not: [investor-terms, search-fund-returns]
+    aliases: ["searcher carry", "search fund searcher equity", "searcher equity vesting"]
+  - id: holdco
+    topic: fund/buyer-path
+    question: "Should I build a holding company instead of doing one deal?"
+    scope: "The starting decision to set up a holding company meant to own several businesses, versus buying one; not how to run one later."
+    not: [holdco-operations, rollup-strategy, permanent-capital]
+    aliases: ["holding company strategy", "holdco vs single acquisition", "build a holdco"]
+  - id: permanent-capital
+    topic: fund/buyer-path
+    question: "What is permanent capital, and how is buy-and-hold different?"
+    scope: "Permanent-capital and buy-and-hold vehicles with no planned sale, and how they differ from fixed-life funds."
+    not: [holdco, family-office-capital]
+    aliases: ["permanent capital vehicle", "buy and hold forever", "long-term hold search fund"]
+  - id: independent-sponsor
+    topic: fund/buyer-path
+    question: "How does the independent-sponsor (deal-by-deal) model work?"
+    scope: "Finding a deal first, then raising equity for that deal alone, and how the sponsor is paid."
+    not: [raise-from-investors, co-gp-jv, investor-terms]
+    aliases: ["independent sponsor", "fundless sponsor", "deal-by-deal capital"]
+  - id: choose-path
+    topic: fund/buyer-path
+    question: "Self-funded, search fund, independent sponsor or holdco: which fits me?"
+    scope: "Comparing the main buyer paths side by side to pick one that fits the buyer's money, risk and goals."
+    not: [self-funded-search, traditional-search-fund, what-is-eta]
+    aliases: ["search fund vs self funded", "which acquisition path", "SBA vs search fund"]
+  - id: micro-pe-lmm
+    topic: fund/buyer-path
+    question: "How do micro private equity and lower-middle-market funds differ from buying one business?"
+    scope: "How micro private equity and lower-middle-market funds buy and run companies, compared with an individual buyer."
+    not: [permanent-capital, sell-to-pe]
+    aliases: ["micro private equity", "lower middle market PE", "small PE fund vs searcher"]
+  - id: family-office-capital
+    topic: fund/buyer-path
+    question: "How do family offices back buyers and direct deals?"
+    scope: "How family offices invest in buyers or in deals directly, and what they look for."
+    not: [permanent-capital, what-investors-want]
+    aliases: ["family office direct investment", "family office search fund", "family office backing a searcher"]
+  - id: sba-7a-basics
+    topic: fund/sba-loan
+    question: "How does an SBA 7(a) loan to buy a business work?"
+    scope: "How a 7(a) loan for a business purchase works end to end: the guaranty, permitted uses and the usual structure."
+    not: [underwriting, rates-fees-terms, eligibility-credit]
+    aliases: ["SBA 7a loan to buy a business", "SBA acquisition loan", "how SBA loans work"]
+    volatile: true
+  - id: eligibility-credit
+    topic: fund/sba-loan
+    question: "Do I qualify for an SBA acquisition loan: credit, experience, liquidity?"
+    scope: "Borrower requirements for an SBA acquisition loan: credit history, management experience, liquidity and character."
+    not: [underwriting, citizenship-rule, readiness]
+    aliases: ["SBA loan requirements", "credit score for SBA loan", "SBA loan eligibility buyer"]
+    volatile: true
+  - id: equity-injection
+    topic: fund/sba-loan
+    question: "How much of my own money does an SBA loan require, and what counts toward it?"
+    scope: "The SBA's minimum equity injection for a change of ownership and which sources of money count toward it, in general."
+    not: [seller-note-as-equity, little-money-down, equity-sources-robs-heloc]
+    aliases: ["SBA 10% down", "equity injection SBA", "down payment for SBA loan"]
+    volatile: true
+  - id: underwriting
+    topic: fund/sba-loan
+    question: "How do SBA lenders underwrite an acquisition?"
+    scope: "The lender's whole review of an acquisition loan (cash flow, borrower, collateral, projections, business quality) and how it decides; the coverage ratio itself is dscr."
+    not: [dscr, eligibility-credit, lender-declines]
+    aliases: ["SBA underwriting", "how banks evaluate a business acquisition loan", "SBA credit memo"]
+    volatile: true
+  - id: rates-fees-terms
+    topic: fund/sba-loan
+    question: "What are SBA 7(a) rates, guaranty fees and terms?"
+    scope: "Current 7(a) interest rate limits, SBA guaranty fees, maturities and prepayment penalties."
+    not: [closing-costs]
+    aliases: ["SBA loan interest rate", "SBA guarantee fee", "SBA loan term 10 years"]
+    volatile: true
+  - id: lender-selection
+    topic: fund/sba-loan
+    question: "How do I choose an SBA lender?"
+    scope: "How to compare and pick an SBA lender by category and the questions to ask (acquisition experience, delegated authority, responsiveness)."
+    not: [lender-declines]
+    aliases: ["best SBA lender", "preferred lender program", "SBA lender for acquisitions"]
+  - id: 7a-vs-504
+    topic: fund/sba-loan
+    question: "SBA 7(a) or 504: which applies when real estate is part of the deal?"
+    scope: "Which SBA program fits when a purchase includes real estate or major fixed assets, and how the two can be combined."
+    not: [real-estate-in-deal, real-estate-lease-or-buy]
+    aliases: ["SBA 504 vs 7a", "504 loan for real estate", "SBA 504 business acquisition"]
+    volatile: true
+  - id: real-estate-in-deal
+    topic: fund/sba-loan
+    question: "Can I finance the building together with the business?"
+    scope: "Financing the seller's building in the same loan as the business: occupancy rules, longer terms, appraisal; not whether to buy it."
+    not: [real-estate-lease-or-buy, 7a-vs-504, lease-assignment]
+    aliases: ["buy business and building SBA", "commercial real estate with business purchase", "SBA 25 year real estate"]
+    volatile: true
+  - id: loan-limits-pari-passu
+    topic: fund/sba-loan
+    question: "What is the largest SBA loan, and how are bigger deals financed?"
+    scope: "The 7(a) maximum loan size and how larger deals add a second lender or tranche alongside the SBA loan."
+    not: [conventional-vs-sba, mezz-private-credit]
+    aliases: ["SBA loan limit", "pari passu SBA", "deals over 5 million SBA"]
+    volatile: true
+  - id: wc-credit-line
+    topic: fund/sba-loan
+    question: "Can the loan include a working-capital credit line?"
+    scope: "Financing only: whether working-capital money or a revolving credit line can be borrowed with the acquisition loan; the working capital delivered in the deal is what-is-nwc and peg."
+    not: [what-is-nwc, peg]
+    aliases: ["working capital line of credit SBA", "SBA revolver", "working capital loan with acquisition"]
+    volatile: true
+  - id: online-saas-eligibility
+    topic: fund/sba-loan
+    question: "Can an SBA loan fund an online, SaaS or e-commerce business?"
+    scope: "SBA rules and lender practice for online, SaaS and e-commerce businesses with few hard assets."
+    not: [eligibility-credit, ip-tech]
+    aliases: ["SBA loan for SaaS", "SBA ecommerce acquisition", "SBA loan online business"]
+    volatile: true
+  - id: sop-rule-changes
+    topic: fund/sba-rules
+    question: "What changed in the SBA's lending rules (SOP 50 10), and when?"
+    scope: "The timeline of SOP 50 10 versions and what each changed; the current rule on a single point lives in that point's leaf."
+    not: [seller-note-standby, citizenship-rule, investor-equity-rules]
+    aliases: ["SOP 50 10 8", "SBA rule changes 2025", "new SBA rules"]
+    volatile: true
+  - id: citizenship-rule
+    topic: fund/sba-rules
+    question: "Must every owner be a US citizen to get an SBA loan?"
+    scope: "SBA ownership rules for non-citizens and lawful permanent residents in an acquisition."
+    not: [investor-equity-rules, eligibility-credit]
+    aliases: ["green card holder SBA loan", "non-citizen SBA loan", "SBA citizenship requirement"]
+    volatile: true
+  - id: investor-equity-rules
+    topic: fund/sba-rules
+    question: "What are the SBA rules for outside investors and guarantors?"
+    scope: "SBA rules on outside investors' ownership, which owners must guarantee, and how investor money counts as equity."
+    not: [citizenship-rule, raise-from-investors, equity-injection]
+    aliases: ["SBA investor guarantee 20%", "passive investor SBA loan", "SBA equity from investors"]
+    volatile: true
+  - id: partial-change-of-ownership
+    topic: fund/sba-rules
+    question: "Can I buy part of a business with an SBA loan, and must the seller keep guaranteeing?"
+    scope: "SBA rules when the buyer purchases less than 100% and the seller keeps a stake, including the seller's guarantee."
+    not: [rollover-equity, partial-buy-recap]
+    aliases: ["SBA partial acquisition", "seller keeps a stake SBA", "partial change of ownership SBA"]
+    volatile: true
+  - id: earnout-ban-forgivable-note
+    topic: fund/sba-rules
+    question: "The SBA doesn't allow earnouts. What can a deal use instead?"
+    scope: "The SBA limit on earnouts and the alternatives SBA-financed deals use, such as forgivable or contingent seller notes."
+    not: [earnouts, seller-note-standby]
+    aliases: ["SBA earnout prohibition", "forgivable seller note", "earnout with SBA loan"]
+    volatile: true
+  - id: seller-financing-basics
+    topic: fund/seller-financing
+    question: "Why and how much will a seller finance?"
+    scope: "Why sellers agree to finance part of the price and what share of the price they typically carry."
+    not: [getting-seller-to-carry, seller-note-terms]
+    aliases: ["seller financing", "owner financing a business", "seller carry note"]
+  - id: seller-note-standby
+    topic: fund/seller-financing
+    question: "Does the SBA require the seller note to be on full standby, and for how long?"
+    scope: "The current SBA standby requirement for seller notes: full versus partial standby, how long, and when payments may start."
+    not: [seller-note-as-equity, sop-rule-changes, seller-note-refinance-timing]
+    aliases: ["full standby seller note", "seller note standby 24 months", "SBA standby agreement"]
+    volatile: true
+  - id: seller-note-terms
+    topic: fund/seller-financing
+    question: "What rate, term and amortization should a seller note have?"
+    scope: "A seller note's interest rate, length, amortization, balloon and security, as negotiated terms."
+    not: [seller-note-standby, set-off-default]
+    aliases: ["seller note interest rate", "seller note term", "seller note amortization"]
+  - id: seller-note-as-equity
+    topic: fund/seller-financing
+    question: "Can the seller note count toward my equity injection?"
+    scope: "Whether, and on what conditions, a seller note can count toward the SBA equity injection."
+    not: [equity-injection, seller-note-standby, little-money-down]
+    aliases: ["seller note equity injection", "seller standby note as down payment", "seller note half of equity"]
+    volatile: true
+  - id: seller-note-refinance-timing
+    topic: fund/seller-financing
+    question: "When can I refinance or pay off the seller note?"
+    scope: "When the seller note may be prepaid or refinanced given standby and senior-loan terms; not refinancing the whole company."
+    not: [refinance-recap, seller-note-standby]
+    aliases: ["pay off seller note early", "refinance seller note", "seller note prepayment"]
+    volatile: true
+  - id: getting-seller-to-carry
+    topic: fund/seller-financing
+    question: "How do I get a reluctant seller to carry a note?"
+    scope: "Persuading a seller who resists carrying a note: their worries, the trade-offs to offer and how to frame the ask."
+    not: [seller-financing-basics, price-vs-terms]
+    aliases: ["convince seller to finance", "seller doesn't want to finance", "how to ask for seller financing"]
+  - id: set-off-default
+    topic: fund/seller-financing
+    question: "What happens if I can't pay the seller note, and can I offset claims against it?"
+    scope: "Missed seller-note payments and their consequences, and offsetting indemnity claims against what is owed on the note."
+    not: [indemnification, seller-note-terms]
+    aliases: ["default on seller note", "right of offset seller note", "set-off clause"]
+  - id: little-money-down
+    topic: fund/creative
+    question: "Can I really buy a business with little or no money down?"
+    scope: "Whether low- or no-money-down acquisitions are realistic, and the structures and risks behind the claim, across all financing."
+    not: [equity-injection, seller-note-as-equity, equity-sources-robs-heloc]
+    aliases: ["buy a business with no money down", "zero down business acquisition", "100% financing business purchase"]
+  - id: equity-sources-robs-heloc
+    topic: fund/creative
+    question: "Can I fund my down payment from a 401(k) (ROBS), a home equity line or savings?"
+    scope: "Using retirement funds (ROBS), home equity or savings for the down payment: how each works and its risks."
+    not: [equity-injection, little-money-down]
+    aliases: ["ROBS 401k business", "HELOC down payment business", "rollover for business startups"]
+    volatile: true
+  - id: conventional-vs-sba
+    topic: fund/creative
+    question: "When is a conventional or cash-flow loan better than an SBA loan?"
+    scope: "When a conventional bank, cash-flow or asset-based loan suits a purchase better than an SBA loan."
+    not: [loan-limits-pari-passu, mezz-private-credit]
+    aliases: ["conventional loan vs SBA", "cash flow loan acquisition", "non-SBA acquisition loan"]
+  - id: mezz-private-credit
+    topic: fund/creative
+    question: "When do mezzanine debt or private credit make sense?"
+    scope: "Subordinated, mezzanine and private-credit debt for acquisitions: cost, terms and when it fits."
+    not: [conventional-vs-sba, capital-stack]
+    aliases: ["mezzanine debt", "private credit small business acquisition", "subordinated debt"]
+  - id: raise-from-investors
+    topic: fund/raising-equity
+    question: "How do I raise equity from investors for a single deal?"
+    scope: "Finding and pitching investors for one deal's equity: who they are, the process and materials; the securities exemption is 506b-506c-securities."
+    not: [506b-506c-securities, investor-terms, independent-sponsor]
+    aliases: ["raise equity for an acquisition", "find investors to buy a business", "deal by deal raise"]
+  - id: investor-terms
+    topic: fund/raising-equity
+    question: "What terms do investors expect: preferred return, carry, ownership?"
+    scope: "The economic terms investors expect in a small-business buyout: preferred return, carry, ownership split and fees."
+    not: [searcher-economics, search-fund-returns]
+    aliases: ["preferred return", "sponsor carry", "investor equity split"]
+  - id: what-investors-want
+    topic: fund/raising-equity
+    question: "What do investors in small-business buyers look for?"
+    scope: "What investors look for in a buyer and a deal before they commit."
+    not: [investor-terms, raise-from-investors]
+    aliases: ["what investors look for in searchers", "pitch investors acquisition", "investor criteria search fund"]
+  - id: search-fund-returns
+    topic: fund/raising-equity
+    question: "What returns do search-fund investors expect?"
+    scope: "Reported return history and expectations for search-fund investors, from published studies."
+    not: [investor-terms, searcher-economics]
+    aliases: ["search fund IRR", "search fund returns study", "search fund ROI"]
+  - id: 506b-506c-securities
+    topic: fund/raising-equity
+    question: "Rule 506(b) or 506(c): can I advertise that I'm raising money?"
+    scope: "Which SEC private-offering exemption fits a raise, who may invest, and whether the raise may be publicly advertised."
+    not: [raise-from-investors]
+    aliases: ["Rule 506(b)", "Rule 506(c)", "general solicitation", "accredited investor verification"]
+    volatile: true
+  - id: co-gp-jv
+    topic: fund/raising-equity
+    question: "Should I bring in a co-sponsor or joint-venture partner?"
+    scope: "Bringing a co-sponsor or joint-venture partner into a deal: roles, economics and control."
+    not: [partner-or-solo, independent-sponsor]
+    aliases: ["co-GP", "joint venture acquisition", "co-sponsor deal"]
+  - id: accredited-investor
+    topic: fund/raising-equity
+    question: "Who counts as an accredited investor?"
+    scope: "The SEC definition of an accredited investor and why it matters for raising money."
+    not: [506b-506c-securities, raise-from-investors]
+    aliases: ["accredited investor definition", "accredited investor income test", "net worth test accredited"]
+    volatile: true
+  - id: capital-stack
+    topic: fund/modeling
+    question: "How do I layer bank debt, a seller note and equity?"
+    scope: "How senior debt, seller note and equity are layered in one deal, and their order of payment and claim."
+    not: [deal-model, mezz-private-credit, cash-at-close]
+    aliases: ["capital stack", "how to structure financing for an acquisition", "debt and equity mix"]
+  - id: deal-model
+    topic: fund/modeling
+    question: "How do I build an acquisition model that works for the lender, the seller and me?"
+    scope: "Building the acquisition spreadsheet: sources and uses, debt schedule, cash flow, returns and scenarios."
+    not: [capital-stack, stress-test, affordability]
+    aliases: ["acquisition model", "LBO model small business", "sources and uses"]
   # find
-  - {id: define-buy-box, topic: find/buy-box, question: "How do I define my buy box?"}
-  - {id: deal-size, topic: find/buy-box, question: "What size of business should a first-time buyer target?"}
-  - {id: industry-selection, topic: find/buy-box, question: "How do I pick an industry?"}
-  - {id: recurring-revenue, topic: find/buy-box, question: "Why look for recurring revenue, and which businesses have it?"}
-  - {id: what-makes-a-good-target, topic: find/buy-box, question: "What makes a small business worth buying?"}
-  - {id: geography-relocation, topic: find/buy-box, question: "Should I buy locally or move for the right deal?"}
-  - {id: how-brokers-work, topic: find/brokers, question: "How do business brokers work, and whose side are they on?"}
-  - {id: listing-marketplaces, topic: find/brokers, question: "Which marketplaces list businesses for sale?"}
-  - {id: why-listings-dont-sell, topic: find/brokers, question: "Why do most listed businesses never sell, and what does that tell a buyer?"}
-  - {id: buy-side-advisor, topic: find/brokers, question: "Should I hire a buy-side advisor?"}
-  - {id: off-market-sourcing, topic: find/off-market, question: "How do I find owners whose businesses aren't listed?"}
-  - {id: cold-email, topic: find/off-market, question: "How do I email business owners I don't know?"}
-  - {id: cold-calling, topic: find/off-market, question: "Does calling owners directly work, and what do I say?"}
-  - {id: direct-mail, topic: find/off-market, question: "Do letters and direct mail to owners work?"}
-  - {id: data-and-lists, topic: find/off-market, question: "Which data sources and lists help find owners?"}
-  - {id: referral-networks, topic: find/off-market, question: "How do I find deals through accountants, attorneys, bankers and referrals?"}
-  - {id: interns-and-teams, topic: find/off-market, question: "Should I use interns, assistants or a sourcing team?"}
-  - {id: ai-sourcing, topic: find/off-market, question: "Can AI find and screen deals for me?"}
-  - {id: search-timeline, topic: find/search-process, question: "How long does a search take?"}
-  - {id: deal-funnel-math, topic: find/search-process, question: "How many deals and offers does it take to close one?"}
-  - {id: search-ran-out, topic: find/search-process, question: "What happens when a search runs out of time or money?"}
-  - {id: competition-crowded, topic: find/search-process, question: "Is buying small businesses getting crowded, and how do I stand out?"}
-  - {id: search-budget, topic: find/search-process, question: "How do I pay my living costs during the search?"}
+  - id: define-buy-box
+    topic: find/buy-box
+    question: "How do I define my buy box?"
+    scope: "Writing down acquisition criteria (size, industry, geography, margins, owner role) to screen deals quickly."
+    not: [deal-size, industry-selection, what-makes-a-good-target]
+    aliases: ["buy box", "acquisition criteria", "investment criteria for buying a business"]
+  - id: deal-size
+    topic: find/buy-box
+    question: "What size of business should a first-time buyer target?"
+    scope: "The range of price or earnings that suits a first-time buyer given their money and risk."
+    not: [define-buy-box, affordability]
+    aliases: ["what size business to buy", "SDE range first acquisition", "minimum EBITDA to buy"]
+  - id: industry-selection
+    topic: find/buy-box
+    question: "How do I pick an industry?"
+    scope: "How a buyer narrows the search to one or a few industries."
+    not: [boring-business-thesis, define-buy-box]
+    aliases: ["best industry to buy a business", "how to choose an industry for acquisition", "industry thesis"]
+  - id: recurring-revenue
+    topic: find/buy-box
+    question: "Why look for recurring revenue, and which businesses have it?"
+    scope: "Recurring and repeat revenue as a search criterion, and which kinds of business have it; its effect on the multiple is value-drivers."
+    not: [value-drivers, revenue-quality-churn]
+    aliases: ["recurring revenue businesses", "subscription small business", "contracted revenue"]
+  - id: what-makes-a-good-target
+    topic: find/buy-box
+    question: "What makes a small business worth buying?"
+    scope: "The overall qualities that make a particular business attractive to buy."
+    not: [define-buy-box, value-drivers]
+    aliases: ["what makes a good acquisition", "signs of a good business to buy", "ideal acquisition target"]
+  - id: geography-relocation
+    topic: find/buy-box
+    question: "Should I buy locally or move for the right deal?"
+    scope: "Searching locally versus nationally, and whether to move for a deal."
+    not: [define-buy-box]
+    aliases: ["relocate to buy a business", "buy a business in another state", "local vs national search"]
+  - id: how-brokers-work
+    topic: find/brokers
+    question: "How do business brokers work, and whose side are they on?"
+    scope: "How brokers are paid, whom they represent and how they run a sale."
+    not: [broker-credibility, bad-brokers, buy-side-advisor]
+    aliases: ["business broker commission", "who does the broker represent", "how business brokers work"]
+  - id: listing-marketplaces
+    topic: find/brokers
+    question: "Which marketplaces list businesses for sale?"
+    scope: "The kinds of sites that list businesses for sale and what each kind shows, without ranking them."
+    not: [how-brokers-work, data-and-lists]
+    aliases: ["websites to buy a business", "businesses for sale listings", "online business marketplaces"]
+  - id: why-listings-dont-sell
+    topic: find/brokers
+    question: "Why do most listed businesses never sell, and what does that tell a buyer?"
+    scope: "Why most listed businesses never sell, and what that tells a buyer about price and leverage."
+    not: [asking-price-gap]
+    aliases: ["why businesses don't sell", "listed business sale rate", "stale listings"]
+  - id: buy-side-advisor
+    topic: find/brokers
+    question: "Should I hire a buy-side advisor?"
+    scope: "Whether to pay a buy-side advisor or search firm to find or run a deal for the buyer."
+    not: [how-brokers-work, deal-team]
+    aliases: ["buy side broker", "buy side M&A advisor", "pay someone to find a business"]
+  - id: buying-online-business
+    topic: find/brokers
+    question: "How is buying an online business (SaaS, app, e-commerce) different?"
+    scope: "What changes when the business is online: marketplace verification, platform escrow, code, accounts and transfers."
+    not: [listing-marketplaces, ip-tech, online-saas-eligibility]
+    aliases: ["buy a SaaS business", "buy an app business", "buy an e-commerce store"]
+  - id: off-market-sourcing
+    topic: find/off-market
+    question: "How do I find owners whose businesses aren't listed?"
+    scope: "The overall strategy for reaching owners of unlisted businesses; each channel in detail has its own leaf."
+    not: [cold-email, cold-calling, direct-mail, referral-networks]
+    aliases: ["off market deals", "proprietary deal flow", "find businesses not for sale"]
+  - id: cold-email
+    topic: find/off-market
+    question: "How do I email business owners I don't know?"
+    scope: "Unsolicited email to owners: lists, wording, cadence and deliverability."
+    not: [cold-calling, direct-mail, data-and-lists]
+    aliases: ["cold email business owners", "outreach email template", "email to buy a business"]
+  - id: cold-calling
+    topic: find/off-market
+    question: "Does calling owners directly work, and what do I say?"
+    scope: "Phoning owners who haven't been approached: whether it works, getting through and the opening lines; the full first conversation is first-conversation."
+    not: [first-conversation, cold-email]
+    aliases: ["cold call business owners", "cold calling script", "call owners to buy their business"]
+  - id: direct-mail
+    topic: find/off-market
+    question: "Do letters and direct mail to owners work?"
+    scope: "Letters and postcards to owners: whether they work and how to run a campaign."
+    not: [cold-email]
+    aliases: ["direct mail to business owners", "letters to buy a business", "handwritten letters owners"]
+  - id: data-and-lists
+    topic: find/off-market
+    question: "Which data sources and lists help find owners?"
+    scope: "Kinds of data sources and lists for building target-owner lists, described by type."
+    not: [cold-email, ai-sourcing, listing-marketplaces]
+    aliases: ["business owner database", "lead lists for acquisition", "find owner contact info"]
+  - id: referral-networks
+    topic: find/off-market
+    question: "How do I find deals through accountants, attorneys, bankers and referrals?"
+    scope: "Deals that come through accountants, attorneys, bankers, wealth advisers and personal networks."
+    not: [off-market-sourcing]
+    aliases: ["CPA referrals for deals", "intermediary network", "deal referrals"]
+  - id: interns-and-teams
+    topic: find/off-market
+    question: "Should I use interns, assistants or a sourcing team?"
+    scope: "Using interns, assistants or outsourced callers to source deals."
+    not: [ai-sourcing]
+    aliases: ["search fund interns", "outsourced deal sourcing", "virtual assistant cold calling"]
+  - id: ai-sourcing
+    topic: find/off-market
+    question: "Can AI find and screen deals for me?"
+    scope: "Using AI tools to find, enrich and screen targets before first contact."
+    not: [ai-assisted-diligence, data-and-lists]
+    aliases: ["AI deal sourcing", "AI to find businesses for sale", "AI screen deals"]
+  - id: outreach-rules
+    topic: find/off-market
+    question: "What rules apply to calling, texting and emailing business owners?"
+    scope: "Consent and anti-spam rules for owner outreach by phone, text and email."
+    not: [cold-calling, cold-email]
+    aliases: ["cold calling rules", "CAN-SPAM business owners", "TCPA texting rules"]
+    volatile: true
+  - id: search-timeline
+    topic: find/search-process
+    question: "How long does a search take?"
+    scope: "How long searches take from start to close, and what drives the range."
+    not: [deal-funnel-math, approval-timeline]
+    aliases: ["how long to find a business", "search fund timeline", "time to buy a business"]
+  - id: deal-funnel-math
+    topic: find/search-process
+    question: "How many deals and offers does it take to close one?"
+    scope: "The ratios from owners contacted to deals reviewed, LOIs and closings."
+    not: [search-timeline]
+    aliases: ["deal funnel", "how many LOIs to close a deal", "search conversion rates"]
+  - id: search-ran-out
+    topic: find/search-process
+    question: "What happens when a search runs out of time or money?"
+    scope: "What searchers do when time or money runs out: extend, change course or stop."
+    not: [search-budget]
+    aliases: ["search fund failed", "searcher didn't find a deal", "end of search"]
+  - id: competition-crowded
+    topic: find/search-process
+    question: "Is buying small businesses getting crowded, and how do I stand out?"
+    scope: "Whether more buyers now chase small businesses, and how a buyer stands out in general; winning one particular deal is buyer-of-choice."
+    not: [buyer-of-choice, silver-tsunami]
+    aliases: ["too many searchers", "ETA crowded", "competition for small business deals"]
+  - id: search-budget
+    topic: find/search-process
+    question: "How do I pay my living costs during the search?"
+    scope: "Paying personal living costs and search expenses while searching."
+    not: [search-ran-out, keep-day-job]
+    aliases: ["how to pay bills while searching", "search budget", "runway during search"]
   # approach
-  - {id: first-conversation, topic: approach/owner-outreach, question: "What do I say on the first call with an owner?"}
-  - {id: first-meeting, topic: approach/owner-outreach, question: "How should I run the first meeting with an owner?"}
-  - {id: when-owner-not-ready, topic: approach/owner-outreach, question: "What do I do when an owner isn't ready to sell yet?"}
-  - {id: earn-trust, topic: approach/owner-outreach, question: "How do I earn a retiring owner's trust?"}
-  - {id: seller-psychology, topic: approach/owner-outreach, question: "What do sellers care about besides price?"}
-  - {id: why-owner-selling, topic: approach/owner-outreach, question: "How do I find out why the owner is really selling?"}
-  - {id: buyer-of-choice, topic: approach/owner-outreach, question: "How do I win a deal without the highest offer?"}
-  - {id: broker-credibility, topic: approach/broker-relations, question: "How do I look credible to brokers?"}
-  - {id: bad-brokers, topic: approach/broker-relations, question: "How do I get a deal done with an unresponsive or difficult broker?"}
-  - {id: nda, topic: approach/screening, question: "What should I know before signing an NDA with a seller?"}
-  - {id: cim-teaser, topic: approach/screening, question: "How do I read a teaser or CIM, and what's missing from it?"}
-  - {id: early-red-flags, topic: approach/screening, question: "Which early red flags should make me pass before an offer?"}
-  - {id: pre-loi-diligence, topic: approach/screening, question: "How much checking should I do before making an offer?"}
-  - {id: early-docs-request, topic: approach/screening, question: "Which documents should I get before making an offer?"}
+  - id: first-conversation
+    topic: approach/owner-outreach
+    question: "What do I say on the first call with an owner?"
+    scope: "The first real phone conversation with an owner: opening, questions and the next step."
+    not: [cold-calling, first-meeting]
+    aliases: ["first call with business owner", "what to ask a seller on the first call", "intro call script"]
+  - id: first-meeting
+    topic: approach/owner-outreach
+    question: "How should I run the first meeting with an owner?"
+    scope: "The first in-person or video meeting with an owner: agenda, questions and what to watch for."
+    not: [first-conversation, pre-loi-diligence]
+    aliases: ["first meeting with seller", "site visit with seller", "questions to ask a business owner"]
+  - id: when-owner-not-ready
+    topic: approach/owner-outreach
+    question: "What do I do when an owner isn't ready to sell yet?"
+    scope: "Keeping a relationship with an owner who won't sell yet, and following up over time."
+    not: [earn-trust]
+    aliases: ["owner not ready to sell", "follow up with seller", "nurture a seller"]
+  - id: earn-trust
+    topic: approach/owner-outreach
+    question: "How do I earn a retiring owner's trust?"
+    scope: "Building credibility and rapport with a retiring owner over the whole process."
+    not: [seller-psychology, buyer-of-choice]
+    aliases: ["build trust with seller", "rapport with business owner", "seller relationship"]
+  - id: seller-psychology
+    topic: approach/owner-outreach
+    question: "What do sellers care about besides price?"
+    scope: "Owner-sellers' non-price priorities: legacy, employees, timing and identity."
+    not: [why-owner-selling, earn-trust]
+    aliases: ["what sellers care about", "seller motivations", "seller emotions"]
+  - id: why-owner-selling
+    topic: approach/owner-outreach
+    question: "How do I find out why the owner is really selling?"
+    scope: "Finding the real reason behind a sale and what it signals about the business."
+    not: [seller-psychology, early-red-flags]
+    aliases: ["why is the owner selling", "reason for sale", "seller's real motivation"]
+  - id: buyer-of-choice
+    topic: approach/owner-outreach
+    question: "How do I win a deal without the highest offer?"
+    scope: "Winning a particular deal against higher bids through certainty, terms and fit."
+    not: [competition-crowded, price-vs-terms]
+    aliases: ["win deal without highest offer", "seller chooses buyer", "beat other buyers"]
+  - id: broker-credibility
+    topic: approach/broker-relations
+    question: "How do I look credible to brokers?"
+    scope: "Presenting as a credible, funded buyer whom brokers take seriously."
+    not: [how-brokers-work]
+    aliases: ["how to get brokers to send deals", "proof of funds for broker", "buyer profile for brokers"]
+  - id: bad-brokers
+    topic: approach/broker-relations
+    question: "How do I get a deal done with an unresponsive or difficult broker?"
+    scope: "Working with brokers who don't respond, withhold information or push the process."
+    not: [how-brokers-work, broker-credibility]
+    aliases: ["broker not responding", "difficult business broker", "broker won't share financials"]
+  - id: proof-of-funds
+    topic: approach/broker-relations
+    question: "How do I show proof of funds or a lender prequalification?"
+    scope: "What brokers and owners ask for to believe a buyer can close, and how to provide it."
+    not: [broker-credibility, lender-selection]
+    aliases: ["proof of funds letter", "SBA prequalification letter", "show I can afford the business"]
+  - id: nda
+    topic: approach/screening
+    question: "What should I know before signing an NDA with a seller?"
+    scope: "Signing a seller's confidentiality agreement: common terms, non-solicit clauses and what to watch for."
+    not: [cim-teaser]
+    aliases: ["NDA to buy a business", "confidentiality agreement business sale", "non-disclosure agreement seller"]
+  - id: cim-teaser
+    topic: approach/screening
+    question: "How do I read a teaser or CIM, and what's missing from it?"
+    scope: "Reading a teaser or confidential information memorandum and spotting what it leaves out."
+    not: [early-red-flags, early-docs-request]
+    aliases: ["CIM", "confidential information memorandum", "teaser business for sale", "offering memorandum"]
+  - id: early-red-flags
+    topic: approach/screening
+    question: "Which early red flags should make me pass before an offer?"
+    scope: "Warning signs visible before an offer (in the listing, CIM or early calls) that justify passing; findings after the LOI are deal-killers."
+    not: [deal-killers, walk-away, businesses-to-avoid]
+    aliases: ["red flags buying a business", "when to pass on a deal", "CIM red flags"]
+  - id: pre-loi-diligence
+    topic: approach/screening
+    question: "How much checking should I do before making an offer?"
+    scope: "How deep to check before an offer versus after the LOI."
+    not: [early-docs-request, phased-diligence]
+    aliases: ["diligence before LOI", "pre-LOI questions", "how much diligence before an offer"]
+  - id: early-docs-request
+    topic: approach/screening
+    question: "Which documents should I get before making an offer?"
+    scope: "The specific documents to request from a seller before an LOI."
+    not: [financial-dd-checklist, pre-loi-diligence]
+    aliases: ["documents to request before LOI", "what to ask a seller for", "pre-LOI document list"]
   # evaluate
-  - {id: sde-vs-ebitda, topic: evaluate/earnings, question: "SDE or EBITDA: which measure applies, and why?"}
-  - {id: add-backs, topic: evaluate/earnings, question: "Which add-backs are legitimate and which are inflated?"}
-  - {id: owner-replacement-cost, topic: evaluate/earnings, question: "How do I account for the cost of replacing the owner's work?"}
-  - {id: tax-returns-vs-books, topic: evaluate/earnings, question: "Why don't the tax returns match the P&L, and which one counts?"}
-  - {id: cash-business, topic: evaluate/earnings, question: "How should a buyer treat claimed cash income that isn't reported?"}
-  - {id: proof-of-cash, topic: evaluate/earnings, question: "How do I tie reported revenue to the bank statements?"}
-  - {id: trends-ttm, topic: evaluate/earnings, question: "How do I weigh the last 12 months against prior years and declining trends?"}
-  - {id: covid-ppp-normalization, topic: evaluate/earnings, question: "How do I adjust for unusual years such as COVID and PPP loans?"}
-  - {id: capex-equipment, topic: evaluate/earnings, question: "How do I account for equipment, vehicles and future capital spending?"}
-  - {id: what-multiple, topic: evaluate/valuation, question: "What multiple should I pay for a small business?"}
-  - {id: value-drivers, topic: evaluate/valuation, question: "What earns a business a higher or lower multiple?"}
-  - {id: valuation-methods, topic: evaluate/valuation, question: "How is a small business valued: multiples, cash flow or assets?"}
-  - {id: asking-price-gap, topic: evaluate/valuation, question: "How do I handle an unrealistic asking price?"}
-  - {id: revenue-based-valuation, topic: evaluate/valuation, question: "How are practices and agencies valued as a percentage of revenue?"}
-  - {id: dscr, topic: evaluate/debt-capacity, question: "What debt service coverage do lenders require, and how is it calculated?"}
-  - {id: affordability, topic: evaluate/debt-capacity, question: "How much can I pay for a business given the loan payments?"}
-  - {id: stress-test, topic: evaluate/debt-capacity, question: "How do I stress-test a deal for a downturn?"}
-  - {id: customer-concentration, topic: evaluate/risk-factors, question: "How much customer concentration is too much?"}
-  - {id: owner-dependence, topic: evaluate/risk-factors, question: "Does the business depend too much on the owner?"}
-  - {id: key-employee-risk, topic: evaluate/risk-factors, question: "What if key employees leave after the sale?"}
-  - {id: supplier-concentration, topic: evaluate/risk-factors, question: "What if a key supplier relationship breaks?"}
-  - {id: license-dependence, topic: evaluate/risk-factors, question: "Does the business need a license I don't hold?"}
-  - {id: ai-disruption, topic: evaluate/risk-factors, question: "Will AI disrupt this particular business?"}
-  - {id: labor-availability, topic: evaluate/risk-factors, question: "Can I hire enough technicians or skilled workers?"}
-  - {id: pe-consolidation, topic: evaluate/risk-factors, question: "Is private equity rolling up this industry, and is that good or bad for me?"}
-  - {id: macro-exposure, topic: evaluate/risk-factors, question: "How exposed is the business to interest rates, tariffs and the economy?"}
-  - {id: hidden-upside, topic: evaluate/risk-factors, question: "How do I spot upside the owner hasn't captured?"}
-  - {id: distressed-turnaround, topic: evaluate/risk-factors, question: "Should I buy a struggling business to turn it around?"}
+  - id: sde-vs-ebitda
+    topic: evaluate/earnings
+    question: "SDE or EBITDA: which measure applies, and why?"
+    scope: "What SDE and EBITDA mean, when each is used and how to move from one to the other."
+    not: [add-backs, owner-replacement-cost]
+    aliases: ["SDE vs EBITDA", "seller's discretionary earnings", "owner benefit", "adjusted EBITDA"]
+  - id: add-backs
+    topic: evaluate/earnings
+    question: "Which add-backs are legitimate and which are inflated?"
+    scope: "Judging each seller adjustment to earnings as legitimate or inflated, and how to check it; the owner's replacement salary is owner-replacement-cost."
+    not: [owner-replacement-cost, qoe-need, sde-vs-ebitda]
+    aliases: ["add-backs", "normalized earnings", "inflated add-backs", "recast P&L"]
+  - id: owner-replacement-cost
+    topic: evaluate/earnings
+    question: "How do I account for the cost of replacing the owner's work?"
+    scope: "Deducting the market cost of the roles the owner fills (manager pay, payroll taxes) from earnings."
+    not: [add-backs, owner-dependence]
+    aliases: ["replacement manager salary", "owner salary adjustment", "market rate owner compensation"]
+  - id: tax-returns-vs-books
+    topic: evaluate/earnings
+    question: "Why don't the tax returns match the P&L, and which one counts?"
+    scope: "Reconciling tax returns with the internal P&L, and which one a lender and a buyer rely on."
+    not: [proof-of-cash, cash-business]
+    aliases: ["tax returns don't match P&L", "SBA uses tax returns", "books vs taxes"]
+  - id: cash-business
+    topic: evaluate/earnings
+    question: "How should a buyer treat claimed cash income that isn't reported?"
+    scope: "How buyers and lenders treat cash income a seller claims but didn't report."
+    not: [tax-returns-vs-books, fraud-misstatement]
+    aliases: ["unreported cash income", "cash business valuation", "seller says there's more cash"]
+  - id: proof-of-cash
+    topic: evaluate/earnings
+    question: "How do I tie reported revenue to the bank statements?"
+    scope: "The method for tying reported revenue and deposits to the bank statements; what such checks uncover is fraud-misstatement."
+    not: [fraud-misstatement, qoe-need, tax-returns-vs-books]
+    aliases: ["proof of cash", "bank statement reconciliation", "verify revenue with bank statements"]
+  - id: trends-ttm
+    topic: evaluate/earnings
+    question: "How do I weigh the last 12 months against prior years and declining trends?"
+    scope: "Weighing trailing twelve months against prior years, and handling declining or spiking trends."
+    not: [covid-ppp-normalization]
+    aliases: ["TTM", "trailing twelve months", "declining revenue business"]
+  - id: covid-ppp-normalization
+    topic: evaluate/earnings
+    question: "How do I adjust for unusual years such as COVID and PPP loans?"
+    scope: "Adjusting for one-off years and items such as COVID disruption, PPP or EIDL money and employee retention credits."
+    not: [trends-ttm, add-backs]
+    aliases: ["PPP loan forgiveness in earnings", "COVID year adjustment", "ERC credit earnings"]
+  - id: capex-equipment
+    topic: evaluate/earnings
+    question: "How do I account for equipment, vehicles and future capital spending?"
+    scope: "Equipment, vehicles, deferred maintenance and future capital spending, in earnings and in the price."
+    not: [add-backs]
+    aliases: ["capex", "maintenance capex", "equipment replacement cost"]
+  - id: reading-financials
+    topic: evaluate/earnings
+    question: "How do I read a small business's P&L, balance sheet and cash flow statement?"
+    scope: "Basic reading of the three financial statements for a first-time buyer; not adjustments or add-backs."
+    not: [add-backs, sde-vs-ebitda, tax-returns-vs-books]
+    aliases: ["how to read a P&L", "small business financial statements", "balance sheet basics"]
+  - id: what-multiple
+    topic: evaluate/valuation
+    question: "What multiple should I pay for a small business?"
+    scope: "The usual range of earnings multiples paid for small businesses and where a given deal sits in it."
+    not: [value-drivers, valuation-methods, revenue-based-valuation]
+    aliases: ["SDE multiple", "EBITDA multiple small business", "how many times earnings"]
+  - id: value-drivers
+    topic: evaluate/valuation
+    question: "What earns a business a higher or lower multiple?"
+    scope: "The factors that move a multiple up or down (size, recurring revenue, concentration, owner dependence, growth)."
+    not: [what-multiple, recurring-revenue, what-makes-a-good-target]
+    aliases: ["what increases business value", "drivers of valuation multiple", "why a higher multiple"]
+  - id: valuation-methods
+    topic: evaluate/valuation
+    question: "How is a small business valued: multiples, cash flow or assets?"
+    scope: "The main valuation approaches (market multiples, discounted cash flow, asset-based) and when each applies."
+    not: [what-multiple, business-appraisal]
+    aliases: ["business valuation methods", "how to value a small business", "asset based valuation"]
+  - id: asking-price-gap
+    topic: evaluate/valuation
+    question: "How do I handle an unrealistic asking price?"
+    scope: "Responding when the seller's asking price is well above what the numbers support."
+    not: [why-listings-dont-sell, price-vs-terms]
+    aliases: ["overpriced business", "seller asking too much", "price gap"]
+  - id: revenue-based-valuation
+    topic: evaluate/valuation
+    question: "How are practices and agencies valued as a percentage of revenue?"
+    scope: "Pricing practices and agencies as a percentage of revenue, and why those sectors use it."
+    not: [what-multiple, valuation-methods]
+    aliases: ["percent of revenue valuation", "accounting practice valuation", "insurance agency multiple of revenue"]
+  - id: dscr
+    topic: evaluate/debt-capacity
+    question: "What debt service coverage do lenders require, and how is it calculated?"
+    scope: "The debt service coverage ratio: its definition, how it is calculated and the minimum lenders require."
+    not: [underwriting, affordability]
+    aliases: ["debt service coverage ratio", "1.25x coverage", "DSCR SBA"]
+    volatile: true
+  - id: affordability
+    topic: evaluate/debt-capacity
+    question: "How much can I pay for a business given the loan payments?"
+    scope: "Working back from cash flow and loan terms to the most a buyer can pay."
+    not: [dscr, owner-take-home, deal-size]
+    aliases: ["how much business can I afford", "max purchase price SBA", "what price can cash flow support"]
+  - id: stress-test
+    topic: evaluate/debt-capacity
+    question: "How do I stress-test a deal for a downturn?"
+    scope: "Testing a deal's coverage and survival under revenue drops, cost rises or rate increases."
+    not: [macro-exposure, deal-model]
+    aliases: ["stress test acquisition", "downside case", "recession scenario"]
+  - id: customer-concentration
+    topic: evaluate/risk-factors
+    question: "How much customer concentration is too much?"
+    scope: "How much revenue from one or a few customers is too risky, and how it affects price and lending."
+    not: [supplier-concentration, revenue-quality-churn]
+    aliases: ["customer concentration", "largest customer percentage", "top customer risk"]
+  - id: owner-dependence
+    topic: evaluate/risk-factors
+    question: "Does the business depend too much on the owner?"
+    scope: "How much the business relies on the seller's relationships, skills or licence, and how that changes risk and price."
+    not: [operator-vs-absentee, key-employee-risk, license-dependence]
+    aliases: ["owner dependent business", "key person risk owner", "business relies on owner"]
+  - id: key-employee-risk
+    topic: evaluate/risk-factors
+    question: "What if key employees leave after the sale?"
+    scope: "Judging, before the offer, the risk that key staff leave after the sale, and pricing or structuring for it."
+    not: [employee-dd, employee-retention, owner-dependence]
+    aliases: ["key employee leaving", "key man risk", "employee flight after sale"]
+  - id: supplier-concentration
+    topic: evaluate/risk-factors
+    question: "What if a key supplier relationship breaks?"
+    scope: "Dependence on one supplier, vendor or platform."
+    not: [customer-concentration]
+    aliases: ["supplier concentration", "single vendor dependence", "platform risk"]
+  - id: license-dependence
+    topic: evaluate/risk-factors
+    question: "Does the business need a license I don't hold?"
+    scope: "Whether running the business needs a professional licence the buyer lacks, and the workarounds."
+    not: [licenses-permits-transfer, regulatory-compliance]
+    aliases: ["licensed trade business", "need a license to own HVAC", "license qualifier"]
+  - id: ai-disruption
+    topic: evaluate/risk-factors
+    question: "Will AI disrupt this particular business?"
+    scope: "Whether AI threatens a specific target's products, services or labour model."
+    not: [resilient-businesses, ai-in-operations]
+    aliases: ["AI risk to small business", "will AI replace this business", "AI disruption"]
+  - id: labor-availability
+    topic: evaluate/risk-factors
+    question: "Can I hire enough technicians or skilled workers?"
+    scope: "Whether enough skilled workers can be hired and kept in the target's market."
+    not: [key-employee-risk, hiring-team]
+    aliases: ["technician shortage", "skilled labor shortage", "hiring trades workers"]
+  - id: pe-consolidation
+    topic: evaluate/risk-factors
+    question: "Is private equity rolling up this industry, and is that good or bad for me?"
+    scope: "Whether private-equity roll-ups in the target's industry help or hurt a small buyer."
+    not: [rollup-strategy, sell-to-pe]
+    aliases: ["PE roll-ups in my industry", "private equity buying HVAC", "industry consolidation"]
+  - id: macro-exposure
+    topic: evaluate/risk-factors
+    question: "How exposed is the business to interest rates, tariffs and the economy?"
+    scope: "How sensitive the business is to interest rates, tariffs and the economy."
+    not: [stress-test, resilient-businesses]
+    aliases: ["tariff risk small business", "interest rate risk", "cyclical business"]
+  - id: hidden-upside
+    topic: evaluate/risk-factors
+    question: "How do I spot upside the owner hasn't captured?"
+    scope: "Spotting, before buying, improvements the current owner hasn't made."
+    not: [value-creation, raise-prices]
+    aliases: ["low hanging fruit acquisition", "untapped upside", "value creation levers"]
+  - id: distressed-turnaround
+    topic: evaluate/risk-factors
+    question: "Should I buy a struggling business to turn it around?"
+    scope: "Buying a struggling or declining business to fix it: risks, financing and pricing."
+    not: [businesses-to-avoid]
+    aliases: ["buy a failing business", "turnaround acquisition", "distressed business"]
   # offer
-  - {id: loi-contents, topic: offer/loi, question: "What goes in a letter of intent, and what part of it is binding?"}
-  - {id: settle-before-diligence, topic: offer/loi, question: "Which terms should be settled in the LOI rather than later?"}
-  - {id: exclusivity, topic: offer/loi, question: "How long should exclusivity (no-shop) last?"}
-  - {id: loi-mistakes, topic: offer/loi, question: "Which LOI mistakes cost buyers later?"}
-  - {id: retrade, topic: offer/loi, question: "When is it fair to change the price after the LOI?"}
-  - {id: asset-vs-stock, topic: offer/structure, question: "Asset purchase or stock purchase?"}
-  - {id: earnouts, topic: offer/structure, question: "When and how should a deal use an earnout?"}
-  - {id: earnout-disputes, topic: offer/structure, question: "How do earnouts go wrong, and how are disputes prevented?"}
-  - {id: rollover-equity, topic: offer/structure, question: "Should the seller keep a stake (rollover equity)?"}
-  - {id: cash-at-close, topic: offer/structure, question: "How much should be paid at closing versus later?"}
-  - {id: partial-buy-recap, topic: offer/structure, question: "Can I buy a majority now and the rest later?"}
-  - {id: seller-consulting-agreement, topic: offer/structure, question: "How should a seller's consulting or transition agreement be structured?"}
-  - {id: non-compete, topic: offer/structure, question: "What non-compete and non-solicit should the seller sign?"}
-  - {id: real-estate-lease-or-buy, topic: offer/structure, question: "Should I buy the seller's real estate or lease it?"}
-  - {id: tax-structuring, topic: offer/structure, question: "How do taxes shape the deal structure and price allocation?"}
-  - {id: what-is-nwc, topic: offer/working-capital, question: "What is net working capital in a deal, and why does it matter?"}
-  - {id: peg, topic: offer/working-capital, question: "How is the working-capital target (peg) set and trued up?"}
-  - {id: cash-free-debt-free, topic: offer/working-capital, question: "What does 'cash-free, debt-free' mean for the buyer?"}
-  - {id: ar-ap-inventory, topic: offer/working-capital, question: "How are receivables, payables, inventory and customer deposits handled?"}
-  - {id: wip-backlog, topic: offer/working-capital, question: "How are work in progress and backlog handled for contractors?"}
-  - {id: price-vs-terms, topic: offer/negotiation, question: "How do I trade price against terms?"}
-  - {id: tactics, topic: offer/negotiation, question: "Which negotiation approaches work with owner-sellers?"}
-  - {id: deal-momentum, topic: offer/negotiation, question: "How do I keep a deal from stalling?"}
-  - {id: choosing-counsel, topic: offer/team, question: "Do I need a lawyer to buy a business, and how do I choose one?"}
-  - {id: advisor-costs, topic: offer/team, question: "What do lawyers, accountants and diligence providers cost?"}
-  - {id: deal-team, topic: offer/team, question: "Who should be on my acquisition team?"}
-  - {id: cpa-role, topic: offer/team, question: "What role should my accountant play?"}
+  - id: loi-contents
+    topic: offer/loi
+    question: "What goes in a letter of intent, and what part of it is binding?"
+    scope: "The sections of a letter of intent and which of them are binding."
+    not: [settle-before-diligence, loi-mistakes]
+    aliases: ["letter of intent template", "is an LOI binding", "LOI for small business"]
+  - id: settle-before-diligence
+    topic: offer/loi
+    question: "Which terms should be settled in the LOI rather than later?"
+    scope: "Which terms to pin down in the LOI so they aren't reopened during diligence or drafting."
+    not: [loi-contents, loi-mistakes]
+    aliases: ["what to include in an LOI", "how detailed should an LOI be", "terms to agree in the LOI"]
+  - id: exclusivity
+    topic: offer/loi
+    question: "How long should exclusivity (no-shop) last?"
+    scope: "The length and terms of the no-shop period, and extensions."
+    not: [loi-contents]
+    aliases: ["LOI exclusivity period", "no shop clause", "exclusivity extension"]
+  - id: loi-mistakes
+    topic: offer/loi
+    question: "Which LOI mistakes cost buyers later?"
+    scope: "Common LOI errors that hurt buyers later in the deal."
+    not: [settle-before-diligence]
+    aliases: ["LOI mistakes", "LOI regret", "bad LOI terms"]
+  - id: retrade
+    topic: offer/loi
+    question: "When is it fair to change the price after the LOI?"
+    scope: "When lowering the price after the LOI is fair, and how to raise it with the seller."
+    not: [deal-killers, asking-price-gap]
+    aliases: ["retrade", "renegotiate after LOI", "lower price after diligence"]
+  - id: asset-vs-stock
+    topic: offer/structure
+    question: "Asset purchase or stock purchase?"
+    scope: "Buying assets versus buying the shares or membership interests: liabilities, contracts and taxes at a high level."
+    not: [tax-structuring, contract-assignment]
+    aliases: ["asset purchase vs stock purchase", "APA vs SPA", "buy assets or shares"]
+  - id: earnouts
+    topic: offer/structure
+    question: "When and how should a deal use an earnout?"
+    scope: "Contingent payments tied to future performance in deals where they are allowed: when they fit and how they are set up; SBA-financed deals are earnout-ban-forgivable-note."
+    not: [earnout-ban-forgivable-note, earnout-disputes]
+    aliases: ["earnout", "contingent consideration", "earn out structure"]
+  - id: earnout-disputes
+    topic: offer/structure
+    question: "How do earnouts go wrong, and how are disputes prevented?"
+    scope: "How earnouts break down after closing and the terms that prevent disputes."
+    not: [earnouts]
+    aliases: ["earnout dispute", "earnout litigation", "earnout manipulation"]
+  - id: rollover-equity
+    topic: offer/structure
+    question: "Should the seller keep a stake (rollover equity)?"
+    scope: "Whether the seller keeps a minority stake after the sale, and the pros and cons for both sides."
+    not: [partial-change-of-ownership, partial-buy-recap]
+    aliases: ["seller rollover", "seller keeps equity", "rollover equity"]
+    volatile: true
+  - id: cash-at-close
+    topic: offer/structure
+    question: "How much should be paid at closing versus later?"
+    scope: "The split between cash at closing and deferred payments (notes, earnouts, holdbacks)."
+    not: [price-vs-terms, capital-stack, escrow-holdback]
+    aliases: ["cash at closing", "how much upfront", "deferred consideration"]
+  - id: partial-buy-recap
+    topic: offer/structure
+    question: "Can I buy a majority now and the rest later?"
+    scope: "Buying a majority now with an option or obligation to buy the rest later."
+    not: [partial-change-of-ownership, rollover-equity]
+    aliases: ["buy 51% now", "staged acquisition", "buy out remaining shares later"]
+    volatile: true
+  - id: seller-consulting-agreement
+    topic: offer/structure
+    question: "How should a seller's consulting or transition agreement be structured?"
+    scope: "The contract for the seller's role after closing: length, pay, duties and SBA limits; how the handover goes in practice is seller-transition-period."
+    not: [seller-transition-period, non-compete]
+    aliases: ["seller consulting agreement", "transition services agreement", "seller employment agreement"]
+    volatile: true
+  - id: non-compete
+    topic: offer/structure
+    question: "What non-compete and non-solicit should the seller sign?"
+    scope: "The scope, length and geography of the seller's non-compete and non-solicit."
+    not: [seller-consulting-agreement]
+    aliases: ["seller non-compete", "non-solicit", "restrictive covenant sale of business"]
+    volatile: true
+  - id: real-estate-lease-or-buy
+    topic: offer/structure
+    question: "Should I buy the seller's real estate or lease it?"
+    scope: "Deciding whether to buy the seller's property or lease it, on economics and risk; financing it is real-estate-in-deal."
+    not: [real-estate-in-deal, lease-assignment]
+    aliases: ["buy the building or lease", "seller owns the real estate", "lease from seller"]
+  - id: tax-structuring
+    topic: offer/structure
+    question: "How do taxes shape the deal structure and price allocation?"
+    scope: "How tax treatment shapes the structure and the allocation of price among asset classes, for buyer and seller."
+    not: [asset-vs-stock, exit-taxes]
+    aliases: ["purchase price allocation", "Form 8594", "Section 338(h)(10)", "tax structure business acquisition"]
+    volatile: true
+  - id: buyer-rebate
+    topic: offer/structure
+    question: "What is a buyer rebate, and how is it different from an earnout?"
+    scope: "Price adjustments paid back to the buyer based on performance, where SBA financing doesn't allow seller earnouts."
+    not: [earnouts, earnout-ban-forgivable-note]
+    aliases: ["buyer rebate SBA", "performance rebate acquisition", "alternative to earnout SBA"]
+    volatile: true
+  - id: what-is-nwc
+    topic: offer/working-capital
+    question: "What is net working capital in a deal, and why does it matter?"
+    scope: "What net working capital means in a purchase and why a normal level comes with the business; not a loan or credit line."
+    not: [peg, wc-credit-line]
+    aliases: ["net working capital", "NWC", "working capital in an acquisition"]
+  - id: peg
+    topic: offer/working-capital
+    question: "How is the working-capital target (peg) set and trued up?"
+    scope: "How the target level of working capital is set and the closing true-up is calculated; not financing."
+    not: [what-is-nwc, wc-credit-line, ar-ap-inventory]
+    aliases: ["working capital peg", "NWC target", "working capital adjustment"]
+  - id: cash-free-debt-free
+    topic: offer/working-capital
+    question: "What does 'cash-free, debt-free' mean for the buyer?"
+    scope: "What cash-free, debt-free pricing means and which items count as debt."
+    not: [what-is-nwc]
+    aliases: ["cash free debt free", "debt-like items", "seller keeps the cash"]
+  - id: ar-ap-inventory
+    topic: offer/working-capital
+    question: "How are receivables, payables, inventory and customer deposits handled?"
+    scope: "How receivables, payables, inventory and customer deposits are treated in the price and at closing."
+    not: [peg, wip-backlog]
+    aliases: ["accounts receivable in a sale", "inventory in purchase price", "customer deposits at closing"]
+  - id: wip-backlog
+    topic: offer/working-capital
+    question: "How are work in progress and backlog handled for contractors?"
+    scope: "Work in progress, unbilled work and backlog in contractor and project businesses."
+    not: [ar-ap-inventory]
+    aliases: ["WIP schedule", "contractor backlog", "over and under billings"]
+  - id: price-vs-terms
+    topic: offer/negotiation
+    question: "How do I trade price against terms?"
+    scope: "Trading headline price against payment terms, seller financing and conditions."
+    not: [cash-at-close, buyer-of-choice]
+    aliases: ["your price my terms", "price vs terms", "higher price better terms"]
+  - id: tactics
+    topic: offer/negotiation
+    question: "Which negotiation approaches work with owner-sellers?"
+    scope: "Negotiation approaches that work with owner-sellers, in general."
+    not: [price-vs-terms, deal-momentum]
+    aliases: ["negotiate with seller", "negotiation tactics business acquisition", "how to negotiate a business purchase"]
+  - id: deal-momentum
+    topic: offer/negotiation
+    question: "How do I keep a deal from stalling?"
+    scope: "Keeping a deal moving after the LOI: timelines, communication and avoiding stalls."
+    not: [approval-timeline]
+    aliases: ["deal fatigue", "deal stalled", "keep deal on track"]
+  - id: choosing-counsel
+    topic: offer/team
+    question: "Do I need a lawyer to buy a business, and how do I choose one?"
+    scope: "Whether to hire a lawyer, when, and how to choose one; what legal diligence covers is legal-dd-scope."
+    not: [legal-dd-scope, advisor-costs]
+    aliases: ["M&A lawyer small business", "do I need a lawyer to buy a business", "acquisition attorney"]
+  - id: advisor-costs
+    topic: offer/team
+    question: "What do lawyers, accountants and diligence providers cost?"
+    scope: "What lawyers, accountants and diligence providers cost in a small deal, by category."
+    not: [qoe-cost-scope, closing-costs]
+    aliases: ["cost of a lawyer to buy a business", "due diligence costs", "acquisition advisor fees"]
+  - id: deal-team
+    topic: offer/team
+    question: "Who should be on my acquisition team?"
+    scope: "Who belongs on the buyer's team (lawyer, accountant, QoE provider, lender, insurance broker) and when each joins."
+    not: [choosing-counsel, cpa-role]
+    aliases: ["acquisition team", "advisors to buy a business", "deal team"]
+  - id: cpa-role
+    topic: offer/team
+    question: "What role should my accountant play?"
+    scope: "What the buyer's own accountant does in the deal, as distinct from a quality of earnings provider."
+    not: [qoe-need, deal-team]
+    aliases: ["CPA buying a business", "accountant due diligence", "role of accountant in acquisition"]
   # confirm
-  - {id: qoe-need, topic: confirm/financial-dd, question: "Do I need a quality of earnings report?"}
-  - {id: qoe-cost-scope, topic: confirm/financial-dd, question: "What does a quality of earnings report cost, and is a lighter one enough?"}
-  - {id: sba-qoe-3m-rule, topic: confirm/financial-dd, question: "When does the SBA require a quality of earnings report?"}
-  - {id: fraud-misstatement, topic: confirm/financial-dd, question: "What fraud and misstatements does diligence uncover?"}
-  - {id: phased-diligence, topic: confirm/financial-dd, question: "How do I stage diligence spending in case the deal dies?"}
-  - {id: revenue-quality-churn, topic: confirm/financial-dd, question: "How do I check customer churn, retention and revenue quality?"}
-  - {id: financial-dd-checklist, topic: confirm/financial-dd, question: "What belongs on a financial diligence checklist?"}
-  - {id: legal-dd-scope, topic: confirm/legal-dd, question: "What does legal diligence cover in a small deal?"}
-  - {id: contract-assignment, topic: confirm/legal-dd, question: "Will key contracts transfer to me?"}
-  - {id: lease-assignment, topic: confirm/legal-dd, question: "How do I handle the landlord and the lease?"}
-  - {id: licenses-permits-transfer, topic: confirm/legal-dd, question: "Do licenses and permits transfer to a buyer?"}
-  - {id: litigation-liabilities, topic: confirm/legal-dd, question: "How do I find hidden liabilities and lawsuits?"}
-  - {id: ip-tech, topic: confirm/legal-dd, question: "How do I check intellectual property, code and domains?"}
-  - {id: environmental, topic: confirm/legal-dd, question: "When do I need an environmental (Phase I) report?"}
-  - {id: regulatory-compliance, topic: confirm/legal-dd, question: "Which regulatory and licensing-board issues should I check?"}
-  - {id: employee-dd, topic: confirm/ops-dd, question: "How do I check employees, payroll and worker classification?"}
-  - {id: customer-dd-calls, topic: confirm/ops-dd, question: "Should I talk to customers before closing, and how?"}
-  - {id: marketing-dd, topic: confirm/ops-dd, question: "What should I ask about marketing and where new customers come from?"}
-  - {id: systems-data, topic: confirm/ops-dd, question: "How do I assess the software, records and data quality?"}
-  - {id: work-in-business-first, topic: confirm/ops-dd, question: "Should I spend time working in the business before closing?"}
-  - {id: insurance-review, topic: confirm/ops-dd, question: "What insurance should I review or buy?"}
-  - {id: ai-assisted-diligence, topic: confirm/ops-dd, question: "Can AI tools speed up diligence?"}
-  - {id: deal-killers, topic: confirm/go-no-go, question: "Which diligence findings should kill or reprice a deal?"}
-  - {id: walk-away, topic: confirm/go-no-go, question: "How do I know when to walk away?"}
-  - {id: seller-surprises, topic: confirm/go-no-go, question: "Which seller problems usually surface in diligence?"}
-  - {id: lender-package, topic: confirm/lender-process, question: "What does the lender need from me?"}
-  - {id: approval-timeline, topic: confirm/lender-process, question: "How long do SBA approval and closing take?"}
-  - {id: business-appraisal, topic: confirm/lender-process, question: "Does the lender require an independent business valuation?"}
-  - {id: lender-declines, topic: confirm/lender-process, question: "Why do lenders decline acquisition loans?"}
+  - id: qoe-need
+    topic: confirm/financial-dd
+    question: "Do I need a quality of earnings report?"
+    scope: "Whether a deal warrants a quality of earnings report at all, by size and risk."
+    not: [qoe-cost-scope, sba-qoe-3m-rule, add-backs]
+    aliases: ["do I need a QoE", "quality of earnings report", "QoE small business"]
+  - id: qoe-cost-scope
+    topic: confirm/financial-dd
+    question: "What does a quality of earnings report cost, and is a lighter one enough?"
+    scope: "What a quality of earnings report costs and lighter options such as a scoped review or a proof of cash alone."
+    not: [qoe-need, advisor-costs]
+    aliases: ["QoE cost", "QoE lite", "limited scope quality of earnings"]
+  - id: sba-qoe-3m-rule
+    topic: confirm/financial-dd
+    question: "When does the SBA require a quality of earnings report?"
+    scope: "When SBA rules require a quality of earnings report for an acquisition loan."
+    not: [qoe-need]
+    aliases: ["SBA QoE rule", "SBA requires quality of earnings", "SOP QoE requirement"]
+    volatile: true
+  - id: fraud-misstatement
+    topic: confirm/financial-dd
+    question: "What fraud and misstatements does diligence uncover?"
+    scope: "The kinds of fraud and misstatement diligence finds (inflated revenue, hidden debts, personal spending in the books); the bank-tie method is proof-of-cash."
+    not: [proof-of-cash, seller-surprises, cash-business]
+    aliases: ["seller fraud", "fake financials", "misrepresented financials"]
+  - id: phased-diligence
+    topic: confirm/financial-dd
+    question: "How do I stage diligence spending in case the deal dies?"
+    scope: "Ordering diligence spending after the LOI so less is lost if the deal dies."
+    not: [pre-loi-diligence]
+    aliases: ["phased due diligence", "diligence budget", "diligence order"]
+  - id: revenue-quality-churn
+    topic: confirm/financial-dd
+    question: "How do I check customer churn, retention and revenue quality?"
+    scope: "Checking customer churn, retention, cohorts and revenue quality in diligence."
+    not: [recurring-revenue, customer-concentration]
+    aliases: ["customer churn analysis", "revenue quality", "cohort analysis"]
+  - id: financial-dd-checklist
+    topic: confirm/financial-dd
+    question: "What belongs on a financial diligence checklist?"
+    scope: "The items on a financial diligence request list after the LOI."
+    not: [early-docs-request, lender-package]
+    aliases: ["financial due diligence checklist", "due diligence request list", "DRL"]
+  - id: tax-dd
+    topic: confirm/financial-dd
+    question: "Which tax liabilities should I check in diligence: sales, payroll and income tax?"
+    scope: "Unpaid or under-reported taxes a buyer could inherit or need protection against."
+    not: [litigation-liabilities, tax-structuring]
+    aliases: ["tax due diligence", "unpaid sales tax buyer", "payroll tax liability acquisition"]
+    volatile: true
+  - id: legal-dd-scope
+    topic: confirm/legal-dd
+    question: "What does legal diligence cover in a small deal?"
+    scope: "What legal diligence reviews in a small deal (entity, contracts, liens, litigation, permits, employment); not how to hire counsel."
+    not: [choosing-counsel, litigation-liabilities]
+    aliases: ["legal due diligence checklist", "legal diligence small business", "lien search"]
+  - id: contract-assignment
+    topic: confirm/legal-dd
+    question: "Will key contracts transfer to me?"
+    scope: "Whether customer, vendor and other contracts transfer, and change-of-control consents; the premises lease is lease-assignment."
+    not: [lease-assignment, asset-vs-stock]
+    aliases: ["assignment of contracts", "change of control clause", "consent to assign"]
+  - id: lease-assignment
+    topic: confirm/legal-dd
+    question: "How do I handle the landlord and the lease?"
+    scope: "Reviewing the existing premises lease: landlord consent, assignment or a new lease, term length and the landlord's guarantee demands."
+    not: [real-estate-lease-or-buy, real-estate-in-deal, contract-assignment]
+    aliases: ["lease assignment", "landlord consent", "lease term for SBA loan"]
+  - id: licenses-permits-transfer
+    topic: confirm/legal-dd
+    question: "Do licenses and permits transfer to a buyer?"
+    scope: "Which licences and permits transfer with the business and which must be reissued."
+    not: [license-dependence, regulatory-compliance]
+    aliases: ["transfer business license", "permits change of ownership", "liquor license transfer"]
+  - id: litigation-liabilities
+    topic: confirm/legal-dd
+    question: "How do I find hidden liabilities and lawsuits?"
+    scope: "Finding lawsuits, liens, tax debts and other hidden liabilities."
+    not: [legal-dd-scope, fraud-misstatement]
+    aliases: ["hidden liabilities", "lawsuit search", "UCC lien search"]
+  - id: ip-tech
+    topic: confirm/legal-dd
+    question: "How do I check intellectual property, code and domains?"
+    scope: "Checking who owns the trademarks, code, domains and online accounts."
+    not: [systems-data]
+    aliases: ["IP due diligence", "domain transfer", "code ownership"]
+  - id: environmental
+    topic: confirm/legal-dd
+    question: "When do I need an environmental (Phase I) report?"
+    scope: "When a Phase I environmental site assessment or other environmental review is needed."
+    not: [real-estate-in-deal]
+    aliases: ["Phase I environmental", "environmental due diligence", "SBA environmental requirement"]
+    volatile: true
+  - id: regulatory-compliance
+    topic: confirm/legal-dd
+    question: "Which regulatory and licensing-board issues should I check?"
+    scope: "Industry regulatory and licensing-board compliance to check in diligence."
+    not: [license-dependence, licenses-permits-transfer]
+    aliases: ["regulatory due diligence", "compliance check", "licensing board complaints"]
+  - id: franchise-transfer
+    topic: confirm/legal-dd
+    question: "What does the franchisor require to approve a franchise resale?"
+    scope: "The franchisor's transfer approval, fees, training and remodel conditions when buying an existing franchise."
+    not: [buy-vs-franchise, contract-assignment]
+    aliases: ["franchise transfer approval", "buying an existing franchise", "franchise resale requirements"]
+  - id: landlord-estoppel
+    topic: confirm/legal-dd
+    question: "What is a landlord estoppel or consent, and do I need one?"
+    scope: "The landlord's written confirmation of the lease terms and consent to the transfer."
+    not: [lease-assignment, real-estate-lease-or-buy]
+    aliases: ["landlord estoppel certificate", "landlord consent to assignment", "lease estoppel"]
+  - id: employee-dd
+    topic: confirm/ops-dd
+    question: "How do I check employees, payroll and worker classification?"
+    scope: "Checking payroll, worker classification, benefits and employment records in diligence."
+    not: [key-employee-risk, employee-retention]
+    aliases: ["employee due diligence", "1099 vs W-2", "payroll diligence"]
+  - id: customer-dd-calls
+    topic: confirm/ops-dd
+    question: "Should I talk to customers before closing, and how?"
+    scope: "Whether and how to speak with customers before closing."
+    not: [customer-retention]
+    aliases: ["customer calls in diligence", "talk to customers before buying", "customer interviews"]
+  - id: marketing-dd
+    topic: confirm/ops-dd
+    question: "What should I ask about marketing and where new customers come from?"
+    scope: "Lead sources, marketing spend and customer acquisition in diligence."
+    not: [sales-marketing-growth]
+    aliases: ["marketing due diligence", "lead sources", "customer acquisition cost"]
+  - id: systems-data
+    topic: confirm/ops-dd
+    question: "How do I assess the software, records and data quality?"
+    scope: "The software, records and data quality of the target, in diligence."
+    not: [ip-tech, ai-assisted-diligence]
+    aliases: ["systems due diligence", "data quality", "tech stack review"]
+  - id: work-in-business-first
+    topic: confirm/ops-dd
+    question: "Should I spend time working in the business before closing?"
+    scope: "Working in or shadowing the business before closing."
+    not: [seller-transition-period]
+    aliases: ["work in the business before buying", "shadow the owner", "trial period before closing"]
+  - id: insurance-review
+    topic: confirm/ops-dd
+    question: "What insurance should I review or buy?"
+    scope: "Reviewing the target's insurance and arranging the buyer's own coverage."
+    not: [pg-insurance, rw-insurance]
+    aliases: ["business insurance acquisition", "insurance due diligence", "life insurance for SBA loan"]
+  - id: ai-assisted-diligence
+    topic: confirm/ops-dd
+    question: "Can AI tools speed up diligence?"
+    scope: "Using AI tools to review documents and data during diligence."
+    not: [ai-sourcing]
+    aliases: ["AI due diligence", "AI document review", "LLM due diligence"]
+  - id: deal-killers
+    topic: confirm/go-no-go
+    question: "Which diligence findings should kill or reprice a deal?"
+    scope: "Which specific diligence findings justify ending or repricing a deal after the LOI."
+    not: [early-red-flags, walk-away, retrade, seller-surprises]
+    aliases: ["deal breakers", "diligence red flags", "kill the deal"]
+  - id: walk-away
+    topic: confirm/go-no-go
+    question: "How do I know when to walk away?"
+    scope: "The decision and personal judgment of walking away, including sunk costs and deal fatigue; not a list of findings."
+    not: [deal-killers, early-red-flags]
+    aliases: ["when to walk away from a deal", "sunk cost", "walking away after LOI"]
+  - id: seller-surprises
+    topic: confirm/go-no-go
+    question: "Which seller problems usually surface in diligence?"
+    scope: "Seller-side problems that often come out in diligence (undisclosed debts, family disputes, cold feet), described rather than judged."
+    not: [deal-killers, fraud-misstatement]
+    aliases: ["seller surprises", "seller cold feet", "seller remorse"]
+  - id: lender-package
+    topic: confirm/lender-process
+    question: "What does the lender need from me?"
+    scope: "The documents and information a lender asks the buyer for."
+    not: [underwriting, financial-dd-checklist]
+    aliases: ["SBA loan application documents", "SBA forms", "lender package"]
+  - id: approval-timeline
+    topic: confirm/lender-process
+    question: "How long do SBA approval and closing take?"
+    scope: "How long SBA approval and closing take, and what delays them."
+    not: [search-timeline, deal-momentum]
+    aliases: ["SBA loan timeline", "how long SBA approval takes", "SBA closing time"]
+  - id: business-appraisal
+    topic: confirm/lender-process
+    question: "Does the lender require an independent business valuation?"
+    scope: "When a lender requires an independent business valuation, and what happens if it comes in below the price."
+    not: [valuation-methods, what-multiple]
+    aliases: ["SBA business valuation requirement", "independent business appraisal", "valuation gap SBA"]
+    volatile: true
+  - id: lender-declines
+    topic: confirm/lender-process
+    question: "Why do lenders decline acquisition loans?"
+    scope: "Common reasons lenders decline acquisition loans, and what buyers do next."
+    not: [underwriting, eligibility-credit]
+    aliases: ["SBA loan denied", "why the bank declined", "SBA rejection"]
   # close
-  - {id: apa-key-terms, topic: close/purchase-agreement, question: "What are the key terms of a purchase agreement for a small business?"}
-  - {id: reps-warranties, topic: close/purchase-agreement, question: "What representations and warranties should the buyer get?"}
-  - {id: indemnification, topic: close/purchase-agreement, question: "How does indemnification protect the buyer?"}
-  - {id: escrow-holdback, topic: close/purchase-agreement, question: "Should part of the price sit in escrow or a holdback?"}
-  - {id: closing-conditions, topic: close/purchase-agreement, question: "Which closing conditions protect the buyer?"}
-  - {id: rw-insurance, topic: close/purchase-agreement, question: "Is representations and warranties insurance available or worth it for small deals?"}
-  - {id: closing-day, topic: close/mechanics, question: "What happens on closing day?"}
-  - {id: closing-costs, topic: close/mechanics, question: "What are the total closing costs?"}
-  - {id: entity-setup, topic: close/mechanics, question: "What kind of company should I buy through?"}
-  - {id: day-one-readiness, topic: close/mechanics, question: "What must be ready on day one: bank, payroll, insurance?"}
+  - id: apa-key-terms
+    topic: close/purchase-agreement
+    question: "What are the key terms of a purchase agreement for a small business?"
+    scope: "The main terms and sections of a small-business purchase agreement, as an overview."
+    not: [reps-warranties, indemnification]
+    aliases: ["asset purchase agreement", "purchase agreement terms", "APA"]
+  - id: reps-warranties
+    topic: close/purchase-agreement
+    question: "What representations and warranties should the buyer get?"
+    scope: "The seller's representations and warranties a buyer asks for."
+    not: [indemnification, rw-insurance]
+    aliases: ["reps and warranties", "seller representations", "disclosure schedules"]
+  - id: indemnification
+    topic: close/purchase-agreement
+    question: "How does indemnification protect the buyer?"
+    scope: "How indemnity terms, caps, baskets and survival periods protect the buyer."
+    not: [escrow-holdback, set-off-default]
+    aliases: ["indemnification", "indemnity cap and basket", "survival period"]
+  - id: escrow-holdback
+    topic: close/purchase-agreement
+    question: "Should part of the price sit in escrow or a holdback?"
+    scope: "Holding part of the price in escrow or a holdback to secure claims after closing."
+    not: [indemnification, cash-at-close]
+    aliases: ["escrow holdback", "indemnity escrow", "holdback"]
+  - id: closing-conditions
+    topic: close/purchase-agreement
+    question: "Which closing conditions protect the buyer?"
+    scope: "Conditions that must be met before closing and that protect the buyer."
+    not: [apa-key-terms]
+    aliases: ["closing conditions", "conditions precedent", "financing contingency"]
+  - id: rw-insurance
+    topic: close/purchase-agreement
+    question: "Is representations and warranties insurance available or worth it for small deals?"
+    scope: "Representations and warranties insurance for small deals: availability and value."
+    not: [reps-warranties, insurance-review]
+    aliases: ["RWI", "R&W insurance", "reps and warranties insurance"]
+  - id: closing-day
+    topic: close/mechanics
+    question: "What happens on closing day?"
+    scope: "The sequence of signing, funding and handover on closing day."
+    not: [day-one-readiness, closing-costs]
+    aliases: ["closing day", "funding day", "what to expect at closing"]
+  - id: closing-costs
+    topic: close/mechanics
+    question: "What are the total closing costs?"
+    scope: "The total transaction costs paid at closing (lender and guaranty fees, legal, escrow, other)."
+    not: [advisor-costs, rates-fees-terms]
+    aliases: ["closing costs business purchase", "SBA closing costs", "transaction costs"]
+  - id: entity-setup
+    topic: close/mechanics
+    question: "What kind of company should I buy through?"
+    scope: "The type and setup of the buyer's acquiring entity."
+    not: [asset-protection, holdco]
+    aliases: ["LLC or S corp to buy a business", "acquisition entity", "NewCo"]
+  - id: day-one-readiness
+    topic: close/mechanics
+    question: "What must be ready on day one: bank, payroll, insurance?"
+    scope: "What must be live the moment the deal closes: bank accounts, payroll, insurance and access."
+    not: [closing-day, first-100-days-plan]
+    aliases: ["day one checklist", "post-closing checklist", "payroll transfer"]
+  - id: purchase-price-allocation
+    topic: close/mechanics
+    question: "How is the purchase price allocated, and what is IRS Form 8594?"
+    scope: "Allocating the price across asset classes for tax reporting, and who files Form 8594."
+    not: [tax-structuring, asset-vs-stock]
+    aliases: ["purchase price allocation", "Form 8594", "asset allocation acquisition tax"]
+    volatile: true
+  - id: signing-vs-closing
+    topic: close/mechanics
+    question: "What happens when signing and closing are on different days?"
+    scope: "The gap between signing and closing: conditions, interim covenants and what can still go wrong."
+    not: [closing-conditions, closing-day]
+    aliases: ["sign and close same day", "interim covenants", "gap between signing and closing"]
   # own
-  - {id: seller-transition-period, topic: own/transition, question: "How long should the seller stay, and what should they do?"}
-  - {id: announce-to-employees, topic: own/transition, question: "How and when do I tell the employees?"}
-  - {id: customer-retention, topic: own/transition, question: "How do I keep customers through the change of owner?"}
-  - {id: seller-wont-let-go, topic: own/transition, question: "What if the seller interferes or won't let go?"}
-  - {id: employee-retention, topic: own/transition, question: "How do I keep employees after the purchase?"}
-  - {id: first-100-days-plan, topic: own/first-100-days, question: "What should I do, and not do, in the first 100 days?"}
-  - {id: dont-change-too-fast, topic: own/first-100-days, question: "What shouldn't I change right away?"}
-  - {id: culture, topic: own/first-100-days, question: "How do I lead the team as the new owner?"}
-  - {id: raise-prices, topic: own/first-100-days, question: "When and how should I raise prices?"}
-  - {id: financial-controls-kpis, topic: own/first-100-days, question: "How do I set up reporting, financial controls and key numbers?"}
-  - {id: operating-system-eos, topic: own/operate, question: "Should I adopt EOS or another management system?"}
-  - {id: hiring-team, topic: own/operate, question: "How do I hire and strengthen the team?"}
-  - {id: sales-marketing-growth, topic: own/operate, question: "How do I grow sales in a business I bought?"}
-  - {id: ai-in-operations, topic: own/operate, question: "How can I use AI to improve the business I bought?"}
-  - {id: peer-groups-board, topic: own/operate, question: "Should I set up a board or join a peer group?"}
-  - {id: owner-wellbeing, topic: own/operate, question: "How do owners handle isolation and burnout?"}
-  - {id: post-close-failure, topic: own/operate, question: "Why do acquisitions fail after closing?"}
+  - id: seller-transition-period
+    topic: own/transition
+    question: "How long should the seller stay, and what should they do?"
+    scope: "In practice, how long the seller stays after closing and what they do during the handover; the contract is seller-consulting-agreement."
+    not: [seller-consulting-agreement, seller-wont-let-go, work-in-business-first]
+    aliases: ["seller transition", "how long should the seller stay", "seller training period"]
+  - id: announce-to-employees
+    topic: own/transition
+    question: "How and when do I tell the employees?"
+    scope: "How and when employees are told about the sale."
+    not: [employee-retention, culture]
+    aliases: ["tell employees the business sold", "announce acquisition to staff", "employee announcement"]
+  - id: customer-retention
+    topic: own/transition
+    question: "How do I keep customers through the change of owner?"
+    scope: "Keeping customers through the change of owner, after closing."
+    not: [customer-dd-calls]
+    aliases: ["keep customers after acquisition", "customer churn after sale", "customer announcement"]
+  - id: seller-wont-let-go
+    topic: own/transition
+    question: "What if the seller interferes or won't let go?"
+    scope: "Handling a seller who interferes or won't let go after closing."
+    not: [seller-transition-period]
+    aliases: ["seller interfering", "former owner won't leave", "seller meddling"]
+  - id: employee-retention
+    topic: own/transition
+    question: "How do I keep employees after the purchase?"
+    scope: "Steps after closing to keep employees (pay, retention bonuses, communication)."
+    not: [key-employee-risk, employee-dd, announce-to-employees]
+    aliases: ["retain employees after acquisition", "retention bonus", "keep staff after buying"]
+  - id: first-100-days-plan
+    topic: own/first-100-days
+    question: "What should I do, and not do, in the first 100 days?"
+    scope: "A sequenced plan for the first 100 days, what to do and in what order."
+    not: [dont-change-too-fast, day-one-readiness]
+    aliases: ["first 100 days", "post acquisition plan", "new owner plan"]
+  - id: dont-change-too-fast
+    topic: own/first-100-days
+    question: "What shouldn't I change right away?"
+    scope: "The specific things new owners leave alone at first (people, prices, systems, vendors) and why."
+    not: [first-100-days-plan, raise-prices]
+    aliases: ["don't change anything the first year", "new owner mistakes", "changing too fast"]
+  - id: culture
+    topic: own/first-100-days
+    question: "How do I lead the team as the new owner?"
+    scope: "Leading the team as the new owner: credibility, communication and style."
+    not: [announce-to-employees, hiring-team]
+    aliases: ["leading employees as new owner", "company culture after acquisition", "new boss"]
+  - id: raise-prices
+    topic: own/first-100-days
+    question: "When and how should I raise prices?"
+    scope: "When and how to raise prices after buying."
+    not: [hidden-upside, dont-change-too-fast]
+    aliases: ["raise prices after buying a business", "price increase", "price increase letter"]
+  - id: financial-controls-kpis
+    topic: own/first-100-days
+    question: "How do I set up reporting, financial controls and key numbers?"
+    scope: "Reporting, financial controls and key numbers after closing."
+    not: [systems-data, operating-system-eos]
+    aliases: ["KPIs small business", "financial controls", "monthly close"]
+  - id: post-closing-true-up
+    topic: own/first-100-days
+    question: "How do I track the working-capital true-up and escrow release after closing?"
+    scope: "Post-closing adjustments and deadlines: working-capital true-up, escrow or holdback release, and claims."
+    not: [peg, escrow-holdback]
+    aliases: ["working capital true-up after closing", "escrow release", "post-closing adjustment"]
+  - id: operating-system-eos
+    topic: own/operate
+    question: "Should I adopt EOS or another management system?"
+    scope: "Whether to adopt EOS or another management system to run the business."
+    not: [financial-controls-kpis, professionalize-systems]
+    aliases: ["EOS", "entrepreneurial operating system", "management system for small business"]
+  - id: hiring-team
+    topic: own/operate
+    question: "How do I hire and strengthen the team?"
+    scope: "Hiring and strengthening the team after closing."
+    not: [labor-availability, culture]
+    aliases: ["hiring after acquisition", "build the team", "hire a general manager after buying"]
+  - id: sales-marketing-growth
+    topic: own/operate
+    question: "How do I grow sales in a business I bought?"
+    scope: "Growing sales in an acquired business."
+    not: [value-creation, marketing-dd]
+    aliases: ["grow revenue after acquisition", "marketing a small business", "sales growth"]
+  - id: ai-in-operations
+    topic: own/operate
+    question: "How can I use AI to improve the business I bought?"
+    scope: "Using AI to improve the operations of a business the buyer owns."
+    not: [ai-disruption, ai-rollups]
+    aliases: ["AI for small business", "AI automation", "AI operations"]
+  - id: peer-groups-board
+    topic: own/operate
+    question: "Should I set up a board or join a peer group?"
+    scope: "A board of advisers or a peer group for the owner."
+    not: [owner-wellbeing]
+    aliases: ["advisory board", "CEO peer group", "board of directors small business"]
+  - id: owner-wellbeing
+    topic: own/operate
+    question: "How do owners handle isolation and burnout?"
+    scope: "Owner isolation, stress and burnout."
+    not: [hours-lifestyle, peer-groups-board]
+    aliases: ["business owner burnout", "lonely at the top", "owner mental health"]
+  - id: post-close-failure
+    topic: own/operate
+    question: "Why do acquisitions fail after closing?"
+    scope: "Operating causes of failure after closing and their early warning signs; consequences for the buyer are failure-stories."
+    not: [failure-stories, too-many-too-fast]
+    aliases: ["why acquisitions fail", "post acquisition failure", "acquisition gone wrong"]
   # later
-  - {id: value-creation, topic: later/growth, question: "How do I increase the value of the business after buying it?"}
-  - {id: professionalize-systems, topic: later/growth, question: "How do I make the business run without me?"}
-  - {id: add-on-acquisitions, topic: later/add-ons, question: "When should I make an add-on acquisition or a second deal?"}
-  - {id: rollup-strategy, topic: later/add-ons, question: "How does a roll-up (buy-and-build) create value?"}
-  - {id: multiple-arbitrage, topic: later/add-ons, question: "Is multiple arbitrage real for small roll-ups?"}
-  - {id: integration, topic: later/add-ons, question: "How do I integrate and rebrand businesses I acquire?"}
-  - {id: too-many-too-fast, topic: later/add-ons, question: "What goes wrong when you buy too much too fast?"}
-  - {id: ai-rollups, topic: later/add-ons, question: "What are AI-enabled roll-ups, and do they work?"}
-  - {id: holdco-operations, topic: later/add-ons, question: "How do I run several companies under a holding company?"}
-  - {id: exit-options, topic: later/exit, question: "What are my exit options?"}
-  - {id: sell-to-pe, topic: later/exit, question: "What is selling to private equity or a strategic buyer like?"}
-  - {id: refinance-recap, topic: later/exit, question: "Can I refinance or recapitalize to take money out?"}
-  - {id: cant-exit, topic: later/exit, question: "What if I can't sell the business later?"}
-  - {id: exit-taxes, topic: later/exit, question: "How are the proceeds of selling a business taxed?"}
+  - id: value-creation
+    topic: later/growth
+    question: "How do I increase the value of the business after buying it?"
+    scope: "The levers that raise enterprise value after buying."
+    not: [hidden-upside, professionalize-systems, sales-marketing-growth]
+    aliases: ["value creation plan", "increase business value", "grow EBITDA"]
+  - id: professionalize-systems
+    topic: later/growth
+    question: "How do I make the business run without me?"
+    scope: "Making the business run without the owner through managers, systems and documentation."
+    not: [owner-dependence, operating-system-eos]
+    aliases: ["make the business run without me", "systematize a business", "remove owner dependence"]
+  - id: add-on-acquisitions
+    topic: later/add-ons
+    question: "When should I make an add-on acquisition or a second deal?"
+    scope: "When and how to make a second or add-on acquisition."
+    not: [rollup-strategy, too-many-too-fast]
+    aliases: ["add-on acquisition", "second acquisition", "tuck-in acquisition"]
+  - id: rollup-strategy
+    topic: later/add-ons
+    question: "How does a roll-up (buy-and-build) create value?"
+    scope: "The buy-and-build thesis within one industry and how it creates value."
+    not: [holdco, multiple-arbitrage, pe-consolidation]
+    aliases: ["roll-up strategy", "buy and build", "platform acquisition"]
+  - id: multiple-arbitrage
+    topic: later/add-ons
+    question: "Is multiple arbitrage real for small roll-ups?"
+    scope: "Whether buying small at lower multiples and selling larger at higher ones works in practice."
+    not: [rollup-strategy]
+    aliases: ["multiple arbitrage", "multiple expansion", "buy low multiple sell high"]
+  - id: integration
+    topic: later/add-ons
+    question: "How do I integrate and rebrand businesses I acquire?"
+    scope: "Integrating and rebranding businesses acquired after the first."
+    not: [add-on-acquisitions, holdco-operations]
+    aliases: ["post merger integration", "rebrand acquired business", "integrate an add-on"]
+  - id: too-many-too-fast
+    topic: later/add-ons
+    question: "What goes wrong when you buy too much too fast?"
+    scope: "What goes wrong when an owner buys too many businesses too quickly."
+    not: [post-close-failure, add-on-acquisitions]
+    aliases: ["acquiring too fast", "overexpansion", "roll-up failure"]
+  - id: ai-rollups
+    topic: later/add-ons
+    question: "What are AI-enabled roll-ups, and do they work?"
+    scope: "AI-enabled roll-up models and what is known about how they perform."
+    not: [rollup-strategy, ai-in-operations]
+    aliases: ["AI roll-up", "AI-enabled services roll-up", "AI holdco"]
+  - id: holdco-operations
+    topic: later/add-ons
+    question: "How do I run several companies under a holding company?"
+    scope: "Running several owned companies under a holding company: shared services, management and capital allocation."
+    not: [holdco, integration]
+    aliases: ["holding company operations", "manage multiple businesses", "holdco management"]
+  - id: exit-options
+    topic: later/exit
+    question: "What are my exit options?"
+    scope: "The ways an owner exits: sale, management buyout, ESOP, family transfer or recapitalization."
+    not: [sell-to-pe, cant-exit, refinance-recap]
+    aliases: ["exit strategy small business", "sell my business", "ESOP"]
+  - id: sell-to-pe
+    topic: later/exit
+    question: "What is selling to private equity or a strategic buyer like?"
+    scope: "What selling to private equity or a strategic buyer is like."
+    not: [exit-options, pe-consolidation]
+    aliases: ["sell to private equity", "strategic buyer", "sell business to PE"]
+  - id: refinance-recap
+    topic: later/exit
+    question: "Can I refinance or recapitalize to take money out?"
+    scope: "Refinancing or recapitalizing the company later to take money out; paying off the seller note is seller-note-refinance-timing."
+    not: [seller-note-refinance-timing, exit-options]
+    aliases: ["dividend recap", "refinance SBA loan", "cash out refinance business"]
+  - id: cant-exit
+    topic: later/exit
+    question: "What if I can't sell the business later?"
+    scope: "What to do if the business can't be sold later."
+    not: [exit-options]
+    aliases: ["can't sell my business", "no buyer for my business", "unsellable business"]
+  - id: exit-taxes
+    topic: later/exit
+    question: "How are the proceeds of selling a business taxed?"
+    scope: "How the proceeds of selling a business are taxed."
+    not: [tax-structuring]
+    aliases: ["capital gains on sale of business", "taxes on selling a business", "installment sale tax"]
+    volatile: true
 
 facets:
   industry: [hvac, plumbing, electrical, roofing, landscaping, pest-control, pool-service, home-services, cleaning, commercial-services, cpa-accounting, dental, medical, veterinary, home-health, insurance-agency, law-firm, ria-advisory, marketing-agency, property-management, logistics, staffing, manufacturing, distribution, construction, auto-repair, car-wash, laundromat, self-storage, rv-mobile-home-park, vending, restaurant, retail, childcare, education, saas, e-commerce, online-content, franchise-resale, govcon, other]

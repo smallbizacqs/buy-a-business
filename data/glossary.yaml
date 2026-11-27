@@ -1,0 +1,280 @@
+# Shared terms a first-time buyer meets. Plain definitions, no rule numbers (those live in data/sources/ and the leaf answers).
+# leaves: existing leaf ids in data/taxonomy.yaml where the term is explained.
+# Nothing here is legal, tax or financial advice.
+
+# Earnings and valuation
+- term: Seller's discretionary earnings
+  abbr: SDE
+  definition: "A small business's pre-tax earnings before one owner's pay and perks, interest, depreciation and amortization, with one-off and discretionary costs added back. It shows what the business would pay a single owner who runs it."
+  leaves: [sde-vs-ebitda, add-backs]
+- term: Earnings before interest, taxes, depreciation and amortization
+  abbr: EBITDA
+  definition: "Operating earnings before financing costs, income taxes and non-cash charges for depreciation and amortization. Unlike SDE, it treats the cost of managing the business as an expense, so it is the usual measure for larger businesses with paid managers."
+  leaves: [sde-vs-ebitda]
+- term: Adjusted EBITDA
+  definition: "EBITDA after adjustments for items the seller says won't continue under a new owner, such as one-off costs or above-market owner pay. The adjustments are claims to check, not facts."
+  leaves: [sde-vs-ebitda, add-backs]
+- term: Add-back
+  definition: "An expense the seller adds back to reported profit because it is personal, one-off or discretionary and wouldn't continue after the sale. Each one needs evidence before a buyer or lender accepts it."
+  leaves: [add-backs]
+- term: Recast financial statements
+  definition: "The seller's or broker's restated profit and loss statements showing earnings after add-backs. They start from the books or tax returns and should reconcile to them."
+  leaves: [add-backs, tax-returns-vs-books]
+- term: Owner replacement cost
+  definition: "What it would cost to hire someone at market pay to do the work the owner does now. Deducting it shows earnings for a buyer who won't do all of that work personally."
+  leaves: [owner-replacement-cost]
+- term: Trailing twelve months
+  abbr: TTM
+  definition: "Results for the most recent twelve months, whatever the fiscal year. It shows current performance between year-end statements."
+  leaves: [trends-ttm]
+- term: Capital expenditures
+  abbr: capex
+  definition: "Spending on equipment, vehicles, buildings and other long-lived assets. Maintenance capex keeps the business running as it is; growth capex expands it. Neither appears in SDE or EBITDA, so buyers estimate it separately."
+  leaves: [capex-equipment]
+- term: Valuation multiple
+  definition: "The price of a business divided by a measure of its earnings, usually SDE or EBITDA. Multiples differ by size, industry, risk and growth."
+  leaves: [what-multiple, value-drivers]
+- term: Customer concentration
+  definition: "The share of revenue that comes from the largest customer or a few customers. High concentration means losing one customer could hurt the business badly."
+  leaves: [customer-concentration]
+- term: Proof of cash
+  definition: "A reconciliation of the revenue and cash recorded in the books with the deposits and withdrawals on the bank statements for the same periods. It tests whether reported revenue actually arrived."
+  leaves: [proof-of-cash, fraud-misstatement]
+- term: Quality of earnings
+  abbr: QoE
+  definition: "An accountant's review of whether a business's reported earnings are accurate and likely to continue, including add-backs, revenue and working capital. It is narrower than an audit and does not give an audit opinion."
+  leaves: [qoe-need, qoe-cost-scope, sba-qoe-3m-rule]
+
+# Finding and first contact
+- term: Entrepreneurship through acquisition
+  abbr: ETA
+  definition: "Becoming a business owner by buying an existing company rather than starting one. People who follow this path are often called searchers."
+  leaves: [what-is-eta]
+- term: Buy box
+  definition: "A buyer's written criteria for the businesses they will consider: size, industry, location, margins, the owner's role and similar filters."
+  leaves: [define-buy-box]
+- term: Off-market deal
+  definition: "A purchase of a business that was not publicly listed for sale, usually found by contacting owners directly or through referrals."
+  leaves: [off-market-sourcing]
+- term: Business broker
+  definition: "An intermediary who markets a business for sale and runs the process, usually paid a success fee by the seller. A broker normally represents the seller, not the buyer."
+  leaves: [how-brokers-work]
+- term: Buy-side advisor
+  definition: "An advisor hired and paid by the buyer to find businesses or run a purchase on the buyer's behalf."
+  leaves: [buy-side-advisor]
+- term: Teaser
+  definition: "A short, often anonymous summary of a business for sale, used to gauge buyer interest before an NDA is signed."
+  leaves: [cim-teaser]
+- term: Non-disclosure agreement
+  abbr: NDA
+  definition: "A contract in which the buyer agrees to keep the seller's information confidential and use it only to evaluate the deal. Seller NDAs often also bar hiring the seller's employees or contacting customers."
+  leaves: [nda]
+- term: Confidential information memorandum
+  abbr: CIM
+  definition: "A marketing document, usually prepared by the broker, describing the business, its history, operations and financial summary. It is written to sell the business, so buyers check its claims."
+  leaves: [cim-teaser]
+
+# Paths and investors
+- term: Search fund
+  definition: "A model in which investors pay a searcher's salary and costs while they look for a business, in return for the right to invest in the purchase. The searcher earns a share of the equity over time."
+  leaves: [traditional-search-fund, searcher-economics]
+- term: Self-funded search
+  definition: "A search the buyer pays for personally, usually buying the business with an SBA loan, seller financing and their own or a few investors' money."
+  leaves: [self-funded-search]
+- term: Independent sponsor
+  definition: "A dealmaker without a committed fund who finds a business first and then raises equity for that one deal, typically earning fees and a share of the profits."
+  leaves: [independent-sponsor]
+- term: Holding company
+  abbr: holdco
+  definition: "A company whose purpose is to own other companies. Buyers use one to own several businesses and share capital and management across them."
+  leaves: [holdco, holdco-operations]
+- term: Permanent capital
+  definition: "Money invested with no set date by which the business must be sold, unlike a fund with a fixed life. It allows a buy-and-hold approach."
+  leaves: [permanent-capital]
+- term: Preferred return
+  definition: "A minimum return investors receive on their money before the sponsor shares in the profits."
+  leaves: [investor-terms]
+- term: Carried interest
+  abbr: carry
+  definition: "The sponsor's or searcher's share of the profits, paid after investors get back their money and any preferred return."
+  leaves: [investor-terms, searcher-economics]
+- term: Rule 506(b)
+  definition: "An SEC exemption under Regulation D for raising money privately without registering the offering. It does not allow general solicitation, and any non-accredited investors must receive specified disclosures."
+  leaves: [506b-506c-securities]
+- term: Rule 506(c)
+  definition: "An SEC exemption under Regulation D that allows a private raise to be publicly advertised, provided every investor is accredited and the issuer takes reasonable steps to verify that."
+  leaves: [506b-506c-securities]
+- term: Accredited investor
+  definition: "A person or entity that meets the SEC's income, net worth or professional tests in Regulation D. Many private investments are limited to accredited investors."
+  leaves: [506b-506c-securities]
+- term: General solicitation
+  definition: "Offering an investment to the public, for example on a website, on social media or at an open event. Rule 506(c) allows it; Rule 506(b) does not."
+  leaves: [506b-506c-securities]
+- term: J-curve
+  definition: "The pattern in which the owner's pay or the investors' returns dip in the early period after a purchase and then rise."
+  leaves: [j-curve]
+
+# Debt and SBA lending
+- term: SBA 7(a) loan
+  definition: "The U.S. Small Business Administration's main loan program: a private lender makes the loan and the SBA guarantees part of it. It is the most common bank loan for buying a small business."
+  leaves: [sba-7a-basics, underwriting]
+- term: SBA 504 loan
+  definition: "An SBA program for long-term financing of major fixed assets such as real estate and heavy equipment, made jointly by a lender and a certified development company. It comes up in acquisitions when a building is part of the deal."
+  leaves: [7a-vs-504, real-estate-in-deal]
+- term: SOP 50 10
+  definition: "The SBA's Standard Operating Procedure for its 7(a) and 504 loan programs. Lenders must follow the version in force, and the SBA revises it periodically, so rules quoted from an older version may be out of date."
+  leaves: [sop-rule-changes]
+- term: SBA guaranty fee
+  definition: "A fee the SBA charges on the guaranteed portion of a 7(a) loan, usually paid by the borrower at closing. The SBA sets and changes the amount."
+  leaves: [rates-fees-terms, closing-costs]
+- term: Equity injection
+  definition: "The money the buyer puts into an SBA-financed purchase from sources other than the loan. The SBA's current SOP sets the minimum and what counts toward it."
+  leaves: [equity-injection, seller-note-as-equity]
+- term: Debt service coverage ratio
+  abbr: DSCR
+  definition: "Cash flow available to pay debt divided by the principal and interest due on all loans in the same period, usually a year. A ratio above 1 means the cash flow covers the payments with room to spare; lenders set a minimum."
+  leaves: [dscr, underwriting, affordability]
+- term: Personal guarantee
+  abbr: PG
+  definition: "A promise by an individual to repay a business's loan personally if the business can't. SBA rules require it from owners above an ownership threshold, and most acquisition lenders ask for one."
+  leaves: [personal-guarantee, pg-insurance]
+- term: Collateral
+  definition: "Assets a borrower pledges so the lender can take and sell them if the loan isn't repaid. For an acquisition loan it can include business assets and, in some cases, personal assets such as a home."
+  leaves: [collateral-home]
+- term: Pari passu
+  definition: "Latin for 'on equal footing'. Two loans that are pari passu share repayment priority and collateral equally, as when a conventional loan sits alongside an SBA loan in a larger deal."
+  leaves: [loan-limits-pari-passu]
+- term: Mezzanine debt
+  definition: "A loan that ranks behind the senior bank loan in repayment, carrying a higher interest rate and sometimes a share of the equity to make up for the extra risk."
+  leaves: [mezz-private-credit]
+- term: Capital stack
+  definition: "All the money used to buy a business, layered by who gets paid first: senior debt, then subordinated debt such as a seller note, then equity."
+  leaves: [capital-stack]
+- term: Sources and uses
+  definition: "A table showing where the money for a deal comes from (loan, seller note, equity) and where it goes (price, fees, working capital). The two columns must add up to the same total."
+  leaves: [deal-model, capital-stack]
+- term: Rollover as business startup
+  abbr: ROBS
+  definition: "An arrangement in which a new corporation sponsors a retirement plan, the buyer rolls retirement savings into it, and the plan buys the corporation's stock to fund the business. It avoids an early-withdrawal tax only if strict tax and retirement-plan rules are followed."
+  leaves: [equity-sources-robs-heloc]
+
+# Seller financing
+- term: Seller note
+  definition: "A loan from the seller to the buyer for part of the price, repaid over time with interest, usually ranking behind the bank loan."
+  leaves: [seller-financing-basics, seller-note-terms]
+- term: Seller financing
+  definition: "Any part of the price the seller agrees to receive later rather than at closing, most often through a seller note."
+  leaves: [seller-financing-basics, getting-seller-to-carry]
+- term: Standby
+  definition: "An agreement that the seller will not receive some or all payments on the seller note for a set period while the senior loan is outstanding. On full standby, the seller receives no principal or interest during that period."
+  leaves: [seller-note-standby, seller-note-as-equity]
+- term: Forgivable seller note
+  definition: "A seller note whose balance is reduced or cancelled if the business misses agreed targets after closing. It is sometimes discussed as an alternative where earnouts are not allowed; whether a lender accepts one depends on the lender and the current SBA rules."
+  leaves: [earnout-ban-forgivable-note]
+- term: Right of set-off
+  definition: "A contract right letting the buyer reduce payments owed to the seller, such as on a seller note, by amounts the seller owes the buyer, such as indemnity claims."
+  leaves: [set-off-default, indemnification]
+
+# The offer and structure
+- term: Letter of intent
+  abbr: LOI
+  definition: "A short document setting out the main terms of a proposed purchase, such as price, structure and timing. Most of it is non-binding, but terms like exclusivity and confidentiality usually are binding."
+  leaves: [loi-contents, settle-before-diligence]
+- term: Exclusivity
+  definition: "A period, usually agreed in the LOI, during which the seller may not negotiate with or solicit other buyers. Also called a no-shop."
+  leaves: [exclusivity]
+- term: Retrade
+  definition: "An attempt by the buyer to lower the price or change terms after the LOI is signed, usually citing what diligence found."
+  leaves: [retrade]
+- term: Asset purchase
+  definition: "A purchase in which the buyer acquires selected assets and agreed liabilities from the seller's company, and the company itself stays with the seller."
+  leaves: [asset-vs-stock]
+- term: Stock purchase
+  definition: "A purchase of the owners' shares or membership interests, so the company changes hands with its history, contracts and liabilities."
+  leaves: [asset-vs-stock]
+- term: Earnout
+  definition: "Part of the price that is paid after closing only if the business meets agreed targets, such as revenue or profit."
+  leaves: [earnouts, earnout-disputes]
+- term: Rollover equity
+  definition: "A stake in the business that the seller keeps, or reinvests in, after the sale instead of taking all of the price in cash."
+  leaves: [rollover-equity, partial-change-of-ownership]
+- term: Seller consulting agreement
+  definition: "A contract under which the seller works for the business for a period after closing, setting out duties, time and pay. Also called a transition agreement."
+  leaves: [seller-consulting-agreement, seller-transition-period]
+- term: Non-compete
+  definition: "A promise by the seller not to run or join a competing business for a set time and area. A non-solicit is a related promise not to approach the business's customers or employees."
+  leaves: [non-compete]
+- term: Purchase price allocation
+  definition: "The division of the price among types of asset (equipment, inventory, goodwill, a non-compete and so on), which affects each side's taxes. In a U.S. asset purchase both sides report it to the IRS."
+  leaves: [tax-structuring]
+
+# Working capital
+- term: Net working capital
+  abbr: NWC
+  definition: "Current operating assets such as receivables and inventory minus current operating liabilities such as payables. In a purchase it is the operating money that comes with the business, not a loan."
+  leaves: [what-is-nwc, peg]
+- term: Working capital peg
+  definition: "The target level of net working capital agreed in the purchase agreement, often based on a recent average. If the actual amount at closing differs, the price is adjusted up or down."
+  leaves: [peg, what-is-nwc]
+- term: True-up
+  definition: "The adjustment after closing that compares estimated figures, such as working capital at closing, with final figures and moves money between buyer and seller for the difference."
+  leaves: [peg]
+- term: Cash-free, debt-free
+  definition: "A pricing basis in which the seller keeps the business's cash and pays off its debt at closing, and the business is delivered with a normal level of working capital."
+  leaves: [cash-free-debt-free]
+
+# Diligence
+- term: Due diligence
+  definition: "The buyer's investigation of a business after the LOI, covering its finances, legal position and operations, to confirm what was claimed and find what wasn't."
+  leaves: [legal-dd-scope, financial-dd-checklist, phased-diligence]
+- term: Change of control clause
+  definition: "A contract term that gives the other party a right to consent to, end or change the contract when ownership of the business changes."
+  leaves: [contract-assignment, lease-assignment]
+- term: Phase I environmental site assessment
+  definition: "A review of a property's current and past uses, public records and site conditions to identify likely environmental contamination. It does not usually involve sampling soil or water."
+  leaves: [environmental]
+
+# The purchase agreement and closing
+- term: Purchase agreement
+  abbr: APA / SPA
+  definition: "The binding contract for the sale: an asset purchase agreement (APA) or a stock purchase agreement (SPA). It sets the price, the terms, the seller's promises and what happens if they prove untrue."
+  leaves: [apa-key-terms]
+- term: Representations and warranties
+  definition: "Statements of fact the seller makes in the purchase agreement about the business, such as the accuracy of its financial statements. If one proves untrue, the buyer may have a claim."
+  leaves: [reps-warranties]
+- term: Disclosure schedules
+  definition: "Lists attached to the purchase agreement where the seller sets out exceptions to the representations, such as known lawsuits or contracts needing consent."
+  leaves: [reps-warranties]
+- term: Indemnification
+  definition: "A promise by one party to compensate the other for specified losses, such as a breach of the representations or liabilities from before closing, within agreed limits."
+  leaves: [indemnification]
+- term: Basket and cap
+  definition: "Limits on indemnity claims. The basket is the amount of losses that must build up before claims can be made; the cap is the most the seller can owe in total."
+  leaves: [indemnification]
+- term: Escrow
+  definition: "Part of the price held by a neutral third party after closing to cover claims or adjustments, then released under agreed terms."
+  leaves: [escrow-holdback]
+- term: Holdback
+  definition: "Part of the price the buyer keeps back at closing and pays later if no claims arise, without a third-party escrow agent."
+  leaves: [escrow-holdback, cash-at-close]
+- term: Closing conditions
+  definition: "Events that must happen before either side is obliged to close, such as loan funding, landlord consent or key approvals."
+  leaves: [closing-conditions]
+- term: Representations and warranties insurance
+  abbr: RWI
+  definition: "Insurance bought to cover losses from breaches of the seller's representations, so the buyer claims against the insurer rather than the seller."
+  leaves: [rw-insurance]
+
+# Later
+- term: Add-on acquisition
+  definition: "A business bought to combine with one the buyer already owns, often in the same or a related industry."
+  leaves: [add-on-acquisitions]
+- term: Roll-up
+  definition: "A strategy of buying several businesses in one industry and combining them into a larger company. Also called buy-and-build."
+  leaves: [rollup-strategy, pe-consolidation]
+- term: Multiple arbitrage
+  definition: "The idea that small businesses bought at lower multiples become worth a higher multiple once combined into a larger company."
+  leaves: [multiple-arbitrage]
+- term: Recapitalization
+  definition: "A change in a company's mix of debt and equity, for example new borrowing used to pay owners a distribution or buy out investors."
+  leaves: [refinance-recap]

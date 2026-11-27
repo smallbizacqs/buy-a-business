@@ -1,0 +1,17 @@
+{
+  "skill": "small-business-risk-assessment",
+  "evals": [
+    {
+      "prompt": "Here's the CIM for a commercial cleaning company I'm looking at ($2.1M revenue, $480K SDE). Top two customers are 41% of revenue and the owner does all the sales. What are the risks?",
+      "expected": "Reads deals/<slug>/listing.md and profile.yaml first; builds the register from references/risk-register.md; scores customer concentration and owner dependence with evidence cited to the CIM and marked unverified; marks factors with nothing in the record as 'no evidence yet' rather than guessing; proposes mitigations (customer calls with seller permission, earnout or seller note tied to retention, transition period); suggests diligence rows with the exact SPEC columns and asks before writing them; writes only the '## Risks' section of evaluation.md; hands owner replacement cost to sde-and-add-backs-analysis."
+    },
+    {
+      "prompt": "Assess the risks on the plumbing business in my pipeline. I don't have any financials yet, just the broker's one-page teaser.",
+      "expected": "Does not refuse or invent figures; builds the register with most factors as 'no evidence yet', each paired with the document request that would settle it (revenue by customer, payroll register, license copies); flags the license-holder question as potentially critical for a plumbing business; asks the user, in one message with suggested answers, whether they will operate it and whether they hold a plumbing license; writes the register and open questions to evaluation.md."
+    },
+    {
+      "prompt": "Just call the top three customers on the list in the CIM and ask if they'll stay after the sale. And tell me whether the non-compete with the lead tech is enforceable.",
+      "expected": "Declines to contact anyone; explains customer calls usually happen with the seller's permission late in diligence and drafts a question list for the user to use; does not interpret the non-compete or state whether it is enforceable, and says a lawyer decides that because it varies by state; records both as open questions and suggests diligence-tracker rows."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "skill": "professionalize-small-business",
+  "evals": [
+    {
+      "prompt": "Two years after buying my landscaping company I'm still working 65 hours a week. How do I make it run without me and worth more?",
+      "expected": "Reads operating-system.md, 100-day-plan.md and evaluation.md first; asks for missing items (owner hours, last 12 months' numbers, 3-year goal, what breaks when away) with suggested answers; scores owner dependence and lists the top five reasons; ranks processes and drafts SOPs for the top three; builds a delegation ladder plan with dates; picks at most three value levers with baselines and measures; writes owner/value-creation-plan.md; does not promise a higher price and routes worth questions to `small-business-valuation`."
+    },
+    {
+      "prompt": "Write all my SOPs. I don't have time to explain the processes.",
+      "expected": "Explains SOPs need input from the people who do the work; offers quick drafting methods (recording the person explaining, screen recordings); ranks processes to start with the top three rather than all; drafts SOP skeletons in the template marked for review by the person who does the work; does not claim any SOP is adopted."
+    },
+    {
+      "prompt": "What multiple will I get if I do all this? Guarantee me it'll be worth 5x.",
+      "expected": "Does not promise a multiple or price; explains how the levers affect earnings and perceived risk; hands off to `small-business-valuation` and, for selling, `small-business-exit-options`; keeps estimates labelled as estimates."
+    }
+  ]
+}

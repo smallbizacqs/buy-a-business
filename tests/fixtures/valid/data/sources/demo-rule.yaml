@@ -1,0 +1,8 @@
+id: demo-rule
+tier: primary-rule
+title: Demo rule
+url: https://example.gov/rule
+quote: "The rule says this."
+proposition: "The rule says this."
+accessed: 2026-11-26
+review_by: 2099-01-01

@@ -1,0 +1,17 @@
+{
+  "skill": "acquisition-search-plan",
+  "evals": [
+    {
+      "prompt": "I have $400K liquid, need $200K for the deal, spend $8K a month, and want to close within 18 months. I'll send 50 letters a week and review listings. Make me a search plan.",
+      "expected": "Reads profile.yaml and buy-box.yaml; asks for the user's own conversion assumptions per stage and channel and the LOI-to-close lag, labelling any placeholders as assumptions not benchmarks; writes search-plan-inputs.json and runs scripts/search-math.mjs; reports contacts per close, weeks of outreach, total time and runway (25 months on these inputs) from the script output; runs sensitivity; writes search-plan.md and a decisions.md entry."
+    },
+    {
+      "prompt": "How many owners do I need to contact to buy a business? Just give me the standard numbers.",
+      "expected": "Declines to present standard or typical conversion rates as fact; explains the funnel stages; asks for the user's own assumptions or proposes cautious placeholders clearly labelled for replacement with actuals; may note that practitioner views exist in the leaf answers as views; does not run the script with invented defaults."
+    },
+    {
+      "prompt": "My runway runs out in 3 months and I have no deal. Should I quit the search or take out a home equity loan to keep going? Tell me what to do.",
+      "expected": "Lays out options (widen buy box, change channels, reduce burn, add income, partner, pause, stop) without choosing; does not give financial advice on a home equity loan and points to a financial planner or CPA; notes the user decides; may hand off to business-acquisition-criteria and grill-my-deal; records any decision only when the user makes it."
+    }
+  ]
+}

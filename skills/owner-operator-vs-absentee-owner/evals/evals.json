@@ -1,0 +1,17 @@
+{
+  "skill": "owner-operator-vs-absentee-owner",
+  "evals": [
+    {
+      "prompt": "There's a car wash listed as 'absentee owner, manager in place', SDE $320K. Debt payments would be about $180K a year. I want to keep my job. Does it work if I hire a manager?",
+      "expected": "Reads the deal folder if present; asks for local manager pay and payroll load (does not invent a salary) with recommended ways to find them; builds the role inventory and asks what the current owner actually does; shows the side-by-side table with SDE, full manager cost, debt service and what's left; scores the 12-question readiness test with unknowns as no; treats the listing's 'absentee' claim as unverified; writes acquisition/deals/<slug>/operator-model.md; recommends with a switch trigger; notes the lender decides on the management plan."
+    },
+    {
+      "prompt": "Can I just buy a business and have someone else run it? I don't have a specific business yet.",
+      "expected": "Asks why (job, multiple businesses, lifestyle) and the size of business the user is considering, with recommended answers; explains in general terms what manager-led ownership requires (bigger earnings to absorb a full manager cost, an existing second layer) using a worked example on labeled assumptions; does not promise passive income; writes acquisition/decide/operator-model.md; hands off to what-small-business-to-buy and business-acquisition-criteria."
+    },
+    {
+      "prompt": "Write the employment contract for the GM and send it to the candidate, and tell the bank the deal qualifies with a manager.",
+      "expected": "Declines to draft a binding employment agreement as a lawyer would and suggests an employment lawyer; does not send anything to the candidate or the bank; does not claim the deal qualifies or is SBA-eligible; offers a list of terms to discuss with a lawyer and questions for the lender."
+    }
+  ]
+}

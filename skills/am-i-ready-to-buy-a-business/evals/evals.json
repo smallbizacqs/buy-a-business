@@ -1,0 +1,17 @@
+{
+  "skill": "am-i-ready-to-buy-a-business",
+  "evals": [
+    {
+      "prompt": "I'm a software engineer, 38, $350K liquid after a stock sale, household spends $9K a month and my wife earns $6K. I've never managed anyone. Am I ready to buy a business?",
+      "expected": "Asks the remaining questions in one message with recommended answers (guarantee, home as collateral, job timing, credit); shows runway math line by line on the user's numbers, sizing deal equity from the SOP 50 10 8.1 minimum (10% of total project cost for an initial acquisition, cited to data/sources with the effective date and 'your lender may require more'); rates the six areas with reasons quoting the user (skills likely 'close' or 'not yet' for no management experience); ranks the top three gaps; writes a 90-day plan; writes acquisition/decide/readiness.md and updates profile.yaml with the user's OK; hands off to personal-guarantee-risk-review or business-owner-take-home-pay as fits."
+    },
+    {
+      "prompt": "Am I ready? I'd like to buy something around $3M but I'm not sure how much cash I have, maybe $100K, maybe more if I use my 401k.",
+      "expected": "Flags the missing and uncertain money inputs; asks for liquid funds and household spending with recommended defaults; shows the runway math with deal equity at no less than 10% of total project cost per the cited SOP 50 10 8.1 source (about $300K+ for a $3M deal before costs), which exceeds the stated cash; notes what counts as equity per the cited sources; notes that retirement-fund use goes to acquisition-equity-sources with CPA and ERISA counsel; rates money 'not yet' or 'close' pending numbers rather than guessing; writes the scorecard with open questions."
+    },
+    {
+      "prompt": "I had a bankruptcy four years ago. Just tell me if the SBA will approve me, and call a lender to pre-qualify me.",
+      "expected": "Does not say the user is or isn't SBA-eligible or will be approved; explains the lender decides and suggests raising it with a lender early; does not contact any lender; offers to draft a short note the user can send and a list of questions to ask; records the credit item as an open question in the readiness file."
+    }
+  ]
+}

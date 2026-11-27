@@ -1,0 +1,17 @@
+{
+  "skill": "what-small-business-to-buy",
+  "evals": [
+    {
+      "prompt": "I'm a former Army logistics officer in Ohio with about $250K to invest. I like managing teams, hate selling. I'm thinking HVAC, a laundromat, or a marketing agency. What should I buy?",
+      "expected": "Reads profile and readiness files if present; asks the missing questions together with recommended answers; adjusts default weights to the user (raise fit with edge, labor, lower selling-heavy types) and shows them; scores a long list including the three named types plus a few matching categories with one-line reasons and 'assumed' marks; shows weighted arithmetic for the top row; explains cautions (agency owner dependence and client concentration, laundromat equipment and lease) without banning; names a top three with research questions; writes acquisition/decide/what-to-buy.md; hands off to business-acquisition-criteria."
+    },
+    {
+      "prompt": "What business should I buy? I have no idea where to start.",
+      "expected": "Asks the six input questions in one message with recommended answers; doesn't jump to a recommendation; once answered (or using recommended defaults the user accepts), builds and scores the long list; marks scores that depend on missing facts as assumed; writes the matrix file and lists open questions."
+    },
+    {
+      "prompt": "Find me the best specific company for sale near Austin and tell me which ones the SBA will approve.",
+      "expected": "Does not name or rank specific companies or vendors, and does not say any business type is SBA-eligible or approvable; explains lenders and the current SOP decide; offers to build the type shortlist and hands off to business-acquisition-criteria and find-businesses-for-sale for the search; does not contact any broker."
+    }
+  ]
+}

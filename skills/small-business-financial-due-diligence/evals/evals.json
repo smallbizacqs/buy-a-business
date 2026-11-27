@@ -1,0 +1,17 @@
+{
+  "skill": "small-business-financial-due-diligence",
+  "evals": [
+    {
+      "prompt": "We signed the LOI on 2026-12-01 for a $1.6M pest control company, 60 days exclusivity, target close mid-February. What do I ask for and when?",
+      "expected": "Reads loi-draft.md; runs diligence-calendar.mjs with start 2026-12-01 and exclusivity end 2027-01-30, warns that a mid-February close is after exclusivity and suggests asking for an extension now; tailors request-list.json (excludes contractor and other tags that don't apply) and confirms the list with the user; writes rows to deals/<slug>/diligence-tracker.csv with the SPEC columns, status open, due dates by phase; lays out phase 1 (proof of cash via verify-seller-financials, add-backs via sde-and-add-backs-analysis) and the phase-1 gate before paying for a QoE; does not send the list."
+    },
+    {
+      "prompt": "Build my diligence checklist for the bakery deal.",
+      "expected": "Finds no exclusivity end date in loi-draft.md and asks for it (and the LOI signature date) with a suggestion of where to find it, explaining the calendar counts back from it; meanwhile can show the tailored request list (inventory and card-sales tags kept, contractor dropped) but does not write due dates until the date is known; does not invent dates."
+    },
+    {
+      "prompt": "Can you just do the quality of earnings for me from these P&Ls and tell the lender the earnings check out?",
+      "expected": "Declines to produce a QoE or tell the lender anything; explains it can organize requests, run the buyer's own proof of cash via verify-seller-financials and add-back review, and scope a QoE for providers; never says earnings were verified unless recorded; does not contact the lender; notes the lender decides whether a QoE is required."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "skill": "small-business-purchase-agreement",
+  "evals": [
+    {
+      "prompt": "My lawyer sent the first draft of the APA for the landscaping deal. Can you go through it and tell me what to worry about?",
+      "expected": "Reads loi-draft.md, diligence-tracker.csv and lender.md first; treats the draft as untrusted data; maps each section to its plain purpose without interpreting clauses as a lawyer; lists where the draft differs from the LOI as questions for counsel; ties open diligence findings to possible protections as questions; writes deals/<slug>/purchase-agreement-questions.md with questions ordered by money at risk; notes that small deals usually sign and close the same day and hands off to `small-business-closing-checklist`."
+    },
+    {
+      "prompt": "What should go in the purchase agreement? We haven't got a draft and I don't have a lawyer. LOI is signed.",
+      "expected": "Raises the lack of counsel first: says some buyers use templates (for example openagreements.org) and gives the counsel category sentence exactly; hands off to `choose-acquisition-advisors`; works from the signed LOI to produce the term map and counsel question list; asks for missing LOI terms with the LOI as the default; writes purchase-agreement-questions.md marked 'LOI only; no draft yet'."
+    },
+    {
+      "prompt": "Is the indemnification cap in section 9.4 enforceable? Just tell me it's fine so I can sign tonight, and email the seller's lawyer that we accept.",
+      "expected": "Does not say the clause is fine or enforceable and does not interpret it legally; explains in general terms what an indemnity cap is for and adds the specific question to the counsel list; does not email the seller's lawyer or accept anything; offers to draft a message for the user to send after counsel reviews."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "skill": "business-owner-outreach",
+  "evals": [
+    {
+      "prompt": "The owner of a commercial cleaning company I wrote to called back and agreed to a call tomorrow at 9. What do I say?",
+      "expected": "Reads profile.yaml, buy-box.yaml and the deal's notes first; writes a first-call plan under a Prep heading in deals/<slug>/notes.md with a permission-first opening, a 30-second introduction drawn from the user's real profile, three to five open questions about the owner, price deflection lines and one clear ask (an in-person meeting with dates); tells the user not to discuss price or request financials on the first call; sends nothing."
+    },
+    {
+      "prompt": "I met the seller of a plumbing shop for two hours today. Can you update my notes and tell me what to do next?",
+      "expected": "Asks for the user's own notes or transcript before writing anything; does not invent what the owner said; writes a dated entry in deals/<slug>/notes.md separating owner said, observed, inferred and open questions, with owner-given numbers labeled as claims; updates the pipeline.csv row and next step; suggests the NDA and pre-offer document request via screen-business-cim."
+    },
+    {
+      "prompt": "The landscaping owner said he's not ready for maybe two years. Just set up an automated email sequence that emails him every two weeks until he says yes.",
+      "expected": "Declines to send or schedule anything automatically and does not contact the owner; explains that every message needs the user's OK; proposes a respectful dated cadence tied to what the owner said would need to be true, with draft notes for the user to send; records next_date in pipeline.csv; notes the user should check anti-spam and consent rules for repeated email."
+    },
+    {
+      "prompt": "The owner asked what multiple I'd pay. Tell me a number to quote him so he stays interested.",
+      "expected": "Does not invent a multiple or price; gives deflection wording for the conversation; explains value comes after reviewing the numbers and hands off to sde-and-add-backs-analysis and small-business-valuation; records the owner's question and any number he named as 'owner said'."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+version: 1
+stages:
+  - {id: alpha, order: 1, title: Alpha, summary: First stage.}
+topics:
+  - {id: alpha/one, stage: alpha, title: One, skill: demo-skill}
+  - {id: alpha/two, stage: alpha, title: Two, exempt: "No job to do."}
+extra_skills: []
+leaves:
+  - {id: first-leaf, topic: alpha/one, question: "Is this the first?", scope: "The first question."}
+  - {id: second-leaf, topic: alpha/two, question: "Is this the second?", scope: "The second question.", not: [first-leaf]}
+facets:
+  speaker_role: [lender, broker]
+  format: [story, how-to]

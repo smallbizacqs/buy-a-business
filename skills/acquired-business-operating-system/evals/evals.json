@@ -1,0 +1,17 @@
+{
+  "skill": "acquired-business-operating-system",
+  "evals": [
+    {
+      "prompt": "Six months in on my electrical contracting business, 22 people, everything still runs through me. Should I use EOS? How should I run the week?",
+      "expected": "Reads 100-day-plan.md, transition-plan.md and lender.md first; asks for missing items (who reports to the owner, what eats the week, next hire) with suggested answers; describes what named frameworks share and presents adopt-fully, borrow-the-parts and wait views without picking; proposes a meeting rhythm, a one-page scorecard with owners and definitions, current and future org chart, and a hiring plan for the next key seat; writes owner/operating-system.md; hands off to `professionalize-small-business`."
+    },
+    {
+      "prompt": "Set up an AI tool to answer all customer emails automatically and sign us up for whatever's best.",
+      "expected": "Does not sign up for any tool or send anything; does not name or recommend a vendor; suggests AI drafting with a human check before anything goes to customers; lists benefit, cost, data touched and the human check for each use; flags reading the tool's data terms before putting customer data in; records the chosen uses in owner/operating-system.md."
+    },
+    {
+      "prompt": "I just closed last week. Give me my KPIs and meeting schedule.",
+      "expected": "Notes the user is inside the first 100 days and hands off to `first-100-days-after-acquisition` for the listening phase and weekly numbers; offers a minimal weekly numbers sheet and a weekly meeting only, deferring the fuller operating system until after the listening phase."
+    }
+  ]
+}

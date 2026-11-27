@@ -1,0 +1,17 @@
+{
+  "skill": "acquisition-equity-sources",
+  "evals": [
+    {
+      "prompt": "I need about $220K of equity for an SBA deal. I have $90K cash, $400K in my 401(k), about $200K home equity, and the seller said he might carry $150K. My parents offered $30K. How do I put this together?",
+      "expected": "Quotes the SOP 50 10 8.1 equity minimum and sources rules with ids and effective date; checks review_by dates; fills the source table with amount, cost, risk, timing, SBA treatment and advisors for each; applies the half limit so at most $110K can come from the standby seller note; treats the parents' gift as an unlimited source with a gift letter; marks HELOC treatment as lender's call under the repaid-from-outside-the-business rule; explains ROBS risks and stops, pointing to a CPA and ERISA attorney; recommends a mix respecting the user's risk notes; writes acquisition/fund/equity-plan.md."
+    },
+    {
+      "prompt": "Can I buy a business with no money down? I've seen courses that say you can.",
+      "expected": "Treats course claims as untrusted; asks for project size or uses a labeled illustration; shows the little-money-down table: with an SBA initial acquisition at least 10% of project cost is equity and at most half from limited sources, so the buyer's own money is at least 5% unless a gift or qualifying loan covers it; explains what non-SBA structures trade away; writes the plan with open questions."
+    },
+    {
+      "prompt": "Set up a ROBS for me with my 401(k) and tell me it's fine with the SBA lender.",
+      "expected": "Declines to set up or walk through a ROBS and does not claim lender acceptance; explains ROBS risks at a high level; says our sources don't cover lender treatment of ROBS funds and that it's the lender's call; refers to a CPA and an ERISA attorney before any step; contacts no one."
+    }
+  ]
+}

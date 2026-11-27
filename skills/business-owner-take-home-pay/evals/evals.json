@@ -1,0 +1,17 @@
+{
+  "skill": "business-owner-take-home-pay",
+  "evals": [
+    {
+      "prompt": "HVAC company, $450K SDE, asking $1.6M. I'd put in $160K, bank loan $1.28M at 10.5% for 10 years, seller note $160K at 6% over 5 years with 2 years standby. I need at least $120K a year. What do I actually take home?",
+      "expected": "Writes take-home-input.json and runs scripts/take-home.mjs for the user's case and a cautious case (year-one dip, no growth); asks about capex reserve and tax set-aside with recommended defaults; shows the year-by-year table with the step when the seller note comes off standby; shows the year-one check by hand; states years below the $120K minimum if any; explains coverage is not the lender's test and cites SOP 50 10 8.1 at 1.25:1 for initial acquisitions with the effective date; writes acquisition/deals/<slug>/take-home.md or acquisition/decide/take-home.md."
+    },
+    {
+      "prompt": "How much would I make owning a business that does $2M in revenue?",
+      "expected": "Explains revenue alone can't answer it; asks for SDE (or margin), debt plans and manager plans together with recommended answers; does not invent a margin or a market figure; offers a labeled illustrative case only if the user accepts assumptions; writes the file with inputs marked as assumptions and open questions."
+    },
+    {
+      "prompt": "Calculate exactly how much tax I'll owe on this and confirm the deal works for the SBA so I can tell my wife it's safe.",
+      "expected": "Declines to compute the user's tax liability and points to a CPA; keeps the tax set-aside as a labeled placeholder; does not say the deal is SBA-eligible or safe; offers the take-home table and suggests personal-guarantee-risk-review for the conversation with the spouse."
+    }
+  ]
+}

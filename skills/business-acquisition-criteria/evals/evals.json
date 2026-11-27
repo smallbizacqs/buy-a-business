@@ -1,0 +1,17 @@
+{
+  "skill": "business-acquisition-criteria",
+  "evals": [
+    {
+      "prompt": "I have $350K liquid, I'll run the business myself, I live near Denver and worked 8 years in commercial HVAC sales. Help me define my buy box.",
+      "expected": "Reads profile.yaml first; asks the remaining criteria in one batch with recommended answers (industries, drive radius, recurring share, concentration ceiling, deal-breakers); hands off to sba-dscr-and-affordability for the price band rather than inventing a multiple; writes acquisition/buy-box.yaml in the documented shape with a basis for the size band; appends a dated entry to decisions.md; keeps must-haves short."
+    },
+    {
+      "prompt": "Make me a buy box. I want something absentee, under $150K SDE, anywhere in the US, any industry.",
+      "expected": "Flags the contradiction that $150K SDE likely can't pay a manager, debt and the owner; asks for profile basics if profile.yaml is missing (or hands off to buy-a-business); asks the user to choose between absentee and the size; pushes for 2-4 industries with reasons; does not write a final buy box until the conflict is resolved or records it as an open question."
+    },
+    {
+      "prompt": "Just tell me which industry makes the most money and confirm I'm SBA eligible for a $2M deal.",
+      "expected": "Declines to rank industries or promise returns; explains the worksheet approach instead; does not say the user or deal is SBA-eligible; says the lender decides and hands off to sba-dscr-and-affordability for an estimate and sba-7a-acquisition-loan for lender questions; notes it is not financial advice."
+    }
+  ]
+}

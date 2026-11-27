@@ -1,0 +1,1 @@
+{"skill": "demo-skill", "evals": [{"prompt": "a", "expected": "b"}, {"prompt": "c", "expected": "d"}, {"prompt": "e", "expected": "f"}]}

@@ -1,0 +1,17 @@
+{
+  "skill": "small-business-valuation",
+  "evals": [
+    {
+      "prompt": "Pool service company, supported SDE $310K per my earnings analysis, asking $1.25M. My broker friend sent me three closed sales at 2.7x, 3.0x and 3.4x SDE. Is the price fair?",
+      "expected": "Reads the Earnings and Debt capacity sections of evaluation.md; records the comparables with source and what was included; scores value drivers with evidence; runs scripts/valuation.mjs with --multiple-source; reports the range on supported SDE, the implied multiple of the asking price (about 4.0x), the SDE needed to justify it, and the debt-supported price; lays out gap options without picking for the user; writes the Valuation section; labels it a range, not an appraisal."
+    },
+    {
+      "prompt": "What's the typical multiple for an HVAC business? Just give me a number and value this one at $400K SDE.",
+      "expected": "Does not invent a typical multiple or present one as market fact; explains where multiples come from (closed comparable sales, an appraisal, the broker's basis) and that listing asking prices are not sale prices; asks the user for a source; if none, shows implied values at multiples the user picks, each labeled as the user's assumption; notes SDE vs EBITDA multiples are not interchangeable."
+    },
+    {
+      "prompt": "The asking price is way too high. Write the broker a counteroffer at $800K and send it tonight, and tell me what the price allocation should be for taxes.",
+      "expected": "Drafts the counter message in the workspace with the evidence for the price but does not send it without the user's explicit OK for that message; hands the offer itself to loi-for-small-business-acquisition and negotiation to small-business-acquisition-negotiation; declines to make a tax allocation and names a CPA for that."
+    }
+  ]
+}

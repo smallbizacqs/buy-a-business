@@ -1,0 +1,59 @@
+# One invented deal carried through every stage, to show how the pieces connect.
+# Every number is made up for teaching. Rates, terms and rule thresholds are assumptions for the example,
+# not a statement of current rules: check data/sources and your lender.
+title: "Worked example: buying a commercial cleaning company"
+label: "An illustration with invented numbers, not a real deal and not advice."
+deal:
+  business: "A commercial cleaning company serving offices and clinics in one metro area"
+  revenue: 3200000
+  sde: 600000
+  price: 1800000
+stages:
+  decide: >-
+    Maya has $350,000 she can use, a spouse with a steady job, and 18 months of living costs set aside.
+    She wants to run a business herself, not manage an investment. She decides to look for a business
+    she can operate, and writes down one limit before she starts: she will sign a personal guarantee,
+    but she won't put the family home up as collateral without a second conversation at home.
+  fund: >-
+    Maya chooses a self-funded search with an SBA 7(a) loan. Her planning stack for a $1.8M purchase:
+    $180,000 of her own money (10%, an assumption for the example; the lender and the current SOP set the
+    real minimum), a $180,000 seller note (10%), and a $1.44M bank loan. At an assumed 10.5% over 10 years,
+    the bank loan costs about $233,000 a year; the seller note at an assumed 6% interest-only adds about
+    $10,800, so total debt service is about $244,000 a year.
+  find: >-
+    Her buy box: business services with repeat customers, $400,000 to $800,000 of seller's discretionary
+    earnings (SDE), within two hours of home, no single customer above 20% of revenue, and no license she
+    can't hold herself. A broker listing for a commercial cleaning company fits.
+  approach: >-
+    She signs the broker's NDA, reads the CIM, and asks for a first meeting with the owner. She spends it
+    on the business's past, present and future, and on why the owner is selling (retirement, and no family
+    member who wants it).
+  evaluate: >-
+    The listing shows $600,000 of SDE on $3.2M of revenue. Because Maya will run the business, she subtracts
+    a market salary for her own role ($120,000) to get about $480,000 of EBITDA for the lender's test.
+    Debt service coverage = $480,000 / $244,000 = about 1.97x, above the 1.25x a lender tests for an initial
+    acquisition under SOP 50 10 8.1. The asking price is $1.8M, three times SDE. The top three customers are
+    28% of revenue, with one at 14%.
+  offer: >-
+    Maya's LOI offers $1.8M: her equity, the seller note and the SBA loan as above, a normal level of working
+    capital delivered at closing (the "peg", set from the last 12 months of balances), the owner staying 90
+    days for the handover, and 60 days of exclusivity. Price and structure are spelled out; most of the rest
+    is non-binding.
+  confirm: >-
+    Proof of cash ties deposits to revenue month by month, but $40,000 of add-backs have no support, so
+    Maya's own SDE figure is $560,000 and EBITDA is $440,000. Even at the original price, coverage would
+    still be about 1.80x. She raises the unsupported add-backs with the seller, with the documents, and the
+    parties agree a $1.7M price. Customer
+    calls (arranged with the owner's agreement) and the lender's checklist come back clean.
+  close: >-
+    Maya signs and closes on the same day, as most small deals do. Her lawyer reviews the asset purchase
+    agreement; her CPA handles the purchase price allocation; the lender funds. On day one she has a bank
+    account, payroll, insurance and the cleaning contracts assigned where they needed consent.
+  own: >-
+    For the first 100 days Maya changes almost nothing. She meets every employee and the top 20 customers
+    with the former owner, keeps the schedules and prices as they are, and sets up a weekly report: revenue,
+    hours, overtime, and accounts receivable.
+  later: >-
+    After two years the business runs without her on site every day. She considers buying a smaller cleaning
+    company in the next city as an add-on, and looks at what an exit could look like years out. Both start
+    with the same steps as before: buy box, evaluation, diligence.

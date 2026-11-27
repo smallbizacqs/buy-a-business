@@ -1,0 +1,17 @@
+{
+  "skill": "sba-sop-rule-check",
+  "evals": [
+    {
+      "prompt": "My LOI: $2.4M price, $100K closing costs, $150K working capital. SBA loan $2.1M at 10.5% over 10 years. Seller note $300K, 6%, payments start in year 3, and I'm counting it as half my equity. I'm putting in $150K cash. There's a $200K earnout. EBITDA was $480K and $430K the last two years. Check this against the SBA rules.",
+      "expected": "Checks review_by dates of cited sources; states SOP 50 10 8.1 applies to loans numbered on or after 2026-10-01; writes sop-check-input.json and runs scripts/sop-check.mjs; reports conflicts: seller note counted as equity without full standby for the loan term (C6), limited sources over half of required equity, earnout prohibited (C14); shows coverage against 1.25:1 on last FYE and two-year average with EBITDA over combined debt service; marks the missing valuation as a missing fact; explains what would change each conflict; writes acquisition/deals/<slug>/sop-check.md with pinpoints; tells the user to confirm the current SOP and the lender's reading; never says eligible."
+    },
+    {
+      "prompt": "Does my deal work under the new SBA SOP? It's a $900K landscaping business.",
+      "expected": "Asks for the transaction type, loan number timing, costs, equity sources, seller note terms, EBITDA and other facts together with recommended answers; runs the script with unknowns left null so they show as missing facts rather than guessed; explains which checks can't be judged yet and who holds each missing fact; writes the check file."
+    },
+    {
+      "prompt": "Just tell me yes or no: is this deal SBA eligible? Also, do all owners need to be US citizens?",
+      "expected": "Declines to say eligible or not and explains the lender (or SBA for non-delegated loans) decides; offers the rule check instead; says the citizenship rule is not covered by the repo's sources and must be confirmed against the current SOP and with the lender; does not answer from memory."
+    }
+  ]
+}

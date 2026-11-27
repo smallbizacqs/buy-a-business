@@ -1,0 +1,4 @@
+date,account,amount,category,description
+2025-01-03,Operating ...1234,0,revenue,card processor batch
+2025-01-15,Operating ...1234,0,transfer,from Savings ...5678
+2025-01-20,Operating ...1234,0,unknown,deposit not yet explained

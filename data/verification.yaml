@@ -1,0 +1,18 @@
+# Dispositions for sources the automated quote check can't fetch (bot-walled or not machine-readable).
+# Each says how the quote was verified instead. A disposition never covers a mismatch.
+- id: flippa-terms-data-verified
+  status: verified-in-browser
+  reason: "flippa.com returns 403 to scripts; quote found verbatim in the rendered Terms of Service page in a browser."
+  checked_on: 2026-11-26
+- id: flippa-terms-listing-types
+  status: verified-in-browser
+  reason: "flippa.com returns 403 to scripts; quote found verbatim in the rendered Terms of Service page in a browser."
+  checked_on: 2026-11-26
+- id: flippa-terms-not-diligence
+  status: verified-in-browser
+  reason: "flippa.com returns 403 to scripts; quote found verbatim in the rendered Terms of Service page in a browser."
+  checked_on: 2026-11-26
+- id: flippa-terms-role
+  status: verified-in-browser
+  reason: "flippa.com returns 403 to scripts; quote found verbatim in the rendered Terms of Service page in a browser."
+  checked_on: 2026-11-26

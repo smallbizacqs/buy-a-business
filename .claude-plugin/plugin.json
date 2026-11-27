@@ -1,0 +1,24 @@
+{
+  "name": "buy-a-business",
+  "displayName": "Buy a Business",
+  "version": "0.1.0",
+  "description": "A guide to buying a small business, plus agent skills: ten stages from deciding to buy to selling later.",
+  "author": {
+    "name": "Small Biz Acquisitions",
+    "email": "smallbizacquisitions@outlook.com",
+    "url": "https://smallbizacqs.com"
+  },
+  "homepage": "https://smallbizacqs.com",
+  "repository": "https://github.com/smallbizacqs/buy-a-business",
+  "license": "CC-BY-4.0 AND MIT",
+  "keywords": [
+    "buy a business",
+    "small business acquisition",
+    "entrepreneurship through acquisition",
+    "ETA",
+    "search fund",
+    "SBA 7(a)",
+    "due diligence",
+    "LOI"
+  ]
+}

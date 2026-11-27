@@ -1,0 +1,18 @@
+id: c0a0b0c
+leaves: [first-leaf]
+facets:
+  speaker_role: lender
+  sells_services: "unknown"
+  format: story
+view: "A lender explains the first thing."
+creator:
+  name: "Demo Creator"
+  channel: https://www.youtube.com/@demo
+source:
+  url: https://www.youtube.com/watch?v=AAAAAAAAAAA
+  start: 10
+  end: 30
+  published: 2026-01-01
+posts:
+  youtube: null
+added: 2026-11-26

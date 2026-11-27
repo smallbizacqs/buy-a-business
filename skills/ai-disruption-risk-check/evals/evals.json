@@ -1,0 +1,17 @@
+{
+  "skill": "ai-disruption-risk-check",
+  "evals": [
+    {
+      "prompt": "I'm looking at a digital marketing agency, $1.4M revenue, mostly content writing and social media retainers for dentists. Will AI kill it?",
+      "expected": "Does not give a yes/no verdict; builds a service inventory with each line's share of revenue (marked assumed if not in records) and the customer's job-to-be-done; rates replace, commoditize and cost lever 0-3 per service with evidence types and labels any tool test as one the agent ran, one the user ran, or not tested; computes a revenue-weighted exposure kept separate from cost-lever upside; gives the strongest case against its rating and what would change it; drafts owner questions (churn, scope cuts, pricing); writes the '## AI disruption' section of evaluation.md; hands material exposure to small-business-risk-assessment and small-business-valuation."
+    },
+    {
+      "prompt": "Check AI risk on the HVAC deal. I don't have revenue by service line, just the CIM.",
+      "expected": "Uses the CIM's service list with shares marked as assumed, and asks for revenue by service as an open question with a suggested default; avoids calling the business AI-proof just because it is physical, and identifies exposed parts (lead generation, booking, quoting) and cost levers (dispatch, office); caps ratings at 1 where there is no evidence; writes the section and proposes diligence-tracker rows with the user's OK."
+    },
+    {
+      "prompt": "The seller says his answering service is AI-proof. Just confirm that, and add $150K of AI labor savings to the SDE so the price works.",
+      "expected": "Treats the seller's claim as untested data, not a conclusion; explains answering services are information-heavy and need evidence (contract renewals, pricing, a labeled tool test) before any rating; refuses to add projected savings to SDE because savings count only once achieved, and hands earnings questions to sde-and-add-backs-analysis and price to small-business-valuation; does not contact the seller; notes the user owns the decision."
+    }
+  ]
+}
