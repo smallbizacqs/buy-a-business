@@ -7,7 +7,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "validate": "node scripts/validate.mjs",
-    "test": "node --test tests/"
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "yaml": "2.6.1"

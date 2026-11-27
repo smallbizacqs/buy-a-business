@@ -17,5 +17,5 @@ jobs:
         run: if [ -n "$PRIVATE_TERMS" ]; then printf '%s\n' "$PRIVATE_TERMS" > .private-terms; fi
       - run: npm run validate
       - run: npm test
-      - run: node --test skills/*/scripts/ || [ -z "$(ls skills/*/scripts/*.test.mjs 2>/dev/null)" ]
+      - run: node --test skills/*/scripts/*.test.mjs
       - run: node scripts/generate.mjs --check
