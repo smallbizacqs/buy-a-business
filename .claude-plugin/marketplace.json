@@ -65,7 +65,7 @@
       ]
     },
     {
-      "name": "bab-01-decide",
+      "name": "stage-1-should-you-buy",
       "description": "Stage 1: Should you buy a business?. What buying a small business involves, what it costs you in time, money and risk, and whether you'd run it yourself.",
       "source": "./",
       "strict": false,
@@ -81,7 +81,7 @@
       ]
     },
     {
-      "name": "bab-02-fund",
+      "name": "stage-2-path-and-money",
       "description": "Stage 2: Choose your path and line up the money. Self-funded with an SBA loan, a search fund, a holding company or deal-by-deal investors, and how each is financed.",
       "source": "./",
       "strict": false,
@@ -98,7 +98,7 @@
       ]
     },
     {
-      "name": "bab-03-find",
+      "name": "stage-3-find-deals",
       "description": "Stage 3: Decide what to buy and find deals. Your criteria (the \"buy box\"), brokers and marketplaces, reaching owners directly, and how long a search takes.",
       "source": "./",
       "strict": false,
@@ -112,7 +112,7 @@
       ]
     },
     {
-      "name": "bab-04-approach",
+      "name": "stage-4-owners-and-brokers",
       "description": "Stage 4: Talk to owners and brokers. First calls and meetings, earning an owner's trust, working with brokers, and the early screen before an offer.",
       "source": "./",
       "strict": false,
@@ -125,7 +125,7 @@
       ]
     },
     {
-      "name": "bab-05-evaluate",
+      "name": "stage-5-size-it-up",
       "description": "Stage 5: Size it up: real earnings, fair price, what you can borrow. Seller's discretionary earnings and add-backs, valuation multiples, debt coverage, and the risks that change the price.",
       "source": "./",
       "strict": false,
@@ -141,7 +141,7 @@
       ]
     },
     {
-      "name": "bab-06-offer",
+      "name": "stage-6-make-the-offer",
       "description": "Stage 6: Make the offer (the LOI). The letter of intent, deal structure, working capital, negotiation, and the advisors you'll need.",
       "source": "./",
       "strict": false,
@@ -156,7 +156,7 @@
       ]
     },
     {
-      "name": "bab-07-confirm",
+      "name": "stage-7-diligence-and-the-loan",
       "description": "Stage 7: Check everything and finalize the loan. Financial, legal and operational due diligence, when to walk away, and the lender's approval process.",
       "source": "./",
       "strict": false,
@@ -171,7 +171,7 @@
       ]
     },
     {
-      "name": "bab-08-close",
+      "name": "stage-8-sign-and-close",
       "description": "Stage 8: Sign and close. The purchase agreement and closing day. In small deals, signing and closing usually happen on the same day.",
       "source": "./",
       "strict": false,
@@ -183,7 +183,7 @@
       ]
     },
     {
-      "name": "bab-09-own",
+      "name": "stage-9-first-100-days",
       "description": "Stage 9: Your first 100 days as owner. The seller's transition, keeping employees and customers, and what to change (and not change) first.",
       "source": "./",
       "strict": false,
@@ -196,7 +196,7 @@
       ]
     },
     {
-      "name": "bab-10-later",
+      "name": "stage-10-grow-buy-more-or-sell",
       "description": "Stage 10: Later: grow, buy more, or sell. Growing value, add-on acquisitions and holding companies, and exit options.",
       "source": "./",
       "strict": false,

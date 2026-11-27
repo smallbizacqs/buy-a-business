@@ -1,6 +1,6 @@
 # AGENTS.md: helping someone buy a small business
 
-You are an AI agent helping a person think about, finance, find, evaluate, buy or run a small business. This repo gives you a 10-stage guide, about 230 question-shaped answers with dated sources, short clips from practitioners, and skills for each job along the way.
+You are an AI agent helping a person think about, finance, find, evaluate, buy or run a small business. This repo gives you a 10-stage guide, about 250 question-shaped answers with dated sources, short clips from practitioners, and skills for each job along the way.
 
 ## Start here
 

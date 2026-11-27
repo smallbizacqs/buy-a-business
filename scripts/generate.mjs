@@ -75,7 +75,7 @@ ${answered.map((l) => `- [${l.question}](${RAW}/data/leaves/${l.id}.md)`).join('
 const present = (names) => names.filter((n) => byName.has(n)).map((n) => `./skills/${n}`);
 const plugins = [
   { name: 'buy-a-business', description: 'Every skill: the guide to buying a small business, from deciding to buy to selling later.', source: './', strict: false, skills: present([...entry, ...tax.stages.flatMap((s) => stageSkills(s.id))]) },
-  ...tax.stages.map((s) => ({ name: `bab-${String(s.order).padStart(2, '0')}-${s.id}`, description: `Stage ${s.order}: ${s.title}. ${s.summary}`, source: './', strict: false, skills: present([...entry, ...stageSkills(s.id)]) })),
+  ...tax.stages.map((s) => ({ name: `stage-${s.order}-${String(s.short ?? s.id).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`, description: `Stage ${s.order}: ${s.title}. ${s.summary}`, source: './', strict: false, skills: present([...entry, ...stageSkills(s.id)]) })),
 ].filter((p) => p.skills.length);
 const marketplace = { name: 'buy-a-business', owner: AUTHOR, metadata: { description: 'A guide to buying a small business, plus agent skills.', version }, plugins };
 const plugin = { name: 'buy-a-business', displayName: 'Buy a Business', version, description: 'A guide to buying a small business, plus agent skills: ten stages from deciding to buy to selling later.', author: AUTHOR, homepage: 'https://smallbizacqs.com', repository: REPO, license: 'CC-BY-4.0 AND MIT', keywords: ['buy a business', 'small business acquisition', 'entrepreneurship through acquisition', 'ETA', 'search fund', 'SBA 7(a)', 'due diligence', 'LOI'] };
