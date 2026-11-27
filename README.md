@@ -3,7 +3,7 @@
 
 **A guide to buying a small business, plus agent skills.**
 
-[![skills.sh](https://skills.sh/b/smallbizacqs/buy-a-business)](https://skills.sh/smallbizacqs/buy-a-business) [![validate](https://github.com/smallbizacqs/buy-a-business/actions/workflows/validate.yml/badge.svg)](https://github.com/smallbizacqs/buy-a-business/actions/workflows/validate.yml)
+[![validate](https://github.com/smallbizacqs/buy-a-business/actions/workflows/validate.yml/badge.svg)](https://github.com/smallbizacqs/buy-a-business/actions/workflows/validate.yml)
 
 You want to buy a small business, or you're wondering whether you should. The advice is scattered across podcasts, broker sites and forums, a lot of it is selling something, and the rules (SBA loans above all) keep changing. This repo puts the whole journey in one place, in a form your AI agent can read and act on: ten stages, about 250 specific questions, answers with dated primary sources, short clips from people who've done it, and a skill for each job along the way.
 
